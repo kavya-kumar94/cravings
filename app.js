@@ -21,8 +21,8 @@ app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
     const user = new User({
-        handle: "jim",
-        email: "jim@jim.jim",
+        username: "jim",
+        age: 20,
         password: "jimisgreat123"
     })
     user.save()

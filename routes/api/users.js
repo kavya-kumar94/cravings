@@ -8,14 +8,14 @@ router.get("/test", (req,res) => {
 });
 
 router.post('/register', (req ,res) => {
-    User.findOne( { email: req.body.email })
+    User.findOne( { username: req.body.username })
     .then(user => {
         if (user) {
-            return res.startus(400).json({ email: "A user is already registered with that email"})
+            return res.startus(400).json({ username: "A user is already registered with that username"})
         } else {
             const newUser = new User({
-                handle: req.body.handle,
-                email: req.body.email,
+                username: req.body.username,
+                age: req.body.age,
                 password: req.body.password
             })
 
@@ -34,13 +34,13 @@ router.post('/register', (req ,res) => {
 })
 
 router.post('/login', (req, res) => {
-    const email = req.body.email;
+    const username = req.body.username;
     const password = req.body.password;
 
-    User.findOne({ email })
+    User.findOne({ username })
         .then(user => {
             if(!user) {
-                return res.status(404).json({ email: "This user does not exist." });
+                return res.status(404).json({ username: "This user does not exist." });
             }
 
             bcrypt.compare(password, user.password)
