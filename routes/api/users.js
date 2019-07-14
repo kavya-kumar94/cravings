@@ -14,7 +14,7 @@ router.post('/register', (req ,res) => {
     User.findOne( { username: req.body.username })
     .then(user => {
         if (user) {
-            return res.startus(400).json({ username: "A user is already registered with that username"})
+            return res.status(400).json({ username: "A user is already registered with that username"})
         } else {
             const newUser = new User({
                 username: req.body.username,
