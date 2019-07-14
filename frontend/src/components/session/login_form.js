@@ -37,7 +37,8 @@ class LoginForm extends React.Component {
             password: this.state.password
         };
 
-        this.props.login(user);
+        this.props.login(user)
+            .then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -57,6 +58,7 @@ class LoginForm extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <div>
+                        <div onClick={this.props.closeModal} className="close-x">&times;</div>
                         <br />
                         <input type="text"
                             value={this.state.username}
