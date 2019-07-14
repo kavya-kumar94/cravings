@@ -1,4 +1,4 @@
-import { RECEIVE_FOOD, RECEIVE_FOODS } from '../actions/tweet_actions';
+import { RECEIVE_FOOD, RECEIVE_FOODS } from '../actions/food_actions';
 
 const FoodsReducer = (state = {}, action) => {
     Object.freeze(state);
