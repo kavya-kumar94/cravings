@@ -39,7 +39,9 @@ class SignupForm extends React.Component {
             password2: this.state.password2
         };
 
-        this.props.signup(user, this.props.history);
+        this.props.signup(user)
+            .then(this.props.closeModal)
+            .then(this.props.history);
     }
 
     renderErrors() {
@@ -56,10 +58,11 @@ class SignupForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
+            <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
+                    <div className="signup-form">
                         <br />
+                        <div onClick={this.props.closeModal} className="close-x">&times;</div>
                         <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
