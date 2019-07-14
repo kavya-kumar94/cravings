@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const FoodSchema = new Schema({
+const FoodSchema = new Schema ({
     name: {
         type: String,
         required: true
@@ -62,25 +62,28 @@ const FoodSchema = new Schema({
         type: Boolean,
         required: true
     },
-    sweet: {
+    angry: {
         type: Boolean,
         required: true
     },
-    sweet: {
+    sick: {
         type: Boolean,
         required: true
     },
-    sweet: {
+    celebratory: {
         type: Boolean,
         required: true
     },
-    sweet: {
+    stressed: {
         type: Boolean,
         required: true
     },
-    sweet: {
+    adventurous: {
         type: Boolean,
         required: true
     },
    
 })
+
+const Food = mongoose.model('foods', FoodSchema);
+module.exports = Food;
