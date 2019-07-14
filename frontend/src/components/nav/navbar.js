@@ -1,31 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './navbar.css'
 
 class NavBar extends React.Component {
+
     constructor(props) {
         super(props);
-        this.logoutUser = this.logoutUser.bind(this);
         this.getLinks = this.getLinks.bind(this);
     }
 
-    logoutUser(e) {
-        e.preventDefault();
-        this.props.logout();
-    }
-
     getLinks() {
+
+        const { currentUser, logout, openModal } = this.props;
+
         if (this.props.loggedIn) {
             return (
                 <div>
-                    <button onClick={this.logoutUser}>Logout</button>
+                    <button onClick={logout}>Logout</button>
+                    <h2 className="welcome-name">Welcome, { currentUser.username }</h2>
                 </div>
             );
         } else {
             return (
                 <div>
-                    <Link to={'/signup'}>Signup</Link>
-                    <Link to={'/login'}>Login</Link>
+                    <button onClick={() => openModal('signup')}>Sign up</button>
+                    &nbsp; &nbsp;
+                    <button onClick={() => openModal('login')}>Log in</button>
                 </div>
             );
         }
