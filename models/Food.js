@@ -2,7 +2,39 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const FoodSchema = new Schema ({
+    id: {
+        type: Number,
+        required: true
+    },
     name: {
+        type: String,
+        required: true
+    },
+    address: {
+        type: String,
+        required: true
+    },
+    city: {
+        type: String,
+        required: true
+    },
+    state: {
+        type: String,
+        required: true
+    },
+    area: {
+        type: String,
+        required: true
+    },
+    postal_code: {
+        type: String,
+        required: true
+    },
+    country: {
+        type: String,
+        required: true
+    },
+    phone: {
         type: String,
         required: true
     },
@@ -14,14 +46,15 @@ const FoodSchema = new Schema ({
         type: Number,
         required: true
     },
-    city: {
-        type: String,
-        required: true
-    },
     price: {
         type: Number,
         required: true
     },
+    image_url: {
+        type: String,
+        required: true
+    },
+    ///qualities
     sweet: {
         type: Boolean,
         required: true

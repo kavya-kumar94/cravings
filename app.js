@@ -1,3 +1,4 @@
+import Food from './models/Food';
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -29,6 +30,22 @@ app.get("/", (req, res) => {
     user.save()
     res.send("Hello Sophia");
 });
+
+app.get("http://opentable.herokuapp.com/api/restaurants?city=san%20francisco", (res) => {
+    let data = '';
+
+    res.on('data', (chunk) => {
+        data += chunk;
+    });
+
+    res.on('end', () => {
+
+    })
+
+    res.body.restaurants.forEach( restaurant => {
+        const food = new Food ({ restaurant })
+    })
+})
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
