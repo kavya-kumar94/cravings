@@ -11,11 +11,11 @@ module.exports = function validateRegisterInput(data){
     if (!Validator.isLength(data.username, { min: 5, max: 10 })) {
         errors.username = "Username must be between 5 and 10 characters.";
     }
-    if (!Validator.isEmpty(data.username)) {
+    if (Validator.isEmpty(data.username)) {
         errors.username = "Username field is required.";
     }
 
-    if (!Validator.isEmpty(data.age)) {
+    if (Validator.isEmpty(data.age)) {
         errors.age = "Age field is required.";
     }
     if (!Validator.isNumeric(data.age)) {
@@ -25,8 +25,8 @@ module.exports = function validateRegisterInput(data){
     if (!Validator.isLength(data.password, { min: 5, max: 10 })) {
         errors.password = "Password must be between 5 and 10 characters.";
     }
-    if (!Validator.isEmpty(data.password)) {
-        errors.age = "Password field is required.";
+    if (Validator.isEmpty(data.password)) {
+        errors.password = "Password field is required.";
     }
 
     if(!Validator.equals(data.password, data.password2)) {
