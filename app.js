@@ -1,4 +1,4 @@
-import Food from './models/Food';
+const Food = require("./models/Food");
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -8,6 +8,7 @@ const foods = require("./routes/api/foods");
 const drinks = require("./routes/api/drinks");
 const User = require("./models/User");
 const bodyParser = require('body-parser');
+const https = require('https');
 
 mongoose
     .connect(db, { useNewUrlParser: true })
@@ -21,31 +22,29 @@ app.use(bodyParser.urlencoded({
 
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-    const user = new User({
-        username: "jim",
-        age: 20,
-        password: "jimisgreat123"
+// app.get("/", (req, res) => {
+//     const user = new User({
+//         username: "jim",
+//         age: 20,
+//         password: "jimisgreat123"
+//     })
+//     user.save()
+//     res.send("Hello Sophia");
+// });
+
+
+const axios = require('axios');
+
+axios.get("http://opentable.herokuapp.com/api/restaurants?city=san%20francisco")
+    .then(res => {
+        res.data.restaurants.forEach(restaurant => {
+            const food = new Food(restaurant);
+            food.save();
+        })  
     })
-    user.save()
-    res.send("Hello Sophia");
-});
-
-app.get("http://opentable.herokuapp.com/api/restaurants?city=san%20francisco", (res) => {
-    let data = '';
-
-    res.on('data', (chunk) => {
-        data += chunk;
+    .catch(error => {
+        console.log(error);
     });
-
-    res.on('end', () => {
-
-    })
-
-    res.body.restaurants.forEach( restaurant => {
-        const food = new Food ({ restaurant })
-    })
-})
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
