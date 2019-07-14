@@ -21,7 +21,7 @@ class NavBar extends React.Component {
             );
         } else {
             return (
-                <div>
+                <div className="navbar-links">
                     <button onClick={() => openModal('signup')}>Sign up</button>
                     &nbsp; &nbsp;
                     <button onClick={() => openModal('login')}>Log in</button>
@@ -33,7 +33,6 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="navbar">
-                <h1>Cravings NavBar</h1>
                 {this.getLinks()}
             </div>
         );

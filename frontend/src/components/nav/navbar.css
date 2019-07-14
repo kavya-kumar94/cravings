@@ -4,18 +4,31 @@
     justify-content: space-between;
 }
 
+.navbar-links {
+    display: flex;
+    float: right;
+    margin-right: 40px;
+    padding: 20px;
+}
+
+.navbar-links button {
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+}
+
+.navbar-links button:focus {
+    outline: none;
+    border: none;
+}
+
+.navbar-links button:hover {
+    transform: scale(1.1);
+}
+
 .NavBar button {
     height: 20px;
-}
-
-.Links1 {
-    width: 100px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.Links2 {
-    width: 400px;
-    display: flex;
-    justify-content: space-between;
 }
