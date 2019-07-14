@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/test", (req, res) => {
-    res.json({ msg: "This is the restaurant route" });
+router.get("/", (req, res) => {
+    res.json({ msg: "This is the drink route" });
 })
 
 module.exports = router;
