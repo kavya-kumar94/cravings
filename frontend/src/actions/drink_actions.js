@@ -3,24 +3,24 @@ import * as DrinkApiUtil from '../util/drink_api_util';
 export const RECEIVE_DRINKS = "RECEIVE_DRINKS";
 export const RECEIVE_DRINK = "RECEIVE_DRINK";
 
-export const receiveFood = (food) => ({
+export const receiveDrink = (drink) => ({
     type: RECEIVE_DRINK,
-    food
+    drink
 });
 
-export const receiveFoods = (foods) => ({
+export const receiveDrinks = (drinks) => ({
     type: RECEIVE_DRINKS,
-    foods
+    drinks
 });
 
 export const fetchDrinks = () => dispatch => (
     DrinkApiUtil.fetchDrinks()
-        .then(foods => dispatch(receiveFoods(foods)))
+        .then(drinks => dispatch(receiveDrinks(drinks)))
         .catch(err => console.log(err))
 );
 
 export const fetchDrink = (id) => dispatch => (
     DrinkApiUtil.fetchDrink(id)
-        .then(food => dispatch(receiveFood(food)))
+        .then(drink => dispatch(receiveDrink(drink)))
         .catch(err => console.log(err))
 );
