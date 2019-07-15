@@ -1,5 +1,6 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
+import 'chartjs-plugin-labels'
 
 class Chart extends React.Component {
     constructor(props) {
@@ -52,21 +53,46 @@ class Chart extends React.Component {
         }
     }
 
+    componentDidMount() {
+        let pieComponent = document.querySelector('.pie-component');
+        console.log(pieComponent);
+    }
+
+    // onSliceClick() {
+    //     ({ e: SliceClickEventArgs}) => {
+    //     e.isExploded = !e.isExploded
+    // }}
+
+    // chooseFood() {
+
+    // }
+    
     render() {
         return (
             <div className="pie">
                 <h1>Choose a Food Mood!</h1>
+
                 <Pie
+                className="pie-component"
                 data={this.state.chartData}
                 width={600}
                 height={300}
                 options={{maintainAspectRatio: true}}
-                plugins={
-                    {labels: 
-                        {render: 'label' 
-                    }}
-                }
+                allowSliceExplosion="true"
+                radiusFactor={0.7}
+                options={
+                    // 'onClick': console.log('it works'),
+                     {events: ['click', 'mousemove'],
+                     onClick: () => console.log('it works')
+                    }
+                    }
+                // plugins={
+                //     {labels: 
+                //         {render: 'label'
+                //     }}
+                // }
                 />
+
             </div>
         )
     }
