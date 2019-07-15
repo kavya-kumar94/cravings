@@ -22,7 +22,16 @@ router.get("/", (req, res) => {
         price: req.body.price
     })
         .then(drinks => {
-            return res.json(drinks);
+            let drinksPojo = {};
+            drinks.forEach(drink => {
+                let drinkPojo = {
+                    id: drink.id,
+                    name: drink.name,
+                    price: drink.price
+                }
+                drinksPojo[drink.id] = drinkPojo;
+            })
+            return res.json(drinksPojo);
         })
 })
 
