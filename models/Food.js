@@ -3,53 +3,53 @@ const Schema = mongoose.Schema;
 
 const FoodSchema = new Schema ({
     id: {
-        type: Number,
-        required: true
+        type: String,
+        required: true  
     },
     name: {
         type: String,
         required: true
     },
-    address: {
-        type: String,
-        required: true
-    },
-    city: {
-        type: String,
-        required: true
-    },
-    state: {
-        type: String,
-        required: true
-    },
-    area: {
-        type: String,
-        required: true
-    },
-    postal_code: {
-        type: String,
-        required: true
-    },
-    country: {
-        type: String,
-        required: true
-    },
+    // address: {
+    //     type: String,
+    //     required: true
+    // },
+    // city: {
+    //     type: String,
+    //     required: true
+    // },
+    // state: {
+    //     type: String,
+    //     required: true
+    // },
+    // area: {
+    //     type: String,
+    //     required: true
+    // },
+    // postal_code: {
+    //     type: String,
+    //     required: true
+    // },
+    // country: {
+    //     type: String,
+    //     required: true
+    // },
     phone: {
         type: String,
         required: true
     },
-    lat: {
-        type: Number,
-        required: true
-    },
-    lng: {
-        type: Number,
-        required: true
-    },
-    price: {
-        type: Number,
-        required: true
-    },
+    // lat: {
+    //     type: Number,
+    //     required: true
+    // },
+    // lng: {
+    //     type: Number,
+    //     required: true
+    // },
+    // price: {
+    //     type: String,
+    //     required: true
+    // },
     image_url: {
         type: String,
         required: true
