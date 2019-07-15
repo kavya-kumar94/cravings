@@ -1,6 +1,7 @@
 import React from 'react';
 import { Pie, Doughnut } from 'react-chartjs-2';
-import 'chartjs-plugin-labels'
+// import 'chartjs-plugin-labels'
+import './drink_mood_wheel.css'
 
 class DrinkWheel extends React.Component {
     constructor(props) {
@@ -80,7 +81,7 @@ class DrinkWheel extends React.Component {
     render() {
         return (
             <div className="doughnut">
-                <h1>Choose a Drink Mood!</h1>
+                <h1>Choose your Drink Moods!</h1>
 
                 <Doughnut
                     className="do-component"
@@ -118,7 +119,9 @@ class DrinkWheel extends React.Component {
                 //     }
                 // }
                 />
-
+                <div className="drink-wheel-btn">
+                    <button className="result-btn">Get Results</button>
+                </div>
             </div>
         )
     }
