@@ -49,6 +49,11 @@ router.post('/register', (req ,res) => {
                 })
             })
 
+            const payload = {
+                id: newUser.id,
+                username: newUser.username,
+                age: newUser.age
+            }
             jwt.sign(
                 payload,
                 keys.secretOrKey,
