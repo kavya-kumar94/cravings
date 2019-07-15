@@ -538,7 +538,7 @@ const seed = (() => {
                 hangry: true,
                 sick: false,
                 celebratory: false,
-                stressed: true
+                stressed: true,
                 adventurous: false
             });
             food.save();
