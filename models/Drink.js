@@ -60,62 +60,62 @@ const DrinkSchema = new Schema({
         // required: true
     },
     // ATTRIBUTES: FEELINGS/CRAVINGS:
-    // caffeine: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // sweet: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // aromatic: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // hot: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // iced: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // healthy: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // sad: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // tired: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // happy: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // angry: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // sick: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // celebratory: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // stressed: {
-    //     type: Boolean,
-    //     required: true
-    // },
-    // adventurous: {
-    //     type: Boolean,
-    //     required: true
-    // }
+    caffeine: {
+        type: Boolean,
+        required: true
+    },
+    sweet: {
+        type: Boolean,
+        required: true
+    },
+    aromatic: {
+        type: Boolean,
+        required: true
+    },
+    hot: {
+        type: Boolean,
+        required: true
+    },
+    iced: {
+        type: Boolean,
+        required: true
+    },
+    healthy: {
+        type: Boolean,
+        required: true
+    },
+    sad: {
+        type: Boolean,
+        required: true
+    },
+    tired: {
+        type: Boolean,
+        required: true
+    },
+    happy: {
+        type: Boolean,
+        required: true
+    },
+    angry: {
+        type: Boolean,
+        required: true
+    },
+    sick: {
+        type: Boolean,
+        required: true
+    },
+    celebratory: {
+        type: Boolean,
+        required: true
+    },
+    stressed: {
+        type: Boolean,
+        required: true
+    },
+    adventurous: {
+        type: Boolean,
+        required: true
+    }
 })
 
 const Drink = mongoose.model('drinks', DrinkSchema);
