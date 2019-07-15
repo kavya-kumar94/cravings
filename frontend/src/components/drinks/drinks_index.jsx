@@ -1,13 +1,9 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DrinksIndexItem from './drinks_index_item';
-import NavBarIndexContainer from '../nav/navbar_container';
-import './drinks.css'
+import './drinks.css';
 
 class Drinks extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     componentWillMount() {
         this.props.fetchDrinks();
@@ -32,8 +28,8 @@ class Drinks extends React.Component {
 
             </div>
         );
-        }
     }
+    
 }
 
 export default withRouter(Drinks);
