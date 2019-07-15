@@ -9,9 +9,9 @@ class MainPage extends React.Component {
             <div className="main">
                 <h1>Cravings</h1>
                 <h2>FIND A RESTAURANT FOR EVERY MOOD</h2>
-                {/* <div>
+                <div>
                     <PieChart />
-                </div> */}
+                </div>
                 {/* <footer>
                     We are live!! React not broken, Everything is fine
                 </footer> */}

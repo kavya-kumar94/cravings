@@ -1,6 +1,5 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
-import 'chartjs-plugin-labels';
 
 class Chart extends React.Component {
     constructor(props) {
@@ -56,17 +55,18 @@ class Chart extends React.Component {
     render() {
         return (
             <div className="pie">
+                <h1>Choose a Food Mood!</h1>
                 <Pie
                 data={this.state.chartData}
                 width={600}
                 height={300}
                 options={{maintainAspectRatio: true}}
-                plugins= {
+                plugins={
                     {labels: 
                         {render: 'label' 
                     }}
                 }
-                    />
+                />
             </div>
         )
     }
