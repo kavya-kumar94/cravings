@@ -1,3 +1,5 @@
+// const Food = require("./models/Food");
+const seed = require('./seeder');
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -7,28 +9,89 @@ const foods = require("./routes/api/foods");
 const drinks = require("./routes/api/drinks");
 const User = require("./models/User");
 const bodyParser = require('body-parser');
+const https = require('https');
+const mongo = require('mongodb').MongoClient;
 
 mongoose
-    .connect(db, { useNewUrlParser: true })
+    .connect(db, { useNewUrlParser: true } )
     .then(() => console.log("Connected to mongoDB"))
     .catch(err => console.log(err));
 
-
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
-
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-    const user = new User({
-        username: "jim",
-        age: 20,
-        password: "jimisgreat123"
-    })
-    user.save()
-    res.send("Hello Sophia");
-});
+seed();
+// app.get("/", (req, res) => {
+//     const user = new User({
+//         username: "jim",
+//         age: 20,
+//         password: "jimisgreat123"
+//     })
+//     user.save()
+//     res.send("Hello Sophia");
+// });
+
+// Food.collection.deleteMany({});
+
+// const yelp = require('yelp-fusion');
+// const apiKey = "nYHIXBZJ5v8UFRI5nnG8So8pqJmDrC9ZsOy9rPjDM1ntm6EQ1mTi-bdJhxZs585BqrThjKKpHi0y2Z-6fmAx48-1SWYNUa3vWgr1JkirCLkz-3x-vYUk81fVT7orXXYx";
+
+// const searchRequest = {
+//     term: 'bubble tea',
+//     limit: 10,
+//     location: 'san francisco, ca'
+// };
+
+// const client = yelp.client(apiKey);
+
+// client.search(searchRequest).then(response => {
+//     response.jsonBody.businesses.forEach( rest => {
+//             const food = new Food({
+//                 id: rest.id,
+//                 name: rest.name,
+//                 imageUrl: rest.image_url,
+//                 category: rest.categories[0].title,
+//                 rating: rest.rating,
+//                 lat: rest.coordinates.latitude,
+//                 lng: rest.coordinates.longitude,
+//                 price: rest.price,
+//                 address: rest.location.address1,
+//                 city: rest.location.city,
+//                 zipCode: rest.location.zip_code,
+//                 country: rest.location.country,
+//                 state: rest.location.state,
+//                 phone: rest.display_phone
+//             });
+//             food.save();
+//     })
+// })
+//     .catch(error => {
+//         console.log(error);
+//     });
+
+
+// const axios = require('axios');
+
+// axios.get("http://opentable.herokuapp.com/api/restaurants?city=san%20francisco")
+//     .then(res => {
+//         res.data.restaurants.forEach(restaurant => {
+//             const food = new Food(restaurant);
+//             food.save();
+//         })  
+//     })
+//     .catch(error => {
+//         console.log(error);
+//     });
+
+// axios.get("http://opentable.herokuapp.com/api/restaurants?city=new%20york")
+//     .then(res => {
+//         res.data.restaurants.forEach(restaurant => {
+//             const food = new Food(restaurant);
+//             food.save();
+//         })  
+//     })
+//     .catch(error => {
+//         console.log(error);
+//     });
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)

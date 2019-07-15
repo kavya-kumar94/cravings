@@ -2,7 +2,7 @@ import { RECEIVE_FOOD, RECEIVE_FOODS } from '../actions/food_actions';
 
 const FoodsReducer = (state = {}, action) => {
     Object.freeze(state);
-    
+
     switch (action.type) {
         case RECEIVE_FOODS:
             return action.foods.data;

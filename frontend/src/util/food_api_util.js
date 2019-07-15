@@ -7,3 +7,4 @@ export const getFoods = () => {
 export const getFood = (id) => {
     return axios.get(`/api/foods/${id}`)
 };
+   
