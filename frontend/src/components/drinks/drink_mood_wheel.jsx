@@ -79,13 +79,13 @@ class DrinkWheel extends React.Component {
 
     render() {
         return (
-            <div className="pie">
-                <h1>Choose a Food Mood!</h1>
+            <div className="doughnut">
+                <h1>Choose a Drink Mood!</h1>
 
                 <Doughnut
-                    className="pie-component"
+                    className="do-component"
                     data={this.state.chartData}
-                    width={600}
+                    width={800}
                     height={300}
                     options={{ maintainAspectRatio: true }}
                     allowSliceExplosion="true"
@@ -97,10 +97,25 @@ class DrinkWheel extends React.Component {
                             onClick: () => console.log('it works')
                         }
                     }
+                    options={
+                        {
+                            legend: {
+                                position: 'left',
+                                labels: {
+                                    fontSize: 20,
+                                    fontColor: '#000000'
+                                }
+                            },
+                        }   
+                    }
                 // plugins={
-                //     {labels: 
-                //         {render: 'label'
-                //     }}
+                //     options= {
+                //         { 
+                //             labels: {
+                //                 render: 'label'
+                //             }
+                //         }
+                //     }
                 // }
                 />
 
