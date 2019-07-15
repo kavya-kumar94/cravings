@@ -8,7 +8,7 @@ import './reset.css';
 import './foods/foods.css';
 import MainPage from './main/main_page';
 import FoodsIndexContainer from './foods/foods_index_container';
-// import FoodShowContainer from '';
+import FoodShowContainer from './foods/food_show/food_show_container';
 import DrinksIndexContainer from './drinks/drinks_index_container';
 import DrinkShowContainer from './drinks/drink_show/drink_show_container';
 import FoodWheel from './foods/food_mood_wheel';
@@ -21,13 +21,11 @@ const App = () => (
             <Route exact path="/foodwheel" component={FoodWheel} />
 
             <Route exact path="/foods" component={FoodsIndexContainer} />
-            {/* <Route exact path="/foods/:foodId" component={FoodShowContainer} /> */}
+            <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
             <Route exact path="/drinks" component={DrinksIndexContainer} />
             <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
 
-            <Route exact path="/" component={MainPage} />
-            {/* <AuthRoute exact path="/" component={MainPage} /> */}
             <AuthRoute exact path="/" component={MainPage} />
         </Switch>
     </div>
