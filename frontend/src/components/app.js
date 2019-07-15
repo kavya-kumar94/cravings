@@ -12,6 +12,8 @@ import FoodShowContainer from './foods/food_show/food_show_container';
 import DrinksIndexContainer from './drinks/drinks_index_container';
 import DrinkShowContainer from './drinks/drink_show/drink_show_container';
 import FoodWheel from './foods/food_mood_wheel';
+import DrinkWheel from './drinks/drink_mood_wheel';
+import DrinkForm from './drinks/drink_mood_form';
 
 const App = () => (
     <div className="app">
