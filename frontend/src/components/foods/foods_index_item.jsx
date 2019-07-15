@@ -1,18 +1,34 @@
 import React from 'react';
+import './foods.css'
+import { Link } from 'react-router-dom';
 
 class FoodsIndexItem extends React.Component {
+
     render() {
+        const { food } = this.props;
         return (
-            <div className="food-index-item">
-                <h3>{this.props.food.name}</h3>
-                <h3>{this.props.food.address}</h3>
-                <h3>{this.props.food.city}</h3>
-                <h3>{this.props.food.state}</h3>
-                <h3>{this.props.food.postal_code}</h3>
-                <h3>{this.props.food.phone_number}</h3>
-                <h3>{this.props.food.price}</h3>
-                <h3>{this.props.food.image_url}</h3>
+            <div className='food-list-items'>
+                <div className='food-pictures'>
+                    <img src={this.props.food.imageUrl} className="food-photo" />
+                </div>
+
+                <Link className='food-info' to={`/foods/${food.id}`}>
+                    <div className='food-name-tent'>
+                        <div className='food-name'>
+                            {food.name} 
+                        </div>
+                    </div>
+                    <div className='food-location'>
+                        {food.address},{food.city},{food.state},{food.zipCode}
+                    </div>
+                    <div className='extra-food-info'>
+                        <div className='food-price'>
+                            {food.price}
+                        </div>
+                    </div>
+                </Link>
             </div>
+           
         );
     }
 }

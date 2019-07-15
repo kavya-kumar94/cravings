@@ -1,16 +1,33 @@
 .drinks-index-container{
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    color: black;
 }
 
 .drinks-ul{
-    border: 1px solid black;
+    padding: 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-bottom: 1px solid white;
+    box-shadow: 0px 5px 5px -5px rgba(211, 211, 211, 0.7);
 }
 
 .drinks-index-item{
-    border: 1px solid black;
+    font-family: "Calibre", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    display: inline-block;
+    background: white;
+    box-shadow: 5px 5px 5px 5px rgba(211, 211, 211, 0.7);
+    width: 350px;
+    margin: 10px;
+    height: 285px;
 }
 
-.drink-photo{
-    border: 1px solid black;
+.drink-picture{
+    /* border: 1px solid black; */
 }
 
+.drink-photo {
+    width: 350px;
+    height: 200px;
+    display: block;
+}

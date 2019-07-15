@@ -1,12 +1,16 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import Modal from '../components/modal/modal';
-import './app.css'
-import './reset.css'
+import './app.css';
+import './reset.css';
+import './foods/foods.css';
 import MainPage from './main/main_page';
-import FoodsContainer from './foods/foods_container';
+import FoodsIndexContainer from './foods/foods_index_container';
+import FoodShowContainer from './foods/food_show/food_show_container';
+import DrinksIndexContainer from './drinks/drinks_index_container';
+import DrinkShowContainer from './drinks/drink_show/drink_show_container';
 import FoodWheel from './foods/food_mood_wheel';
 import DrinkWheel from './drinks/drink_mood_wheel';
 import DrinkForm from './drinks/drink_mood_form';
@@ -16,12 +20,15 @@ const App = () => (
         <NavBarContainer />
         <Modal />
         <Switch>
-            {/* <Route exact> */}
+            <Route exact path="/foodwheel" component={FoodWheel} />
+
+            <Route exact path="/foods" component={FoodsIndexContainer} />
+            <Route exact path="/foods/:foodId" component={FoodShowContainer} />
+
+            <Route exact path="/drinks" component={DrinksIndexContainer} />
+            <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
+
             <AuthRoute exact path="/" component={MainPage} />
-            {/* <Route exact path="/foodwheel" component={FoodWheel} />
-            <Route exact path="/drinkwheel" component={DrinkWheel} /> */}
-            <Route exact path="/drinkwheel" component={DrinkForm} /> */}
-            <Route exact path="/foods" component={FoodsContainer} />
         </Switch>
     </div>
 );

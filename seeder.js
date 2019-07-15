@@ -183,7 +183,7 @@ const seed = (() => {
             food.save();
         })
     })
-    
+
     client.search(searchJapaneseRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
@@ -888,9 +888,9 @@ const seed = (() => {
             drink.save();
         })
     })
-        // .catch(error => {
-        //     console.log(error);
-        // });
+    .catch(error => {
+        console.log(error);
+    });
 });
 
 module.exports = seed;
