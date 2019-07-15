@@ -16,7 +16,7 @@ class NavBar extends React.Component {
             return (
                 <div>
                     <button onClick={logout}>Logout</button>
-                    <h2 className="welcome-name">Welcome, { currentUser.username }</h2>
+                    <h2 className="welcome-name">Welcome, {currentUser.username}</h2>
                 </div>
             );
         } else {
