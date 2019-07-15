@@ -15,6 +15,8 @@ class Drinks extends React.Component {
 
     render() {
 
+        if (this.props.drinks === undefined) return null;
+
         const drinks = this.props.drinks.map(drink => (
             <DrinksIndexItem
                 key={drink.id}
@@ -23,10 +25,6 @@ class Drinks extends React.Component {
 
         return (
             <div className="drinks-index-container">
-
-                <div>
-                    <NavBarIndexContainer />
-                </div>
 
                 <div className="drinks-ul">
                     <ul>{drinks}</ul>
