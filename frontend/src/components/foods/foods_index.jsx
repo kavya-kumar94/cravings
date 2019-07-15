@@ -15,6 +15,8 @@ class FoodsIndex extends React.Component {
 
     render() {
 
+        if(this.props.food === undefined) return null;
+        
         const foods = this.props.foods.map(food => (
             <FoodsIndexItem
                 key={food.id}
