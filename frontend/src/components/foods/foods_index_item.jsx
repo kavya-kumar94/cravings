@@ -2,23 +2,32 @@ import React from 'react';
 import './foods.css'
 
 class FoodsIndexItem extends React.Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
+        const { food } = this.props;
         return (
-            <div className="foods-index-item">
-                <h3>{this.props.drink.name}</h3>
-                <h3>{this.props.drink.address}</h3>
-                <h3>{this.props.drink.city}</h3>
-                <h3>{this.props.drink.state}</h3>
-                <h3>{this.props.drink.rating}</h3>
-                <h3>{this.props.drink.postal_code}</h3>
-                <h3>{this.props.drink.phone_number}</h3>
-                <h3>{this.props.drink.price}</h3>
-                <img src={this.props.drink.imageUrl} className="food-photo" />
+            <div className='food-list-items'>
+                <div className='food-pictures'>
+                    <img src={this.props.food.imageUrl} className="food-photo" />
+                </div>
+
+                {/* <Link className='food-info' to={`/foods/${food.id}`}> */}
+                    <div className='food-name-tent'>
+                        <div className='food-name'>
+                            {food.name} 
+                        </div>
+                    </div>
+                    <div className='food-location'>
+                        {food.address},{food.city},{food.state},{food.zipCode}
+                    </div>
+                    <div className='extra-food-info'>
+                        <div className='food-price'>
+                            {food.price}
+                        </div>
+                    </div>
+                {/* </Link> */}
             </div>
+           
         );
     }
 }
