@@ -1,5 +1,5 @@
 // const Food = require("./models/Food");
-const seed = require('./seeder');
+// const seed = require('./seeder');
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -7,10 +7,10 @@ const db = require("./config/keys").mongoURI
 const users = require("./routes/api/users");
 const foods = require("./routes/api/foods");
 const drinks = require("./routes/api/drinks");
-const User = require("./models/User");
+// const User = require("./models/User");
 const bodyParser = require('body-parser');
-const https = require('https');
-const mongo = require('mongodb').MongoClient;
+// const https = require('https');
+// const mongo = require('mongodb').MongoClient;
 
 mongoose
     .connect(db, { useNewUrlParser: true } )
@@ -19,7 +19,9 @@ mongoose
 
 app.use(bodyParser.json());
 
-seed();
+// debugger;
+
+// seed();
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
