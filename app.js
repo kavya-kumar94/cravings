@@ -19,12 +19,12 @@ mongoose
 
 app.use(bodyParser.json());
 
-seed();
+const port = process.env.PORT || 5000;
+
+app.listen(port, () => console.log(`Listening on port ${port}`));
+
+// seed();
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
 app.use("/api/drinks", drinks)
-
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => console.log(`Listening on port ${port}`));
