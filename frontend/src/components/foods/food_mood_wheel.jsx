@@ -1,62 +1,6 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
-
-// const data = {
-//     labels: ['sweet', 'spicy', 'savory', 'salty', 'hot', 'cold',
-//         'healthy', 'junk', 'sad', 'happy', 'hangry', 'sick', 'celebratory',
-//         'stressed', 'adventurous'],
-//     datasets: [{
-//         data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
-//         backgroundColor: [
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//         ],
-//         hoverBackgroundColor: [
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-//             '#FF6384',
-//             '#36A2EB',
-//             '#FFCE56',
-
-//         ]
-//     }]
-// };
-
-// export default React.createClass({
-//     displayName: 'PieChart',
-
-//     render() {
-//         return (
-//             <div>
-//                 <h2>Pie Chart</h2>
-//                 <Pie data={data} />
-//             </div>
-//         );
-//     }
-// });
+import 'chartjs-plugin-labels';
 
 class Chart extends React.Component {
     constructor(props) {
@@ -116,8 +60,11 @@ class Chart extends React.Component {
                 data={this.state.chartData}
                 width={600}
                 height={300}
-                options={
-                    {maintainAspectRatio: true}
+                options={{maintainAspectRatio: true}}
+                plugins= {
+                    {labels: 
+                        {render: 'label' 
+                    }}
                 }
                     />
             </div>
