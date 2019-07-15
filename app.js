@@ -1,5 +1,5 @@
 const Food = require("./models/Food");
-const seed = require('./seeder');
+// const seed = require('./seeder');
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
@@ -19,7 +19,7 @@ mongoose
 
 app.use(bodyParser.json());
 
-seed();
+// seed();
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
