@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
-import { fetchDrink } from '../../actions/drink_actions';
+import { fetchDrink } from '../../../actions/drink_actions';
 import DrinkShow from './drink_show';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        drink: state.entities.drink[ownProps.match.params.drinkId]
+        drink: state.entities.drinks[ownProps.match.params.drinkId]
     };
 };
 
