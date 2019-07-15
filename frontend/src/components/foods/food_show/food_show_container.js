@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(FoodsIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(FoodShow);
