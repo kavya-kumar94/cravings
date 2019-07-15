@@ -48,6 +48,23 @@ router.post('/register', (req ,res) => {
                         .catch(err => console.log(err))
                 })
             })
+
+            const payload = {
+                id: newUser.id,
+                username: newUser.username,
+                age: newUser.age
+            }
+            jwt.sign(
+                payload,
+                keys.secretOrKey,
+                { expiresIn: 3600 },
+                (err, token) => {
+                    res.json({
+                        success: true,
+                        token: "Bearer " + token
+                    });
+                }
+            );
         }
     })
 })
