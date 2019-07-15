@@ -27,6 +27,7 @@
 }
 
 .close-x:hover {
+    color: rgb(124, 184, 207);
     cursor: pointer;
 }
 
