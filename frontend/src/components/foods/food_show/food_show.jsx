@@ -18,6 +18,7 @@ class FoodShow extends React.Component{
                 <h3>{food.name}</h3>
                 <h3>{food.address}</h3>
                 <h3>{food.price}</h3>
+                <img src={this.props.food.imageUrl} className="food-photo" />
             </div>
         )
     }
