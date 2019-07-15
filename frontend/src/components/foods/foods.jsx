@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import FoodsIndexItem from './foods_index_item';
+import './food.css'
 
 class Foods extends React.Component {
     constructor(props) {
