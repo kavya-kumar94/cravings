@@ -33,6 +33,7 @@ router.get("/", (req, res) => {
             })
             return res.json(drinksPojo);
         })
+        // .catch(er)
 })
 
 module.exports = router;
