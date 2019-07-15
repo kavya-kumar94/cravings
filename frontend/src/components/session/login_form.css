@@ -9,10 +9,17 @@
 }
 
 .inputs input[type="submit"] {
-    background-color: rgb(151, 145, 145);
-    color: white;    width: 85%;
+    background-color: rgb(65, 132, 158);
+    color: white;
+    width: 85%;
     text-align: center;
 }
+
+.inputs input[type="submit"]:hover {
+    background-color: rgb(124, 184, 207);
+}
+
+
 
 .please {
     text-align: center;
