@@ -7,3 +7,12 @@
     font-size: 30px;
     padding: 20px;
 }
+
+.fd {
+    margin: 60px;
+    padding: 50px;
+    /* border: 1px solid grey; */
+    width: 400px;
+    height: 200px;
+    /* background-color: rgb(204, 198, 198); */
+}
