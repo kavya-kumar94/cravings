@@ -17,6 +17,17 @@
 
 .inputs input[type="submit"]:hover {
     background-color: rgb(124, 184, 207);
+    cursor: pointer;
+}
+
+.close-x {
+    padding: 0px 5px;
+    width: 20px;
+    text-align: center;
+}
+
+.close-x:hover {
+    cursor: pointer;
 }
 
 .please {
