@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
         iced: req.body.iced,
         healthy: req.body.healthy,
         sad: req.body.sad,
+        tired: req.body.tired,
         happy: req.body.happy,
         angry: req.body.angry,
         sick: req.body.sick,
