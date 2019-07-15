@@ -5,7 +5,7 @@ const FoodsReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_FOODS:
-            return action.foods.data;
+            return action.payload.data;
         case RECEIVE_FOOD:
             return action.food.data;
         default:
