@@ -9,6 +9,7 @@ class FoodsIndexItem extends React.Component {
                 <h3>{props.drink.address}</h3>
                 <h3>{props.drink.city}</h3>
                 <h3>{props.drink.state}</h3>
+                <h3>{props.drink.rating}</h3>
                 <h3>{props.drink.postal_code}</h3>
                 <h3>{props.drink.phone_number}</h3>
                 <h3>{props.drink.price}</h3>
