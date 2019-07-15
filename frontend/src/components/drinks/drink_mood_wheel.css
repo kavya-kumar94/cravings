@@ -1,0 +1,31 @@
+.doughnut h1 {
+    font-size: 30px;
+    color: black;
+    padding-top: 20px;
+    margin-left: 50px;
+}
+
+.drink-wheel-btn {
+    font-size: 16px;
+    /* transition: all .2s ease-in-out; */
+    text-align: center;
+}
+
+
+.result-btn {
+    width: 80px;
+    height: 30px;
+    border-radius: 25px;
+    position: absolute;
+    top: 300px;
+    left: 690px;
+    z-index: 10;
+}
+
+.result-btn:focus {
+    outline: none;
+}
+
+.result-btn:hover {
+    background-color: rgb(192, 181, 181);
+}
