@@ -2,6 +2,7 @@ import React from 'react';
 import { Pie, Doughnut } from 'react-chartjs-2';
 // import 'chartjs-plugin-labels'
 import './drink_mood_wheel.css'
+import { defaults } from 'react-chartjs-2';
 
 class DrinkWheel extends React.Component {
     constructor(props) {
@@ -65,8 +66,8 @@ class DrinkWheel extends React.Component {
     }
 
     componentDidMount() {
-        let pieComponent = document.querySelector('.pie-component');
-        console.log(pieComponent);
+        let doComponent = document.querySelector('.do-component');
+        console.log(doComponent);
     }
 
     // onSliceClick() {
@@ -79,7 +80,11 @@ class DrinkWheel extends React.Component {
     // }
 
     render() {
-        return (
+        // Chart.defaults.global.legend.onClick = function (e, arr) {
+        //     /* do custom stuff here */
+        //     Chart.defaults.global.legend.onClick.call(this, e, arr)
+
+             return (
             <div className="doughnut">
                 <h1>Choose your Drink Moods!</h1>
 
@@ -92,7 +97,7 @@ class DrinkWheel extends React.Component {
                     allowSliceExplosion="true"
                     radiusFactor={0.7}
                     options={
-                        // 'onClick': console.log('it works'),
+                        // 'onClick': () => console.log('it works'),
                         {
                             events: ['click', 'mousemove'],
                             onClick: () => console.log('it works')
@@ -102,6 +107,11 @@ class DrinkWheel extends React.Component {
                         {
                             legend: {
                                 position: 'left',
+                                
+                                // onClick: (e, arr) => {
+                                //     console.log(arr)
+
+                                // },
                                 labels: {
                                     fontSize: 20,
                                     fontColor: '#000000'
