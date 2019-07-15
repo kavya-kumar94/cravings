@@ -22,9 +22,9 @@ class FoodsIndex extends React.Component {
         return (
             <div className="foods-index-container">
 
-                <div className="foods-ul">
-                    <ul>{foods}</ul>
-                </div>
+                <ul className="foods-ul">
+                    {foods}
+                </ul>
 
             </div>
         );
