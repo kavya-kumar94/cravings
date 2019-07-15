@@ -183,7 +183,7 @@
 //             food.save();
 //         })
 //     })
-    
+
 //     client.search(searchJapaneseRequest).then(response => {
 //         response.jsonBody.businesses.forEach(rest => {
 //             const food = new Food({
@@ -627,7 +627,7 @@
 //                 sad: true,
 //                 tired: false,
 //                 happy: true,
-//                 hangry: false,
+//                 angry: false,
 //                 sick: false,
 //                 celebratory: true,
 //                 stressed: true,
@@ -663,7 +663,7 @@
 //                 sad: false,
 //                 tired: true,
 //                 happy: true,
-//                 hangry: false,
+//                 angry: false,
 //                 sick: false,
 //                 celebratory: false,
 //                 stressed: true,
@@ -699,7 +699,7 @@
 //                 sad: true,
 //                 tired: true,
 //                 happy: true,
-//                 hangry: false,
+//                 angry: false,
 //                 sick: true,
 //                 celebratory: false,
 //                 stressed: true,
@@ -735,7 +735,7 @@
 //                 sad: true,
 //                 tired: false,
 //                 happy: true,
-//                 hangry: false,
+//                 angry: false,
 //                 sick: true,
 //                 celebratory: false,
 //                 stressed: true,
@@ -771,7 +771,7 @@
 //                 sad: false,
 //                 tired: false,
 //                 happy: true,
-//                 hangry: true,
+//                 angry: true,
 //                 sick: false,
 //                 celebratory: true,
 //                 stressed: true,
@@ -807,7 +807,7 @@
 //                 sad: false,
 //                 tired: false,
 //                 happy: true,
-//                 hangry: false,
+//                 angry: false,
 //                 sick: true,
 //                 celebratory: false,
 //                 stressed: false,
@@ -843,7 +843,7 @@
 //                 sad: true,
 //                 tired: true,
 //                 happy: true,
-//                 hangry: true,
+//                 angry: true,
 //                 sick: false,
 //                 celebratory: true,
 //                 stressed: true,
@@ -879,7 +879,7 @@
 //                 sad: true,
 //                 tired: false,
 //                 happy: true,
-//                 hangry: true,
+//                 angry: true,
 //                 sick: false,
 //                 celebratory: true,
 //                 stressed: true,
@@ -888,9 +888,9 @@
 //             drink.save();
 //         })
 //     })
-//         // .catch(error => {
-//         //     console.log(error);
-//         // });
+    // .catch(error => {
+    //     console.log(error);
+    // });
 // });
 
 // module.exports = seed;
