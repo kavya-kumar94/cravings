@@ -6,7 +6,7 @@ import Modal from '../components/modal/modal';
 import './app.css'
 import './reset.css'
 import MainPage from './main/main_page';
-import FoodsContainer from './foods/foods_container';
+import FoodsIndexContainer from './foods/foods_index_container';
 import FoodWheel from './foods/food_mood_wheel';
 
 const App = () => (
@@ -17,7 +17,7 @@ const App = () => (
             {/* <Route exact> */}
             <AuthRoute exact path="/" component={MainPage} />
             <Route exact path="/foodwheel" component={FoodWheel} />
-            <Route exact path="/foods" component={FoodsContainer} />
+            <Route exact path="/foods" component={FoodsIndexContainer} />
         </Switch>
     </div>
 );
