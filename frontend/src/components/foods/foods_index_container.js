@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchFoods } from '../../actions/food_actions';
-import Foods from './foods';
+import FoodsIndex from './foods_index';
 
 const mapStateToProps = (state) => {
     return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Foods);
+export default connect(mapStateToProps, mapDispatchToProps)(FoodsIndex);

@@ -15,9 +15,7 @@ class Drinks extends React.Component {
 
     render() {
 
-        const { drinks } = this.props;
-
-        const drinks = drinks.map(drink => (
+        const drinks = this.props.drinks.map(drink => (
             <DrinksIndexItem
                 key={drink.id}
                 drink={drink} />
