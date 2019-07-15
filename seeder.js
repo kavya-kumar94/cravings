@@ -1,11 +1,13 @@
 const Food = require("./models/Food");
 const Drink = require("./models/Drink")
+const apiKey = require('./config/keys').YelpApiKey;
+
+const yelp = require('yelp-fusion');
+const client = yelp.client(apiKey);
 
 const seed = (() => {
     Food.collection.deleteMany({});
 
-    const yelp = require('yelp-fusion');
-    const apiKey = "nYHIXBZJ5v8UFRI5nnG8So8pqJmDrC9ZsOy9rPjDM1ntm6EQ1mTi-bdJhxZs585BqrThjKKpHi0y2Z-6fmAx48-1SWYNUa3vWgr1JkirCLkz-3x-vYUk81fVT7orXXYx";
 
     const searchBreakfastRequest = {
         term: 'Breakfast & Brunch',
@@ -72,8 +74,6 @@ const seed = (() => {
         limit: 10,
         location: 'san francisco, ca'
     };
-
-    const client = yelp.client(apiKey);
 
     client.search(searchBreakfastRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
@@ -600,7 +600,6 @@ const seed = (() => {
         location: 'san francisco, ca'
     };
 
-    const client = yelp.client(apiKey);
 
     client.search(searchBubbleTeaRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
@@ -628,7 +627,7 @@ const seed = (() => {
                 sad: true,
                 tired: false,
                 happy: true,
-                hangry: false,
+                angry: false,
                 sick: false,
                 celebratory: true,
                 stressed: true,
@@ -664,7 +663,7 @@ const seed = (() => {
                 sad: false,
                 tired: true,
                 happy: true,
-                hangry: false,
+                angry: false,
                 sick: false,
                 celebratory: false,
                 stressed: true,
@@ -700,7 +699,7 @@ const seed = (() => {
                 sad: true,
                 tired: true,
                 happy: true,
-                hangry: false,
+                angry: false,
                 sick: true,
                 celebratory: false,
                 stressed: true,
@@ -736,7 +735,7 @@ const seed = (() => {
                 sad: true,
                 tired: false,
                 happy: true,
-                hangry: false,
+                angry: false,
                 sick: true,
                 celebratory: false,
                 stressed: true,
@@ -772,7 +771,7 @@ const seed = (() => {
                 sad: false,
                 tired: false,
                 happy: true,
-                hangry: true,
+                angry: true,
                 sick: false,
                 celebratory: true,
                 stressed: true,
@@ -808,7 +807,7 @@ const seed = (() => {
                 sad: false,
                 tired: false,
                 happy: true,
-                hangry: false,
+                angry: false,
                 sick: true,
                 celebratory: false,
                 stressed: false,
@@ -844,7 +843,7 @@ const seed = (() => {
                 sad: true,
                 tired: true,
                 happy: true,
-                hangry: true,
+                angry: true,
                 sick: false,
                 celebratory: true,
                 stressed: true,
@@ -880,7 +879,7 @@ const seed = (() => {
                 sad: true,
                 tired: false,
                 happy: true,
-                hangry: true,
+                angry: true,
                 sick: false,
                 celebratory: true,
                 stressed: true,
