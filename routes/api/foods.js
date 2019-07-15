@@ -38,7 +38,17 @@ router.get("/", (req, res) => {
                 zipCode: food.zipCode,
                 country: food.country,
                 state: food.state,
-                phone: food.phone
+                phone: food.phone,
+                sweet: food.sweet,
+                spicy: food.spicy,
+                salty: food.salty,
+                savory: food.savory,
+                hot: food.hot,
+                cold: food.cold,
+                healthy: food.healthy,
+                junk: food.junk,
+                sad: food.sad,
+                happy: food.happy
             }
             foodsPojo[food.id] = foodPojo;
         })
