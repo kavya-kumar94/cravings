@@ -1,4 +1,4 @@
-// const Food = require("./models/Food");
+const Food = require("./models/Food");
 // const seed = require('./seeder');
 const express = require("express");
 const app = express();
@@ -18,8 +18,6 @@ mongoose
     .catch(err => console.log(err));
 
 app.use(bodyParser.json());
-
-// debugger;
 
 // seed();
 
