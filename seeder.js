@@ -576,6 +576,31 @@ const seed = (() => {
         location: 'san francisco, ca'
     };
 
+    const searchMilkshakeBarsRequest = {
+        term: 'milkshake bars',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+
+    const searchKombuchaRequest = {
+        term: 'kombucha',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+
+    const searchWineriesRequest = {
+        term: 'wineries',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+
+    const searchBarsRequest = {
+        term: 'bars',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+
+    const client = yelp.client(apiKey);
 
     client.search(searchBubbleTeaRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
@@ -714,6 +739,150 @@ const seed = (() => {
                 hangry: false,
                 sick: true,
                 celebratory: false,
+                stressed: true,
+                adventurous: false
+            });
+            drink.save();
+        })
+    })
+
+    client.search(searchMilkshakeBarsRequest).then(response => {
+        response.jsonBody.businesses.forEach(rest => {
+            const drink = new Drink({
+                id: rest.id,
+                name: rest.name,
+                imageUrl: rest.image_url,
+                category: rest.categories[0].title,
+                rating: rest.rating,
+                lat: rest.coordinates.latitude,
+                lng: rest.coordinates.longitude,
+                price: rest.price,
+                address: rest.location.address1,
+                city: rest.location.city,
+                zipCode: rest.location.zip_code,
+                country: rest.location.country,
+                state: rest.location.state,
+                phone: rest.display_phone,
+                caffeine: false,
+                sweet: true,
+                aromatic: false,
+                hot: false,
+                iced: true,
+                healthy: false,
+                sad: false,
+                tired: false,
+                happy: true,
+                hangry: true,
+                sick: false,
+                celebratory: true,
+                stressed: true,
+                adventurous: false
+            });
+            drink.save();
+        })
+    })
+
+    client.search(searchKombuchaRequest).then(response => {
+        response.jsonBody.businesses.forEach(rest => {
+            const drink = new Drink({
+                id: rest.id,
+                name: rest.name,
+                imageUrl: rest.image_url,
+                category: rest.categories[0].title,
+                rating: rest.rating,
+                lat: rest.coordinates.latitude,
+                lng: rest.coordinates.longitude,
+                price: rest.price,
+                address: rest.location.address1,
+                city: rest.location.city,
+                zipCode: rest.location.zip_code,
+                country: rest.location.country,
+                state: rest.location.state,
+                phone: rest.display_phone,
+                caffeine: true,
+                sweet: false,
+                aromatic: false,
+                hot: false,
+                iced: true,
+                healthy: true,
+                sad: false,
+                tired: false,
+                happy: true,
+                hangry: false,
+                sick: true,
+                celebratory: false,
+                stressed: false,
+                adventurous: true
+            });
+            drink.save();
+        })
+    })
+
+    client.search(searchWineriesRequest).then(response => {
+        response.jsonBody.businesses.forEach(rest => {
+            const drink = new Drink({
+                id: rest.id,
+                name: rest.name,
+                imageUrl: rest.image_url,
+                category: rest.categories[0].title,
+                rating: rest.rating,
+                lat: rest.coordinates.latitude,
+                lng: rest.coordinates.longitude,
+                price: rest.price,
+                address: rest.location.address1,
+                city: rest.location.city,
+                zipCode: rest.location.zip_code,
+                country: rest.location.country,
+                state: rest.location.state,
+                phone: rest.display_phone,
+                caffeine: false,
+                sweet: true,
+                aromatic: true,
+                hot: false,
+                iced: true,
+                healthy: true,
+                sad: true,
+                tired: true,
+                happy: true,
+                hangry: true,
+                sick: false,
+                celebratory: true,
+                stressed: true,
+                adventurous: false
+            });
+            drink.save();
+        })
+    })
+
+    client.search(searchBarsRequest).then(response => {
+        response.jsonBody.businesses.forEach(rest => {
+            const drink = new Drink({
+                id: rest.id,
+                name: rest.name,
+                imageUrl: rest.image_url,
+                category: rest.categories[0].title,
+                rating: rest.rating,
+                lat: rest.coordinates.latitude,
+                lng: rest.coordinates.longitude,
+                price: rest.price,
+                address: rest.location.address1,
+                city: rest.location.city,
+                zipCode: rest.location.zip_code,
+                country: rest.location.country,
+                state: rest.location.state,
+                phone: rest.display_phone,
+                caffeine: false,
+                sweet: true,
+                aromatic: false,
+                hot: false,
+                iced: true,
+                healthy: false,
+                sad: true,
+                tired: false,
+                happy: true,
+                hangry: true,
+                sick: false,
+                celebratory: true,
                 stressed: true,
                 adventurous: false
             });
