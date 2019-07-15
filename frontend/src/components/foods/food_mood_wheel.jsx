@@ -1,8 +1,8 @@
 import React from 'react';
-import { Pie } from 'react-chartjs-2';
+import { Pie, Doughnut } from 'react-chartjs-2';
 import 'chartjs-plugin-labels'
 
-class Chart extends React.Component {
+class FoodWheel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -72,7 +72,7 @@ class Chart extends React.Component {
             <div className="pie">
                 <h1>Choose a Food Mood!</h1>
 
-                <Pie
+                <Doughnut
                 className="pie-component"
                 data={this.state.chartData}
                 width={600}
@@ -98,4 +98,4 @@ class Chart extends React.Component {
     }
 }
 
-export default Chart;
+export default FoodWheel;
