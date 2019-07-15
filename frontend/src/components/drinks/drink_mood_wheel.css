@@ -6,12 +6,16 @@
 }
 
 .drink-wheel-btn {
+    font-size: 16px;
+    transition: all .2s ease-in-out;
+    text-align: center;
+}
+
+
+.result-btn {
     width: 80px;
     height: 30px;
-    border-radius: 20px;
-    font-size: 16px;
-    text-align: center;
-    transition: all .2s ease-in-out;
+    border-radius: 25px;
 }
 
 .drink-wheel-btn:hover {
