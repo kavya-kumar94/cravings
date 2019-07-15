@@ -164,61 +164,26 @@ const seed = (() => {
                 country: rest.location.country,
                 state: rest.location.state,
                 phone: rest.display_phone,
-                sweet: true,
-                spicy: true,
+                sweet: false,
+                spicy: false,
                 salty: true,
                 savory: true,
                 hot: true,
-                cold: true,
+                cold: false,
                 healthy: false,
                 junk: true,
-                sad: true,
+                sad: false,
                 happy: true,
-                hangry: true,
+                hangry: false,
                 sick: false,
-                celebratory: true,
+                celebratory: false,
                 stressed: true,
-                adventurous: true
+                adventurous: false
             });
             food.save();
         })
     })
-    client.search(searchBuffetRequest).then(response => {
-        response.jsonBody.businesses.forEach(rest => {
-            const food = new Food({
-                id: rest.id,
-                name: rest.name,
-                imageUrl: rest.image_url,
-                category: rest.categories[0].title,
-                rating: rest.rating,
-                lat: rest.coordinates.latitude,
-                lng: rest.coordinates.longitude,
-                price: rest.price,
-                address: rest.location.address1,
-                city: rest.location.city,
-                zipCode: rest.location.zip_code,
-                country: rest.location.country,
-                state: rest.location.state,
-                phone: rest.display_phone,
-                sweet: true,
-                spicy: true,
-                salty: true,
-                savory: true,
-                hot: true,
-                cold: true,
-                healthy: false,
-                junk: true,
-                sad: true,
-                happy: true,
-                hangry: true,
-                sick: false,
-                celebratory: true,
-                stressed: true,
-                adventurous: true
-            });
-            food.save();
-        })
-    })
+    
     client.search(searchJapaneseRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
@@ -236,26 +201,62 @@ const seed = (() => {
                 country: rest.location.country,
                 state: rest.location.state,
                 phone: rest.display_phone,
-                sweet: true,
-                spicy: true,
+                sweet: false,
+                spicy: false,
                 salty: true,
                 savory: true,
                 hot: true,
                 cold: true,
-                healthy: false,
-                junk: true,
-                sad: true,
-                happy: true,
-                hangry: true,
+                healthy: true,
+                junk: false,
+                sad: false,
+                happy: false,
+                hangry: false,
                 sick: false,
-                celebratory: true,
+                celebratory: false,
                 stressed: true,
-                adventurous: true
+                adventurous: false
             });
             food.save();
         })
     })
-    client.search(searchBuffetRequest).then(response => {
+    client.search(searchMexicanRequest).then(response => {
+        response.jsonBody.businesses.forEach(rest => {
+            const food = new Food({
+                id: rest.id,
+                name: rest.name,
+                imageUrl: rest.image_url,
+                category: rest.categories[0].title,
+                rating: rest.rating,
+                lat: rest.coordinates.latitude,
+                lng: rest.coordinates.longitude,
+                price: rest.price,
+                address: rest.location.address1,
+                city: rest.location.city,
+                zipCode: rest.location.zip_code,
+                country: rest.location.country,
+                state: rest.location.state,
+                phone: rest.display_phone,
+                sweet: false,
+                spicy: true,
+                salty: true,
+                savory: true,
+                hot: true,
+                cold: false,
+                healthy: false,
+                junk: true,
+                sad: false,
+                happy: true,
+                hangry: true,
+                sick: false,
+                celebratory: false,
+                stressed: true,
+                adventurous: false
+            });
+            food.save();
+        })
+    })
+    client.search(searchChineseRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
                 id: rest.id,
@@ -277,13 +278,13 @@ const seed = (() => {
                 salty: true,
                 savory: true,
                 hot: true,
-                cold: true,
+                cold: false,
                 healthy: false,
                 junk: true,
                 sad: true,
                 happy: true,
                 hangry: true,
-                sick: false,
+                sick: true,
                 celebratory: true,
                 stressed: true,
                 adventurous: true
@@ -291,7 +292,7 @@ const seed = (() => {
             food.save();
         })
     })
-    client.search(searchBuffetRequest).then(response => {
+    client.search(searchIndianRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
                 id: rest.id,
@@ -308,26 +309,26 @@ const seed = (() => {
                 country: rest.location.country,
                 state: rest.location.state,
                 phone: rest.display_phone,
-                sweet: true,
+                sweet: false,
                 spicy: true,
                 salty: true,
                 savory: true,
                 hot: true,
-                cold: true,
+                cold: false,
                 healthy: false,
-                junk: true,
-                sad: true,
+                junk: false,
+                sad: false,
                 happy: true,
                 hangry: true,
                 sick: false,
                 celebratory: true,
-                stressed: true,
+                stressed: false,
                 adventurous: true
             });
             food.save();
         })
     })
-    client.search(searchBuffetRequest).then(response => {
+    client.search(searchKoreanRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
                 id: rest.id,
@@ -344,26 +345,26 @@ const seed = (() => {
                 country: rest.location.country,
                 state: rest.location.state,
                 phone: rest.display_phone,
-                sweet: true,
+                sweet: false,
                 spicy: true,
                 salty: true,
                 savory: true,
                 hot: true,
-                cold: true,
-                healthy: false,
+                cold: false,
+                healthy: true,
                 junk: true,
-                sad: true,
+                sad: false,
                 happy: true,
                 hangry: true,
-                sick: false,
+                sick: true,
                 celebratory: true,
                 stressed: true,
-                adventurous: true
+                adventurous: true,
             });
             food.save();
         })
     })
-    client.search(searchBuffetRequest).then(response => {
+    client.search(searchPizzaRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
                 id: rest.id,
@@ -380,12 +381,12 @@ const seed = (() => {
                 country: rest.location.country,
                 state: rest.location.state,
                 phone: rest.display_phone,
-                sweet: true,
+                sweet: false,
                 spicy: true,
                 salty: true,
                 savory: true,
                 hot: true,
-                cold: true,
+                cold: false,
                 healthy: false,
                 junk: true,
                 sad: true,
@@ -394,12 +395,12 @@ const seed = (() => {
                 sick: false,
                 celebratory: true,
                 stressed: true,
-                adventurous: true
+                adventurous: false,
             });
             food.save();
         })
     })
-    client.search(searchBuffetRequest).then(response => {
+    client.search(searchSandwichesRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
                 id: rest.id,
@@ -416,26 +417,26 @@ const seed = (() => {
                 country: rest.location.country,
                 state: rest.location.state,
                 phone: rest.display_phone,
-                sweet: true,
-                spicy: true,
-                salty: true,
+                sweet: false,
+                spicy: false,
+                salty: false,
                 savory: true,
                 hot: true,
                 cold: true,
-                healthy: false,
-                junk: true,
-                sad: true,
+                healthy: true,
+                junk: false,
+                sad: false,
                 happy: true,
-                hangry: true,
+                hangry: false,
                 sick: false,
-                celebratory: true,
+                celebratory: false,
                 stressed: true,
-                adventurous: true
+                adventurous: false
             });
             food.save();
         })
     })
-    client.search(searchBuffetRequest).then(response => {
+    client.search(searchSoupsRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
                 id: rest.id,
@@ -452,21 +453,93 @@ const seed = (() => {
                 country: rest.location.country,
                 state: rest.location.state,
                 phone: rest.display_phone,
-                sweet: true,
-                spicy: true,
+                sweet: false,
+                spicy: false,
                 salty: true,
                 savory: true,
                 hot: true,
+                cold: false,
+                healthy: true,
+                junk: false,
+                sad: true,
+                happy: false,
+                hangry: false,
+                sick: true,
+                celebratory: false,
+                stressed: true,
+                adventurous: false
+            });
+            food.save();
+        })
+    })
+    client.search(searchSaladRequest).then(response => {
+        response.jsonBody.businesses.forEach(rest => {
+            const food = new Food({
+                id: rest.id,
+                name: rest.name,
+                imageUrl: rest.image_url,
+                category: rest.categories[0].title,
+                rating: rest.rating,
+                lat: rest.coordinates.latitude,
+                lng: rest.coordinates.longitude,
+                price: rest.price,
+                address: rest.location.address1,
+                city: rest.location.city,
+                zipCode: rest.location.zip_code,
+                country: rest.location.country,
+                state: rest.location.state,
+                phone: rest.display_phone,
+                sweet: false,
+                spicy: false,
+                salty: false,
+                savory: true,
+                hot: false,
                 cold: true,
+                healthy: true,
+                junk: false,
+                sad: false,
+                happy: true,
+                hangry: false,
+                sick: false,
+                celebratory: false,
+                stressed: false,
+                adventurous: false
+            });
+            food.save();
+        })
+    })
+    client.search(searchFastFoodRequest).then(response => {
+        response.jsonBody.businesses.forEach(rest => {
+            const food = new Food({
+                id: rest.id,
+                name: rest.name,
+                imageUrl: rest.image_url,
+                category: rest.categories[0].title,
+                rating: rest.rating,
+                lat: rest.coordinates.latitude,
+                lng: rest.coordinates.longitude,
+                price: rest.price,
+                address: rest.location.address1,
+                city: rest.location.city,
+                zipCode: rest.location.zip_code,
+                country: rest.location.country,
+                state: rest.location.state,
+                phone: rest.display_phone,
+                sweet: false,
+                spicy: false,
+                salty: true,
+                savory: true,
+                hot: true,
+                cold: false,
                 healthy: false,
                 junk: true,
                 sad: true,
                 happy: true,
                 hangry: true,
                 sick: false,
-                celebratory: true,
-                stressed: true,
-                adventurous: true
+                celebratory: false,
+                stressed: true
+                adventurous: false
             });
             food.save();
         })
