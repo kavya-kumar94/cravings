@@ -6,15 +6,75 @@ const seed = (() => {
     const yelp = require('yelp-fusion');
     const apiKey = "nYHIXBZJ5v8UFRI5nnG8So8pqJmDrC9ZsOy9rPjDM1ntm6EQ1mTi-bdJhxZs585BqrThjKKpHi0y2Z-6fmAx48-1SWYNUa3vWgr1JkirCLkz-3x-vYUk81fVT7orXXYx";
 
-    const searchRequest = {
-        term: 'bubble tea',
+    const searchBreakfastRequest = {
+        term: 'Breakfast & Brunch',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchBuffetRequest = {
+        term: 'Buffets',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchItalianRequest = {
+        term: 'Italian',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchJapaneseRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchMexicanRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchChineseRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchIndianRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchKoreanRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchPizzaRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchSandwichesRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchSoupRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchSaladRequest = {
+        term: 'Japanese',
+        limit: 10,
+        location: 'san francisco, ca'
+    };
+    const searchFastFoodRequest = {
+        term: 'Japanese',
         limit: 10,
         location: 'san francisco, ca'
     };
 
     const client = yelp.client(apiKey);
 
-    client.search(searchRequest).then(response => {
+    client.search(searchBreakfastRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
             const food = new Food({
                 id: rest.id,
@@ -30,7 +90,22 @@ const seed = (() => {
                 zipCode: rest.location.zip_code,
                 country: rest.location.country,
                 state: rest.location.state,
-                phone: rest.display_phone
+                phone: rest.display_phone,
+                sweet: true,
+                spicy: false,
+                salty: true,
+                savory: true,
+                hot: true,
+                cold: false,
+                healthy: true,
+                junk: true,
+                sad: false,
+                happy: true,
+                hangry: false,
+                sick: false,
+                celebratory: true,
+                stressed: false,
+                adventurous: false
             });
             food.save();
         })
