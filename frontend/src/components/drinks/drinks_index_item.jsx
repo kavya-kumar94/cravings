@@ -1,19 +1,32 @@
 import React from 'react';
-import './drinks.css'
+import { Link } from 'react-router-dom';
+import './drinks.css';
 
 class DrinksIndexItem extends React.Component {
 
     render() {
+        const { drink } = this.props;
         return (
             <div className="drinks-index-item">
-                <h3>{this.props.drink.name}</h3>
-                <h3>{this.props.drink.address}</h3>
-                <h3>{this.props.drink.city}</h3>
-                <h3>{this.props.drink.state}</h3>
-                <h3>{this.props.drink.postal_code}</h3>
-                <h3>{this.props.drink.phone_number}</h3>
-                <h3>{this.props.drink.price}</h3>
-                <img src={this.props.drink.imageUrl} className="drink-photo" />
+                <div className="drink-picture">
+                    <img src={drink.imageUrl} className="drink-photo" />
+                </div>
+
+                <Link className='drink-info' to={`/drinks/${drink.id}`}>
+                    
+                    <div className='drink-name'>
+                        {drink.name}
+                    </div>
+                    
+                    <div className='drink-full-address'>
+                        {drink.address}, {drink.city}, {drink.state} {drink.zipCode}
+                    </div>
+
+                    <div className='drink-price'>
+                        {drink.price}
+                    </div>
+
+                </Link>
             </div>
         );
     }

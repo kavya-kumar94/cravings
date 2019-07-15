@@ -22,9 +22,9 @@ class Drinks extends React.Component {
         return (
             <div className="drinks-index-container">
 
-                <div className="drinks-ul">
-                    <ul>{drinks}</ul>
-                </div>
+                <ul className="drinks-ul">
+                    {drinks}
+                </ul>
 
             </div>
         );
