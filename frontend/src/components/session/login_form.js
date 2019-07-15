@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './login_form.css'
 
 class LoginForm extends React.Component {
     constructor(props) {
@@ -57,23 +58,26 @@ class LoginForm extends React.Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    <div>
+                    <div className="login-form">
                         <div onClick={this.props.closeModal} className="close-x">&times;</div>
                         <br />
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            placeholder="Username"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input type="submit" value="Log In" />
-                        {this.renderErrors()}
+                        <div className="please">Please sign in</div>
+                        <div className="inputs">
+                            <input type="text"
+                                value={this.state.username}
+                                onChange={this.update('username')}
+                                placeholder="Username"
+                            />
+                            <br />
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                placeholder="Password"
+                            />
+                            <br />
+                            <input type="submit" value="Log In" />
+                            {this.renderErrors()}
+                        </div>
                     </div>
                 </form>
             </div>
