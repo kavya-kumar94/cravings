@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './signup_form.css'
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -60,34 +61,37 @@ class SignupForm extends React.Component {
             <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
                     <div className="signup-form">
-                        <br />
                         <div onClick={this.props.closeModal} className="close-x">&times;</div>
-                        <input type="text"
-                            value={this.state.username}
-                            onChange={this.update('username')}
-                            placeholder="Username"
-                        />
                         <br />
-                        <input type="text"
-                            value={this.state.age}
-                            onChange={this.update('age')}
-                            placeholder="Age"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            placeholder="Password"
-                        />
-                        <br />
-                        <input type="password"
-                            value={this.state.password2}
-                            onChange={this.update('password2')}
-                            placeholder="Confirm Password"
-                        />
-                        <br />
-                        <input type="submit" value="Sign Up" />
-                        {this.renderErrors()}
+                        <div className="please">Sign up!</div>
+                        <div className="inputs">
+                            <input type="text"
+                                value={this.state.username}
+                                onChange={this.update('username')}
+                                placeholder="Username"
+                            />
+                            <br />
+                            <input type="text"
+                                value={this.state.age}
+                                onChange={this.update('age')}
+                                placeholder="Age"
+                            />
+                            <br />
+                            <input type="password"
+                                value={this.state.password}
+                                onChange={this.update('password')}
+                                placeholder="Password"
+                            />
+                            <br />
+                            <input type="password"
+                                value={this.state.password2}
+                                onChange={this.update('password2')}
+                                placeholder="Confirm Password"
+                            />
+                            <br />
+                            <input type="submit" value="Sign Up" />
+                            {this.renderErrors()}
+                        </div>
                     </div>
                 </form>
             </div>
