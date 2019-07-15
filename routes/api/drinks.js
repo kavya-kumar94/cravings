@@ -8,7 +8,6 @@ router.get("/", (req, res) => {
         caffeine: req.body.caffeine,
         sweet: req.body.sweet,
         aromatic: req.body.aromatic,
-        sparkling: req.body.sparkling,
         hot: req.body.hot,
         iced: req.body.iced,
         healthy: req.body.healthy,
