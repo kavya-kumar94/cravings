@@ -1,0 +1,21 @@
+.food-drink button {
+    margin-left: 60px;
+    border-radius: 20px;
+    padding: 7px 30px 7px;
+    font-size: 15px;
+    transition: all .2s ease-in-out;
+}
+
+.food-drink button:focus {
+    outline: none;
+}
+
+.food-drink button:hover {
+     transform: scale(1.1);
+}
+
+.food-drink h3{
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+}
