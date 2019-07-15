@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import Modal from '../components/modal/modal';
@@ -14,10 +14,9 @@ const App = () => (
         <NavBarContainer />
         <Modal />
         <Switch>
-            {/* <Route exact> */}
-            <AuthRoute exact path="/" component={MainPage} />
             <Route exact path="/foodwheel" component={FoodWheel} />
             <Route exact path="/foods" component={FoodsIndexContainer} />
+            <AuthRoute exact path="/" component={MainPage} />
         </Switch>
     </div>
 );
