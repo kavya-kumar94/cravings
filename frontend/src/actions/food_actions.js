@@ -8,9 +8,9 @@ export const receiveFood = food => ({
     food
 });
 
-export const receiveFoods = payload => ({
+export const receiveFoods = foods => ({
     type: RECEIVE_FOODS,
-    payload
+    foods
 });
 
 export const fetchFoods = () => dispatch => (

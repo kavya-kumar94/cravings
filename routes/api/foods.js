@@ -54,7 +54,8 @@ router.get("/", (req, res) => {
         })
         return res.json(foodsPojo);
     })
-    .catch(err => console.log(err))
+    .catch(err => 
+        res.status(404).json({ noFoodFound: 'No food locations found' }))
 })
 
 module.exports = router;
