@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-export const getDrinks = () => {
+export const fetchDrinks = () => {
     return axios.get('/api/drinks')
 };
 
-export const getDrink = (id) => {
+export const fetchDrink = (id) => {
     return axios.get(`/api/drinks/${id}`)
 };
