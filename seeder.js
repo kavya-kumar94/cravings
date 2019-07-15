@@ -57,7 +57,7 @@ const seed = (() => {
         limit: 10,
         location: 'san francisco, ca'
     };
-    const searchSoupRequest = {
+    const searchSoupsRequest = {
         term: 'Japanese',
         limit: 10,
         location: 'san francisco, ca'
@@ -538,7 +538,7 @@ const seed = (() => {
                 hangry: true,
                 sick: false,
                 celebratory: false,
-                stressed: true
+                stressed: true,
                 adventurous: false
             });
             food.save();
@@ -551,8 +551,6 @@ const seed = (() => {
 
     Drink.collection.deleteMany({});
 
-    const yelp = require('yelp-fusion');
-    const apiKey = "nYHIXBZJ5v8UFRI5nnG8So8pqJmDrC9ZsOy9rPjDM1ntm6EQ1mTi-bdJhxZs585BqrThjKKpHi0y2Z-6fmAx48-1SWYNUa3vWgr1JkirCLkz-3x-vYUk81fVT7orXXYx";
 
     const searchBubbleTeaRequest = {
         term: 'bubble tea',
@@ -578,7 +576,6 @@ const seed = (() => {
         location: 'san francisco, ca'
     };
 
-    const client = yelp.client(apiKey);
 
     client.search(searchBubbleTeaRequest).then(response => {
         response.jsonBody.businesses.forEach(rest => {
