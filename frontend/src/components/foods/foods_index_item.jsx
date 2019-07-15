@@ -1,5 +1,6 @@
 import React from 'react';
 import './foods.css'
+import { Link } from 'react-router-dom';
 
 class FoodsIndexItem extends React.Component {
 
@@ -11,7 +12,7 @@ class FoodsIndexItem extends React.Component {
                     <img src={this.props.food.imageUrl} className="food-photo" />
                 </div>
 
-                {/* <Link className='food-info' to={`/foods/${food.id}`}> */}
+                <Link className='food-info' to={`/foods/${food.id}`}>
                     <div className='food-name-tent'>
                         <div className='food-name'>
                             {food.name} 
@@ -25,7 +26,7 @@ class FoodsIndexItem extends React.Component {
                             {food.price}
                         </div>
                     </div>
-                {/* </Link> */}
+                </Link>
             </div>
            
         );

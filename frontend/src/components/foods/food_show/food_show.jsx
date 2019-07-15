@@ -2,9 +2,6 @@ import React from 'react';
 
 
 class FoodShow extends React.Component{
-    constructor(props){
-        super(props)
-    }
 
     componentDidMount(){
         this.props.fetchFood(this.props.match.params.foodId)
@@ -12,11 +9,15 @@ class FoodShow extends React.Component{
 
     render(){
 
+        const { food } = this.props;
+
         if (this.props.food === undefined) return null;
 
         return(
             <div>
-                Show Page
+                <h3>{food.name}</h3>
+                <h3>{food.address}</h3>
+                <h3>{food.price}</h3>
             </div>
         )
     }
