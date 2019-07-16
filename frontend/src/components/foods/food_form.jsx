@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import queryString from 'query-string';
 
 class FoodForm extends React.Component {
     constructor(props) {
@@ -29,7 +30,18 @@ class FoodForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.state);
-        // this.props.history.push('/foods');
+        this.props.history.push({
+            pathname: '/foods',
+            search: `?sweet=${this.state.sweet}&spicy=${this.state.spicy}&salty=${this.state.salty}&savory=${this.state.savory}&hot=${this.state.hot}&cold=${this.state.cold}&healthy=${this.state.healthy}&junk=${this.state.junk}&happy=${this.state.happy}&sad=${this.state.sad}&hangry=${this.state.hangry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
+        })
+        // console.log(this.state);
+        // this.props.history.push(`/foods?sweet=${this.state.sweet}&spicy=${this.state.spicy}&salty=${this.state.salty}&savory=${this.state.savory}&hot=${this.state.hot}&cold=${this.state.cold}&healthy=${this.state.healthy}&junk=${this.state.junk}&happy=${this.state.happy}&sad=${this.state.sad}&hangry=${this.state.hangry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`);
+
+        console.log('this is the location.search')
+        console.log(this.props.location);
+        const parsed = queryString.parse(this.props.location.search);
+        console.log(parsed);
+        // this.props.fetchDrinks(parsed);
     }
 
     check(field){

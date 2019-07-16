@@ -23,7 +23,7 @@ router.get("/", (req, res) => {
     // })
     Food.find({})
     .then(foods => {
-        console.log(foods.length);
+        // console.log(foods.length);
         let foodsPojo = {};
         foods.forEach(food => {
             let foodPojo = {
