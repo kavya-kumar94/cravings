@@ -115,7 +115,15 @@ const DrinkSchema = new Schema({
     adventurous: {
         type: Boolean,
         required: true
-    }
+    },
+    users: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User'
+    }]
+    // restaurant_id: {
+    //     type: Array,
+    //     required: true
+    // }
 })
 
 const Drink = mongoose.model('drinks', DrinkSchema);
