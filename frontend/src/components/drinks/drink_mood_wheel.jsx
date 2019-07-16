@@ -29,22 +29,6 @@ class DrinkWheel extends React.Component {
         this.query = this.query.bind(this);
     }
 
-    componentDidMount() {
-        let doComponent = document.querySelector('.do-component');
-        console.log(doComponent);
-
-        console.log(this.refs.chart);
-    }
-
-    // onSliceClick() {
-    //     ({ e: SliceClickEventArgs}) => {
-    //     e.isExploded = !e.isExploded
-    // }}
-
-    // chooseFood() {
-
-    // }
-
     handleClick(field, boo) {
         this.setState({[field]: !boo } );
         console.log(this.state);

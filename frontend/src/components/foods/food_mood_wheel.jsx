@@ -1,12 +1,11 @@
 import React from 'react';
 import { Pie, Doughnut } from 'react-chartjs-2';
+import { withRouter } from 'react-router-dom';
 import 'chartjs-plugin-datalabels';
 
 class FoodWheel extends React.Component {
     constructor(props) {
         super(props);
-
-        this.handleClick = this.handleClick.bind(this);
 
         this.state = {
             sweet: true,
@@ -26,22 +25,21 @@ class FoodWheel extends React.Component {
             adventurous: true
         }
 
+        this.handleClick = this.handleClick.bind(this);
+        this.query = this.query.bind(this);
         
     }
 
-    // componentDidMount() {
-    //     let pieComponent = document.querySelector('.pie-component');
-    //     console.log(pieComponent);
-    // }
-
-    // onSliceClick() {
-    //     ({ e: SliceClickEventArgs}) => {
-    //     e.isExploded = !e.isExploded
-    // }}
+    query(e) {
+        e.preventDefault();
+        this.props.history.push({
+            pathname: '/foods',
+            search: `/foods?sweet=${this.state.sweet}&spicy=${this.state.spicy}&salty=${this.state.salty}&savory=${this.state.savory}&hot=${this.state.hot}&cold=${this.state.cold}&healthy=${this.state.healthy}&junk=${this.state.junk}&happy=${this.state.happy}&sad=${this.state.sad}&hangry=${this.state.hangry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
+        })
+    }
 
     handleClick(field, boo) {
         this.setState({[field]: !boo});
-        console.log(this.state);
     }
     
     render() {
@@ -100,16 +98,11 @@ class FoodWheel extends React.Component {
                 height={300}
                 options={{maintainAspectRatio: true}}
                 allowSliceExplosion="true"
-<<<<<<< HEAD
                 radiusFactor={0.8} 
-                options={{plugins: 
-                {
-                    datalabels: { render: 'hello' },
-                }}}
-=======
-                radiusFactor={0.7} 
-                options={{plugins: {datalabels: {display: true}}}}
->>>>>>> master
+                // options={{plugins: 
+                // {
+                //     datalabels: { render: 'hello' },
+                // }}}
                 legend={{onClick: (e, item) => {
                     var index = item.index;
                     var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
@@ -121,23 +114,12 @@ class FoodWheel extends React.Component {
                     this.refs.chart.chartInstance.update();
                 }}}
                 />
-                
-                {/* // legend={ 
-                //     {getElementAtEvent: (dataset) => {console.log(dataset)},
-                //         onElementsClick: (eles) => {console.log(eles)},
-                // }} />
-                {/* options={
-                        legend: {getDatasetAtEvent: (dataset) => {console.log(dataset)}}
-                    // 'onClick': console.log('it works'),
-                    //  {events: ['click', 'mousemove'],
-                    //  onClick: () => console.log('it works')
-                    // }
-                } /> */} 
-            
-
+                <div className="food-wheel-btn">
+                    <button onClick={this.query} className="result-btn">Get Results</button>
+                </div>
             </div>
         )
     }
 }
 
-export default FoodWheel;
+export default withRouter(FoodWheel);
