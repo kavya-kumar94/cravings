@@ -7,17 +7,22 @@
 .navbar-links {
     display: flex;
     float: right;
-    margin-right: 40px;
     padding: 20px;
+    width: 100%;
+    align-items: right;
+    justify-content: flex-end;
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .navbar-links button {
     width: 80px;
     height: 30px;
-    border-radius: 20px;
-    font-size: 16px;
+    border-radius: 8px;
+    font-size: 20px;
     text-align: center;
     transition: all .2s ease-in-out;
+    font-family: inherit;
+    border-color: antiquewhite;
 }
 
 .navbar-links button:focus {

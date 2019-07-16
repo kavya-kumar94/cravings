@@ -5,6 +5,10 @@
 
 .main h2 {
     padding: 20px;
+    position: absolute;
+    margin-top: 11rem;
+    margin-left: 30rem;
+    font-size: 20px;
 }
 
 .cravings-logo {
