@@ -38,10 +38,7 @@ router.get("/", (req, res) => {
         stressed: req.query.stressed,
         adventurous: req.query.adventurous,
     })
-    // Food.find({})
-    // Food.find({sick: req.query.sick})
     .then(foods => {
-        // console.log(foods.length);
         let foodsPojo = {};
         foods.forEach(food => {
             let foodPojo = {
@@ -76,11 +73,6 @@ router.get("/", (req, res) => {
             }
             foodsPojo[food._id] = foodPojo;
         })
-        // console.log(foods.map(food => {
-        //     return food.id
-        // }))
-        // console.log(Object.keys(foodsPojo))
-        // console.log(Object.keys(foodsPojo).length)
         return res.json(foodsPojo);
     })
     .catch(err => 
