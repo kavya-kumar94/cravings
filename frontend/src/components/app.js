@@ -15,6 +15,7 @@ import DrinkWheel from './drinks/drink_mood_wheel';
 import FoodFormContainer from './foods/food_form_container';
 import FoodWheel from './foods/food_mood_wheel';
 
+if()
 const App = () => (
     <div className="app">
         <NavBarContainer />
@@ -34,7 +35,7 @@ const App = () => (
                 <AuthRoute exact path="/" component={MainPage} />
             </Switch>
         </div>
-    </div>
+        </div>
 );
 
 export default App;

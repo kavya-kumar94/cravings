@@ -5,9 +5,18 @@
     margin-left: 50px;
 }
 
+.bg {
+    background-image: url('drinkform2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
 .doughnut h3 {
     color: black;
-    margin-left: 40px;
+    margin-left: 50px;
+    font-size: 25px;
 }
 
 .drink-wheel-btn {
@@ -17,12 +26,13 @@
 
 
 .result-btn {
+    font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     width: 150px;
     height: 50px;
     border-radius: 25px;
     position: absolute;
-    top: 360px;
+    top: 380px;
     left: 550px;
     z-index: 10;
 }
@@ -35,9 +45,9 @@
     background-color: rgb(192, 181, 181);
 }
 
-/* canvas.chartjs-render-monitor {
-    width: 80%;
-} */
+canvas.chartjs-render-monitor {
+    font-family: 'Source Sans Pro', sans-serif;
+}
 
 .doughnut {
     width: 85%;
