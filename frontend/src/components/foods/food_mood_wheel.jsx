@@ -23,11 +23,32 @@ class FoodWheel extends React.Component {
             sick: true,
             celebratory: true,
             stressed: true,
-            adventurous: true,
-            chartData: {
-                labels: ['sweet', 'spicy', 'savory', 'salty', 'hot', 'cold',
-                    'healthy', 'junk', 'sad', 'happy', 'hangry', 'sick', 'celebratory',
-                    'stressed', 'adventurous'],
+            adventurous: true
+        }
+
+        
+    }
+
+    // componentDidMount() {
+    //     let pieComponent = document.querySelector('.pie-component');
+    //     console.log(pieComponent);
+    // }
+
+    // onSliceClick() {
+    //     ({ e: SliceClickEventArgs}) => {
+    //     e.isExploded = !e.isExploded
+    // }}
+
+    handleClick(field, boo) {
+        this.setState({[field]: !boo});
+        console.log(this.state);
+    }
+    
+    render() {
+        const chartData = {
+            labels: ['sweet', 'spicy', 'savory', 'salty', 'hot', 'cold',
+                'healthy', 'junk', 'sad', 'happy', 'hangry', 'sick', 'celebratory',
+                'stressed', 'adventurous'],
                 datasets: [{
                     data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
                     backgroundColor: [
@@ -65,42 +86,25 @@ class FoodWheel extends React.Component {
                         '#336699',
 
                     ]
-                }]
-            }
-
-        }
-    }
-
-    // componentDidMount() {
-    //     let pieComponent = document.querySelector('.pie-component');
-    //     console.log(pieComponent);
-    // }
-
-    // onSliceClick() {
-    //     ({ e: SliceClickEventArgs}) => {
-    //     e.isExploded = !e.isExploded
-    // }}
-
-    handleClick(field, boo) {
-        this.setState({[field]: !boo});
-        console.log(this.state);
-    }
-    
-    render() {
+                }]};
         return (
             <div className="pie">
-                <h1>Choose a Food Mood!</h1>
+                <h1>Shape your Food Mood!</h1>
+                <h1>(Click on traits to select/unselect)</h1>
 
                 <Doughnut
                 ref="chart"
                 className="pie-component"
-                data={this.state.chartData}
+                data={chartData}
                 width={600}
                 height={300}
                 options={{maintainAspectRatio: true}}
                 allowSliceExplosion="true"
-                radiusFactor={0.7} 
-                options={{plugins: {datalabels: {display: false }}}}
+                radiusFactor={0.8} 
+                options={{plugins: 
+                {
+                    datalabels: { render: 'hello' },
+                }}}
                 legend={{onClick: (e, item) => {
                     var index = item.index;
                     var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
