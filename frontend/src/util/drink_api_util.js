@@ -1,8 +1,13 @@
 import axios from 'axios';
 
-export const fetchDrinks = () => {
-    return axios.get('/api/drinks')
+export const fetchDrinks = (location) => {
+    return axios.get(`/api/drinks${location}`)
+    // return axios.get(`/api/drinks`,location)
 };
+
+// export const fetchDrinks = () => {
+//     return axios.get(`/api/drinks/?sick=true`)
+// };
 
 export const fetchDrink = (id) => {
     return axios.get(`/api/drinks/${id}`)

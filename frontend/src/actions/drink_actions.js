@@ -13,8 +13,8 @@ export const receiveDrinks = (drinks) => ({
     drinks
 });
 
-export const fetchDrinks = () => dispatch => (
-    DrinkApiUtil.fetchDrinks()
+export const fetchDrinks = (parsed) => dispatch => (
+    DrinkApiUtil.fetchDrinks(parsed)
         .then(drinks => dispatch(receiveDrinks(drinks)))
         .catch(err => console.log(err))
 );
