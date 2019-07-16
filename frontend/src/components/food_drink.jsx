@@ -11,12 +11,12 @@ class FoodDrink extends React.Component {
 
     foodWheel(e) {
         e.preventDefault();
-        this.props.history.push('/foodform')
+        this.props.history.push('/foodwheel')
     }
     
     drinkWheel(e) {
         e.preventDefault();
-        this.props.history.push('/drinkform')
+        this.props.history.push('/drinkwheel')
 
     }
 
