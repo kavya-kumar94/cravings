@@ -1,0 +1,60 @@
+.bg2 .doughnut h1 {
+    font-size: 38px;
+    color: white;
+    padding-top: 10px;
+    margin-left: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin-top: 3rem;
+}
+
+.bg2 {
+    background-image: url('foodwheel.jpg');
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+}
+
+.bg2 .doughnut h3 {
+    color: white;
+    margin-left: 50px;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.food-wheel-btn {
+    text-align: center;
+}
+
+
+.result-btn {
+    transition: all .2s ease-in-out;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    width: 150px;
+    height: 30px;
+    border-radius: 25px;
+    z-index: 10;
+    float: left;
+    position: absolute;
+    left: 100px;
+    bottom: 5rem;
+    border: none;
+}
+
+.result-btn:focus {
+    outline: none;
+}
+
+.result-btn:hover {
+    background-color: rgb(212, 78, 78);
+    transform: scale(1.1);
+    border: none;
+}
+
+canvas.chartjs-render-monitor {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.doughnut {
+    width: 85%;
+}
