@@ -1,9 +1,19 @@
 import axios from 'axios';
 
+<<<<<<< HEAD
 window.axios = axios;
 export const fetchDrinks = () => {
     return axios.get('/api/drinks')
+=======
+export const fetchDrinks = (location) => {
+    return axios.get(`/api/drinks${location}`)
+    // return axios.get(`/api/drinks`,location)
+>>>>>>> master
 };
+
+// export const fetchDrinks = () => {
+//     return axios.get(`/api/drinks/?sick=true`)
+// };
 
 export const fetchDrink = (id) => {
     return axios.get(`/api/drinks/${id}`)

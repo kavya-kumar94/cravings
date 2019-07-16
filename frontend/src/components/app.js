@@ -11,8 +11,6 @@ import FoodsIndexContainer from './foods/foods_index_container';
 import FoodShowContainer from './foods/food_show/food_show_container';
 import DrinksIndexContainer from './drinks/drinks_index_container';
 import DrinkShowContainer from './drinks/drink_show/drink_show_container';
-import FoodWheel from './foods/food_mood_wheel';
-import DrinkWheel from './drinks/drink_mood_wheel';
 import DrinkForm from './drinks/drink_mood_form';
 import FoodFormContainer from './foods/food_form_container';
 import FoodForm from './foods/food_form';
@@ -22,7 +20,6 @@ const App = () => (
         <NavBarContainer />
         <Modal />
         <Switch>
-            <Route exact path="/foodwheel" component={FoodWheel} />
             <Route path='/drinkform' component={DrinkForm} />
 
             <Route path='/foodform' component={FoodForm} />

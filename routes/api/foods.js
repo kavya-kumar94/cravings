@@ -3,6 +3,7 @@ const router = express.Router();
 const Food = require('../../models/Food')
 
 router.get("/", (req, res) => {
+    console.log(req)
     // Food.find({ 
     //     sweet: req.body.sweet,
     //     spicy: req.body.spicy, 
@@ -22,6 +23,7 @@ router.get("/", (req, res) => {
     //     price: req.body.price
     // })
     Food.find({})
+    // Food.find({sick: req.query.sick})
     .then(foods => {
         // console.log(foods.length);
         let foodsPojo = {};

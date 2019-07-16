@@ -3,6 +3,7 @@ const router = express.Router();
 const Drink = require('../../models/Drink')
 
 router.get("/", (req, res) => {
+    console.log(req)
     // Drink.find({
     //     caffeine: req.body.caffeine,
     //     sweet: req.body.sweet,
