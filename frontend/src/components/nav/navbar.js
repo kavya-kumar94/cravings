@@ -1,11 +1,32 @@
 import React from 'react';
-import './navbar.css'
+import './navbar.css';
+import { withRouter } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
     constructor(props) {
         super(props); 
+        this.state = {
+            userMenu: false,
+        }
+
         this.getLinks = this.getLinks.bind(this);
+
+        this.showDropdownMenu = this.showDropdownMenu.bind(this);
+        this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+    }
+
+    showDropdownMenu(e) {
+        e.preventDefault();
+        this.setState({ userMenu: true }, () => {
+            document.addEventListener('click', this.hideDropdownMenu);
+        });
+    }
+
+    hideDropdownMenu() {
+        this.setState({ userMenu: false }, () => {
+            document.removeEventListener('click', this.hideDropdownMenu);
+        });
     }
 
     getLinks() {
@@ -15,8 +36,15 @@ class NavBar extends React.Component {
         if (loggedIn) {
             return (
                 <div className="logged-in">
-                    <button onClick={logout}>Logout</button>
-                    <h2 className="welcome-name">Welcome, {currentUser.username}</h2>
+                    <h2 className="username-toggle" onClick={this.showDropdownMenu}>Welcome, {currentUser.username} </h2>
+                    {this.state.userMenu && (
+                        <div className="container">
+                            <ul className="dropdown">
+                                <li onClick={() => this.props.history.push('/foodwheel')}>My Saves</li>
+                                <li onClick={logout}>Logout</li>
+                            </ul>
+                        </div>
+                    )}
                 </div>
             );
         } else {
@@ -39,4 +67,4 @@ class NavBar extends React.Component {
     }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
