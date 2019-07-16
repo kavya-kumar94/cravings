@@ -5,8 +5,21 @@ import './foods.css'
 
 class FoodsIndex extends React.Component {
 
+    constructor(props) {
+        super(props);
+
+        this.randomizer = this.randomizer.bind(this);
+    }
+
     componentWillMount() {
         this.props.fetchFoods(this.props.location.search);
+    }
+
+    randomizer() {
+        let num_choices = this.props.foods.length;
+        let choiceIdx = Math.floor(Math.random() * Math.floor(num_choices));
+        let foodId = this.props.foods[choiceIdx].id;   
+        this.props.history.push(`/foods/${foodId}`);
     }
 
     render() {
@@ -35,6 +48,10 @@ class FoodsIndex extends React.Component {
                     <ul className="foods-ul">
                         {foods}
                     </ul>
+
+                    <button className='pick-one' onClick={() => this.randomizer() }>
+                        Pick for me, I am indecisive
+                    </button>
 
                 </div>
             );
