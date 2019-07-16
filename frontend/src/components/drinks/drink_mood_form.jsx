@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './drink_mood_form.css'
-import queryString from 'query-string';
+// import queryString from 'query-string';
 
 class DrinkForm extends React.Component {
     constructor(props) {
