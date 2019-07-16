@@ -39,7 +39,7 @@ class DrinkForm extends React.Component {
     render() {
         return(
             <div className="drinkform">
-                <h2>Choose your drink mood!</h2>
+                <h2>Choose your drink moods!</h2>
                 <form className="drink-form" onSubmit={this.handleSubmit}>
                     <div className="caffeine">
                         <input onClick={this.toggle('caffeine')} value={!this.state.caffeine} type="checkbox"/>

@@ -1,11 +1,13 @@
 .drink-form {
-    padding: 50px;
+    padding-left: 200px;
+    padding-top: 40px;
     font-size: 20px;
 }
 
 .drinkform h2 {
     font-size: 40px;
     text-align: center;
+
 }
 
 .drink-form input {
@@ -21,4 +23,10 @@
     background-color: white;
     color: black;
     margin-top: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.drinkform-btn:hover {
+    transform: scale(1.1);
+    background-color: aquamarine
 }
