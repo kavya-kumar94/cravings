@@ -19,19 +19,21 @@ const App = () => (
     <div className="app">
         <NavBarContainer />
         <Modal />
-        <Switch>
-            <Route path='/drinkwheel' component={DrinkWheel} />
-            <Route path='/foodwheel' component={FoodWheel} />
-            <Route exact path="/foods" component={FoodsIndexContainer} />
-            <Route exact path="/foods/:foodId" component={FoodShowContainer} />
+        <div className="main-body">
+            <Switch>
+                <Route path='/drinkwheel' component={DrinkWheel} />
+                <Route path='/foodwheel' component={FoodWheel} />
+                <Route exact path="/foods" component={FoodsIndexContainer} />
+                <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
-            {/* <Route exact path="/test" component={FoodWheel} /> */}
+                {/* <Route exact path="/test" component={FoodWheel} /> */}
 
-            <Route exact path="/drinks" component={DrinksIndexContainer} />
-            <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
+                <Route exact path="/drinks" component={DrinksIndexContainer} />
+                <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
 
-            <AuthRoute exact path="/" component={MainPage} />
-        </Switch>
+                <AuthRoute exact path="/" component={MainPage} />
+            </Switch>
+        </div>
     </div>
 );
 

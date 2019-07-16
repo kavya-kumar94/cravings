@@ -120,17 +120,23 @@ class DrinkWheel extends React.Component {
              return (
             <div className="doughnut">
                 <h1>Choose your Drink Moods!</h1>
+                <h3>Click on traits to deselect and remove from wheel</h3>
                      <Doughnut
                          ref="chart"
                          className="pie-component"
                          data={chartData}
                          width={600}
-                         height={300}
+                         height={350}
                          options={{ maintainAspectRatio: true }}
                          allowSliceExplosion="true"
                          radiusFactor={0.7}
                          options={{ plugins: { datalabels: { display: false } } }}
                          legend={{
+                             position: 'left',
+                             labels: {
+                                 fontSize: 25,
+                                 fontColor: '#000000'
+                             },
                              onClick: (e, item) => {
                                  var index = item.index;
                                  var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
@@ -141,6 +147,7 @@ class DrinkWheel extends React.Component {
                                  this.handleClick(item.text, meta.hidden);
                                  this.refs.chart.chartInstance.update();
                              }
+
                          }}
                      />
                 {/* <Doughnut
