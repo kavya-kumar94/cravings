@@ -27,6 +27,7 @@ class App extends React.Component {
     } else {
         classy="app"
     }
+    
     return(
     <div className={classy}>
         {/* <div className="bg"> */}

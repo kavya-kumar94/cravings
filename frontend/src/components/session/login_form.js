@@ -61,7 +61,7 @@ class LoginForm extends React.Component {
                     <div className="login-form">
                         <div onClick={this.props.closeModal} className="close-x">&times;</div>
                         <br />
-                        <div className="please">Please sign in</div>
+                        <div className="please">Log in</div>
                         <div className="inputs">
                             <input type="text"
                                 value={this.state.username}
