@@ -106,7 +106,7 @@ class DrinkWheel extends React.Component {
             <div className="doughnut">
                 <h1>Choose your Drink Moods!</h1>
                 <h3>Click on traits to deselect and remove from wheel</h3>
-                     <Doughnut
+                     <Pie
                          ref="chart"
                          className="pie-component"
                          data={chartData}
