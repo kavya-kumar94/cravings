@@ -68,6 +68,8 @@ class DrinkWheel extends React.Component {
     componentDidMount() {
         let doComponent = document.querySelector('.do-component');
         console.log(doComponent);
+
+        console.log(this.refs.chart);
     }
 
     // onSliceClick() {
@@ -87,8 +89,9 @@ class DrinkWheel extends React.Component {
              return (
             <div className="doughnut">
                 <h1>Choose your Drink Moods!</h1>
-
+                
                 <Doughnut
+                    ref = "chart"
                     className="do-component"
                     data={this.state.chartData}
                     width={800}
@@ -108,10 +111,11 @@ class DrinkWheel extends React.Component {
                             legend: {
                                 position: 'left',
                                 
-                                // onClick: (e, arr) => {
-                                //     console.log(arr)
+                                onClick: (e, legendItem) => {
+                                    legendItem.hidden = true
+                                    console.log(legendItem)
 
-                                // },
+                                },
                                 labels: {
                                     fontSize: 20,
                                     fontColor: '#000000'

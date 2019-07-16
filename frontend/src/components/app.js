@@ -22,8 +22,7 @@ const App = () => (
         <Modal />
         <Switch>
             <Route exact path="/foodwheel" component={FoodWheel} />
-            <Route exact path="/foodform" component={FoodFormContainer} />
-
+            <Route path='/drinkform' component={DrinkForm} />
             <Route exact path="/foods" component={FoodsIndexContainer} />
             <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
