@@ -27,12 +27,13 @@ class DrinkForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.history.push('/drinks');
+        // this.props.history.push('/drinks');
+        console.log(this.state);
     }
 
     toggle(field) {
         return e => 
-        this.setState({[field]: !this.state.field})
+        this.setState({[field]: !e.target.checked})
     }
 
     render() {
@@ -41,59 +42,59 @@ class DrinkForm extends React.Component {
                 <h2>Choose your drink mood!</h2>
                 <form className="drink-form" onSubmit={this.handleSubmit}>
                     <div className="caffeine">
-                        <input onClick={this.toggle('caffeine')} value={this.state.caffeine} type="checkbox"/>
+                        <input onClick={this.toggle('caffeine')} value={!this.state.caffeine} type="checkbox"/>
                         <label>Caffeine</label>
                     </div>
                     <div className="sweet">
-                        <input onClick={this.toggle('sweet')} value={this.state.sweet} type="checkbox"/>
+                        <input onClick={this.toggle('sweet')} value={!this.state.sweet} type="checkbox"/>
                         <label>Sweet</label>
                     </div>
                     <div className="aromatic">
-                        <input onClick={this.toggle('aromatic')} value={this.state.aromatic} type="checkbox"/>
+                        <input onClick={this.toggle('aromatic')} value={!this.state.aromatic} type="checkbox"/>
                         <label>Aromatic</label>
                     </div>
                     <div className="hot">
-                        <input onClick={this.toggle('hot')} value={this.state.hot} type="checkbox"/>
+                        <input onClick={this.toggle('hot')} value={!this.state.hot} type="checkbox"/>
                         <label>Hot</label>
                     </div>
                     <div className="iced">
-                        <input onClick={this.toggle('iced')} value={this.state.iced} type="checkbox"/>
+                        <input onClick={this.toggle('iced')} value={!this.state.iced} type="checkbox"/>
                         <label>Iced</label>
                     </div>
                     <div className="healthy">
-                        <input onClick={this.toggle('healthy')} value={this.state.healthy} type="checkbox"/>
+                        <input onClick={this.toggle('healthy')} value={!this.state.healthy} type="checkbox"/>
                         <label>Healthy</label>
                     </div>
                     <div className="sad">
-                        <input onClick={this.toggle('sad')} value={this.state.sad} type="checkbox"/>
+                        <input onClick={this.toggle('sad')} value={!this.state.sad} type="checkbox"/>
                         <label>Sad</label>
                     </div>
                     <div className="tired">
-                        <input onClick={this.toggle('tired')} value={this.state.tired} type="checkbox"/>
+                        <input onClick={this.toggle('tired')} value={!this.state.tired} type="checkbox"/>
                         <label>Tired</label>
                     </div>
                     <div className="happy">
-                        <input onClick={this.toggle('happy')} value={this.state.happy} type="checkbox"/>
+                        <input onClick={this.toggle('happy')} value={!this.state.happy} type="checkbox"/>
                         <label>Happy</label>
                     </div>
                     <div className="angry">
-                        <input onClick={this.toggle('angry')} value={this.state.angry} type="checkbox"/>
+                        <input onClick={this.toggle('angry')} value={!this.state.angry} type="checkbox"/>
                         <label>Angry</label>
                     </div>
                     <div className="sick">
-                        <input onClick={this.toggle('sick')} value={this.state.sick} type="checkbox"/>
+                        <input onClick={this.toggle('sick')} value={!this.state.sick} type="checkbox"/>
                         <label>Sick</label>
                     </div>
                     <div className="celebratory">
-                        <input onClick={this.toggle('celebratory')} value={this.state.celebratory} type="checkbox"/>
+                        <input onClick={this.toggle('celebratory')} value={!this.state.celebratory} type="checkbox"/>
                         <label>Celebratory</label>
                     </div>
                     <div className="stressed">
-                        <input onClick={this.toggle('stressed')} value={this.state.stressed} type="checkbox"/>
+                        <input onClick={this.toggle('stressed')} value={!this.state.stressed} type="checkbox"/>
                         <label>Stressed</label>
                     </div>
                     <div className="adventurous">
-                        <input onClick={this.toggle('adventurous')} value={this.state.adventurous} type="checkbox"/>
+                        <input onClick={this.toggle('adventurous')} value={!this.state.adventurous} type="checkbox"/>
                         <label>Adventurous</label>
                     </div>
                     <input type="submit" className="drinkform-btn" value="Find my drink!"/>
