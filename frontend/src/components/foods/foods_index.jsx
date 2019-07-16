@@ -11,9 +11,6 @@ class FoodsIndex extends React.Component {
 
     render() {
 
-        console.log('this is location search Food index');
-        console.log(this.props.location.search);
-
         if(this.props.foods === undefined) return null;
         
         const foods = this.props.foods.map(food => (
@@ -22,15 +19,24 @@ class FoodsIndex extends React.Component {
                 food={food} />
         ));
 
-        return (
-            <div className="foods-index-container">
+        if (this.props.foods) {
+            return (
+                <div className='form-again'>
+                    <h3>We were unable to find foods in your area that meet your cravings.</h3>
+                    <button className='spin-again' onClick={() => this.props.history.push('/foodwheel')}>Please try again.</button>
+                </div>
+            )
+        } else {
+            return (
+                <div className="foods-index-container">
 
-                <ul className="foods-ul">
-                    {foods}
-                </ul>
+                    <ul className="foods-ul">
+                        {foods}
+                    </ul>
 
-            </div>
-        );
+                </div>
+            );
+        }
     }
 }
 
