@@ -3,26 +3,42 @@ const router = express.Router();
 const Food = require('../../models/Food')
 
 router.get("/", (req, res) => {
-    console.log(req)
-    // Food.find({ 
-    //     sweet: req.body.sweet,
-    //     spicy: req.body.spicy, 
-    //     salty: req.body.salty,
-    //     savory: req.body.savory,
-    //     hot: req.body.hot,
-    //     cold: req.body.cold,
-    //     healthy: req.body.healthy,
-    //     junk: req.body.junk,
-    //     sad: req.body.sad,
-    //     happy: req.body.happy,
-    //     hangry: req.body.hangry,
-    //     sick: req.body.sick,
-    //     celebratory: req.body.celebratory,
-    //     stressed: req.body.stressed,
-    //     adventurous: req.body.adventurous,
-    //     price: req.body.price
-    // })
-    Food.find({})
+
+    req.query.sweet = JSON.parse(req.query.sweet);
+    req.query.spicy = JSON.parse(req.query.spicy);
+    req.query.salty = JSON.parse(req.query.salty);
+    req.query.savory = JSON.parse(req.query.savory);
+    req.query.hot = JSON.parse(req.query.hot);
+    req.query.cold = JSON.parse(req.query.cold);
+    req.query.healthy = JSON.parse(req.query.healthy);
+    req.query.junk = JSON.parse(req.query.junk);
+    req.query.sad = JSON.parse(req.query.sad);
+    req.query.happy = JSON.parse(req.query.happy);
+    req.query.hangry = JSON.parse(req.query.hangry);
+    req.query.sick = JSON.parse(req.query.sick);
+    req.query.celebratory = JSON.parse(req.query.celebratory);
+    req.query.stressed = JSON.parse(req.query.stressed);
+    req.query.adventurous = JSON.parse(req.query.adventurous);
+
+    
+    Food.find({ 
+        sweet: req.query.sweet,
+        spicy: req.query.spicy, 
+        salty: req.query.salty,
+        savory: req.query.savory,
+        hot: req.query.hot,
+        cold: req.query.cold,
+        healthy: req.query.healthy,
+        junk: req.query.junk,
+        sad: req.query.sad,
+        happy: req.query.happy,
+        hangry: req.query.hangry,
+        sick: req.query.sick,
+        celebratory: req.query.celebratory,
+        stressed: req.query.stressed,
+        adventurous: req.query.adventurous,
+    })
+    // Food.find({})
     // Food.find({sick: req.query.sick})
     .then(foods => {
         // console.log(foods.length);
