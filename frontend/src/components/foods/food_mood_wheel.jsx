@@ -90,7 +90,7 @@ class FoodWheel extends React.Component {
                 <h1>Shape your Food Mood!</h1>
                 <h1>(Click on traits to select/unselect)</h1>
 
-                <Doughnut
+                <Pie
                 ref="chart"
                 className="pie-component"
                 data={chartData}
