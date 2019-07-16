@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
         let drinksPojo = {};
         drinks.forEach(drink => {
             let drinkPojo = {
-                id: drink.id,
+                id: drink._id,
                 name: drink.name,
                 imageUrl: drink.imageUrl,
                 rating: drink.rating,
@@ -53,7 +53,7 @@ router.get("/", (req, res) => {
                 stressed: drink.stressed,
                 adventurous: drink.adventurous
             }
-            drinksPojo[drink.id] = drinkPojo;
+            drinksPojo[drink._id] = drinkPojo;
         })
         return res.json(drinksPojo);
     })
