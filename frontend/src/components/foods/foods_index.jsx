@@ -21,9 +21,11 @@ class FoodsIndex extends React.Component {
 
         if (this.props.foods) {
             return (
-                <div className='form-again'>
-                    <h3>We were unable to find foods in your area that meet your cravings.</h3>
-                    <button className='spin-again' onClick={() => this.props.history.push('/foodwheel')}>Please try again.</button>
+                <div className='foods-index-container'>
+                    <div className='no-results-for-food'>
+                        <h3>We were unable to find foods in your area that meet your cravings.</h3>
+                        <button className='spin-again' onClick={() => this.props.history.push('/foodwheel')}>Please try again.</button>
+                    </div>
                 </div>
             )
         } else {
