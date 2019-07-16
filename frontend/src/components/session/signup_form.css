@@ -6,6 +6,7 @@
     padding: 10px;
     margin: 5px;
     border: 1px solid lightgray;
+    width: 80%;
 }
 
 .inputs input[type="submit"] {
@@ -23,6 +24,7 @@
 .close-x {
     padding: 0px 5px;
     width: 20px;
+    float: right;
     text-align: center;
 }
 
@@ -32,6 +34,7 @@
 }
 
 .please {
+    font-family: 'Source Sans Pro', sans-serif;
     text-align: center;
     margin-bottom: 10px;
 }
