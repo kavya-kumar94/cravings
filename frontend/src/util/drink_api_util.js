@@ -1,33 +1,14 @@
 import axios from 'axios';
 
-export const fetchDrinks = (location) => {
-    return axios.get(`/api/drinks${location}`)
-    // return axios.get(`/api/drinks`,location)
+export const fetchDrinks = (query) => {
+    return axios.get(`/api/drinks${query}`)
 };
 
-// export const fetchDrinks = () => {
-//     return axios.get(`/api/drinks/?sick=true`)
-// };
 
 export const fetchDrink = (id) => {
     return axios.get(`/api/drinks/${id}`)
 };
 
 
-// export const fetchDrinks = (userData) => {
-//     return axios.get('/api/drinks',
-//     query: {
-            // tired: userData.tired,
-            // sweet: userData.sweet,
 
 
-//      })
-// }
-
-// export const fetchDrinks = () => {
-//     return axios.get('api/drinks',
-//         params: {
-//             id: 123
-//         }
-//     )
-// }

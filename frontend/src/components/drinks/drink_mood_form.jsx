@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import './drink_mood_form.css'
-// import queryString from 'query-string';
 
 class DrinkForm extends React.Component {
     constructor(props) {
@@ -33,13 +32,6 @@ class DrinkForm extends React.Component {
             // search: `?caffeine=${this.state.caffeine}&sweet=${this.state.sweet}&aromatic=${this.state.aromatic}&hot=${this.state.hot}&iced=${this.state.iced}&healthy=${this.state.healthy}&sad=${this.state.sad}&tired=${this.state.tired}&happy=${this.state.happy}&angry=${this.state.angry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
             search: `?caffeine=${this.state.caffeine}`
         })
-        // console.log(this.state);
-
-        // console.log('this is the location.search')
-        // console.log(this.props.location);
-        // const parsed = queryString.parse(this.props.location.search);
-        // console.log(parsed);
-        // this.props.fetchDrinks(this.props.location.search);
     }
 
     toggle(field) {
