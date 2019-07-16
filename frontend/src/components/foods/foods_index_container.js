@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchFoods } from '../../actions/food_actions';
+import { fetchFoods, getFoods } from '../../actions/food_actions';
 import FoodsIndex from './foods_index';
 
 const mapStateToProps = (state) => {
@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchFoods: (query) => dispatch(fetchFoods(query))
+        fetchFoods: (query) => dispatch(fetchFoods(query)),
+        getFoods: () => dispatch(getFoods())
     };
 };
 
