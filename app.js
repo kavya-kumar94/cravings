@@ -19,7 +19,7 @@ mongoose
 
 app.use(bodyParser.json());
 
-// seed();
+// seed(); 
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
