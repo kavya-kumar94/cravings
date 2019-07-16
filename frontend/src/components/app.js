@@ -21,12 +21,15 @@ class App extends React.Component {
     }
 
     render() {
-    let classy = ""
-    if (this.props.location.pathname !== '/') {
+    let classy = "";
+    if (this.props.location.pathname === '/drinkwheel') {
         classy="bg"
+    } else if (this.props.location.pathname === '/foodwheel') {
+        classy="bg2"
     } else {
-        classy="app"
+        classy = "app"
     }
+    
     return(
     <div className={classy}>
         {/* <div className="bg"> */}

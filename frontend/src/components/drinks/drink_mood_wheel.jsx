@@ -3,7 +3,7 @@ import { Pie, Doughnut } from 'react-chartjs-2';
 import { withRouter } from 'react-router-dom';
 // import 'chartjs-plugin-labels'
 import 'chartjs-plugin-datalabels';
-import './drink_mood_wheel.css'
+import './drink_mood_wheel.css';
 import { defaults } from 'react-chartjs-2';
 
 class DrinkWheel extends React.Component {
