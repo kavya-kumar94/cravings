@@ -26,6 +26,7 @@
     "mongoose": "^5.6.4",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "query-string": "^6.8.1",
     "react-chartjs-2": "^2.7.6",
     "validator": "^11.1.0",
     "yelp-fusion": "^3.0.0"
