@@ -4,7 +4,7 @@ import DrinksIndexItem from './drinks_index_item';
 import './drinks.css';
 
 
-class Drinks extends React.Component {
+class DrinksIndex extends React.Component {
 
     constructor(props) {
         super(props);
@@ -61,4 +61,4 @@ class Drinks extends React.Component {
     
 }
 
-export default withRouter(Drinks);
+export default withRouter(DrinksIndex);
