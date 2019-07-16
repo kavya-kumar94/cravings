@@ -33,7 +33,6 @@ class Drinks extends React.Component {
             </div>
         );
     }
-    
 }
 
 export default withRouter(Drinks);
