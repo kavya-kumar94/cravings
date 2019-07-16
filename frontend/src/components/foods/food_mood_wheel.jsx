@@ -100,11 +100,16 @@ class FoodWheel extends React.Component {
                 height={300}
                 options={{maintainAspectRatio: true}}
                 allowSliceExplosion="true"
+<<<<<<< HEAD
                 radiusFactor={0.8} 
                 options={{plugins: 
                 {
                     datalabels: { render: 'hello' },
                 }}}
+=======
+                radiusFactor={0.7} 
+                options={{plugins: {datalabels: {display: true}}}}
+>>>>>>> master
                 legend={{onClick: (e, item) => {
                     var index = item.index;
                     var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
