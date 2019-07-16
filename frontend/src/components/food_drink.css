@@ -1,21 +1,8 @@
-.fd {
-    background-image: url('fooddrink.png');
-    margin: 60px;
-    padding: 50px;
-    width: 400px;
-    height: 200px;
-    background-size: contain;
-    width: 11.5rem;
-    height: 15rem;
-    position: relative;
-    margin-left: 12rem;
-    margin-top: 16rem;
-}
 .food-drink button {
-    margin-left: 23px;
+    margin-left: 60px;
     border-radius: 20px;
     padding: 7px 30px 7px;
-    font-size: 34px;
+    font-size: 15px;
     transition: all .2s ease-in-out;
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -32,10 +19,4 @@
     font-size: 35px;
     font-weight: 600;
     text-align: center;
-    color: black;
-    margin: 0;
-}
-
-.drink-btn {
-    margin-top: 3rem;
 }

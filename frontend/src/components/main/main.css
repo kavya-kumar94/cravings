@@ -4,25 +4,16 @@
 }
 
 .main h2 {
+    font-size: 50px;
     padding: 20px;
-    position: absolute;
-    margin-top: 11rem;
-    margin-left: 30rem;
-    font-size: 20px;
+    font-weight: 900;
 }
 
-.cravings-logo {
-    background-image: url('cravings.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 350px;
-    height: 21rem;
-    margin-left: 9.5rem;
-    position: absolute;
-    top: 0;
-}
-
-.main {
-    display: flex;
-    flex-direction: column;
+.fd {
+    margin: 60px;
+    padding: 50px;
+    /* border: 1px solid grey; */
+    width: 400px;
+    height: 200px;
+    /* background-color: rgb(204, 198, 198); */
 }
