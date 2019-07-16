@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchDrinks: (parsed) => dispatch(fetchDrinks(parsed))
+        fetchDrinks: (query) => dispatch(fetchDrinks(query))
     }
 }
 
