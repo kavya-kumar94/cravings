@@ -3,11 +3,6 @@ const router = express.Router();
 const Food = require('../../models/Food')
 
 router.get("/", (req, res) => {
-    // console.log(req.query);
-    // console.log(JSON.parse(req.query.sweet));
-    // req.query.sweet = JSON.parse(req.query.sweet);
-    // console.log(req.query);
-    // console.log(typeof req.query.sweet);
 
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.spicy = JSON.parse(req.query.spicy);
@@ -25,7 +20,6 @@ router.get("/", (req, res) => {
     req.query.stressed = JSON.parse(req.query.stressed);
     req.query.adventurous = JSON.parse(req.query.adventurous);
 
-    // console.log(req.query);
     
     // Food.find({ 
     //     sweet: req.body.sweet,
