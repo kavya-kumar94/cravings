@@ -1,5 +1,5 @@
 .doughnut h1 {
-    font-size: 40px;
+    font-size: 38px;
     color: black;
     padding-top: 10px;
     margin-left: 50px;
@@ -22,19 +22,22 @@
 }
 
 .drink-wheel-btn {
-    /* transition: all .2s ease-in-out; */
     text-align: center;
 }
 
 
 .result-btn {
+    transition: all .2s ease-in-out;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     width: 150px;
-    height: 50px;
+    height: 30px;
     border-radius: 25px;
     z-index: 10;
     float: left;
+    position: absolute;
+    left: 100px;
+    bottom: 50px;
 }
 
 .result-btn:focus {
@@ -42,7 +45,8 @@
 }
 
 .result-btn:hover {
-    background-color: rgb(192, 181, 181);
+    background-color: rgb(212, 78, 78);
+    transform: scale(1.1);
 }
 
 canvas.chartjs-render-monitor {
