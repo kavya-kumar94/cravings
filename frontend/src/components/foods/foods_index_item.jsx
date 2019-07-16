@@ -9,7 +9,7 @@ class FoodsIndexItem extends React.Component {
         return (
             <div className='food-list-items'>
                 <div className='food-pictures'>
-                    <img src={this.props.food.imageUrl} className="food-photo" />
+                    <img src={this.props.food.imageUrl} className="food-photo" alt="pic"/>
                 </div>
 
                 <Link className='food-info' to={`/foods/${food.id}`}>

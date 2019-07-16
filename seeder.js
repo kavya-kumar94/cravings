@@ -11,67 +11,67 @@ const seed = (() => {
 
     const searchBreakfastRequest = {
         term: 'Breakfast & Brunch',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchBuffetRequest = {
         term: 'Buffets',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchItalianRequest = {
         term: 'Italian',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchJapaneseRequest = {
         term: 'Japanese',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchMexicanRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Mexican',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchChineseRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Chinese',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchIndianRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Indian',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchKoreanRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Korean',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchPizzaRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Pizza',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchSandwichesRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Sandwiches',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchSoupsRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Soups',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchSaladRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Salad',
+        limit: 2,
         location: 'san francisco, ca'
     };
     const searchFastFoodRequest = {
-        term: 'Japanese',
-        limit: 10,
+        term: 'Fast Food',
+        limit: 2,
         location: 'san francisco, ca'
     };
 
@@ -554,49 +554,49 @@ const seed = (() => {
 
     const searchBubbleTeaRequest = {
         term: 'bubble tea',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 
     const searchCoffeeShopsRequest = {
         term: 'coffeeshops',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 
     const searchTeaRoomsRequest = {
         term: 'tea rooms',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 
     const searchJuiceBarsAndSmoothiesRequest = {
         term: 'juice bars & smoothies',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 
     const searchMilkshakeBarsRequest = {
         term: 'milkshake bars',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 
     const searchKombuchaRequest = {
         term: 'kombucha',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 
     const searchWineriesRequest = {
         term: 'wineries',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 
     const searchBarsRequest = {
         term: 'bars',
-        limit: 10,
+        limit: 2,
         location: 'san francisco, ca'
     };
 

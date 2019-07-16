@@ -23,10 +23,11 @@ router.get("/", (req, res) => {
     // })
     Food.find({})
     .then(foods => {
+        console.log(foods.length);
         let foodsPojo = {};
         foods.forEach(food => {
             let foodPojo = {
-                id: food.id,
+                id: food._id,
                 name: food.name,
                 imageUrl: food.imageUrl,
                 rating: food.rating,
@@ -48,10 +49,20 @@ router.get("/", (req, res) => {
                 healthy: food.healthy,
                 junk: food.junk,
                 sad: food.sad,
-                happy: food.happy
+                happy: food.happy,
+                hangry: food.hangry,
+                sick: food.sick,
+                celebratory: food.celebratory,
+                stressed: food.stressed,
+                adventurous: food.adventurous
             }
-            foodsPojo[food.id] = foodPojo;
+            foodsPojo[food._id] = foodPojo;
         })
+        // console.log(foods.map(food => {
+        //     return food.id
+        // }))
+        // console.log(Object.keys(foodsPojo))
+        // console.log(Object.keys(foodsPojo).length)
         return res.json(foodsPojo);
     })
     .catch(err => 
