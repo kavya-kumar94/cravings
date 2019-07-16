@@ -135,7 +135,8 @@ class DrinkWheel extends React.Component {
                              position: 'left',
                              labels: {
                                  fontSize: 25,
-                                 fontColor: '#000000'
+                                 fontColor: '#000000',
+                                 fontFamily: 'Source Sans Pro, sans-serif'
                              },
                              onClick: (e, item) => {
                                  var index = item.index;
