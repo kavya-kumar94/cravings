@@ -34,15 +34,14 @@ class FoodForm extends React.Component {
 
     check(field){
         return e => this.setState({
-            [field]: !this.state.field
+            [field]: !!e.target.checked
         });
     }
-
     render() {
         return (
             <form className="food-form" onSubmit={this.handleSubmit} >
                 <div className="spicy">
-                    <input type="checkbox" onChange={this.check('spicy')} />
+                    <input type="checkbox" onClick={this.check('spicy')} value={!this.state.spicy} />
                     <label>Spicy</label>
                 </div>
                 <div className="sweet">
