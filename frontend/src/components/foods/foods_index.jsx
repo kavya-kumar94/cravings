@@ -11,15 +11,9 @@ class FoodsIndex extends React.Component {
 
     render() {
 
-        if(this.props.foods === undefined) return null;
-        
-        const foods = this.props.foods.map(food => (
-            <FoodsIndexItem
-                key={food.id}
-                food={food} />
-        ));
-
-        if (this.props.foods) {
+        if(this.props.foods === undefined) {
+            return null;
+        } else if (Object.keys(this.props.foods).length === 0) {
             return (
                 <div className='foods-index-container'>
                     <div className='no-results-for-food'>
@@ -29,6 +23,12 @@ class FoodsIndex extends React.Component {
                 </div>
             )
         } else {
+            const foods = this.props.foods.map(food => (
+                <FoodsIndexItem
+                    key={food.id}
+                    food={food} />
+            ));
+
             return (
                 <div className="foods-index-container">
 
@@ -40,6 +40,7 @@ class FoodsIndex extends React.Component {
             );
         }
     }
+        
 }
 
 
