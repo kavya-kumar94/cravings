@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import './food_form.css';
 
 class FoodForm extends React.Component {
     constructor(props) {
@@ -29,7 +30,8 @@ class FoodForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         console.log(this.state);
-        // this.props.history.push('/foods');
+        // this.props.someaction(this.state);
+        this.props.history.push(`/foods?sweet=${this.state.sweet}&spicy=${this.state.spicy}&salty=${this.state.salty}&savory=${this.state.savory}&hot=${this.state.hot}&cold=${this.state.cold}&healthy=${this.state.healthy}&junk=${this.state.junk}&happy=${this.state.happy}&sad=${this.state.sad}&hangry=${this.state.hangry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`);
     }
 
     check(field){
@@ -40,6 +42,7 @@ class FoodForm extends React.Component {
     render() {
         return (
             <form className="food-form" onSubmit={this.handleSubmit} >
+                <h1>Choose your food mood</h1>
                 <div className="spicy">
                     <input type="checkbox" onClick={this.check('spicy')} value={!this.state.spicy} />
                     <label>Spicy</label>
@@ -100,7 +103,7 @@ class FoodForm extends React.Component {
                     <input type="checkbox" onClick={this.check('adventurous')} value={!this.state.adventurous}/>
                     <label>Adventurous</label>
                 </div>
-                <button type="submit" value="Find my food!" />
+                <button className="foodform-btn" type="submit" value="Find my food!" />
             </form>
         )
     }

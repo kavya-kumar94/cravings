@@ -1,0 +1,32 @@
+.food-form {
+    padding-left: 200px;
+    padding-top: 40px;
+    font-size: 20px;
+}
+
+.food-form h2 {
+    font-size: 40px;
+    text-align: center;
+
+}
+
+.food-form input {
+    margin: 10px;
+}
+
+.foodform-btn {
+    margin-left: 60px;
+    border-radius: 20px;
+    padding: 7px 30px 7px;
+    font-size: 15px;
+    transition: all .2s ease-in-out;
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+    transition: all .2s ease-in-out;
+}
+
+.foodform-btn:hover {
+    transform: scale(1.1);
+    background-color: aquamarine
+}
