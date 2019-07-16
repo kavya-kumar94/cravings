@@ -38,3 +38,24 @@
 .NavBar button {
     height: 20px;
 }
+
+.logged-in {
+    font-family: 'Source Sans Pro', sans-serif;
+    float: right;
+}
+
+.logged-in button {
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 80px;
+    height: 30px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    transition: all .2s ease-in-out;
+    float: right;
+    margin: 40px;
+}
+
+.logged-in button:hover {
+    transform: scale(1.1);
+}

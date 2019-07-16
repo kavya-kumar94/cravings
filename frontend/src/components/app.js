@@ -44,7 +44,7 @@ class App extends React.Component {
                 <Route exact path="/drinks" component={DrinksIndexContainer} />
                 <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
 
-                <AuthRoute exact path="/" component={MainPage} />
+                <Route exact path="/" component={MainPage} />
             </Switch>
         </div>
         </div>
