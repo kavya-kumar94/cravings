@@ -85,7 +85,8 @@ class FoodWheel extends React.Component {
                      {events: ['click', 'mousemove'],
                      onClick: () => console.log('it works')
                     }
-                    }
+                    
+                }
                 // plugins={
                 //     {labels: 
                 //         {render: 'label'
