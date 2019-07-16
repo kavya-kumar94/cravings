@@ -3,25 +3,39 @@ const router = express.Router();
 const Drink = require('../../models/Drink')
 
 router.get("/", (req, res) => {
-    console.log(req)
-    // Drink.find({
-    //     caffeine: req.body.caffeine,
-    //     sweet: req.body.sweet,
-    //     aromatic: req.body.aromatic,
-    //     hot: req.body.hot,
-    //     iced: req.body.iced,
-    //     healthy: req.body.healthy,
-    //     sad: req.body.sad,
-    //     tired: req.body.tired,
-    //     happy: req.body.happy,
-    //     angry: req.body.angry,
-    //     sick: req.body.sick,
-    //     celebratory: req.body.celebratory,
-    //     stressed: req.body.stressed,
-    //     adventurous: req.body.adventurous,
-    //     price: req.body.price
-    // })
-    Drink.find({})
+    req.query.caffeine = JSON.parse(req.query.caffeine)
+    req.query.sweet = JSON.parse(req.query.sweet)
+    req.query.aromatic = JSON.parse(req.query.aromatic)
+    req.query.hot = JSON.parse(req.query.hot)
+    req.query.iced = JSON.parse(req.query.iced)
+    req.query.healthy = JSON.parse(req.query.healthy)
+    req.query.sad = JSON.parse(req.query.sad)
+    req.query.tired = JSON.parse(req.query.tired)
+    req.query.happy = JSON.parse(req.query.happy)
+    req.query.angry = JSON.parse(req.query.angry)
+    req.query.sick = JSON.parse(req.query.sick)
+    req.query.celebratory = JSON.parse(req.query.celebratory)
+    req.query.stressed = JSON.parse(req.query.stressed)
+    req.query.adventurous = JSON.parse(req.query.adventurous)
+
+    Drink.find({
+        caffeine: req.query.caffeine,
+        sweet: req.query.sweet,
+        aromatic: req.query.aromatic,
+        hot: req.query.hot,
+        iced: req.query.iced,
+        healthy: req.query.healthy,
+        sad: req.query.sad,
+        tired: req.query.tired,
+        happy: req.query.happy,
+        angry: req.query.angry,
+        sick: req.query.sick,
+        celebratory: req.query.celebratory,
+        stressed: req.query.stressed,
+        adventurous: req.query.adventurous,
+        price: req.body.price
+    })
+    // Drink.find({})
     .then(drinks => {
         let drinksPojo = {};
         drinks.forEach(drink => {

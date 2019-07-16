@@ -1,11 +1,13 @@
 .login-form {
     padding: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .inputs input {
     padding: 10px;
     margin: 5px;
     border: 1px solid lightgray;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .inputs input[type="submit"] {

@@ -17,8 +17,7 @@
     padding: 7px 30px 7px;
     font-size: 34px;
     transition: all .2s ease-in-out;
-    font-family: inherit;
-    width: 9rem;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .food-drink button:focus {
@@ -30,8 +29,8 @@
 }
 
 .food-drink h3{
-    font-size: 30px;
-    font-weight: 400;
+    font-size: 35px;
+    font-weight: 600;
     text-align: center;
     color: black;
     margin: 0;

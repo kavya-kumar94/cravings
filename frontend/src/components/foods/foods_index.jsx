@@ -11,6 +11,9 @@ class FoodsIndex extends React.Component {
 
     render() {
 
+        console.log('this is location search Food index');
+        console.log(this.props.location.search);
+
         if(this.props.foods === undefined) return null;
         
         const foods = this.props.foods.map(food => (

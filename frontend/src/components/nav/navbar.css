@@ -15,6 +15,7 @@
 }
 
 .navbar-links button {
+    font-family: 'Source Sans Pro', sans-serif;
     width: 80px;
     height: 30px;
     border-radius: 8px;
