@@ -6,10 +6,12 @@ import './foods.css'
 class FoodsIndex extends React.Component {
 
     componentWillMount() {
-        this.props.fetchFoods();
+        this.props.fetchFoods(this.props.location.search);
     }
 
     render() {
+        console.log('this is the location.search in foods index')
+        console.log(this.props.location.search);
 
         if(this.props.foods === undefined) return null;
         
