@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Allerta|Barlow+Semi+Condensed|Caveat+Brush|Sawarabi+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap');
 .app {
     background-image: url('splash-bg-1.jpg');
     background-size: cover;
@@ -6,6 +6,11 @@
     width: 100vw;
     height: 100vh;
     color: white;
-    font-family: 'Caveat Brush', cursive;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
+.main-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

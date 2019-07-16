@@ -67,36 +67,36 @@ class DrinkWheel extends React.Component {
             datasets: [{
                 data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
                 backgroundColor: [
-                    '#336699',
-                    '#33CCCC',
-                    '#339999',
-                    '#3366CC',
-                    '#0000CC',
-                    '#0000FF',
-                    '#0033FF',
-                    '#0066FF',
-                    '#0099FF',
-                    '#00CCFF',
-                    '#00FFFF',
-                    '#00CCCC',
-                    '#0099CC',
-                    '#0066CC',
+                    '#FFFFF0',
+                    '#FFF8DC',
+                    '#FFE4C4',
+                    '#FFDEAD',
+                    '#F5DEB3',
+                    '#DEB887',
+                    '#D2B48C',
+                    '#BC8F8F',
+                    '#F4A460',
+                    '#CD853F',
+                    '#D2691E',
+                    '#8B4513',
+                    '#A0522D',
+                    '#800000',
                 ],
                 hoverBackgroundColor: [
                     '#006699',
-                    '#0066CC',
-                    '#0099CC',
-                    '#00CCCC',
-                    '#00FFFF',
-                    '#00CCFF',
-                    '#0099FF',
-                    '#0066FF',
-                    '#0066FF',
-                    '#0033FF',
-                    '#0000FF',
-                    '#0000CC',
-                    '#339999',
-                    '#33CCCC',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
 
                 ]
             }]
@@ -105,17 +105,24 @@ class DrinkWheel extends React.Component {
              return (
             <div className="doughnut">
                 <h1>Choose your Drink Moods!</h1>
+                <h3>Click on traits to deselect and remove from wheel</h3>
                      <Doughnut
                          ref="chart"
                          className="pie-component"
                          data={chartData}
                          width={600}
-                         height={300}
+                         height={350}
                          options={{ maintainAspectRatio: true }}
                          allowSliceExplosion="true"
                          radiusFactor={0.7}
                          options={{ plugins: { datalabels: { display: false } } }}
                          legend={{
+                             position: 'left',
+                             labels: {
+                                 fontSize: 25,
+                                 fontColor: '#000000',
+                                 fontFamily: 'Source Sans Pro, sans-serif'
+                             },
                              onClick: (e, item) => {
                                  var index = item.index;
                                  var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
@@ -126,6 +133,7 @@ class DrinkWheel extends React.Component {
                                  this.handleClick(item.text, meta.hidden);
                                  this.refs.chart.chartInstance.update();
                              }
+
                          }}
                      />
                 {/* <Doughnut

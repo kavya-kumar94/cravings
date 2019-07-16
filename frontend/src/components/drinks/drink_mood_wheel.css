@@ -1,24 +1,41 @@
 .doughnut h1 {
-    font-size: 30px;
+    font-size: 40px;
     color: black;
     padding-top: 20px;
     margin-left: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.bg {
+    background-image: url('drinkform2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+.doughnut h3 {
+    color: black;
+    margin-left: 50px;
+    font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .drink-wheel-btn {
-    font-size: 16px;
     /* transition: all .2s ease-in-out; */
     text-align: center;
 }
 
 
 .result-btn {
-    width: 80px;
-    height: 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    width: 150px;
+    height: 50px;
     border-radius: 25px;
     position: absolute;
-    top: 300px;
-    left: 690px;
+    top: 380px;
+    left: 550px;
     z-index: 10;
 }
 
@@ -28,4 +45,12 @@
 
 .result-btn:hover {
     background-color: rgb(192, 181, 181);
+}
+
+canvas.chartjs-render-monitor {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.doughnut {
+    width: 85%;
 }
