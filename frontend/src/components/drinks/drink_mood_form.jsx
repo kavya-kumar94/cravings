@@ -33,7 +33,7 @@ class DrinkForm extends React.Component {
 
     toggle(field) {
         return e => 
-        this.setState({[field]: !e.target.checked})
+        this.setState({[field]: !!e.target.checked})
     }
 
     render() {
