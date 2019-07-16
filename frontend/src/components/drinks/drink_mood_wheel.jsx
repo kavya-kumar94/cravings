@@ -82,8 +82,8 @@ class DrinkWheel extends React.Component {
             datasets: [{
                 data: [10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10],
                 backgroundColor: [
+                    '#FFFFF0',
                     '#FFF8DC',
-                    '#FFEBCD',
                     '#FFE4C4',
                     '#FFDEAD',
                     '#F5DEB3',
@@ -99,19 +99,19 @@ class DrinkWheel extends React.Component {
                 ],
                 hoverBackgroundColor: [
                     '#006699',
-                    '#0066CC',
-                    '#0099CC',
-                    '#00CCCC',
-                    '#00FFFF',
-                    '#00CCFF',
-                    '#0099FF',
-                    '#0066FF',
-                    '#0066FF',
-                    '#0033FF',
-                    '#0000FF',
-                    '#0000CC',
-                    '#339999',
-                    '#33CCCC',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
+                    '#006699',
 
                 ]
             }]
