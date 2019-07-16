@@ -30,6 +30,7 @@ class DrinkWheel extends React.Component {
     }
 
     handleClick(field, boo) {
+        // debugger
         this.setState({[field]: !boo } );
         console.log(this.state);
     }
