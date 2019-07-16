@@ -3,20 +3,22 @@
     color: black;
     padding-top: 20px;
     margin-left: 50px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .bg {
     background-image: url('drinkform2.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 .doughnut h3 {
     color: black;
     margin-left: 50px;
     font-size: 25px;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
 .drink-wheel-btn {
