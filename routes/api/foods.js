@@ -21,24 +21,24 @@ router.get("/", (req, res) => {
     req.query.adventurous = JSON.parse(req.query.adventurous);
 
     
-    // Food.find({ 
-    //     sweet: req.body.sweet,
-    //     spicy: req.body.spicy, 
-    //     salty: req.body.salty,
-    //     savory: req.body.savory,
-    //     hot: req.body.hot,
-    //     cold: req.body.cold,
-    //     healthy: req.body.healthy,
-    //     junk: req.body.junk,
-    //     sad: req.body.sad,
-    //     happy: req.body.happy,
-    //     hangry: req.body.hangry,
-    //     sick: req.body.sick,
-    //     celebratory: req.body.celebratory,
-    //     stressed: req.body.stressed,
-    //     adventurous: req.body.adventurous,
-    // })
-    Food.find({})
+    Food.find({ 
+        sweet: req.query.sweet,
+        spicy: req.query.spicy, 
+        salty: req.query.salty,
+        savory: req.query.savory,
+        hot: req.query.hot,
+        cold: req.query.cold,
+        healthy: req.query.healthy,
+        junk: req.query.junk,
+        sad: req.query.sad,
+        happy: req.query.happy,
+        hangry: req.query.hangry,
+        sick: req.query.sick,
+        celebratory: req.query.celebratory,
+        stressed: req.query.stressed,
+        adventurous: req.query.adventurous,
+    })
+    // Food.find({})
     // Food.find({sick: req.query.sick})
     .then(foods => {
         // console.log(foods.length);
