@@ -18,24 +18,24 @@ router.get("/", (req, res) => {
     req.query.stressed = JSON.parse(req.query.stressed)
     req.query.adventurous = JSON.parse(req.query.adventurous)
 
-    // Drink.find({
-        // caffeine: req.query.caffeine,
-        // sweet: req.query.sweet,
-        // aromatic: req.query.aromatic,
-        // hot: req.query.hot,
-        // iced: req.query.iced,
-        // healthy: req.query.healthy,
-        // sad: req.query.sad,
-        // tired: req.query.tired,
-        // happy: req.query.happy,
-        // angry: req.query.angry,
-        // sick: req.query.sick,
-        // celebratory: req.query.celebratory,
-        // stressed: req.query.stressed,
-        // adventurous: req.query.adventurous
-    //     price: req.body.price
-    // })
-    Drink.find({})
+    Drink.find({
+        caffeine: req.query.caffeine,
+        sweet: req.query.sweet,
+        aromatic: req.query.aromatic,
+        hot: req.query.hot,
+        iced: req.query.iced,
+        healthy: req.query.healthy,
+        sad: req.query.sad,
+        tired: req.query.tired,
+        happy: req.query.happy,
+        angry: req.query.angry,
+        sick: req.query.sick,
+        celebratory: req.query.celebratory,
+        stressed: req.query.stressed,
+        adventurous: req.query.adventurous,
+        price: req.body.price
+    })
+    // Drink.find({})
     .then(drinks => {
         let drinksPojo = {};
         drinks.forEach(drink => {
