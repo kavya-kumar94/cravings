@@ -1,11 +1,29 @@
 import React from 'react';
 import { Pie, Doughnut } from 'react-chartjs-2';
-import 'chartjs-plugin-labels'
+import 'chartjs-plugin-datalabels';
 
 class FoodWheel extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+
         this.state = {
+            sweet: true,
+            spicy: true,
+            salty: true,
+            savory: true,
+            hot: true,
+            cold: true,
+            healthy: true,
+            junk: true,
+            sad: true,
+            happy: true,
+            hangry: true,
+            sick: true,
+            celebratory: true,
+            stressed: true,
+            adventurous: true,
             chartData: {
                 labels: ['sweet', 'spicy', 'savory', 'salty', 'hot', 'cold',
                     'healthy', 'junk', 'sad', 'happy', 'hangry', 'sick', 'celebratory',
@@ -53,19 +71,20 @@ class FoodWheel extends React.Component {
         }
     }
 
-    componentDidMount() {
-        let pieComponent = document.querySelector('.pie-component');
-        console.log(pieComponent);
-    }
+    // componentDidMount() {
+    //     let pieComponent = document.querySelector('.pie-component');
+    //     console.log(pieComponent);
+    // }
 
     // onSliceClick() {
     //     ({ e: SliceClickEventArgs}) => {
     //     e.isExploded = !e.isExploded
     // }}
 
-    // chooseFood() {
-
-    // }
+    handleClick(field, boo) {
+        this.setState({[field]: !boo});
+        console.log(this.state);
+    }
     
     render() {
         return (
@@ -73,26 +92,39 @@ class FoodWheel extends React.Component {
                 <h1>Choose a Food Mood!</h1>
 
                 <Doughnut
+                ref="chart"
                 className="pie-component"
                 data={this.state.chartData}
                 width={600}
                 height={300}
                 options={{maintainAspectRatio: true}}
                 allowSliceExplosion="true"
-                radiusFactor={0.7}
-                options={
-                    // 'onClick': console.log('it works'),
-                     {events: ['click', 'mousemove'],
-                     onClick: () => console.log('it works')
-                    }
-                    
-                }
-                // plugins={
-                //     {labels: 
-                //         {render: 'label'
-                //     }}
-                // }
+                radiusFactor={0.7} 
+                options={{plugins: {datalabels: {display: false }}}}
+                legend={{onClick: (e, item) => {
+                    var index = item.index;
+                    var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
+                    var ci = this.refs.chart.chartInstance;
+                    // See controller.isDatasetVisible comment
+                    meta.hidden = !meta.hidden;
+                    // We hid a dataset ... rerender the chart
+                    this.handleClick(item.text, meta.hidden);
+                    this.refs.chart.chartInstance.update();
+                }}}
                 />
+                
+                {/* // legend={ 
+                //     {getElementAtEvent: (dataset) => {console.log(dataset)},
+                //         onElementsClick: (eles) => {console.log(eles)},
+                // }} />
+                {/* options={
+                        legend: {getDatasetAtEvent: (dataset) => {console.log(dataset)}}
+                    // 'onClick': console.log('it works'),
+                    //  {events: ['click', 'mousemove'],
+                    //  onClick: () => console.log('it works')
+                    // }
+                } /> */} 
+            
 
             </div>
         )

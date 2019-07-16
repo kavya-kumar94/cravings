@@ -13,6 +13,7 @@ import DrinksIndexContainer from './drinks/drinks_index_container';
 import DrinkShowContainer from './drinks/drink_show/drink_show_container';
 import DrinkForm from './drinks/drink_mood_form';
 import FoodFormContainer from './foods/food_form_container';
+import FoodWheel from './foods/food_mood_wheel';
 
 const App = () => (
     <div className="app">
@@ -23,6 +24,8 @@ const App = () => (
             <Route path='/foodform' component={FoodFormContainer} />
             <Route exact path="/foods" component={FoodsIndexContainer} />
             <Route exact path="/foods/:foodId" component={FoodShowContainer} />
+
+            <Route exact path="/test" component={FoodWheel} />
 
             <Route exact path="/drinks" component={DrinksIndexContainer} />
             <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />

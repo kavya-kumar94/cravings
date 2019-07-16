@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import DrinksIndexItem from './drinks_index_item';
 import './drinks.css';
-import queryString from 'query-string';
+// import queryString from 'query-string';
 
 
 class Drinks extends React.Component {
