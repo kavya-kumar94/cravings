@@ -3,7 +3,30 @@ const router = express.Router();
 const Food = require('../../models/Food')
 
 router.get("/", (req, res) => {
-    console.log(req)
+    // console.log(req.query);
+    // console.log(JSON.parse(req.query.sweet));
+    // req.query.sweet = JSON.parse(req.query.sweet);
+    // console.log(req.query);
+    // console.log(typeof req.query.sweet);
+
+    req.query.sweet = JSON.parse(req.query.sweet);
+    req.query.spicy = JSON.parse(req.query.spicy);
+    req.query.salty = JSON.parse(req.query.salty);
+    req.query.savory = JSON.parse(req.query.savory);
+    req.query.hot = JSON.parse(req.query.hot);
+    req.query.cold = JSON.parse(req.query.cold);
+    req.query.healthy = JSON.parse(req.query.healthy);
+    req.query.junk = JSON.parse(req.query.junk);
+    req.query.sad = JSON.parse(req.query.sad);
+    req.query.happy = JSON.parse(req.query.happy);
+    req.query.hangry = JSON.parse(req.query.hangry);
+    req.query.sick = JSON.parse(req.query.sick);
+    req.query.celebratory = JSON.parse(req.query.celebratory);
+    req.query.stressed = JSON.parse(req.query.stressed);
+    req.query.adventurous = JSON.parse(req.query.adventurous);
+
+    console.log(req.query);
+    
     // Food.find({ 
     //     sweet: req.body.sweet,
     //     spicy: req.body.spicy, 
@@ -20,7 +43,6 @@ router.get("/", (req, res) => {
     //     celebratory: req.body.celebratory,
     //     stressed: req.body.stressed,
     //     adventurous: req.body.adventurous,
-    //     price: req.body.price
     // })
     Food.find({})
     // Food.find({sick: req.query.sick})
