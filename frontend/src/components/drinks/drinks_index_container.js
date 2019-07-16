@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchDrinks } from '../../actions/drink_actions';
-import DrinkIndex from './drinks_index';
+import DrinksIndex from './drinks_index';
 
 const mapStateToProps = (state) => {
     return {
@@ -10,8 +10,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchDrinks: (parsed) => dispatch(fetchDrinks(parsed))
+        fetchDrinks: (query) => dispatch(fetchDrinks(query))
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DrinkIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(DrinksIndex);

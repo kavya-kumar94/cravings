@@ -32,10 +32,8 @@ router.get("/", (req, res) => {
         sick: req.query.sick,
         celebratory: req.query.celebratory,
         stressed: req.query.stressed,
-        adventurous: req.query.adventurous,
-        price: req.body.price
+        adventurous: req.query.adventurous
     })
-    // Drink.find({})
     .then(drinks => {
         let drinksPojo = {};
         drinks.forEach(drink => {
