@@ -1,0 +1,24 @@
+.drink-form {
+    padding: 50px;
+    font-size: 20px;
+}
+
+.drinkform h2 {
+    font-size: 40px;
+    text-align: center;
+}
+
+.drink-form input {
+    margin: 10px;
+}
+
+.drinkform-btn {
+    margin-left: 60px;
+    border-radius: 20px;
+    padding: 7px 30px 7px;
+    font-size: 15px;
+    transition: all .2s ease-in-out;
+    background-color: white;
+    color: black;
+    margin-top: 20px;
+}
