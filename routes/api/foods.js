@@ -48,7 +48,12 @@ router.get("/", (req, res) => {
                 healthy: food.healthy,
                 junk: food.junk,
                 sad: food.sad,
-                happy: food.happy
+                happy: food.happy,
+                hangry: food.hangry,
+                sick: food.sick,
+                celebratory: food.celebratory,
+                stressed: food.stressed,
+                adventurous: food.adventurous
             }
             foodsPojo[food.id] = foodPojo;
         })
