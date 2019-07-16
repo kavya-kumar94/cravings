@@ -22,9 +22,13 @@ class App extends React.Component {
 
     render() {
     let classy = ""
-    if (this.props.location.pathname !== '/') {
+    if (this.props.location.pathname === '/drinkwheel') {
         classy="bg"
-    } else {
+    }
+    if (this.props.location.pathname === '/foodwheel') {
+            classy = "bg2"
+        } 
+    if (this.props.location.pathname === '/') {
         classy="app"
     }
     //please work//

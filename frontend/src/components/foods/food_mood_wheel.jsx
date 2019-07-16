@@ -2,7 +2,7 @@ import React from 'react';
 import { Pie, Doughnut } from 'react-chartjs-2';
 import { withRouter } from 'react-router-dom';
 import 'chartjs-plugin-datalabels';
-
+import './food_mood_wheel.css';
 class FoodWheel extends React.Component {
     constructor(props) {
         super(props);
@@ -86,9 +86,9 @@ class FoodWheel extends React.Component {
                     ]
                 }]};
         return (
-            <div className="pie">
+            <div className="doughnut">
                 <h1>Shape your Food Mood!</h1>
-                <h1>(Click on traits to select/unselect)</h1>
+                <h3>(Click on traits to select/unselect)</h3>
 
                 <Pie
                 ref="chart"
@@ -99,20 +99,26 @@ class FoodWheel extends React.Component {
                 options={{maintainAspectRatio: true}}
                 allowSliceExplosion="true"
                 radiusFactor={0.8} 
-                // options={{plugins: 
-                // {
-                //     datalabels: { render: 'hello' },
-                // }}}
-                legend={{onClick: (e, item) => {
-                    var index = item.index;
-                    var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
-                    var ci = this.refs.chart.chartInstance;
-                    // See controller.isDatasetVisible comment
-                    meta.hidden = !meta.hidden;
-                    // We hid a dataset ... rerender the chart
-                    this.handleClick(item.text, meta.hidden);
-                    this.refs.chart.chartInstance.update();
-                }}}
+                options={{ plugins: { datalabels: { display: false } } }}
+                    legend={{
+                        position: 'left',
+                        labels: {
+                            fontSize: 25,
+                            fontColor: '#ffffff',
+                            fontFamily: 'Source Sans Pro, sans-serif'
+                        },
+                        onClick: (e, item) => {
+                            var index = item.index;
+                            var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
+                            var ci = this.refs.chart.chartInstance;
+                            // See controller.isDatasetVisible comment
+                            meta.hidden = !meta.hidden;
+                            // We hid a dataset ... rerender the chart
+                            this.handleClick(item.text, meta.hidden);
+                            this.refs.chart.chartInstance.update();
+                        }
+
+                    }}
                 />
                 <div className="food-wheel-btn">
                     <button onClick={this.query} className="result-btn">Get Results</button>
