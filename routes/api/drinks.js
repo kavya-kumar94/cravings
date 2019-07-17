@@ -24,11 +24,9 @@ router.get("/", (req, res) => {
     Object.keys(req.query).forEach(category => {
         if(req.query[category] === true){
             Object.assign(newQuery, {[category]: req.query[category]})
-            // console.log(newQuery)
         }
     })
 
-    // console.log(newQuery);
 
     if(Object.keys(newQuery).length === 0) return res.json({});
 
@@ -37,7 +35,6 @@ router.get("/", (req, res) => {
         Drink.find({ [key]: true })
         .then(res => {
             result = result.concat(res);
-            // console.log(result)});
         }).then(() => {
 
             let drinksPojo = {};
