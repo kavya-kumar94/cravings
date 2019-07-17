@@ -8,6 +8,7 @@ class NavBar extends React.Component {
         super(props); 
         this.state = {
             userMenu: false,
+            gitMenu: false,
         }
 
         this.getLinks = this.getLinks.bind(this);
@@ -23,9 +24,22 @@ class NavBar extends React.Component {
         });
     }
 
+    showDropdownMenu2(e) {
+        e.preventDefault();
+        this.setState({ gitMenu: true }, () => {
+            document.addEventListener('click', this.hideDropdownMenu2);
+        });
+    }
+
     hideDropdownMenu() {
         this.setState({ userMenu: false }, () => {
             document.removeEventListener('click', this.hideDropdownMenu);
+        });
+    }
+
+    hideDropdownMenu2() {
+        this.setState({ gitMenu: false }, () => {
+            document.removeEventListener('click', this.hideDropdownMenu2);
         });
     }
 
@@ -53,6 +67,14 @@ class NavBar extends React.Component {
                     <button onClick={() => openModal('signup')}>Sign up</button>
                     &nbsp; &nbsp;
                     <button onClick={() => openModal('login')}>Log in</button>
+                    <h2 className="github-toggle" onClick={this.showDropdownMenu2}></h2>
+                    {this.state.userMenu && (
+                        <div className="container2">
+                            <ul className="dropdown2">
+                                <li onClick={() => this.props.history.push('/foodwheel')}>My Saves</li>
+                            </ul>
+                        </div>
+                    )}
                 </div>
             );
         }

@@ -132,3 +132,10 @@
 .nav-logo:hover {
     cursor: pointer;
 }
+
+.github-toggle {
+    margin-left: 5px;
+    background-image: url('GitHub-Mark-32px.png');
+    height: 32px;
+    width: 32px;
+}
