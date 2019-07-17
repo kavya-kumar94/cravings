@@ -156,6 +156,12 @@
     opacity: 0.6;
     text-align: center;
     color: black;
+    padding: 5px;
+}
+
+.dropdown2 a:hover {
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.03);
 }
 
 .dropdown2 :active:hover {
@@ -168,7 +174,7 @@
     position: absolute;
     background-color: white;
     top: 118%;
-    right: -17px;
+    right: 53px;
     width: 12rem;
     z-index: 10;
     border: 1px solid #d4d8d9;
