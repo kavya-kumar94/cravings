@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: column;
     height: 100vh;
+    margin-top: 100px;
 }
 .foods-ul {
     padding: 40px 40px;
@@ -131,6 +132,14 @@
     outline: none;
 }
 
+.no-results-for-food{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-left: 200px;
+}
+
 .no-results-for-food h3 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
@@ -142,7 +151,7 @@
 .no-results-for-food button {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     text-align: center;
     padding: 10px;
     width: 70%;
@@ -196,6 +205,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: auto;
+    margin-top: 100px;
 }
 
 .food-show p {
