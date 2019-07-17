@@ -132,6 +132,14 @@
     outline: none;
 }
 
+.no-results-for-food{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-left: 200px;
+}
+
 .no-results-for-food h3 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
@@ -143,7 +151,7 @@
 .no-results-for-food button {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     text-align: center;
     padding: 10px;
     width: 70%;

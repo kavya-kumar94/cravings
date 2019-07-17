@@ -22,3 +22,11 @@
     width: 50rem;
     height: 30rem;
 }
+
+.footer {
+    height: 50px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background-color: gray;
+}

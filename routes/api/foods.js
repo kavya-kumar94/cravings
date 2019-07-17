@@ -34,7 +34,7 @@ router.get("/", (req, res) => {
     })
 
 
-    if (Object.keys(newQuery).length === 0) return json.res('No result found')
+    if (Object.keys(newQuery).length === 0) return res.json({});
 
     let result = [];
     Object.keys(newQuery).forEach(key => {

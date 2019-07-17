@@ -112,6 +112,14 @@
     display: block;
 }
 
+.no-results-for-food{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-left: 200px;
+}
+
 .no-results-for-drink h3 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
