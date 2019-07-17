@@ -10,8 +10,7 @@ class FoodsIndex extends React.Component {
     }
 
     componentWillMount() {
-        this.props.getFoods();
-        // this.props.fetchFoods(this.props.location.search);
+        this.props.fetchFoods(this.props.location.search);
     }
 
     randomizer() {
