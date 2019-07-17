@@ -24,10 +24,3 @@ export const fetchFood = (id) => dispatch => (
         .then(food => dispatch(receiveFood(food)))
         .catch(err => console.log(err))
 );
-
-
-export const getFoods = () => dispatch => (
-    FoodApiUtil.getFoods()
-        .then(foods => dispatch(receiveFoods(foods)))
-        .catch(err => console.log(err))
-);

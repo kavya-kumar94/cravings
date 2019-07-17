@@ -5,6 +5,7 @@
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
+    min-height: 100vh;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     display: flex;
