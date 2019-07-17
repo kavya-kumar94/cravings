@@ -35,7 +35,7 @@ class DrinkWheel extends React.Component {
 
     query(e) {
         e.preventDefault();
-        console.log(this.state);
+        // console.log(this.state);
         this.props.history.push({
             pathname: '/drinks',
             search: `?caffeine=${this.state.caffeine}&sweet=${this.state.sweet}&aromatic=${this.state.aromatic}&hot=${this.state.hot}&iced=${this.state.iced}&healthy=${this.state.healthy}&sad=${this.state.sad}&tired=${this.state.tired}&happy=${this.state.happy}&angry=${this.state.angry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
