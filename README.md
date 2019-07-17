@@ -35,11 +35,17 @@ Challenges during this project include using query strings to fetch the user's i
 
 The user can deselect cravings and moods from the pie chart legend and view how the pie chart changes according to their selections. 
 
+<p align="center">
+    <img width="600" height="375" src="https://github.com/kavya-kumar94/cravings/blob/master/ezgif.com-video-to-gif.gif">
+</p>
 
 #### Randomizer for results index
 
 The user can have the application choose a restaurant location by clicking a button that will randomly select a restaurant for them each time they click the button.
 
+<p align="center">
+    <img width="600" height="375" src="https://github.com/kavya-kumar94/cravings/blob/master/ezgif.com-video-to-gif%20(1).gif">
+</p>
 
 ### Code Snippets
 
