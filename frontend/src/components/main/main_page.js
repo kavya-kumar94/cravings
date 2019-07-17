@@ -17,9 +17,9 @@ class MainPage extends React.Component {
                 {/* <div>
                     <PieChart />
                 </div> */}
-                {/* <footer>
+                {/* <div className="footer">
                     We are live!! React not broken, Everything is fine
-                </footer> */}
+                </div> */}
             </div>
         );
     }
