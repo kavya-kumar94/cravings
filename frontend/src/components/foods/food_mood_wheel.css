@@ -41,6 +41,7 @@
     left: 100px;
     border: none;
     bottom: 148%;
+    z-index: 20;
 }
 
 .result-btn:focus {
