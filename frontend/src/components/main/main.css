@@ -10,10 +10,15 @@
 }
 
 .fd {
-    margin: 60px;
-    padding: 50px;
-    /* border: 1px solid grey; */
-    width: 400px;
-    height: 200px;
-    /* background-color: rgb(204, 198, 198); */
+    height: -webkit-fill-available;
+    width: inherit;
+    position: fixed;
+}
+
+.cravings-logo {
+    background-image: url('cravings.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 50rem;
+    height: 30rem;
 }

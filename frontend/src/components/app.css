@@ -8,10 +8,20 @@
     min-height: 100vh;
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
 }
 
 .main-body {
+    width: inherit;
+    height: inherit;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    justify-items: center;
+}
+
+.main {
+    height: -webkit-fill-available;
+    width: inherit;
 }
