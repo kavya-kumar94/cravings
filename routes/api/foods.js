@@ -4,10 +4,13 @@ const Food = require('../../models/Food');
 
 router.get("/", (req, res) => {
 
+<<<<<<< HEAD
     // console.log('in foods router')
 
     console.log(req.query)
     
+=======
+>>>>>>> master
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.spicy = JSON.parse(req.query.spicy);
     req.query.salty = JSON.parse(req.query.salty);
@@ -23,6 +26,7 @@ router.get("/", (req, res) => {
     req.query.celebratory = JSON.parse(req.query.celebratory);
     req.query.stressed = JSON.parse(req.query.stressed);
     req.query.adventurous = JSON.parse(req.query.adventurous);
+<<<<<<< HEAD
 
 
     let newQuery = {};
@@ -132,6 +136,27 @@ module.exports = router;
     //     stressed: req.query.stressed,
     //     adventurous: req.query.adventurous,
     // })
+=======
+
+    
+    Food.find({ 
+        sweet: req.query.sweet,
+        spicy: req.query.spicy, 
+        salty: req.query.salty,
+        savory: req.query.savory,
+        hot: req.query.hot,
+        cold: req.query.cold,
+        healthy: req.query.healthy,
+        junk: req.query.junk,
+        sad: req.query.sad,
+        happy: req.query.happy,
+        hangry: req.query.hangry,
+        sick: req.query.sick,
+        celebratory: req.query.celebratory,
+        stressed: req.query.stressed,
+        adventurous: req.query.adventurous,
+    })
+>>>>>>> master
     // Food.find({})
     // Food.find({sick: req.query.sick})
     // .then(foods => {

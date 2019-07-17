@@ -10,8 +10,4 @@ export const fetchFood = (id) => {
     return axios.get(`/api/foods/${id}`)
 };
    
-// delete this later: this is for Kavya <3
 
-// export const getFoods = () => {
-//     return axios.get(`/api/foods`)
-// };
