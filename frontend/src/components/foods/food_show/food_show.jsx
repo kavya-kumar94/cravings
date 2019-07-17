@@ -8,17 +8,21 @@ class FoodShow extends React.Component{
     }
 
     render(){
-
+        
         const { food } = this.props;
 
         if (this.props.food === undefined) return null;
 
         return(
-            <div>
-                <h3>{food.name}</h3>
-                <h3>{food.address}</h3>
-                <h3>{food.price}</h3>
-                <img src={this.props.food.imageUrl} className="food-photo" />
+            <div className="food-show">
+                <p>{food.name}</p>
+                <p>{food.address}, {food.city}, {food.state} {food.zipCode}</p>
+                <p>{food.price}</p>
+                <div className="photo-rating">
+                    <div className={`rating-static rating-${food.rating*10}`}>
+                    </div>
+                    <img src={this.props.food.imageUrl} className="food-photo" />
+                </div>
             </div>
         )
     }
