@@ -57,10 +57,14 @@
 }
 
 canvas.chartjs-render-monitor {
-    font-family: 'Source Sans Pro', sans-serif;
+    font-family: 'Source Sans Pro', sans-serif; 
 }
 
 .doughnut {
     width: 85%;
         margin-left: 5rem;
+}
+
+.chartjs-render-monitor[style] {
+    height: 695px !important;
 }
