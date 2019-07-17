@@ -1,9 +1,13 @@
 const express = require("express");
 const router = express.Router();
-const Drink = require('../../models/Drink');
+const Food = require('../../models/Food');
 
 router.get("/", (req, res) => {
 
+    // console.log('in foods router')
+
+    console.log(req.query)
+    
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.spicy = JSON.parse(req.query.spicy);
     req.query.salty = JSON.parse(req.query.salty);
