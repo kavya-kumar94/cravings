@@ -1,10 +1,24 @@
 .food-drink button {
-    margin-left: 60px;
     border-radius: 20px;
     padding: 7px 30px 7px;
-    font-size: 15px;
+    font-size: 35px;
     transition: all .2s ease-in-out;
     font-family: 'Source Sans Pro', sans-serif;
+    position: relative;
+    position: relative;
+    left: 82px;
+    width: 9rem;
+    font-weight: bolder;
+    border-color: yellow;
+    text-shadow: 1px 1px 1px lightslategrey;
+}
+
+.food-btn {
+    bottom: 3rem;
+}
+
+.drink-btn {
+    top: 4rem;
 }
 
 .food-drink button:focus {
@@ -16,7 +30,26 @@
 }
 
 .food-drink h3{
-    font-size: 35px;
+    font-size: 26px;
     font-weight: 600;
     text-align: center;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 1.5rem;
+    left: 5.5rem;
+}
+
+.food-drink {
+    background-image: url('fooddrink.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 23rem;
+    position: relative;
+    left: 26%;
+    top: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
 }

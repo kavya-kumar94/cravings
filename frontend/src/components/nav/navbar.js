@@ -36,7 +36,7 @@ class NavBar extends React.Component {
         if (loggedIn) {
             return (
                 <div className="logged-in">
-                    <h2 className="username-toggle" onClick={this.showDropdownMenu}>Welcome, {currentUser.username} </h2>
+                    <h2 className="username-toggle" onClick={this.showDropdownMenu}>Welcome, {currentUser.username}!  ▿</h2>
                     {this.state.userMenu && (
                         <div className="container">
                             <ul className="dropdown">
