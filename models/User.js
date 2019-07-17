@@ -20,11 +20,11 @@ const UserSchema = new Schema({
     },
     foodSaves: [{ 
         type: Schema.Types.ObjectId,
-         ref: 'Food' 
+        ref: 'Food' 
     }],
     drinkSaves: [{ 
         type: Schema.Types.ObjectId,
-         ref: 'Drink' 
+        ref: 'Drink' 
     }]
 
 });

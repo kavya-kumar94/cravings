@@ -44,14 +44,15 @@ class FoodsIndex extends React.Component {
 
             return (
                 <div className="foods-index-container">
+                    
+                    <button className='pick-one' onClick={() => this.randomizer()}>
+                        Pick for me, I am indecisive
+                    </button>
 
                     <ul className="foods-ul">
                         {foods}
                     </ul>
 
-                    <button className='pick-one' onClick={() => this.randomizer()}>
-                        Pick for me, I am indecisive
-                    </button>
 
                 </div>
             );
