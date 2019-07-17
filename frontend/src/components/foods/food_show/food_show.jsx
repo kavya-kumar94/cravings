@@ -18,9 +18,11 @@ class FoodShow extends React.Component{
                 <p>{food.name}</p>
                 <p>{food.address}, {food.city}, {food.state} {food.zipCode}</p>
                 <p>{food.price}</p>
-                <div className={`rating-static rating-${food.rating*10}`}>
+                <div className="photo-rating">
+                    <div className={`rating-static rating-${food.rating*10}`}>
+                    </div>
+                    <img src={this.props.food.imageUrl} className="food-photo" />
                 </div>
-                <img src={this.props.food.imageUrl} className="food-photo" />
             </div>
         )
     }
