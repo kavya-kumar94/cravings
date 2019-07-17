@@ -12,6 +12,11 @@ router.get("/test", (req,res) => {
     res.json({ msg: "This is the user route"});
 });
 
+router.get("/saves", (req,res) => {
+    Food.find({users: req.body.users})
+    Drink.find({users: req.body.users})
+})
+
 router.get(
     '/current',
     passport.authenticate("jwt", { session: false}),

@@ -1,6 +1,8 @@
 .foods-index-container{
     border: 1px solid black;
     color: black;
+    display: flex;
+    flex-direction: column;
 }
 .foods-ul {
     padding: 40px 40px;
@@ -103,4 +105,20 @@
     width: 85%;
     height: 85%;
     display: block;
+}
+
+.pick-one {
+    text-align: center;
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: all .2s ease-in-out;
+    border: none;
+}
+
+.pick-one:hover {
+    transform: scale(1.1);
+    border: none;
 }
