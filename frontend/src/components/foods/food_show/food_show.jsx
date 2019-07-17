@@ -15,9 +15,9 @@ class FoodShow extends React.Component{
 
         return(
             <div className="food-show">
-                <h3>{food.name}</h3>
-                <h3>{food.address}, {food.city}, {food.state} {food.zipCode}</h3>
-                <h3>{food.price}</h3>
+                <p>{food.name}</p>
+                <p>{food.address}, {food.city}, {food.state} {food.zipCode}</p>
+                <p>{food.price}</p>
                 <div className={`rating-static rating-${food.rating*10}`}>
                 </div>
                 <img src={this.props.food.imageUrl} className="food-photo" />

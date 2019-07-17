@@ -141,3 +141,20 @@
     border: none;
     outline: none;
 }
+
+.drink-show img {
+    width: 50%;
+}
+
+.drink-show {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.drink-show p {
+    padding: 8px;
+}
+
