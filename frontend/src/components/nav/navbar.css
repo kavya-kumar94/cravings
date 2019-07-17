@@ -35,9 +35,6 @@
     transform: scale(1.1);
 }
 
-.NavBar button {
-    height: 20px;
-}
 
 .logged-in {
     font-family: 'Source Sans Pro', sans-serif;
@@ -119,4 +116,19 @@
 	border-bottom-color: #ffffff;
 	border-width: 10px;
 	margin-left: 64px;
+}
+
+.nav-logo {
+    background-image: url('../main/cravings.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 8rem;
+    height: 3rem;
+    position: absolute;
+    left: 3rem;
+    top: 8px;
+}
+
+.nav-logo:hover {
+    cursor: pointer;
 }

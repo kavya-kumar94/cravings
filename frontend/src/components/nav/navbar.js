@@ -61,6 +61,7 @@ class NavBar extends React.Component {
     render() {
         return (
             <div className="navbar">
+                {this.props.location.pathname !== '/' ? <div className="nav-logo" onClick={() => this.props.history.push('/')}></div> : <></>}
                 {this.getLinks()}
             </div>
         );
