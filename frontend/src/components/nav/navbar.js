@@ -15,6 +15,8 @@ class NavBar extends React.Component {
 
         this.showDropdownMenu = this.showDropdownMenu.bind(this);
         this.hideDropdownMenu = this.hideDropdownMenu.bind(this);
+        this.showDropdownMenu2 = this.showDropdownMenu2.bind(this);
+        this.hideDropdownMenu2 = this.hideDropdownMenu2.bind(this);
     }
 
     showDropdownMenu(e) {
@@ -68,10 +70,13 @@ class NavBar extends React.Component {
                     &nbsp; &nbsp;
                     <button onClick={() => openModal('login')}>Log in</button>
                     <h2 className="github-toggle" onClick={this.showDropdownMenu2}></h2>
-                    {this.state.userMenu && (
+                    {this.state.gitMenu && (
                         <div className="container2">
                             <ul className="dropdown2">
-                                <li onClick={() => this.props.history.push('/foodwheel')}>My Saves</li>
+                                <a href="https://github.com/kavya-kumar94">Kavya</a>
+                                <a href="https://github.com/sophiacheungshc">Sophia</a>
+                                <a href="https://github.com/mkayys">Michelle</a>
+                                <a href="https://github.com/welduselam">Selam</a>
                             </ul>
                         </div>
                     )}
