@@ -14,12 +14,12 @@ class DrinkShow extends React.Component {
         const { drink } = this.props;
 
         return (
-            <div>
-                <img src={drink.imageUrl} className="drink-photo" />
+            <div className="drink-show">
                 <h3>{drink.name}</h3>
                 <h3>{drink.address}, {drink.city}, {drink.state} {drink.zipCode}</h3>
                 <h3>{drink.price}</h3>
                 <h3>{drink.rating}</h3>
+                <img src={drink.imageUrl} className="drink-photo" />
             </div>
         )
     };
