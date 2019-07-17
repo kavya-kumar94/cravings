@@ -2,6 +2,8 @@
     color: black;
     display: flex;
     flex-direction: column;
+    margin: auto;
+    margin-top: 100px;
     /* height: 100vh; */
 }
 .drinks-ul {
@@ -110,6 +112,14 @@
     display: block;
 }
 
+.no-results-for-food{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-left: 200px;
+}
+
 .no-results-for-drink h3 {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
@@ -161,6 +171,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    margin: auto;
+    margin-top: 100px;
 }
 
 .drink-show p {
