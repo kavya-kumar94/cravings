@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
 
     // console.log('in foods router')
 
-    // console.log(req.query)
+    console.log(req.query)
     
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.spicy = JSON.parse(req.query.spicy);
