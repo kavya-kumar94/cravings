@@ -64,7 +64,3 @@ canvas.chartjs-render-monitor {
     width: 85%;
         margin-left: 5rem;
 }
-
-.chartjs-render-monitor[style] {
-    height: 695px !important;
-}
