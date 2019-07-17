@@ -123,8 +123,42 @@
 
 .pick-one:hover {
     transform: scale(1.1);
+    background-color: rgb(212, 78, 78);
 }
 
 .pick-one:focus {
     border: none;
+    outline: none;
+}
+
+.no-results-for-food h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+}
+
+.no-results-for-food button {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    margin-left: 100px;
+    text-align: center;
+    padding: 10px;
+    width: 70%;
+    font-size: 14px;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: all .2s ease-in-out;
+    border: none;
+}
+
+.no-results-for-food button:hover {
+    transform: scale(1.1);
+    background-color: rgb(212, 78, 78);
+}
+
+.no-results-for-food button:focus {
+    border: none;
+    outline: none;
 }
