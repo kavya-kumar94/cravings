@@ -22,6 +22,7 @@ class App extends React.Component {
 
     render() {
     let classy = ""
+    let newclass = ""
         if (this.props.location.pathname === '/drinkwheel' || this.props.location.pathname === '/drinks') {
         classy="bg"
     }
@@ -29,13 +30,13 @@ class App extends React.Component {
             classy = "bg2"
         } 
     if (this.props.location.pathname === '/') {
-        classy="app"
+        newclass="app"
     }
     //please work//
     
     return(
-    <div className={classy}>
-        {/* <div className="bg"> */}
+        <div className={newclass}>
+        <div className={classy}></div>
         <NavBarContainer />
         <Modal />
         <div className="main-body">
@@ -53,8 +54,7 @@ class App extends React.Component {
                 <Route exact path="/" component={MainPage} />
             </Switch>
         </div>
-        </div>
-    // </div>
+     </div>
     )
 
 }};

@@ -12,6 +12,10 @@
     background-size: cover;
     width: 100vw;
     height: 100vh;
+    position: fixed;
+    z-index: -10;
+    background-position: initial;
+    background-repeat: no-repeat;
 }
 
 .bg2 .doughnut h3 {

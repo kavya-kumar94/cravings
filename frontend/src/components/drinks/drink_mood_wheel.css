@@ -12,6 +12,10 @@
     background-repeat: no-repeat;
     width: 100vw;
     height: 100vh;
+    position: fixed;
+    z-index: -10;
+    background-position: initial;
+    background-repeat: no-repeat;
 }
 
 .doughnut h3 {
