@@ -37,7 +37,7 @@
     float: left;
     position: absolute;
     left: 100px;
-    bottom: 50px;
+    bottom: 6rem;
     border: none;
 }
 
@@ -57,4 +57,5 @@ canvas.chartjs-render-monitor {
 
 .doughnut {
     width: 85%;
+        margin-left: 5rem;
 }
