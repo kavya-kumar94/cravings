@@ -69,7 +69,7 @@
 }
   
 .drink-name {
-    font-size: 14px;
+    font-size: 13px;
     margin: auto;
     text-align: center;
 }
@@ -77,11 +77,12 @@
 .fas {
     color: rgb(66, 152, 247);
 }
-    
-.drink-location {
+
+.drink-full-address {
     font-size: 12px;
     font-weight: lighter;
     text-align: center;
+
 }
 
 .extra-drink-info {
@@ -94,7 +95,7 @@
     }    
 
 .drink-price {
-    font-size: 15px;
+    font-size: 14px;
     margin: auto;
     }
     
