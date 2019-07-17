@@ -8,8 +8,8 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 //TESTING
-import { fetchFoods } from './actions/food_actions';
-import { fetchDrinks } from './actions/drink_actions';
+// import { fetchFoods } from './actions/food_actions';
+// import { fetchDrinks } from './actions/drink_actions';
 //TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // TESTING
-    window.dispatch = store.dispatch;
-    window.getState = store.getState;
-    window.fetchFoods = fetchFoods;
-    window.fetchDrinks = fetchDrinks;
+    // window.dispatch = store.dispatch;
+    // window.getState = store.getState;
+    // window.fetchFoods = fetchFoods;
+    // window.fetchDrinks = fetchDrinks;
     // TESTING
     const root = document.getElementById('root');
 
