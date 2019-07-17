@@ -109,7 +109,7 @@ class DrinkWheel extends React.Component {
                          className="pie-component"
                          data={chartData}
                          width={600}
-                         height={350}
+                         height={300}
                          options={{ maintainAspectRatio: true }}
                          allowSliceExplosion="true"
                          radiusFactor={0.7}

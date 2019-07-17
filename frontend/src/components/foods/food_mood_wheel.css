@@ -37,12 +37,10 @@
     width: 150px;
     height: 30px;
     border-radius: 25px;
-    z-index: 10;
-    float: left;
-    position: absolute;
+    position: relative;
     left: 100px;
-    bottom: 6rem;
     border: none;
+    bottom: 148%;
 }
 
 .result-btn:focus {
@@ -61,4 +59,12 @@ canvas.chartjs-render-monitor {
 
 .doughnut {
     width: 85%;
+    margin-left: 5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.doughnut > * {
+    top: 5rem;
+    position: relative;
 }
