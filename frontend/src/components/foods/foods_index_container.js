@@ -6,6 +6,7 @@ const mapStateToProps = (state) => {
     return {
         foods: Object.values(state.entities.foods)
     };
+    
 };
 
 const mapDispatchToProps = dispatch => {

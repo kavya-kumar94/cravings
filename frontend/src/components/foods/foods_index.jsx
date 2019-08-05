@@ -11,6 +11,7 @@ class FoodsIndex extends React.Component {
 
     componentWillMount() {
         this.props.fetchFoods(this.props.location.search);
+        console.log(this.props.foods);
     }
 
     randomizer() {
@@ -40,7 +41,6 @@ class FoodsIndex extends React.Component {
                     key={food.id}
                     food={food} />
             ));
-
             return (
                 <div className="foods-index-container">
                     
