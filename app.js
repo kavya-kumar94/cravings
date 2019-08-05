@@ -23,12 +23,26 @@ if (process.env.NODE_ENV === 'production') {
     })
 }
 
+var server = app.listen(5000);
+var io = require('socket.io').listen(server);
+
+// var http = require('http').Server(app);
+// var io = require('socket.io')(http, {});
+// const port = process.env.PORT || 5000;
+
+io.on('connection', socket => {
+    console.log('user connected');
+
+    socket.on('chat', ({msg}) =>{
+        console.log(msg);
+    })
+});
+
 // seed(); 
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
 app.use("/api/drinks", drinks)
 
-const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+// app.listen(port, () => console.log(`Listening on port ${port}`));

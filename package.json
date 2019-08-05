@@ -31,6 +31,7 @@
     "query-string": "^6.8.1",
     "react-chartjs-2": "^2.7.6",
     "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0",
     "validator": "^11.1.0",
     "yelp-fusion": "^3.0.0"
   },
