@@ -16,6 +16,8 @@ class LoginForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
 
         this.handleDemoSubmit = this.handleDemoSubmit.bind(this);
+        this.usernameTyper = this.usernameTyper.bind(this);
+        this.passwordTyper = this.passwordTyper.bind(this);
     }
 
     // componentWillReceiveProps(nextProps) {
@@ -44,8 +46,7 @@ class LoginForm extends React.Component {
             .then(this.props.closeModal);
     }
 
-    handleDemoSubmit(e) {
-        e.preventDefault();
+    handleDemoSubmit() {
 
         let demoUser = {
             username: 'guestuser',
@@ -55,6 +56,44 @@ class LoginForm extends React.Component {
         this.props.login(demoUser)
             .then(this.props.closeModal);
     }
+
+    usernameTyper(e) {
+        e.preventDefault();
+        let i = 0;
+        let username = 'guestuser'
+        const speed = 75; /* The speed/duration of the effect in milliseconds */
+        let username_field = document.getElementById("username");
+        username_field.value = "";
+
+        const typeWriter = () => {
+            if (i < username.length) {
+                username_field.value += username.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        };
+
+        typeWriter();
+        setTimeout(this.passwordTyper, 1000);
+        setTimeout(this.handleDemoSubmit, 1800);
+    };
+
+    passwordTyper() {
+        let i = 0;
+        const password = 'demologin'
+        const speed = 75; /* The speed/duration of the effect in milliseconds */
+        let password_field = document.getElementById("password");
+        password_field.value = "";
+
+        const typeWriter = () => {
+            if (i < password.length) {
+                password_field.value += password.charAt(i);
+                i++;
+                setTimeout(typeWriter, speed);
+            }
+        };
+        typeWriter();
+    };
 
     renderErrors() {
         return (
@@ -78,12 +117,14 @@ class LoginForm extends React.Component {
                         <div className="please">Log in</div>
                         <div className="inputs">
                             <input type="text"
+                                id="username"
                                 value={this.state.username}
                                 onChange={this.update('username')}
                                 placeholder="Username"
                             />
                             <br />
                             <input type="password"
+                                id="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 placeholder="Password"
@@ -91,7 +132,7 @@ class LoginForm extends React.Component {
                             <br />
                             <input type="submit" value="Log In" />
                             <br />
-                            <input type="submit" value="Demo Login" onClick={this.handleDemoSubmit} />
+                            <input type="submit" value="Demo Login" onClick={this.usernameTyper} />
                             {this.renderErrors()}
                         </div>
                     </div>
