@@ -13,18 +13,17 @@ class FoodsIndexItem extends React.Component {
                 </div>
 
                 <Link className='food-info' to={`/foods/${food.id}`}>
-                    <div className='food-name-tent'>
+                    <div className='food-name-location'>
                         <div className='food-name'>
                             {food.name} 
                         </div>
-                    </div>
+                    
                     <div className='food-location'>
-                        {food.address},{food.city},{food.state},{food.zipCode}
+                        {food.address}.
+                        <br />
+                        {food.city}, {food.state} {food.zipCode}
                     </div>
-                    <div className='extra-food-info'>
-                        <div className='food-price'>
-                            {food.price}
-                        </div>
+                    
                     </div>
                 </Link>
             </div>
