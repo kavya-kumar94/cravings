@@ -7,7 +7,7 @@
 }
 .foods-ul {
     padding: 40px 40px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -16,27 +16,19 @@
     min-height: 100vh;
 }
 
-.site-additional-info {
-    height: 500px;
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 10px;
-}
 
-.food-list-items {
+.food-list-item {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
     color: white;
     font-weight: bold;
     display: inline-block;
     text-align: center;
-    /* background: rgb(204, 200, 200);
-    opacity: 0.6; */
-    /* box-shadow: 5px 5px 5px 5px rgba(211, 211, 211, 0.7); */
-    width: 220px;
-    height: 200px;
-    min-height: fit-content;
+    box-shadow: -1px 0px 5px 4px rgba(211, 211, 211, 0.7);
+    width: 290px;
+    height: 210px;
     margin: 10px;
+    /* border: 1px solid black; */
+    /* background: rgb(204, 200, 200, 0.6); */
 }
 
 .food-pictures {
@@ -50,64 +42,55 @@
     object-fit: contain;
 }
 
-.pic-slides {
-    object-fit: fill;
-}
 
 .food-info {
     height: 20%;
-    width: 200px;
     display: block;
     font-size: 15px;
     padding: 10px;
     text-decoration: none; 
     margin: auto;
+    background-color: rgb(155, 140, 140);
 }
 
-.food-name-tent {
-        display: flex;
-        justify-content: space-between;
+.food-name-location {
+    display: flex;
+    /* justify-content: space-between; */
 }
   
 .food-name {
-    font-size: 14px;
+    font-size: 16px;
     margin: auto;
     text-align: center;
+    width: 50%;
 }
  
-.fas {
-    color: rgb(66, 152, 247);
-}
     
 .food-location {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: lighter;
     text-align: center;
-}
-
-.extra-food-info {
-    display: flex;
-    justify-content: space-between;        
+    width: 50%;
+    border: 1px dashed black;
 }
 
 .fas {
-    color: rgb(97, 218, 173);
-    }    
-
-.food-price {
-    font-size: 15px;
-    margin: auto;
-    }
+    color: white;
+}
     
+.food-link:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
 .food-info:hover {
-    background-color: rgb(155, 140, 140);
+    background-color: black;
     cursor: pointer;
 }
 
 .food-photo {
-    width: 85%;
-    height: 85%;
-    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .pick-one {
