@@ -76,9 +76,6 @@
     text-align: center;
 }
  
-.fas {
-    color: rgb(66, 152, 247);
-}
 
 .drink-full-address {
     font-size: 12px;
@@ -92,9 +89,6 @@
     justify-content: space-between;        
 }
 
-.fas {
-    color: rgb(97, 218, 173);
-    }    
 
 .drink-price {
     font-size: 14px;
