@@ -30,3 +30,7 @@
     bottom: 0;
     background-color: gray;
 }
+
+.lobby-btn {
+    z-index: 3;
+}

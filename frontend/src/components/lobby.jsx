@@ -1,4 +1,5 @@
 import React from 'react';
+import './lobby.css';
 import { withRouter } from 'react-router-dom';
 import socketIOClient from 'socket.io-client';
 
@@ -16,7 +17,7 @@ class Lobby extends React.Component {
 
     render(){
         return (
-            <div>
+            <div className="lobby-container">
                 <form onSubmit={this.handleSubmit}>
                     <input type="text" placeholder="Enter room id"/>
                     <input type="submit" value="Join Room"/>
