@@ -33,7 +33,6 @@ router.get("/", (req, res) => {
         }
     })
 
-    console.log(newerQuery);
     if(Object.keys(newQuery).length === 0) return res.json({});
     if(Object.keys(newerQuery).length === 0) return res.json({});
     let result = [];
@@ -41,9 +40,13 @@ router.get("/", (req, res) => {
     Object.keys(newQuery).forEach(key => {
         Drink.find({ 
             [key]: true
-        })
-        .then(res => {
-            result = result.concat(res);
+        }).then( (res) => {
+             Object.values(newerQuery).forEach((value) => {
+                 if(value === res.zipCode) {
+                     result = result.concat(res);
+                     console.log(result);
+                 }
+             })
         }).then(() => {
 
             let drinksPojo = {};
