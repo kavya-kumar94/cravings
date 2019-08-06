@@ -38,7 +38,7 @@
 
 .foodform-btn:hover {
     transform: scale(1.1);
-    background-color: aquamarine
+    background-color: #579bea
 }
 
 #food-choosings{
@@ -46,7 +46,7 @@
     flex-direction: row;
     font-family: 'Raleway', sans-serif;
     color: white;
-
+    
 }
 
 .choose-food-moods{
@@ -73,4 +73,5 @@
 
 .foodform-btn-container{
     margin: auto ;
+    font-family: 'Raleway', sans-serif;
 }
