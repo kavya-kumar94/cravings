@@ -42,7 +42,7 @@ class App extends React.Component {
         <Modal />
         <div className="main-body">
             <Switch>
-                <Route path='/drinkwheel' component={DrinkMoodFormContainer} />
+                <Route path='/drinkform' component={DrinkMoodFormContainer} />
                 <Route path='/foodwheel' component={FoodFormContainer} />
                 <Route exact path="/foods" component={FoodsIndexContainer} />
                 <Route exact path="/foods/:foodId" component={FoodShowContainer} />
