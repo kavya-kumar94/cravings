@@ -57,7 +57,7 @@ class NavBar extends React.Component {
                     {this.state.userMenu && (
                         <div className="container">
                             <ul className="dropdown">
-                                <li onClick={() => this.props.history.push('/foodwheel')}>My Saves</li>
+                                <li onClick={() => this.props.history.push('/foodform')}>My Saves</li>
                                 <Link to='/'>
                                     <li onClick={logout}>Logout</li>
                                 </Link>
