@@ -1,18 +1,19 @@
 import React from 'react';
 import './main.css';
 import FoodDrink from '../food_drink'
-import socketIOClient from 'socket.io-client';
 
 
 class MainPage extends React.Component {
 
-    componentDidMount(){
-        var socket = socketIOClient(window.location.origin);
-        debugger
-        socket.on('chat', function (data) {
-            console.log(data);
-            socket.emit('chat', { msg: "hi" });
-        });
+    constructor(props){
+        super(props);
+
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick(e){
+        e.preventDefault();
+        this.props.history.push('/lobby');
     }
 
     render() {
@@ -24,9 +25,7 @@ class MainPage extends React.Component {
                 </div>
             </div>
 
-            {/* <div className="footer">
-                hello
-            </div> */}
+                <button onClick={this.handleClick}>go to lobby</button>
             </>
         );
     }

@@ -14,6 +14,7 @@ import DrinkShowContainer from './drinks/drink_show/drink_show_container';
 import DrinkWheel from './drinks/drink_mood_wheel';
 import FoodFormContainer from './foods/food_form_container';
 import FoodWheel from './foods/food_mood_wheel';
+import Lobby from './lobby';
 
 class App extends React.Component {
     constructor(props) {
@@ -46,12 +47,11 @@ class App extends React.Component {
                 <Route exact path="/foods" component={FoodsIndexContainer} />
                 <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
-                {/* <Route exact path="/test" component={FoodWheel} /> */}
-
                 <Route exact path="/drinks" component={DrinksIndexContainer} />
                 <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
 
                 <Route exact path="/" component={MainPage} />
+                <Route exact path="/lobby" component={Lobby} />
             </Switch>
         </div>
      </div>
