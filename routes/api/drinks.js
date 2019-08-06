@@ -25,6 +25,7 @@ router.get("/", (req, res) => {
 
     let newQuery = {};
     let newerQuery = {};
+
     Object.keys(req.query).forEach(category => {
         if(req.query[category] === true){
             Object.assign(newQuery, {[category]: req.query[category]})
@@ -32,10 +33,62 @@ router.get("/", (req, res) => {
             Object.assign(newerQuery, {[category]: req.query[category]})
         }
     })
-    console.log(newerQuery);
     if (Object.keys(newQuery).length === 0 && Object.keys(newerQuery).length === 0) return res.json({});
     let result = [];
     let filtered = [];
+
+    if(Object.keys(newQuery).length === 0) {
+        Drink.find({})
+        .then(res => {
+            result = result.concat(res);
+        }).then(() => {
+            result.forEach(drink => {
+                let zip = String(drink.zipCode)
+                if (newerQuery["zipCodes"].includes(zip)) {
+                    filtered = filtered.concat(drink)
+                }
+            })
+            let drinksPojo = {};
+            filtered.forEach(drink => {
+                // drinks.forEach(drink => {
+                let drinkPojo = {
+                    id: drink._id,
+                    name: drink.name,
+                    imageUrl: drink.imageUrl,
+                    rating: drink.rating,
+                    lat: drink.lat,
+                    lng: drink.lng,
+                    price: drink.price,
+                    address: drink.address,
+                    city: drink.city,
+                    zipCode: drink.zipCode,
+                    country: drink.country,
+                    state: drink.state,
+                    phone: drink.phone,
+                    caffeine: drink.caffeine,
+                    sweet: drink.sweet,
+                    aromatic: drink.aromatic,
+                    hot: drink.hot,
+                    iced: drink.iced,
+                    healthy: drink.healthy,
+                    sad: drink.sad,
+                    tired: drink.tired,
+                    happy: drink.happy,
+                    angry: drink.angry,
+                    sick: drink.sick,
+                    celebratory: drink.celebratory,
+                    stressed: drink.stressed,
+                    adventurous: drink.adventurous
+                }
+                drinksPojo[drink._id] = drinkPojo;
+                // })
+            })
+            return res.json(drinksPojo);
+
+        })
+            .catch(err =>
+                res.status(404).json({ noDrinkFound: 'No drink locations found' }));
+    } else {
 
     Object.keys(newQuery).forEach(key => {
         Drink.find({ 
@@ -99,6 +152,7 @@ router.get("/", (req, res) => {
 
         })
     // })
+    }
 })
 
 module.exports = router;
