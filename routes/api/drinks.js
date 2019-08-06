@@ -24,18 +24,24 @@ router.get("/", (req, res) => {
 
 
     let newQuery = {};
+    let newerQuery = {};
     Object.keys(req.query).forEach(category => {
         if(req.query[category] === true){
             Object.assign(newQuery, {[category]: req.query[category]})
+        } else if (category === "zipCodes") {
+            Object.assign(newerQuery, {[category]: req.query[category]})
         }
     })
 
-
+    console.log(newerQuery);
     if(Object.keys(newQuery).length === 0) return res.json({});
-
+    if(Object.keys(newerQuery).length === 0) return res.json({});
     let result = [];
+
     Object.keys(newQuery).forEach(key => {
-        Drink.find({ [key]: true })
+        Drink.find({ 
+            [key]: true
+        })
         .then(res => {
             result = result.concat(res);
         }).then(() => {
