@@ -92,45 +92,9 @@ class DrinkForm extends React.Component {
     render() {
         return(
             <div className="drinkform">
-                <h2>Choose your drink locations!</h2>
                 <form className="drink-form" onSubmit={this.query}>
-                    <div className="chinaTown">
-                        <input onClick={this.toggle('chinaTown')} value={!this.state.chinaTown} type="checkbox"/>
-                        <label>Chinatown</label>
-                    </div>
-                    <div className="eastBay">
-                        <input onClick={this.toggle('eastBay')} value={!this.state.eastBay} type="checkbox"/>
-                        <label>East Bay</label>
-                    </div>
-                    <div className="fidi">
-                        <input onClick={this.toggle('fidi')} value={!this.state.fidi} type="checkbox"/>
-                        <label>Financial District</label>
-                    </div>
-                    <div className="mission">
-                        <input onClick={this.toggle('mission')} value={!this.state.mission} type="checkbox"/>
-                        <label>Mission District</label>
-                    </div>
-                    <div className="noeValley">
-                        <input onClick={this.toggle('noeValley')} value={!this.state.noeValley} type="checkbox"/>
-                        <label>Noe Valley</label>
-                    </div>
-                    <div className="nb">
-                        <input onClick={this.toggle('nb')} value={!this.state.nb} type="checkbox"/>
-                        <label>North Beach</label>
-                    </div>
-                    <div className="presidio">
-                        <input onClick={this.toggle('presidio')} value={!this.state.presidio} type="checkbox"/>
-                        <label>Presidio</label>
-                    </div>
-                    <div className="soma">
-                        <input onClick={this.toggle('soma')} value={!this.state.soma} type="checkbox"/>
-                        <label>SOMA</label>
-                    </div>
-                    <div className="sunset">
-                        <input onClick={this.toggle('sunset')} value={!this.state.sunset} type="checkbox"/>
-                        <label>Sunset District</label>
-                    </div>
-
+                    <div className="drink-choosings">
+                    <div className="choose-moods">
                     <h2>Choose your drink mood!</h2>
                         <div className="caffeine">
                             <input onClick={this.toggle('caffeine')} value={!this.state.caffeine} type="checkbox" />
@@ -188,7 +152,53 @@ class DrinkForm extends React.Component {
                         <input onClick={this.toggle('adventurous')} value={!this.state.adventurous} type="checkbox"/>
                         <label>Adventurous</label>
                     </div>
-                    <input type="submit" className="drinkform-btn" value="Find my drink!" />
+                </div>
+
+                    <div className="choose-location">
+
+                        <h2>Choose your drink locations!</h2>
+                        <div className="chinaTown">
+                            <input onClick={this.toggle('chinaTown')} value={!this.state.chinaTown} type="checkbox" />
+                            <label>Chinatown</label>
+                        </div>
+                        <div className="eastBay">
+                            <input onClick={this.toggle('eastBay')} value={!this.state.eastBay} type="checkbox" />
+                            <label>East Bay</label>
+                        </div>
+                        <div className="fidi">
+                            <input onClick={this.toggle('fidi')} value={!this.state.fidi} type="checkbox" />
+                            <label>Financial District</label>
+                        </div>
+                        <div className="mission">
+                            <input onClick={this.toggle('mission')} value={!this.state.mission} type="checkbox" />
+                            <label>Mission District</label>
+                        </div>
+                        <div className="noeValley">
+                            <input onClick={this.toggle('noeValley')} value={!this.state.noeValley} type="checkbox" />
+                            <label>Noe Valley</label>
+                        </div>
+                        <div className="nb">
+                            <input onClick={this.toggle('nb')} value={!this.state.nb} type="checkbox" />
+                            <label>North Beach</label>
+                        </div>
+                        <div className="presidio">
+                            <input onClick={this.toggle('presidio')} value={!this.state.presidio} type="checkbox" />
+                            <label>Presidio</label>
+                        </div>
+                        <div className="soma">
+                            <input onClick={this.toggle('soma')} value={!this.state.soma} type="checkbox" />
+                            <label>SOMA</label>
+                        </div>
+                        <div className="sunset">
+                            <input onClick={this.toggle('sunset')} value={!this.state.sunset} type="checkbox" />
+                            <label>Sunset District</label>
+                        </div>
+                    </div>
+                    </div>
+                    <div className="sub">
+                    <input type="submit" id="drinkform-btn" value="Find my drink!" />
+
+                    </div>
                 </form>
                 </div>
         )
