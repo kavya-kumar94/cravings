@@ -16,24 +16,16 @@
     min-height: 100vh;
 }
 
-.site-additional-info {
-    height: 500px;
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 10px;
-}
 
-.food-list-items {
+.food-list-item {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
     color: white;
     font-weight: bold;
     display: inline-block;
     text-align: center;
     box-shadow: -1px 0px 5px 4px rgba(211, 211, 211, 0.7);
-    width: 230px;
+    width: 290px;
     height: 210px;
-    min-height: fit-content;
     margin: 10px;
     /* border: 1px solid black; */
     /* background: rgb(204, 200, 200, 0.6); */
@@ -50,13 +42,9 @@
     object-fit: contain;
 }
 
-.pic-slides {
-    object-fit: fill;
-}
 
 .food-info {
     height: 20%;
-    width: 200px;
     display: block;
     font-size: 15px;
     padding: 10px;
@@ -67,29 +55,36 @@
 
 .food-name-location {
     display: flex;
-    justify-content: space-between;
-    
+    /* justify-content: space-between; */
 }
   
 .food-name {
-    font-size: 15px;
+    font-size: 16px;
     margin: auto;
     text-align: center;
+    width: 50%;
 }
  
-.fas {
-    color: rgb(66, 152, 247);
-}
     
 .food-location {
-    font-size: 12px;
+    font-size: 13px;
     font-weight: lighter;
     text-align: center;
+    width: 50%;
+    border: 1px solid black;
 }
 
+.fas {
+    color: white;
+}
     
+.food-link:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
 .food-info:hover {
-    background-color: rgb(155, 140, 140);
+    background-color: black;
     cursor: pointer;
 }
 

@@ -27,8 +27,8 @@ class FoodsIndex extends React.Component {
 
     render() {
 
-
         if (this.props.loading) {
+            console.log('loading');
             return <LoadingIcon />
         // } else if (Object.keys(this.props.foods).length === 0) {
         //     return (

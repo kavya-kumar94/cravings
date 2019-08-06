@@ -27,11 +27,15 @@ export const receiveFoods = foods => ({
     foods
 });
 
-export const fetchFoods = (query) => dispatch => (
-    FoodApiUtil.fetchFoods(query)
+export const fetchFoods = (query) => dispatch => {
+
+    // loading
+    dispatch(startLoadingAllFoods());
+
+    return FoodApiUtil.fetchFoods(query)
         .then(foods => dispatch(receiveFoods(foods)))
         .catch(err => console.log(err))
-);
+};
 
 export const fetchFood = (id) => dispatch => (
     FoodApiUtil.fetchFood(id)
