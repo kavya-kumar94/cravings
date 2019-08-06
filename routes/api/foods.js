@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
 
     // console.log(req.query)
     req.query.zipCodes = req.query.zipCodes[0].split(",")
+    // console.log(req.query.zipCodes)
     // console.log(req.query)
     
     req.query.sweet = JSON.parse(req.query.sweet);
@@ -43,6 +44,7 @@ router.get("/", (req, res) => {
         Food.find({ [key]: true })
             .then(res => {
                 result = result.concat(res);
+            console.log(result)
             }).then(() => {
 
                 let foodsPojo = {};
@@ -79,6 +81,7 @@ router.get("/", (req, res) => {
                     }
                     foodsPojo[food._id] = foodPojo;
                 })
+                // console.log(foodsPojo)
                 return res.json(foodsPojo);
 
             })
