@@ -17,8 +17,8 @@ router.get('/:roomId',
 router.post("/",
     (req, res) => {
         const room = new Room({
-            name: req.body.name,
-            users: [req.body.hostname]
+            name: req.body.roomName,
+            users: [req.body.userName]
         });
         room.save().then(room => {
             res.json(room);
@@ -43,7 +43,7 @@ router.delete("/:roomId",
 router.patch('/:roomId',
     (req, res) => {
         let roomId = { _id: mongoose.Types.ObjectId(req.params.roomId) }
-        let updateParams = { $push: { users: req.body.username } }
+        let updateParams = { $push: { users: req.body.userName } }
         Room.findOneAndUpdate(roomId, updateParams, { new: true })
             .then(updatedRoom => {
                 res.json(updatedRoom);
