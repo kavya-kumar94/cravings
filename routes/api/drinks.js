@@ -4,6 +4,9 @@ const Drink = require('../../models/Drink');
 
 router.get("/", (req, res) => {
     
+    req.query.zipCodes = req.query.zipCodes[0].split(","); 
+
+
     req.query.caffeine = JSON.parse(req.query.caffeine);
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.aromatic = JSON.parse(req.query.aromatic);

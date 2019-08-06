@@ -14,19 +14,64 @@ class DrinkForm extends React.Component {
             nb: false,
             presidio: false,
             soma: false,
-            sunset: false
-        }
+            sunset: false,
+            caffeine: true,
+            sweet: true,
+            aromatic: true,
+            hot: true,
+            iced: true,
+            healthy: true,
+            sad: true,
+            tired: true,
+            happy: true,
+            angry: true,
+            sick: true,
+            celebratory: true,
+            stressed: true,
+            adventurous: true,
+            zipCodes: []
+        };
+        this.regions = {
+            chinaTown: [94108],
+            eastBay: [94130, 94501, 94618],
+            fidi: [94104, 94105],
+            mission: [94107, 94110,94117, 94124],
+            noeValley: [94114, 94127],
+            nb: [94109, 94133],
+            presidio: [94115, 94118],
+            soma: [94102, 94103],
+            sunset: [94122, 94132, 94116]
+        };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.toggle = this.toggle.bind(this);
         this.query = this.query.bind(this);
+        this.getRegions = this.getRegions.bind(this);
     }
 
     query(e) {
         e.preventDefault();
-        // console.log(this.state);
+        console.log(this.state);
+        Object.keys(this.state).forEach(key => {
+            if (this.state[key] === true) {
+                this.setState({
+                    zipCodes: this.state.zipCodes.push(this.regions[key])
+                })
+            }
+        })
         this.props.history.push({
             pathname: '/drinks',
-            search: `?chinaTown=${this.state.chinaTown}&eastBay=${this.state.eastBay}&fidi=${this.state.fidi}&mission=${this.state.mission}&noeValley=${this.state.noeValley}&nb=${this.state.nb}&presidio=${this.state.presidio}&soma=${this.state.soma}&sunset=${this.state.sunset}`
+            search: `?zipCodes[]=${this.state.zipCodes}`
+            // `?chinaTown=${this.state.chinaTown}&eastBay=${this.state.eastBay}&fidi=${this.state.fidi}&mission=${this.state.mission}&noeValley=${this.state.noeValley}&nb=${this.state.nb}&presidio=${this.state.presidio}&soma=${this.state.soma}&sunset=${this.state.sunset}`
+        })
+    }
+
+    getRegions() {
+        Object.keys(this.state).forEach(key => {
+            if (this.state[key] === true) {
+                this.setState({
+                    zipCodes: this.state.zipCodes.concat(this.regions[key])
+                })
+            }
         })
     }
 
@@ -85,7 +130,50 @@ class DrinkForm extends React.Component {
                         <input onClick={this.toggle('sunset')} value={!this.state.sunset} type="checkbox"/>
                         <label>Sunset District</label>
                     </div>
-                    {/* <div className="angry">
+                    <input type="submit" className="drinkform-btn" value="Find my drink!" />
+                </form>
+
+
+
+                    <h2>Choose your drink mood!</h2>
+                    <form className="drinks-form" onSubmit={this.query}>
+                        <div className="caffeine">
+                            <input onClick={this.toggle('caffeine')} value={!this.state.caffeine} type="checkbox" />
+                            <label>Caffeine</label>
+                        </div>
+                        <div className="sweet">
+                            <input onClick={this.toggle('sweet')} value={!this.state.sweet} type="checkbox" />
+                            <label>Sweet</label>
+                        </div>
+                        <div className="aromatic">
+                            <input onClick={this.toggle('aromatic')} value={!this.state.aromatic} type="checkbox" />
+                            <label>Aromatic</label>
+                        </div>
+                        <div className="hot">
+                            <input onClick={this.toggle('hot')} value={!this.state.hot} type="checkbox" />
+                            <label>Hot</label>
+                        </div>
+                        <div className="iced">
+                            <input onClick={this.toggle('iced')} value={!this.state.iced} type="checkbox" />
+                            <label>Iced</label>
+                        </div>
+                        <div className="healthy">
+                            <input onClick={this.toggle('healthy')} value={!this.state.healthy} type="checkbox" />
+                            <label>Healthy</label>
+                        </div>
+                        <div className="sad">
+                            <input onClick={this.toggle('sad')} value={!this.state.sad} type="checkbox" />
+                            <label>Sad</label>
+                        </div>
+                        <div className="tired">
+                            <input onClick={this.toggle('tired')} value={!this.state.tired} type="checkbox" />
+                            <label>Tired</label>
+                        </div>
+                        <div className="happy">
+                            <input onClick={this.toggle('happy')} value={!this.state.happy} type="checkbox" />
+                            <label>Happy</label>
+                        </div>
+                    <div className="angry">
                         <input onClick={this.toggle('angry')} value={!this.state.angry} type="checkbox"/>
                         <label>Angry</label>
                     </div>
@@ -104,8 +192,7 @@ class DrinkForm extends React.Component {
                     <div className="adventurous">
                         <input onClick={this.toggle('adventurous')} value={!this.state.adventurous} type="checkbox"/>
                         <label>Adventurous</label>
-                    </div> */}
-                    <input type="submit" className="drinkform-btn" value="Find my drink!"/>
+                    </div>
                 </form>
             </div>
         )
