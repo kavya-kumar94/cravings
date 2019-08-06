@@ -30,7 +30,7 @@ class FoodsIndex extends React.Component {
             return <LoadingIcon />
         } else if (Object.keys(this.props.foods).length === 0) {
             return (
-                <div className='foods-index-container'>
+                <div className='no-results-container'>
                     <div className='no-results-for-food'>
                         <div className='no-results-text'>We were unable to find foods in your area that meet your cravings.</div>
                         <br />

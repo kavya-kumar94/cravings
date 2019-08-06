@@ -116,8 +116,8 @@
 }
 
 .no-results-for-food{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     width: 100%;
     align-items: center;
 }
