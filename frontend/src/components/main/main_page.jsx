@@ -8,7 +8,8 @@ class MainPage extends React.Component {
 
     componentDidMount(){
         var socket = socketIOClient(window.location.origin);
-        socket.on('news', function (data) {
+        debugger
+        socket.on('chat', function (data) {
             console.log(data);
             socket.emit('chat', { msg: "hi" });
         });
