@@ -1,13 +1,12 @@
 import { connect } from 'react-redux';
-import Lobby from './lobby';
+import WaitingRoom from './waiting_room';
 import { createRoom, updateRoom, fetchRoom, deleteRoom } from '../../actions/room_actions';
 
-// const mapStateToProps = (state) => {
-//     return {
-//         currentUser: state.session.user,
-//         gameRooms: Object.values(state.entities.gameRooms)
-//     };
-// }
+const mapStateToProps = (state) => {
+    return {
+        room: state.room
+    };
+}
 
 const mapDispatchToProps = (dispatch) => {
     return ({
@@ -18,6 +17,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(
-    null,
+    mapStateToProps,
     mapDispatchToProps
-)(Lobby);
+)(WaitingRoom);

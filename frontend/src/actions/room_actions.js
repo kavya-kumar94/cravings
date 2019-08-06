@@ -2,14 +2,14 @@ import * as APIUtil from '../util/multi_api_util';
 export const RECEIVE_ROOM = 'RECEIVE_ROOM';
 export const REMOVE_ROOM = 'REMOVE_ROOM';
 
-const receiveRoom = room => ({
+const receiveRoom = payload => ({
     type: RECEIVE_ROOM,
-    room
+    room: payload.data
 })
 
-const removeRoom = (room) => ({
+const removeRoom = (payload) => ({
     type: REMOVE_ROOM,
-    room
+    room: payload.data
 })
 
 export const createRoom = room => dispatch => (

@@ -1,7 +1,6 @@
 import React from 'react';
 import './lobby.css';
 import { withRouter } from 'react-router-dom';
-import socketIOClient from 'socket.io-client';
 
 class Lobby extends React.Component {
     constructor(props) {
@@ -17,17 +16,15 @@ class Lobby extends React.Component {
 
     handleJoin(e){
         e.preventDefault();
-        var socket = socketIOClient(window.location.origin);
-        socket.emit('chat', { msg: "im in the lobby" });
+        this.props.updateRoom(this.state);
     }
 
     handleCreate(e){
         e.preventDefault();
-        this.props.createRoom()
-            .then(this.props.closeModal);
-
-        var socket = socketIOClient(window.location.origin);
-        socket.emit('chat', { msg: "im in the lobby" });
+        debugger
+        this.props.createRoom(this.state)
+            .then(data => this.props.history.push(`/lobby/${data.room._id}`));
+        
     }
 
     update(field) {

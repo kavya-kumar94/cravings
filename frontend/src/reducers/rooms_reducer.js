@@ -7,11 +7,12 @@ const roomsReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
     switch (action.type) {
         case RECEIVE_ROOM:
-            return Object.assign({}, { [action.room.id]: action.room} );
+            // return Object.assign({}, { [action.room.id]: action.room} );
+            return action.room;
         case REMOVE_ROOM:
-            let newState = Object.assign({}, oldState);
-            delete newState[action.room.id]
-            return newState;
+            // let newState = Object.assign({}, oldState);
+            // delete newState[action.room.id]
+            return null;
         default:
             return oldState;
     }
