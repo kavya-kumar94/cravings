@@ -7,7 +7,7 @@ export const fetchFoods = (query) => {
 };
 
 export const fetchFood = (id) => {
-    debugger
+    // debugger
     return axios.get(`/api/foods/${id}`).then(res => {
         console.log(res);
         console.log('success')})

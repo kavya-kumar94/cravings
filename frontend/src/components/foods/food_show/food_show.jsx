@@ -8,7 +8,7 @@ import '../../loading/loading.css';
 class FoodShow extends React.Component{
 
 
-    componentDidMount(){
+    componentWillMount(){
         this.props.fetchFood(this.props.match.params.foodId);
     }
 

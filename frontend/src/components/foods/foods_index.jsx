@@ -32,7 +32,8 @@ class FoodsIndex extends React.Component {
             return (
                 <div className='foods-index-container'>
                     <div className='no-results-for-food'>
-                        <h3>We were unable to find foods in your area that meet your cravings.</h3>
+                        <div className='no-results-text'>We were unable to find foods in your area that meet your cravings.</div>
+                        <br />
                         <button className='spin-again' onClick={() => this.props.history.push('/foodwheel')}>Please try again.</button>
                     </div>
                 </div>
