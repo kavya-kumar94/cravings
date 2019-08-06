@@ -5,16 +5,12 @@ const Room = require('../../models/Room');
 router.post("/",
     (req, res) => {
         const room = new Room({
-            player1Id: mongoose.Types.ObjectId(req.body.playerId),
+            name: req.body.name,
+            users: [req.body.hostname]
         });
-        newMultiplayerGameRoom.save().then(multiplayerGameRoom => {
-            // let gameRoomPojo = {
-            //     id: multiplayerGameRoom.id,
-            //     player1Id: multiplayerGameRoom.player1Id,
-            //     player2Id: multiplayerGameRoom.player2Id
-            // };
-            res.json(gameRoomPojo(multiplayerGameRoom));
+        room.save().then(room => {
+            res.json(room);
         })
-            .catch(err => res.status(400).json({ parameters: 'Invalid multiplayerGameRoom parameters' }));
+        .catch(err => res.status(400).json('Invalid room parameters'));
     }
 );
