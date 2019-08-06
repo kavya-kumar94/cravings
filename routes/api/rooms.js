@@ -42,7 +42,7 @@ router.delete("/:roomId",
 router.patch('/:roomId',
     (req, res) => {
         let roomId = { _id: mongoose.Types.ObjectId(req.params.roomId) }
-        let updateParams = { player2Id: mongoose.Types.ObjectId(req.body.playerId) }
+        let updateParams = { $push: { users: req.body.username } }
         Room.findOneAndUpdate(roomId, updateParams, { new: true })
             .then(updatedRoom => {
                 res.json(updatedRoom);
