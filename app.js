@@ -27,7 +27,6 @@ if (process.env.NODE_ENV === 'production') {
 
 app.use("/api/users", users)
 app.use("/api/foods", foods)
-app.use("api/foods/:foodId", foods)
 app.use("/api/drinks", drinks)
 
 const port = process.env.PORT || 5000;
