@@ -4,8 +4,11 @@ import FoodsIndex from './foods_index';
 
 const mapStateToProps = (state) => {
     return {
-        foods: Object.values(state.entities.foods)
+        foods: Object.values(state.entities.foods),
+        //loading
+        loading: state.ui.loading.indexLoading
     };
+    
 };
 
 const mapDispatchToProps = dispatch => {
