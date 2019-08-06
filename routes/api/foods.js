@@ -2,16 +2,15 @@ const express = require("express");
 const router = express.Router();
 const Food = require('../../models/Food');
 
-// console.log(req.query)
+
 router.get("/", (req, res) => {
-
-    // console.log('in foods router')
-
-    // console.log(req.query)
-    req.query.zipCodes = req.query.zipCodes[0].split(",")
     // console.log(req.query.zipCodes)
-    // console.log(req.query)
-    
+    if(req.query.zipCodes[0] !== ''){
+        req.query.zipCodes = req.query.zipCodes[0].split(",")
+    } else {
+        req.query.zipCodes = []
+    }
+    // console.log(req.query.zipCodes)
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.spicy = JSON.parse(req.query.spicy);
     req.query.salty = JSON.parse(req.query.salty);
@@ -39,27 +38,19 @@ router.get("/", (req, res) => {
         }
     })
 
-    if (Object.keys(newQuery).length === 0) return res.json({});
+    // console.log('newQuery')
+    // console.log(newQuery)
 
-    // if (Object.keys(newQuery).length === 0){
-    //     Food.find({})
-    //         .then(res => {
-    //             result = result.concat(res)
-    //         })
-    // };
+    if (Object.keys(newQuery).length === 0 && Object.keys(newerQuery).length === 0) return res.json({});
 
-    
     let result = [];
     let filtered = [];
-    Object.keys(newQuery).forEach(key => {
-        Food.find({ [key]: true })
-            .then(res => {
-                result = result.concat(res);    
-            }).then(() => {
 
-                if(newerQuery["zipCodes"].length === 0){
-                    filtered = result
-                }
+    if (Object.keys(newQuery).length === 0){
+        Food.find({})
+            .then(res => {
+                result = result.concat(res);
+            }).then(() => {
 
                 result.forEach(food => {
                     let zip = String(food.zipCode)
@@ -109,7 +100,67 @@ router.get("/", (req, res) => {
             })
             .catch(err =>
                 res.status(404).json({ noFoodFound: 'No food locations found' }));
-    })
+    } else {
+
+    
+        Object.keys(newQuery).forEach(key => {
+            Food.find({ [key]: true })
+                .then(res => {
+                    result = result.concat(res);    
+                }).then(() => {
+
+                    if(newerQuery["zipCodes"].length === 0){
+                        filtered = result.slice()
+                    } else {
+                        result.forEach(food => {
+                            let zip = String(food.zipCode)
+                            if (newerQuery["zipCodes"].includes(zip)) {
+                                filtered = filtered.concat(food)
+                            }
+                        })
+                    }
+
+                    let foodsPojo = {};
+                    filtered.forEach(food => {
+                        let foodPojo = {
+                            id: food._id,
+                            name: food.name,
+                            imageUrl: food.imageUrl,
+                            rating: food.rating,
+                            lat: food.lat,
+                            lng: food.lng,
+                            price: food.price,
+                            address: food.address,
+                            city: food.city,
+                            zipCode: food.zipCode,
+                            country: food.country,
+                            state: food.state,
+                            phone: food.phone,
+                            sweet: food.sweet,
+                            spicy: food.spicy,
+                            salty: food.salty,
+                            savory: food.savory,
+                            hot: food.hot,
+                            cold: food.cold,
+                            healthy: food.healthy,
+                            junk: food.junk,
+                            sad: food.sad,
+                            happy: food.happy,
+                            hangry: food.hangry,
+                            sick: food.sick,
+                            celebratory: food.celebratory,
+                            stressed: food.stressed,
+                            adventurous: food.adventurous
+                        }
+                        foodsPojo[food._id] = foodPojo;
+                    })
+                    return res.json(foodsPojo);
+
+                })
+                .catch(err =>
+                    res.status(404).json({ noFoodFound: 'No food locations found' }));
+        })
+    }
 })
 
 module.exports = router;
