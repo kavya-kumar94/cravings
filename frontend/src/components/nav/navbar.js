@@ -1,6 +1,7 @@
 import React from 'react';
 import './navbar.css';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
+
 
 class NavBar extends React.Component {
 
@@ -57,7 +58,9 @@ class NavBar extends React.Component {
                         <div className="container">
                             <ul className="dropdown">
                                 <li onClick={() => this.props.history.push('/foodwheel')}>My Saves</li>
-                                <li onClick={logout}>Logout</li>
+                                <Link to='/'>
+                                    <li onClick={logout}>Logout</li>
+                                </Link>
                             </ul>
                         </div>
                     )}
