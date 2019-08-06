@@ -8,6 +8,8 @@ router.get("/", (req, res) => {
     // console.log('in foods router')
 
     // console.log(req.query)
+    req.query.zipCodes = req.query.zipCodes[0].split(",")
+    // console.log(req.query)
     
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.spicy = JSON.parse(req.query.spicy);

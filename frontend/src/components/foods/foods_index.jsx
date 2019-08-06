@@ -10,6 +10,7 @@ class FoodsIndex extends React.Component {
     }
 
     componentWillMount() {
+        // console.log(this.props.location.search)
         this.props.fetchFoods(this.props.location.search);
     }
 
