@@ -32,9 +32,8 @@ router.get("/", (req, res) => {
             Object.assign(newerQuery, {[category]: req.query[category]})
         }
     })
-
-    if(Object.keys(newQuery).length === 0) return res.json({});
-    if(Object.keys(newerQuery).length === 0) return res.json({});
+    console.log(newerQuery);
+    if (Object.keys(newQuery).length === 0 && Object.keys(newerQuery).length === 0) return res.json({});
     let result = [];
     let filtered = [];
 
@@ -44,13 +43,17 @@ router.get("/", (req, res) => {
         }).then( (res) => {
             result = result.concat(res);
         }).then(() => {
-
-            result.forEach(drink => {
-                let zip = String(drink.zipCode)
-                if (newerQuery["zipCodes"].includes(zip)) {
-                    filtered = filtered.concat(drink)
-                }
-            })
+            if (newerQuery.zipCodes.length < 2) {
+                filtered = result;
+            } else {
+                result.forEach(drink => {
+                    let zip = String(drink.zipCode)
+                    if (newerQuery["zipCodes"].includes(zip)) {
+                        filtered = filtered.concat(drink)
+                    }
+                })
+            }
+                console.log(filtered);
 
             let drinksPojo = {};
             filtered.forEach(drink => {
