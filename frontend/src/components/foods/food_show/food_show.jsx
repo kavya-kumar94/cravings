@@ -15,10 +15,11 @@ class FoodShow extends React.Component{
     render(){
         
         const { food } = this.props;
+        console.log(this.props.food);
         if (food === undefined) return null;
-        if (this.props.loading) {
-            return <LoadingIcon />
-        }
+        // if (this.props.loading) {
+        //     return <LoadingIcon />
+        // }
         // if (this.props.loading) {
         //     console.log('detail loading');
         //     return <LoadingIcon />
