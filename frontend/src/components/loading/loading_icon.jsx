@@ -1,8 +1,22 @@
 import React from 'react';
+import '../loading/loading.css';
 
 const LoadingIcon = () => (
-    <div class="loader"> Loading...
+    <div className='loading-page'>
+        <div className="la-pacman la-3x">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        
+        <br />
+        <div className='loading-text'> en route </div>
     </div>
+   
+    
 );
 
 export default LoadingIcon;
