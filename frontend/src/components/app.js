@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute } from '../util/route_util';
+// import { AuthRoute } from '../util/route_util';
 import { withRouter, Switch, Route } from 'react-router-dom';
 import NavBarContainer from './nav/navbar_container';
 import Modal from '../components/modal/modal';
@@ -14,11 +14,12 @@ import DrinkShowContainer from './drinks/drink_show/drink_show_container';
 import DrinkWheel from './drinks/drink_mood_wheel';
 import FoodFormContainer from './foods/food_form_container';
 import FoodWheel from './foods/food_mood_wheel';
+import DrinkMoodFormContainer from './drinks/drink_mood_form_container';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
     let classy = ""
@@ -41,12 +42,12 @@ class App extends React.Component {
         <Modal />
         <div className="main-body">
             <Switch>
-                <Route path='/drinkwheel' component={DrinkWheel} />
-                <Route path='/foodwheel' component={FoodWheel} />
+                <Route path='/drinkwheel' component={DrinkMoodFormContainer} />
+                <Route path='/foodwheel' component={FoodFormContainer} />
                 <Route exact path="/foods" component={FoodsIndexContainer} />
                 <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
-                {/* <Route exact path="/test" component={FoodWheel} /> */}
+            
 
                 <Route exact path="/drinks" component={DrinksIndexContainer} />
                 <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />

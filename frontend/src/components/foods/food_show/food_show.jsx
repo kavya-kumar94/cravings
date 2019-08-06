@@ -36,6 +36,7 @@ class FoodShow extends React.Component{
                         </div>
                         <img src={this.props.food.imageUrl} className="food-photo" />
                     </div>
+                    <img src={this.props.food.imageUrl} className="food-photo" alt=""/>
                 </div>
             )
 
