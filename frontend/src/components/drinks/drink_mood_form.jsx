@@ -15,20 +15,20 @@ class DrinkForm extends React.Component {
             presidio: false,
             soma: false,
             sunset: false,
-            caffeine: true,
-            sweet: true,
-            aromatic: true,
-            hot: true,
-            iced: true,
-            healthy: true,
-            sad: true,
-            tired: true,
-            happy: true,
-            angry: true,
-            sick: true,
-            celebratory: true,
-            stressed: true,
-            adventurous: true,
+            caffeine: false,
+            sweet: false,
+            aromatic: false,
+            hot: false,
+            iced: false,
+            healthy: false,
+            sad: false,
+            tired: false,
+            happy: false,
+            angry: false,
+            sick: false,
+            celebratory: false,
+            stressed: false,
+            adventurous: false,
             zipCodes: []
         };
         this.regions = {
@@ -52,7 +52,7 @@ class DrinkForm extends React.Component {
         e.preventDefault();
         console.log(this.state);
         Object.keys(this.state).forEach(key => {
-            if (this.state[key] === true) {
+            if (this.state[key] === true && Object.keys(this.regions).includes(key)) {
                 this.setState({
                     zipCodes: this.state.zipCodes.push(this.regions[key])
                 })
@@ -60,7 +60,7 @@ class DrinkForm extends React.Component {
         })
         this.props.history.push({
             pathname: '/drinks',
-            search: `?zipCodes[]=${this.state.zipCodes}`
+            search: `?zipCodes[]=${this.state.zipCodes}&caffeine=${this.state.caffeine}&sweet=${this.state.sweet}&aromatic=${this.state.aromatic}&hot=${this.state.hot}&iced=${this.state.iced}&healthy=${this.state.healthy}&sad=${this.state.sad}&tired=${this.state.tired}&happy=${this.state.happy}&angry=${this.state.angry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
             // `?chinaTown=${this.state.chinaTown}&eastBay=${this.state.eastBay}&fidi=${this.state.fidi}&mission=${this.state.mission}&noeValley=${this.state.noeValley}&nb=${this.state.nb}&presidio=${this.state.presidio}&soma=${this.state.soma}&sunset=${this.state.sunset}`
         })
     }
@@ -130,13 +130,8 @@ class DrinkForm extends React.Component {
                         <input onClick={this.toggle('sunset')} value={!this.state.sunset} type="checkbox"/>
                         <label>Sunset District</label>
                     </div>
-                    <input type="submit" className="drinkform-btn" value="Find my drink!" />
-                </form>
-
-
 
                     <h2>Choose your drink mood!</h2>
-                    <form className="drinks-form" onSubmit={this.query}>
                         <div className="caffeine">
                             <input onClick={this.toggle('caffeine')} value={!this.state.caffeine} type="checkbox" />
                             <label>Caffeine</label>
@@ -193,8 +188,9 @@ class DrinkForm extends React.Component {
                         <input onClick={this.toggle('adventurous')} value={!this.state.adventurous} type="checkbox"/>
                         <label>Adventurous</label>
                     </div>
+                    <input type="submit" className="drinkform-btn" value="Find my drink!" />
                 </form>
-            </div>
+                </div>
         )
     }
 
