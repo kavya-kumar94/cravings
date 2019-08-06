@@ -16,12 +16,12 @@ class Lobby extends React.Component {
 
     handleJoin(e){
         e.preventDefault();
-        this.props.updateRoom(this.state);
+        this.props.updateRoom(this.state)
+            .then(data => this.props.history.push(`/lobby/${data.room._id}`));
     }
 
     handleCreate(e){
         e.preventDefault();
-        debugger
         this.props.createRoom(this.state)
             .then(data => this.props.history.push(`/lobby/${data.room._id}`));
         

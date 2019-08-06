@@ -9,6 +9,8 @@ class WaitingRoom extends React.Component {
     }
 
     componentDidMount(){
+        debugger
+        this.props.fetchRoom(this.props.match.params.roomId);
         // var socket = socketIOClient(window.location.origin);
         // socket.emit('chat', { msg: "im in the waiting room" });
     }
@@ -16,7 +18,10 @@ class WaitingRoom extends React.Component {
     render(){
         debugger
         return(
-            <div>this is the waiting room: {this.props.room.name}</div>
+            <div>
+                <div>this is the waiting room: {this.props.room.name}</div>
+                <div>people waiting: {this.props.room.users}</div>
+            </div>
         )
     }
 

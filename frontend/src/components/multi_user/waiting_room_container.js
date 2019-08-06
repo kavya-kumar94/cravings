@@ -12,7 +12,8 @@ const mapDispatchToProps = (dispatch) => {
     return ({
         createRoom: (room) => dispatch(createRoom(room)),
         updateRoom: (room) => dispatch(updateRoom(room)),
-        deleteRoom: (room) => dispatch(deleteRoom(room))
+        deleteRoom: (room) => dispatch(deleteRoom(room)),
+        fetchRoom: (roomId) => dispatch(fetchRoom(roomId))
     });
 }
 

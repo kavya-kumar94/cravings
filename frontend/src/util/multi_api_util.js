@@ -9,9 +9,9 @@ export const deleteRoom = (room) => {
 };
 
 export const updateRoom = room => {
-    return axios.patch(`/api/rooms/${room.id}`, room);
+    return axios.patch(`/api/rooms/${room.roomName}`, room);
 };
 
 export const fetchRoom = (roomId) => {
-    return axios.post(`/api/rooms/${roomId}`);
+    return axios.get(`/api/rooms/${roomId}`);
 };

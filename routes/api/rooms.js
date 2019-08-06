@@ -40,11 +40,11 @@ router.delete("/:roomId",
             }).catch(err => res.status(404).json('Room does not exist'))
 });
 
-router.patch('/:roomId',
+router.patch('/:roomName',
     (req, res) => {
-        let roomId = { _id: mongoose.Types.ObjectId(req.params.roomId) }
+        let room = { name: req.params.roomName }
         let updateParams = { $push: { users: req.body.userName } }
-        Room.findOneAndUpdate(roomId, updateParams, { new: true })
+        Room.findOneAndUpdate(room, updateParams, { new: true })
             .then(updatedRoom => {
                 res.json(updatedRoom);
             })
