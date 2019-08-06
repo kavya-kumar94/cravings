@@ -17,9 +17,9 @@ import FoodWheel from './foods/food_mood_wheel';
 import DrinkMoodFormContainer from './drinks/drink_mood_form_container';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+    // constructor(props) {
+    //     super(props);
+    // }
 
     render() {
     let classy = ""
@@ -47,7 +47,7 @@ class App extends React.Component {
                 <Route exact path="/foods" component={FoodsIndexContainer} />
                 <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
-                {/* <Route exact path="/test" component={FoodWheel} /> */}
+            
 
                 <Route exact path="/drinks" component={DrinksIndexContainer} />
                 <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />

@@ -1,7 +1,10 @@
 .food-form {
+    display: flex;
+    flex-direction: column;
     padding-left: 200px;
     padding-top: 40px;
     font-size: 20px;
+    margin-top: 40px;
 }
 
 .foodform h2 {
@@ -10,6 +13,10 @@
 
 }
 
+.foodform {
+    display: flex;
+    flex-direction: row;
+}
 .food-form input {
     margin: 10px;
 }
@@ -24,9 +31,27 @@
     color: black;
     margin-top: 20px;
     transition: all .2s ease-in-out;
+    width: min-content;
 }
 
 .foodform-btn:hover {
     transform: scale(1.1);
     background-color: aquamarine
+}
+
+#food-choosings{
+    display: flex;
+    flex-direction: row;
+}
+
+.choose-food-moods{
+    margin-right: 20%;
+}
+
+.choose-locations{
+    margin-left: 20%;
+}
+
+.foodform-btn-container{
+    margin: auto ;
 }
