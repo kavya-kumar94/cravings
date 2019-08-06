@@ -30,25 +30,46 @@ router.get("/", (req, res) => {
 
 
     let newQuery = {};
+    let newerQuery = {};
     Object.keys(req.query).forEach(category => {
         if (req.query[category] === true) {
             Object.assign(newQuery, { [category]: req.query[category] })
+        } else if(category === "zipCodes") {
+            Object.assign(newerQuery, {[category]: req.query[category]})
         }
     })
 
+    // newerQuery["zipCodes"].forEach(zip => {
+    //     zip = Number(zip)
+    // })
 
+    // console.log(newQuery)
+    // console.log(newerQuery["zipCodes"])
+    // console.log(newerQuery["zipCodes"][0])
+    // console.log(typeof newerQuery["zipCodes"][0])
     if (Object.keys(newQuery).length === 0) return res.json({});
 
     let result = [];
+    let filtered = [];
     Object.keys(newQuery).forEach(key => {
         Food.find({ [key]: true })
             .then(res => {
-                result = result.concat(res);
-            console.log(result)
+                // let i = res[0].zipCode
+                // console.log(typeof i)
+                result = result.concat(res);    
             }).then(() => {
 
-                let foodsPojo = {};
                 result.forEach(food => {
+                    let zip = String(food.zipCode)
+                    if (newerQuery["zipCodes"].includes(zip)) {
+                        filtered = filtered.concat(food)
+                    }
+                })
+
+                // console.log(filtered)
+
+                let foodsPojo = {};
+                filtered.forEach(food => {
                     let foodPojo = {
                         id: food._id,
                         name: food.name,
