@@ -7,6 +7,7 @@ const db = require("./config/keys").mongoURI
 const users = require("./routes/api/users");
 const foods = require("./routes/api/foods");
 const drinks = require("./routes/api/drinks");
+const rooms = require("./routes/api/rooms");
 const bodyParser = require('body-parser');
 
 mongoose
@@ -14,6 +15,9 @@ mongoose
     .then(() => console.log("Connected to mongoDB"))
     .catch(err => console.log(err));
 
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json());
 
 if (process.env.NODE_ENV === 'production') {
@@ -25,10 +29,6 @@ if (process.env.NODE_ENV === 'production') {
 
 var server = app.listen(5000);
 var io = require('socket.io').listen(server);
-
-// var http = require('http').Server(app);
-// var io = require('socket.io')(http, {});
-// const port = process.env.PORT || 5000;
 
 io.on('connection', socket => {
     console.log('user connected');
@@ -48,6 +48,4 @@ io.on('connection', socket => {
 app.use("/api/users", users)
 app.use("/api/foods", foods)
 app.use("/api/drinks", drinks)
-
-
-// app.listen(port, () => console.log(`Listening on port ${port}`));
+app.use("/api/rooms", rooms)
