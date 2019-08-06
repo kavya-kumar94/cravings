@@ -9,7 +9,7 @@ class DrinksIndexItem extends React.Component {
         return (
             <div className="drinks-index-item">
                 <div className="drink-picture">
-                    <img src={drink.imageUrl} className="drink-photo" />
+                    <img src={drink.imageUrl} className="drink-photo" alt="" />
                 </div>
 
                 <Link className='drink-info' to={`/drinks/${drink.id}`}>
