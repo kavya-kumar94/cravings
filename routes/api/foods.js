@@ -4,13 +4,11 @@ const Food = require('../../models/Food');
 
 
 router.get("/", (req, res) => {
-    // console.log(req.query.zipCodes)
     if(req.query.zipCodes[0] !== ''){
         req.query.zipCodes = req.query.zipCodes[0].split(",")
     } else {
         req.query.zipCodes = []
     }
-    // console.log(req.query.zipCodes)
     req.query.sweet = JSON.parse(req.query.sweet);
     req.query.spicy = JSON.parse(req.query.spicy);
     req.query.salty = JSON.parse(req.query.salty);
@@ -38,13 +36,13 @@ router.get("/", (req, res) => {
         }
     })
 
-    // console.log('newQuery')
-    // console.log(newQuery)
-
-    if (Object.keys(newQuery).length === 0 && Object.keys(newerQuery).length === 0) return res.json({});
+  
 
     let result = [];
     let filtered = [];
+    
+    if (Object.keys(newQuery).length === 0 && Object.keys(newerQuery).length === 0) return res.json({});
+
 
     if (Object.keys(newQuery).length === 0){
         Food.find({})
@@ -59,7 +57,6 @@ router.get("/", (req, res) => {
                     }
                 })
 
-                // console.log(filtered)
 
                 let foodsPojo = {};
                 filtered.forEach(food => {
