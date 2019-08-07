@@ -37,9 +37,13 @@ io.on('connection', socket => {
         console.log('user disconnected');
     });
     
-    socket.on('chat', ({msg}) => {
-        io.emit(msg);
-        console.log(msg);
+    // socket.on('chat', ({msg}) => {
+    //     io.emit(msg);
+    //     console.log(msg);
+    // })
+    socket.on('multiuser', (room) => {
+        console.log(room);
+        // io.emit(msg);
     })
 });
 
