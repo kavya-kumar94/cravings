@@ -4,7 +4,7 @@ export const saveFood = (foodsave) => {
     return axios.post('/api/foodsaves', foodsave);
 };
 
-export const deleteFoodSave = (foodsave) => {
+export const unsaveFood = (foodsave) => {
     return axios.post(`/api/foodsaves'/${foodsave.id}`, foodsave);
 };
 
