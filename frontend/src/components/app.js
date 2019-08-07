@@ -11,8 +11,10 @@ import FoodsIndexContainer from './foods/foods_index_container';
 import FoodShowContainer from './foods/food_show/food_show_container';
 import DrinksIndexContainer from './drinks/drinks_index_container';
 import DrinkShowContainer from './drinks/drink_show/drink_show_container';
+// eslint-disable-next-line
 import DrinkWheel from './drinks/drink_mood_wheel';
 import FoodFormContainer from './foods/food_form_container';
+// eslint-disable-next-line
 import FoodWheel from './foods/food_mood_wheel';
 import DrinkMoodFormContainer from './drinks/drink_mood_form_container';
 
