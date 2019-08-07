@@ -1,6 +1,7 @@
 import React from 'react';
 import './foods.css'
 import { Link } from 'react-router-dom';
+// import MapContainer from '../map/map_container'
 
 class FoodsIndexItem extends React.Component {
 
@@ -33,6 +34,11 @@ class FoodsIndexItem extends React.Component {
                         
                         </div>
                     </Link>
+
+                    {/* <div className="map-container">
+                        <MapContainer />
+                    </div> */}
+
                 </div>
             
         );

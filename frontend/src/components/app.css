@@ -26,3 +26,8 @@
     width: inherit;
     padding: 27%;
 }
+
+#map-container{
+    width: 500px;
+    height: 500px;
+}
