@@ -93,6 +93,11 @@
     height: 100%;
 }
 
+.food-show-photo {
+    width: 100%;
+    height: 80%;
+}
+
 .pick-one {
     text-align: center;
     margin: auto;
@@ -115,11 +120,18 @@
     outline: none;
 }
 
+.no-results-container {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+}
+
 .no-results-for-food{
     /* display: flex;
     flex-direction: column; */
     width: 100%;
-    align-items: center;
+    text-align: center;
+    display: inline-block;
 }
 
 .no-results-text {

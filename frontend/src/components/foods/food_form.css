@@ -3,10 +3,10 @@
 .food-form {
     display: flex;
     flex-direction: column;
-    padding-left: 200px;
-    padding-top: 30px;
+    /* padding-left: 200px; */
+    /* padding-top: 50px; */
     font-size: 20px;
-    margin-top: 40px;
+    margin-top: 90px;
 }
 
 .foodform h2 {
@@ -17,7 +17,7 @@
 
 .foodform {
     display: flex;
-    flex-direction: row;
+    margin: 0 auto;
 }
 .food-form input {
     margin: 10px;

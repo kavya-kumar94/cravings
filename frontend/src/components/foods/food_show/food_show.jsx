@@ -35,12 +35,11 @@ class FoodShow extends React.Component {
         <p>{food.price}</p>
         <div className="photo-rating">
           <div className={`rating-static rating-${food.rating * 10}`} />
-          <img src={food.imageUrl} className="food-photo" alt="" />
+          <img src={food.imageUrl} className="food-show-photo" alt="" />
         </div>
       </div>
     );
 
-    // }
   }
 }
 
