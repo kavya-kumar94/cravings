@@ -30,15 +30,17 @@ class FoodShow extends React.Component {
 
     return (
         <div className="food-show">
-            <div className='food-photo'>
-                <img src={food.imageUrl} className="food-show-photo" alt="" />
+            <div className='food-show-photo'>
+                <img src={food.imageUrl} className="show-photo" alt="" />
             </div>
 
             <div className='food-show-info'>
                 <div className='food-show-name'>{food.name}</div>
                 <div className='food-show-location'>
                     <i className="fas fa-map-marker-alt"></i> &nbsp;
-                    {food.address}, {food.city}. {food.state} {food.zipCode}
+                    {food.address}. 
+                    <br />
+                    {food.city}, {food.state} {food.zipCode}
                 </div>
                 <br />
                 <div className="food-show-price">
