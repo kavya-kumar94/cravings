@@ -1,26 +1,29 @@
-.main h1 {
-    font-size: 70px;
-    padding: 20px;
-}
-
-.main h2 {
-    font-size: 50px;
-    padding: 20px;
-    font-weight: 900;
+.main {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: inherit;
+    width: inherit;
+    justify-content: space-around;
+    min-height: 745px;
 }
 
 .fd {
     height: -webkit-fill-available;
     width: 57%;
-    position: fixed;
+    position: absolute;
+    top: 40%;
 }
 
-.cravings-logo {
-    background-image: url('cravings.png');
+.main-logo {
+    background-image: url('main-cravings.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 50rem;
-    height: 30rem;
+    width: 500px;
+    height: 200px;
+    position: relative;
+    top: 5rem;
+    right: 10rem;
 }
 
 .footer {

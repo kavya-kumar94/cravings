@@ -48,5 +48,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
+    position: relative;
+    right: 2rem;
 }
