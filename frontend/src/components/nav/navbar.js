@@ -72,7 +72,7 @@ class NavBar extends React.Component {
                     <button onClick={() => openModal('signup')}>Sign up</button>
                     &nbsp; &nbsp;
                     <button onClick={() => openModal('login')}>Log in</button>
-                    <h2 className="github-toggle" onClick={this.showDropdownMenu2}></h2>
+                    <h2 className="github-toggle" onClick={this.showDropdownMenu2}>&nbsp;</h2>
                     {this.state.gitMenu && (
                         <div className="container2">
                             <ul className="dropdown2">

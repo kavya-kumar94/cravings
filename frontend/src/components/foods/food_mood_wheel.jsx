@@ -1,5 +1,8 @@
 import React from 'react';
-import { Pie, Doughnut } from 'react-chartjs-2';
+import { 
+    Pie, 
+    // Doughnut 
+} from 'react-chartjs-2';
 import { withRouter } from 'react-router-dom';
 import 'chartjs-plugin-datalabels';
 import './food_mood_wheel.css';
@@ -100,7 +103,7 @@ class FoodWheel extends React.Component {
                 options={{maintainAspectRatio: true}}
                 allowSliceExplosion="true"
                 radiusFactor={0.8} 
-                options={{ plugins: { datalabels: { display: false } } }}
+                // options={{ plugins: { datalabels: { display: false } } }}
                     legend={{
                         position: 'left',
                         labels: {
@@ -111,7 +114,7 @@ class FoodWheel extends React.Component {
                         onClick: (e, item) => {
                             var index = item.index;
                             var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
-                            var ci = this.refs.chart.chartInstance;
+                            // var ci = this.refs.chart.chartInstance;
                             // See controller.isDatasetVisible comment
                             meta.hidden = !meta.hidden;
                             // We hid a dataset ... rerender the chart

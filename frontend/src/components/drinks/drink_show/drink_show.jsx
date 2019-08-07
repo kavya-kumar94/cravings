@@ -18,7 +18,7 @@ class DrinkShow extends React.Component {
                 <p>{drink.name}</p>
                 <p>{drink.address}, {drink.city}, {drink.state} {drink.zipCode}</p>
                 <p>{drink.price}</p>
-                <div className="photo-rating">
+                <div className="drink-photo-rating">
                     <div className={`rating-static rating-${drink.rating * 10}`}>
                     </div>
                     <img src={drink.imageUrl} className="drink-photo" alt="" />
