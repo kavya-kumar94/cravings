@@ -1,31 +1,47 @@
-import React from 'react';
+import React from "react";
 
+//loading:
 
-class FoodShow extends React.Component{
+import LoadingIcon from "../../loading/loading_icon";
+import "../../loading/loading.css";
 
-    componentDidMount(){
-        this.props.fetchFood(this.props.match.params.foodId)
+class FoodShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.props.fetchFood(this.props.match.params.foodId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.food) {
+      this.setState(nextProps.food);
     }
+  }
 
-    render(){
-        
-        const { food } = this.props;
+  render() {
+    let { food } = this.props;
+  
+    if (food === undefined) food = {};
 
-        if (this.props.food === undefined) return null;
+    return (
+      <div className="food-show">
+        <p>{food.name}</p>
+        <p>
+          {food.address}, {food.city}, {food.state} {food.zipCode}
+        </p>
+        <p>{food.price}</p>
+        <div className="photo-rating">
+          <div className={`rating-static rating-${food.rating * 10}`} />
+          <img src={food.imageUrl} className="food-photo" alt="" />
+        </div>
+      </div>
+    );
 
-        return(
-            <div className="food-show">
-                <p>{food.name}</p>
-                <p>{food.address}, {food.city}, {food.state} {food.zipCode}</p>
-                <p>{food.price}</p>
-                <div className="photo-rating">
-                    <div className={`rating-static rating-${food.rating*10}`}>
-                    </div>
-                    <img src={this.props.food.imageUrl} className="food-photo" alt=""/>
-                </div>
-            </div>
-        )
-    }
+    // }
+  }
 }
 
 export default FoodShow;
