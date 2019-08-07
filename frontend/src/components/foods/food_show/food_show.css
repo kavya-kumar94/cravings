@@ -1,0 +1,36 @@
+.food-show {
+    font-family: 'Source Sans Pro', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+.food-show {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.food-show-name {
+    font-size: 50px;
+}
+
+.fas {
+    color: black;
+}
+
+.food-show-price {
+    color: green;
+}
+
+
+.food-show-photo {
+    width: 100%;
+    height: 50%;
+    border: 1px double black;
+}
+

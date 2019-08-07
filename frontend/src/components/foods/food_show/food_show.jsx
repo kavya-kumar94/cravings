@@ -1,5 +1,7 @@
 import React from "react";
 
+import './food_show.css';
+
 //loading:
 
 // import LoadingIcon from "../../loading/loading_icon";
@@ -27,17 +29,25 @@ class FoodShow extends React.Component {
     if (food === undefined) food = {};
 
     return (
-      <div className="food-show">
-        <p>{food.name}</p>
-        <p>
-          {food.address}, {food.city}, {food.state} {food.zipCode}
-        </p>
-        <p>{food.price}</p>
-        <div className="photo-rating">
-          <div className={`rating-static rating-${food.rating * 10}`} />
-          <img src={food.imageUrl} className="food-show-photo" alt="" />
+        <div className="food-show">
+            <div className='food-photo'>
+                <img src={food.imageUrl} className="food-show-photo" alt="" />
+            </div>
+
+            <div className='food-show-info'>
+                <div className='food-show-name'>{food.name}</div>
+                <div className='food-show-location'>
+                    <i className="fas fa-map-marker-alt"></i> &nbsp;
+                    {food.address}, {food.city}. {food.state} {food.zipCode}
+                </div>
+                <br />
+                <div className="food-show-price">
+                    Price Range: {food.price} 
+                    <br />
+                    Rating: <span className={`rating-static rating-${food.rating * 10}`} />
+                </div>
+            </div>
         </div>
-      </div>
     );
 
   }
