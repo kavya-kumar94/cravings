@@ -24,15 +24,15 @@ class App extends React.Component {
     render() {
     let classy = ""
     let newclass = ""
-        if (this.props.location.pathname.indexOf("/foods") === 0) {
+        if (this.props.location.pathname.indexOf("/foods/") === 0) {
             classy = "nobg"
-        }
+        } else if (this.props.location.pathname.indexOf("/food") === 0 ) {
+            classy = "bg2"
+        } 
+
         if (this.props.location.pathname.indexOf("/drink") === 0 ) {
         classy="bg"
     }
-        if (this.props.location.pathname.indexOf("/food") === 0 ) {
-            classy = "bg2"
-        } 
     if (this.props.location.pathname === '/') {
         newclass="app"
     }
