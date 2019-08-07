@@ -23,17 +23,9 @@ class FoodShow extends React.Component {
 
   render() {
     let { food } = this.props;
-    // debugger
+  
     if (food === undefined) food = {};
-    // if (this.props.loading) {
-    //     return <LoadingIcon />
-    // }
-    // if (this.props.loading) {
-    //     console.log('detail loading');
-    //     return <LoadingIcon />
-    // } else {
-    debugger;
-    console.log("i mounted!");
+
     return (
       <div className="food-show">
         <p>{food.name}</p>
@@ -43,9 +35,8 @@ class FoodShow extends React.Component {
         <p>{food.price}</p>
         <div className="photo-rating">
           <div className={`rating-static rating-${food.rating * 10}`} />
-          <img src={food.imageUrl} className="food-photo" />
+          <img src={food.imageUrl} className="food-photo" alt="" />
         </div>
-        <img src={food.imageUrl} className="food-photo" alt="" />
       </div>
     );
 

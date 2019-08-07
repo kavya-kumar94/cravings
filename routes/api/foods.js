@@ -165,7 +165,6 @@ router.get("/", (req, res) => {
 router.get("/:foodId", (req, res) => {
 
     //req.params.foodId
-    // debugger
     
     let result = [];
 
