@@ -40,16 +40,18 @@ class FoodShow extends React.Component {
                     <i className="fas fa-map-marker-alt"></i> &nbsp;
                     {food.address}. 
                     <br />
-                    {food.city}, {food.state} {food.zipCode}
+                    {food.city}, {food.state} {food.zipCode} 
                 </div>
                 <br />
                 <div className="food-show-price">
                     Price Range: {food.price} 
                     <br />
                     Rating: <span className={`rating-static rating-${food.rating * 10}`} />
+                    <br />
+                    Type: {food.category}
                 </div>
                 <div className='food-save'>
-                  save functionality here? (work in progress)
+                    <i class="fas fa-heart"></i> Click to Save
                 </div>
             </div>
         </div>

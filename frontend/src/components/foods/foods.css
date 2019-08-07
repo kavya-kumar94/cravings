@@ -173,7 +173,7 @@
 
 
 .rating-50 { background-position: 0 0; }
-.rating-40 { background-position: -12px 0; } 
+.rating-40 { background-position: -12px 4px; } 
 .rating-30 { background-position: -24px 0; }
 .rating-20 { background-position: -36px 0; }
 .rating-10 { background-position: -48px 0; }
@@ -181,8 +181,8 @@
 .rating-5  { background-position: -48px -16px; }
 .rating-15 { background-position: -36px -16px; }
 .rating-25 { background-position: -24px -16px; }
-.rating-35 { background-position: -12px -16px; }
-.rating-45 { background-position: 0 -16px; }
+.rating-35 { background-position: -12px -13px; }
+.rating-45 { background-position: 0 -13px; }
 
 
 

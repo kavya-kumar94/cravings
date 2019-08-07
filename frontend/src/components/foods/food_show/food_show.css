@@ -4,10 +4,10 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-    margin: 15% 20%;
-    max-height: 380px;
     border: 1px solid black;
     border-radius: 4px;
+    height: 300px;
+    width: 800px;
 }
 
 
@@ -24,7 +24,7 @@
 }
 
 .food-show-info {
-    border: 1px solid red;
+    border: 1px solid black;
     flex: 1;
     padding: 10px 20px;
     border-radius: 4px;
@@ -39,12 +39,18 @@
 }
 
 .fas {
-    color: black;
+    color: red;
 }
 
 .food-show-price {
-    color: #579bea;
-    font-size: 15px;
+    color: black;
+    font-size: 20px;
+}
+
+.food-save {
+    cursor: pointer;
+    position: relative;
+    bottom: -2rem;
 }
 
 
