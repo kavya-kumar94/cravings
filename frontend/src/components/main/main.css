@@ -4,7 +4,6 @@
     position: relative;
     height: inherit;
     width: inherit;
-    justify-content: space-around;
     min-height: 745px;
 }
 
@@ -19,10 +18,10 @@
     background-image: url('main-cravings.png');
     background-size: cover;
     background-repeat: no-repeat;
-    width: 500px;
+    width: 585px;
     height: 200px;
     position: relative;
-    top: 5rem;
+    top: 8rem;
     right: 10rem;
 }
 

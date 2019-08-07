@@ -49,5 +49,6 @@
     flex-direction: column;
     justify-content: center;
     position: relative;
-    right: 2rem;
+    right: 1rem;
+    top: 11rem;
 }
