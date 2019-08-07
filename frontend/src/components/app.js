@@ -24,15 +24,19 @@ class App extends React.Component {
     render() {
     let classy = ""
     let newclass = ""
+        if (this.props.location.pathname.indexOf("/foods/") === 0) {
+            classy = "nobg"
+        } else if (this.props.location.pathname.indexOf("/food") === 0 ) {
+            classy = "bg2"
+        } 
+
         if (this.props.location.pathname.indexOf("/drink") === 0 ) {
         classy="bg"
     }
-        if (this.props.location.pathname.indexOf("/food") === 0 ) {
-            classy = "bg2"
-        } 
     if (this.props.location.pathname === '/') {
         newclass="app"
     }
+    
     //please work//
     
     return(
@@ -43,7 +47,7 @@ class App extends React.Component {
         <div className="main-body">
             <Switch>
                 <Route path='/drinkform' component={DrinkMoodFormContainer} />
-                <Route path='/foodwheel' component={FoodFormContainer} />
+                <Route path='/foodform' component={FoodFormContainer} />
                 <Route exact path="/foods" component={FoodsIndexContainer} />
                 <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 

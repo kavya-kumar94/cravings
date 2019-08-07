@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
 .food-form {
     display: flex;
     flex-direction: column;
     padding-left: 200px;
-    padding-top: 40px;
+    padding-top: 30px;
     font-size: 20px;
     margin-top: 40px;
 }
@@ -36,22 +38,40 @@
 
 .foodform-btn:hover {
     transform: scale(1.1);
-    background-color: aquamarine
+    background-color: #579bea
 }
 
 #food-choosings{
     display: flex;
     flex-direction: row;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    
 }
 
 .choose-food-moods{
-    margin-right: 20%;
+    margin-right: 10%;
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    width: 100%;
+}
+
+.food-form input label:hover, label:active, input:hover+label, input:active+label, input:checked+label {
+    color: #579bea;
+    opacity: 1;
 }
 
 .choose-locations{
-    margin-left: 20%;
+    margin-left: 10%;
+    border-radius: 5%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0.8;
+    width: 100%;
+    height: 90%;
 }
 
 .foodform-btn-container{
     margin: auto ;
+    font-family: 'Raleway', sans-serif;
 }
