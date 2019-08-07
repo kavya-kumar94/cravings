@@ -48,6 +48,9 @@ class FoodShow extends React.Component {
                     <br />
                     Rating: <span className={`rating-static rating-${food.rating * 10}`} />
                 </div>
+                <div className='food-save'>
+                  save functionality here? (work in progress)
+                </div>
             </div>
         </div>
     );
