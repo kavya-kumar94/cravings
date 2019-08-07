@@ -55,9 +55,12 @@ class FoodShow extends React.Component {
                     <br />
                     Type: {food.category}
                 </div>
-                <div className='food-save' onClick={this.saveFood}>
+                {this.props.loggedIn ? 
+                  <div className='food-save' onClick={this.saveFood}>
                     <i className="fas fa-heart"></i> Click to Save
-                </div>
+                  </div> : <div className='food-save'>
+                    <i className="fas fa-heart"></i> Please Sign in to Save
+                  </div>}
             </div>
         </div>
     );

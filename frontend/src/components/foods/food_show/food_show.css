@@ -53,5 +53,9 @@
     bottom: -2rem;
 }
 
+.food-save:hover {
+    opacity: 0.6;
+}
+
 
 
