@@ -18,6 +18,7 @@ const loadingReducer = (state = initialState, action) => {
         case START_LOADING_ALL_FOODS:
             return Object.assign({}, state, { indexLoading: true });
         case RECEIVE_FOOD:
+            // debugger
             return Object.assign({}, state, { detailLoading: false });
         case START_LOADING_SINGLE_FOOD:
             return Object.assign({}, state, { detailLoading: true })

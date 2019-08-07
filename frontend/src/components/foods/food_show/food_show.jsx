@@ -1,48 +1,56 @@
-import React from 'react';
+import React from "react";
 
 //loading:
 
-import LoadingIcon from '../../loading/loading_icon';
-import '../../loading/loading.css';
+import LoadingIcon from "../../loading/loading_icon";
+import "../../loading/loading.css";
 
-class FoodShow extends React.Component{
+class FoodShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
+  componentDidMount() {
+    this.props.fetchFood(this.props.match.params.foodId);
+  }
 
-    componentDidMount(){
-        console.log(this.props.match);
-        this.props.fetchFood(this.props.match.params.foodId);
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.food) {
+      this.setState(nextProps.food);
     }
+  }
 
-    render(){
-        
-        const { food } = this.props;
-        console.log(this.props.food);
-        if (food === undefined) return null;
-        // if (this.props.loading) {
-        //     return <LoadingIcon />
-        // }
-        // if (this.props.loading) {
-        //     console.log('detail loading');
-        //     return <LoadingIcon />
-        // } else {
-            console.log('i mounted!')
-            return(
-                <div className="food-show">
-                    <p>{food.name}</p>
-                    <p>{food.address}, {food.city}, {food.state} {food.zipCode}</p>
-                    <p>{food.price}</p>
-                    <div className="photo-rating">
-                        <div className={`rating-static rating-${food.rating*10}`}>
-                        </div>
-                        <img src={this.props.food.imageUrl} className="food-photo" />
-                    </div>
-                    <img src={this.props.food.imageUrl} className="food-photo" alt=""/>
-                </div>
-            )
+  render() {
+    let { food } = this.props;
+    // debugger
+    if (food === undefined) food = {};
+    // if (this.props.loading) {
+    //     return <LoadingIcon />
+    // }
+    // if (this.props.loading) {
+    //     console.log('detail loading');
+    //     return <LoadingIcon />
+    // } else {
+    debugger;
+    console.log("i mounted!");
+    return (
+      <div className="food-show">
+        <p>{food.name}</p>
+        <p>
+          {food.address}, {food.city}, {food.state} {food.zipCode}
+        </p>
+        <p>{food.price}</p>
+        <div className="photo-rating">
+          <div className={`rating-static rating-${food.rating * 10}`} />
+          <img src={food.imageUrl} className="food-photo" />
+        </div>
+        <img src={food.imageUrl} className="food-photo" alt="" />
+      </div>
+    );
 
-        // }
-
-    }
+    // }
+  }
 }
 
 export default FoodShow;

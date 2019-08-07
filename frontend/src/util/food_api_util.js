@@ -8,12 +8,13 @@ export const fetchFoods = (query) => {
 
 export const fetchFood = (id) => {
     // debugger
-    return axios.get(`/api/foods/${id}`).then(res => {
-        console.log(res);
-        console.log('success')})
-        .catch(err => {
-            console.log(err);
-            console.log('errored')})
+    return axios.get(`/api/foods/${id}`)
+    // .then(res => {
+    //     console.log(res);
+    //     console.log('success')})
+    //     .catch(err => {
+    //         console.log(err);
+    //         console.log('errored')})
 };
    
 

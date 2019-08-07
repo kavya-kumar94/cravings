@@ -3,6 +3,7 @@ import { fetchFood } from '../../../actions/food_actions';
 import FoodShow from './food_show';
 
 const mapStateToProps = (state,ownProps) => {
+    debugger
     return {
         food: state.entities.foods[ownProps.match.params.foodId],
         loading: state.ui.loading.detailLoading
