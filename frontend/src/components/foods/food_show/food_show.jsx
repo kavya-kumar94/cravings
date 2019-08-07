@@ -1,31 +1,61 @@
-import React from 'react';
+import React from "react";
 
+import './food_show.css';
 
-class FoodShow extends React.Component{
+//loading:
 
-    componentDidMount(){
-        this.props.fetchFood(this.props.match.params.foodId)
+// import LoadingIcon from "../../loading/loading_icon";
+// import "../../loading/loading.css";
+
+class FoodShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    this.props.fetchFood(this.props.match.params.foodId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.food) {
+      this.setState(nextProps.food);
     }
+  }
 
-    render(){
-        
-        const { food } = this.props;
+  render() {
+    let { food } = this.props;
+  
+    if (food === undefined) food = {};
 
-        if (this.props.food === undefined) return null;
+    return (
+        <div className="food-show">
+            <div className='food-show-photo'>
+                <img src={food.imageUrl} className="show-photo" alt="" />
+            </div>
 
-        return(
-            <div className="food-show">
-                <p>{food.name}</p>
-                <p>{food.address}, {food.city}, {food.state} {food.zipCode}</p>
-                <p>{food.price}</p>
-                <div className="photo-rating">
-                    <div className={`rating-static rating-${food.rating*10}`}>
-                    </div>
-                    <img src={this.props.food.imageUrl} className="food-photo" />
+            <div className='food-show-info'>
+                <div className='food-show-name'>{food.name}</div>
+                <div className='food-show-location'>
+                    <i className="fas fa-map-marker-alt"></i> &nbsp;
+                    {food.address}. 
+                    <br />
+                    {food.city}, {food.state} {food.zipCode}
+                </div>
+                <br />
+                <div className="food-show-price">
+                    Price Range: {food.price} 
+                    <br />
+                    Rating: <span className={`rating-static rating-${food.rating * 10}`} />
+                </div>
+                <div className='food-save'>
+                  save functionality here? (work in progress)
                 </div>
             </div>
-        )
-    }
+        </div>
+    );
+
+  }
 }
 
 export default FoodShow;

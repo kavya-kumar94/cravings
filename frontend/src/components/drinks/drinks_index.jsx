@@ -32,7 +32,7 @@ class DrinksIndex extends React.Component {
                 <div className='drinks-index-container'>
                     <div className='no-results-for-drink'>
                         <h3>We were unable to find drinks in your area that meet your cravings.</h3>
-                        <button className='spin-again' onClick={() => this.props.history.push('/drinkwheel')}>Please try again.</button>
+                        <button className='spin-again' onClick={() => this.props.history.push('/drinkform')}>Please try again.</button>
                     </div>
                 </div>
             )

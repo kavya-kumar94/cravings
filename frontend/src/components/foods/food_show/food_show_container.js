@@ -4,7 +4,8 @@ import FoodShow from './food_show';
 
 const mapStateToProps = (state,ownProps) => {
     return {
-        food: state.entities.foods[ownProps.match.params.foodId]
+        food: state.entities.foods[ownProps.match.params.foodId],
+        loading: state.ui.loading.detailLoading
     };
 };
 

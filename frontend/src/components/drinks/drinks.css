@@ -106,12 +106,12 @@
     display: block;
 }
 
-.no-results-for-food{
+.no-results-for-drink {
     display: flex;
     flex-direction: column;
     width: 100%;
     align-items: center;
-    margin-left: 200px;
+    /* margin-left: 200px; */
 }
 
 .no-results-for-drink h3 {
@@ -150,7 +150,7 @@
     width: 50%;
 }
 
-.photo-rating{
+.drink-photo-rating{
     background-color:white;
     display: flex;
     flex-direction: column;

@@ -1,10 +1,10 @@
 import React from 'react';
-import { Pie, Doughnut } from 'react-chartjs-2';
+import { Pie } from 'react-chartjs-2';
 import { withRouter } from 'react-router-dom';
 // import 'chartjs-plugin-labels'
 import 'chartjs-plugin-datalabels';
 import './drink_mood_wheel.css'
-import { defaults } from 'react-chartjs-2';
+// import { defaults } from 'react-chartjs-2';
 
 class DrinkWheel extends React.Component {
     constructor(props) {
@@ -113,7 +113,7 @@ class DrinkWheel extends React.Component {
                          options={{ maintainAspectRatio: true }}
                          allowSliceExplosion="true"
                          radiusFactor={0.7}
-                         options={{ plugins: { datalabels: { display: false } } }}
+                        //  options={{ plugins: { datalabels: { display: false } } }}
                          legend={{
                              position: 'left',
                              labels: {
@@ -124,7 +124,7 @@ class DrinkWheel extends React.Component {
                              onClick: (e, item) => {
                                  var index = item.index;
                                  var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
-                                 var ci = this.refs.chart.chartInstance;
+                                //  var ci = this.refs.chart.chartInstance;
                                  // See controller.isDatasetVisible comment
                                  meta.hidden = !meta.hidden;
                                  // We hid a dataset ... rerender the chart

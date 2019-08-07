@@ -24,4 +24,5 @@
 .main {
     height: -webkit-fill-available;
     width: inherit;
+    padding: 27%;
 }
