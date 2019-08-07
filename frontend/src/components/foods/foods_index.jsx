@@ -16,7 +16,6 @@ class FoodsIndex extends React.Component {
     componentWillMount() {
         // console.log(this.props.location.search)
         this.props.fetchFoods(this.props.location.search);
-        // console.log(this.props.foods);
     }
 
     randomizer() {
@@ -27,19 +26,21 @@ class FoodsIndex extends React.Component {
     }
 
     render() {
-
+        
+        if (this.props.foods === undefined) return null;
+        
         if (this.props.loading) {
-            console.log('loading');
             return <LoadingIcon />
-        // } else if (Object.keys(this.props.foods).length === 0) {
-        //     return (
-        //         <div className='foods-index-container'>
-        //             <div className='no-results-for-food'>
-        //                 <h3>We were unable to find foods in your area that meet your cravings.</h3>
-        //                 <button className='spin-again' onClick={() => this.props.history.push('/foodwheel')}>Please try again.</button>
-        //             </div>
-        //         </div>
-        //     )
+        } else if (Object.keys(this.props.foods).length === 0) {
+            return (
+                <div className='no-results-container'>
+                    <div className='no-results-for-food'>
+                        <div className='no-results-text'>We were unable to find foods in your area that meet your cravings.</div>
+                        <br />
+                        <button className='spin-again' onClick={() => this.props.history.push('/foodwheel')}>Please try again.</button>
+                    </div>
+                </div>
+            )
         } else {
             const foods = this.props.foods.map(food => (
                 <FoodsIndexItem

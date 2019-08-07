@@ -116,14 +116,13 @@
 }
 
 .no-results-for-food{
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     width: 100%;
     align-items: center;
-    margin-left: 200px;
 }
 
-.no-results-for-food h3 {
+.no-results-text {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
     color: black;
