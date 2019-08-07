@@ -24,6 +24,9 @@ class App extends React.Component {
     render() {
     let classy = ""
     let newclass = ""
+        if (this.props.location.pathname.indexOf("/foods") === 0) {
+            classy = "nobg"
+        }
         if (this.props.location.pathname.indexOf("/drink") === 0 ) {
         classy="bg"
     }
@@ -33,6 +36,7 @@ class App extends React.Component {
     if (this.props.location.pathname === '/') {
         newclass="app"
     }
+    
     //please work//
     
     return(

@@ -11,6 +11,12 @@
     opacity: 0.7;
 }
 
+.nobg {
+    background-image: url('white.jpg');
+    background-size: cover;
+    z-index: -10;
+}
+
 .bg2 .doughnut h1 {
     font-size: 38px;
     color: white;
