@@ -11,6 +11,7 @@ class FoodShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.saveFood = this.saveFood.bind(this);
   }
 
   componentDidMount() {
@@ -21,6 +22,10 @@ class FoodShow extends React.Component {
     if (nextProps.food) {
       this.setState(nextProps.food);
     }
+  }
+
+  saveFood(e){
+    e.preventDefault();
   }
 
   render() {
@@ -50,8 +55,8 @@ class FoodShow extends React.Component {
                     <br />
                     Type: {food.category}
                 </div>
-                <div className='food-save'>
-                    <i class="fas fa-heart"></i> Click to Save
+                <div className='food-save' onClick={this.saveFood}>
+                    <i className="fas fa-heart"></i> Click to Save
                 </div>
             </div>
         </div>
