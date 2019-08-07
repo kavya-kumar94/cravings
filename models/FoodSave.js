@@ -12,5 +12,5 @@ const FoodSaveSchema = new Schema({
     }
 });
 
-const FoodSave = mongoose.model('foodsave', FoodSaveSchema);
+const FoodSave = mongoose.model('foodsaves', FoodSaveSchema);
 module.exports = FoodSave;
