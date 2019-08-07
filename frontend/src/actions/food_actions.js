@@ -14,7 +14,8 @@ export const startLoadingAllFoods = () => ({
 
 export const startLoadingSingleFood = () => ({
     type: START_LOADING_SINGLE_FOOD
-})
+});
+
 // end of loading actions
 
 export const receiveFood = food => ({
@@ -37,8 +38,13 @@ export const fetchFoods = (query) => dispatch => {
         .catch(err => console.log(err))
 };
 
-export const fetchFood = (id) => dispatch => (
-    FoodApiUtil.fetchFood(id)
+export const fetchFood = (id) => dispatch => {
+
+    // loading
+
+    dispatch(startLoadingSingleFood());
+
+    return FoodApiUtil.fetchFood(id)
         .then(food => dispatch(receiveFood(food)))
         .catch(err => console.log(err))
-);
+};
