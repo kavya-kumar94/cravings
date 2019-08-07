@@ -2,8 +2,8 @@ import React from "react";
 
 //loading:
 
-import LoadingIcon from "../../loading/loading_icon";
-import "../../loading/loading.css";
+// import LoadingIcon from "../../loading/loading_icon";
+// import "../../loading/loading.css";
 
 class FoodShow extends React.Component {
   constructor(props) {

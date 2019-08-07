@@ -57,7 +57,15 @@
     width: 100%;
 }
 
-.food-form input label:hover, label:active, input:hover+label, input:active+label, input:checked+label {
+label {
+    color: white;
+}
+
+input:hover, label:hover {
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label {
     color: #579bea;
     opacity: 1;
 }

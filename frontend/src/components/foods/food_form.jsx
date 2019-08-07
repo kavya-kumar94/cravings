@@ -92,80 +92,64 @@ class FoodForm extends React.Component {
                         <div className="choose-food-moods">
                         <h2>Choose your food moods!</h2>
                         <div className="sweet">
-                            <label>
-                                <input type="checkbox" onClick={this.check('sweet')} value={!this.state.sweet} />
-                            Sweet</label>
-                            
+                            <input type="checkbox" id="sweet" onClick={this.check('sweet')} value={!this.state.sweet} />
+                            <label for="sweet">Sweet</label>
                         </div>
                         <div className="spicy">
-                            <label>
-                                <input type="checkbox" onClick={this.check('spicy')} value={!this.state.spicy} />
-                            Spicy</label>
+                            <input type="checkbox" id="spicy" onClick={this.check('spicy')} value={!this.state.spicy} />
+                            <label for="spicy">Spicy</label>
                         </div>
                         <div className="salty">
-                            <label>
-                                <input type="checkbox" onClick={this.check('salty')} value={!this.state.salty} />
-                            Salty</label>
+                            <input type="checkbox" id="salty" onClick={this.check('salty')} value={!this.state.salty} />
+                            <label for="salty">Salty</label>
                         </div>
                         <div className="savory">
-                            <label>
-                                <input type="checkbox" onClick={this.check('savory')} value={!this.state.savory} />
-                            Savory</label>
+                            <input type="checkbox" id="savory" onClick={this.check('savory')} value={!this.state.savory} />
+                            <label for="savory">Savory</label>
                         </div>
                         <div className="hot">
-                            <label>
-                                <input type="checkbox" onClick={this.check('hot')} value={!this.state.hot}/>
-                            Hot</label>
+                            <input type="checkbox" id="hot" onClick={this.check('hot')} value={!this.state.hot}/>
+                            <label for="hot">Hot</label>
                         </div>
                         <div className="cold">
-                            <label>
-                                <input type="checkbox" onClick={this.check('cold')} value={!this.state.cold}/>
-                            Cold</label>
+                            <input type="checkbox" id="cold" onClick={this.check('cold')} value={!this.state.cold}/>
+                            <label for="cold">Cold</label>
                         </div>
                         <div className="healthy">
-                            <label>
-                                <input type="checkbox" onClick={this.check('healthy')} value={!this.state.healthy}/>
-                            Healthy</label>
+                            <input type="checkbox" id="healthy" onClick={this.check('healthy')} value={!this.state.healthy}/>
+                            <label for="healthy">Healthy</label>
                         </div>
                         <div className="junk">
-                            <label>
-                                <input type="checkbox" onClick={this.check('junk')} value={!this.state.junk}/>
-                            Junk</label>
+                            <input type="checkbox" id="junk" onClick={this.check('junk')} value={!this.state.junk}/>
+                            <label for="junk">Junk</label>
                         </div>
                         <div className="happy">
-                            <label>
-                                <input type="checkbox" onClick={this.check('happy')} value={!this.state.happy}/>
-                            Happy</label>
+                            <input type="checkbox" id="happy" onClick={this.check('happy')} value={!this.state.happy}/>
+                            <label for="happy">Happy</label>
                         </div>
                         <div className="sad">
-                            <label>
-                                <input type="checkbox" onClick={this.check('sad')} value={!this.state.sad}/>
-                            Sad</label>
+                            <input type="checkbox" id="sad" onClick={this.check('sad')} value={!this.state.sad}/>
+                            <label for="sad">Sad</label>
                         </div>
                         <div className="hangry">
-                            <label>
-                                <input type="checkbox" onClick={this.check('hangry')} value={!this.state.hangry}/>
-                            Hangry</label>
+                            <input type="checkbox" id="hangry" onClick={this.check('hangry')} value={!this.state.hangry}/>
+                            <label for="hangry">Hangry</label>
                         </div>
                         <div className="sick">
-                            <label>
-                                <input type="checkbox" onClick={this.check('sick')} value={!this.state.sick}/>
-                            Sick</label>
+                            <input type="checkbox" id="sick" onClick={this.check('sick')} value={!this.state.sick}/>
+                            <label for="sick">Sick</label>
                         </div>
                         <div className="celebratory">
-                            <label>
-                                <input type="checkbox" onClick={this.check('celebratory')} value={!this.state.celebratory}/>
-                            Celebratory</label>
+                            <input type="checkbox" id="celebratory" onClick={this.check('celebratory')} value={!this.state.celebratory}/>
+                            <label for="celebratory">Celebratory</label>
                         </div>
                         <div className="stressed">
-                            <label>
-                                <input type="checkbox" onClick={this.check('stressed')} value={!this.state.stressed}/>
-                            Stressed</label>
+                            <input type="checkbox" id="stressed" onClick={this.check('stressed')} value={!this.state.stressed}/>
+                            <label for="stressed">Stressed</label>
                         </div>
                         <div className="adventurous">
-                            <label>
-                                <input type="checkbox" onClick={this.check('adventurous')} value={!this.state.adventurous}/>
-                            Adventurous</label>
+                            <input type="checkbox" id="adventurous" onClick={this.check('adventurous')} value={!this.state.adventurous}/>
+                            <label for="adventurous">Adventurous</label>
                         </div>
                     </div>
 
@@ -173,49 +157,40 @@ class FoodForm extends React.Component {
                         <div className="choose-locations">
                             <h2>Choose locations!</h2>
                             <div className="chinaTown">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('chinaTown')} value={!this.state.chinaTown} />
-                                Chinatown</label>
+                                <input type="checkbox" id="chinaTown" onClick={this.check('chinaTown')} value={!this.state.chinaTown} />
+                                <label for="chinaTown">Chinatown</label>
                             </div>
                             <div className="eastBay">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('eastBay')} value={!this.state.eastBay} />
-                                East Bay</label>
+                                <input type="checkbox" id="eastBay" onClick={this.check('eastBay')} value={!this.state.eastBay} />
+                                <label for="eastBay">East Bay</label>
                             </div>
                             <div className="fidi">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('fidi')} value={!this.state.fidi} />
-                                Financial District</label>
+                                <input type="checkbox" id="fidi" onClick={this.check('fidi')} value={!this.state.fidi} />
+                                <label for="fidi">Financial District</label>
                             </div>
                             <div className="mission">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('mission')} value={!this.state.mission} />
-                                Mission District</label>
+                                <input type="checkbox" id="mission" onClick={this.check('mission')} value={!this.state.mission} />
+                                <label for="mission">Mission District</label>
                             </div>
                             <div className="noeValley">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('noeValley')} value={!this.state.noeValley} />
-                                Noe Valley</label>
+                                <input type="checkbox" id="noeValley" onClick={this.check('noeValley')} value={!this.state.noeValley} />
+                                <label for="noeValley">Noe Valley</label>
                             </div>
                             <div className="nb">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('nb')} value={!this.state.nb} />
-                                North Beach</label>
+                                <input type="checkbox" id="nb" onClick={this.check('nb')} value={!this.state.nb} />
+                                <label for="nb">North Beach</label>
                             </div>
                             <div className="presidio">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('presidio')} value={!this.state.presidio} />
-                                Presidio</label>
+                                <input type="checkbox" id="presidio" onClick={this.check('presidio')} value={!this.state.presidio} />
+                                <label for="presidio">Presidio</label>
                             </div>
                             <div className="soma">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('soma')} value={!this.state.soma} />
-                                SOMA</label>
+                                <input type="checkbox" id="soma" onClick={this.check('soma')} value={!this.state.soma} />
+                                <label for="soma">SOMA</label>
                             </div>
                             <div className="sunset">
-                                <label>
-                                    <input type="checkbox" onClick={this.check('sunset')} value={!this.state.sunset} />
-                                Sunset</label>
+                                <input type="checkbox" id="sunset" onClick={this.check('sunset')} value={!this.state.sunset} />
+                                <label for="sunset">Sunset</label>
                             </div>
 
                         </div>

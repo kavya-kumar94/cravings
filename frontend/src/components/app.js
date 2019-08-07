@@ -24,22 +24,24 @@ class App extends React.Component {
     render() {
     let classy = ""
     let newclass = ""
-        if (this.props.location.pathname.indexOf("/foods/") === 0) {
-            classy = "nobg"
-        } else if (this.props.location.pathname.indexOf("/food") === 0 ) {
+        // if (this.props.location.pathname.indexOf("/foods/") === 0) {
+        //     classy = "nobg"
+        // } else 
+        if (this.props.location.pathname.indexOf("/food") === 0 ) {
             classy = "bg2"
         } 
 
         if (this.props.location.pathname.indexOf("/drinks/") === 0) {
             classy = "nobg"
-        } else if (this.props.location.pathname.indexOf("/drink") === 0 ) {
+        } else 
+        if (this.props.location.pathname.indexOf("/drink") === 0 ) {
             classy="bg"
         } 
     if (this.props.location.pathname === '/') {
         newclass="app"
     }
     
-    //please work//
+
     
     return(
         <div className={newclass}>
@@ -53,7 +55,8 @@ class App extends React.Component {
                 <Route exact path="/foods" component={FoodsIndexContainer} />
                 <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
-            
+                {/* user-profile for saves */}
+                {/* <Route exact path='/profile' component={UserShowContainer} /> */}
 
                 <Route exact path="/drinks" component={DrinksIndexContainer} />
                 <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
