@@ -35,9 +35,9 @@ class App extends React.Component {
             classy = "bg2"
         } 
 
-        if (this.props.location.pathname.indexOf("/drinks/") === 0) {
-            classy = "nobg"
-        } else 
+        // if (this.props.location.pathname.indexOf("/drinks/") === 0) {
+        //     classy = "nobg"
+        // } else 
         if (this.props.location.pathname.indexOf("/drink") === 0 ) {
             classy="bg"
         } 
