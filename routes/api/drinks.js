@@ -34,7 +34,9 @@ router.get("/", (req, res) => {
             Object.assign(newerQuery, {[category]: req.query[category]})
         }
     })
+    
     if (Object.keys(newQuery).length === 0 && Object.keys(newerQuery).length === 0) return res.json({});
+    
     let result = [];
     let filtered = [];
 
