@@ -1,11 +1,10 @@
 const express = require("express");
 const router = express.Router();
-const FoodSave = require('../../models/FoodSave');
-const mongoose = require("mongoose");
+const DrinkSave = require('../../models/DrinkSave');
 
 router.get('/',
     (req, res) => {
-        FoodSave.find({ userId: req.body.userId })
+        DrinkSave.find({ userId: req.body.userId })
             .then(saves => {
                 res.json(saves);
             })
@@ -15,28 +14,28 @@ router.get('/',
 
 router.post("/",
     (req, res) => {
-        const foodsave = new FoodSave({
+        const drinksave = new DrinkSave({
             userId: req.body.userId,
-            foodId: req.body.foodId
+            drinkId: req.body.drinkId
         });
-        foodsave.save().then(foodsave => {
-            res.json(foodsave);
+        drinksave.save().then(drinksave => {
+            res.json(drinksave);
         })
-        .catch(err => res.status(400).json('Invalid save parameters'));
+            .catch(err => res.status(400).json('Invalid save parameters'));
     }
 );
 
-router.delete("/:foodSaveId",
+router.delete("/:drinkSaveId",
     (req, res) => {
-        let save = { _id: mongoose.Types.ObjectId(req.params.foodSaveId) }
-        FoodSave.findOne(save)
+        let save = { _id: mongoose.Types.ObjectId(req.params.drinkSaveId) }
+        DrinkSave.findOne(save)
             .then((fetchedSave) => {
-                FoodSave.deleteOne(fetchedSave)
+                DrinkSave.deleteOne(fetchedSave)
                     .then(() => {
                         res.json(fetchedSave);
                     })
                     .catch(err => res.status(404).json('Save does not exist'));
             }).catch(err => res.status(404).json('Save does not exist'))
-});
+    });
 
 module.exports = router;

@@ -1,14 +1,14 @@
 import React from "react";
 
-
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
 import './food_show.css';
+import { saveFood } from "../../../util/foodsave_api_util";
+//loading:
 
 delete L.Icon.Default.prototype._getIconUrl;
-
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
   iconUrl: require('leaflet/dist/images/marker-icon.png'),
@@ -19,7 +19,7 @@ class FoodShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.saveFood = this.saveFood.bind(this);
+    this.saveFoodItem = this.saveFoodItem.bind(this);
   }
 
   componentDidMount() {
@@ -32,12 +32,14 @@ class FoodShow extends React.Component {
     }
   }
 
-  saveFood(e){
-    e.preventDefault();
+  saveFoodItem(userId, foodId) {
+    this.props.saveFood({userId: userId, foodId: foodId})
+      .then(this.props.history.push('/saves'))
   }
 
-  render() { 
-    let { food } = this.props;
+  
+  render() {
+    let { food, userId } = this.props;
   
     if (food === undefined) food = {};
 
@@ -91,7 +93,6 @@ class FoodShow extends React.Component {
 
             </Map>
           </div>
-
         </div>
     );
 

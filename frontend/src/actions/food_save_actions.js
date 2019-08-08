@@ -22,14 +22,14 @@ export const saveFood = foodSave => dispatch => (
     APIUtil.saveFood(foodSave).then(foodSave => dispatch(receiveFoodSave(foodSave)))
 );
 
-export const unsaveFood = (foodsave) => dispatch => (
-    APIUtil.unsaveFood(foodsave).then((foodsave) => dispatch(removeFoodSave(foodsave)))
+export const unsaveFood = (foodSave) => dispatch => (
+    APIUtil.unsaveFood(foodSave).then((foodsave) => dispatch(removeFoodSave(foodsave)))
 );
 
 export const fetchFoodSaves = (userId) => dispatch => (
     APIUtil.fetchFoodSaves(userId).then((foodSaves) => dispatch(receiveFoodSaves(foodSaves)))
 );
 
-export const fetchFoodSave = (foodsave) => dispatch => (
-    APIUtil.fetchFoodSave(foodsave).then(foodsave => dispatch(receiveFoodSave(foodsave)))
+export const fetchFoodSave = (foodSave) => dispatch => (
+    APIUtil.fetchFoodSave(foodSave).then(foodsave => dispatch(receiveFoodSave(foodsave)))
 );
