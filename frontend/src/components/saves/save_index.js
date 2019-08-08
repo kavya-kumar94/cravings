@@ -5,14 +5,22 @@ import './save.css'
 class SaveIndex extends React.Component {
     constructor(props) {
         super(props);
+        // this.randomDate = this.randomDate.bind(this);
     }
 
+    // randomDate(start, end) {
+    //     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    // }
+
+    
     render() {
+        
         const { currentUser } = this.props;
         return(
             <div className="save-index"> 
                 <div className="user-info">
-                    { currentUser.username }'s saved restaurants!
+                    <li>{currentUser.username}'s saved restaurants!</li>
+                    <li className="member-date">Member since August 2019</li>
                 </div>
                 I am your saves
             </div>
