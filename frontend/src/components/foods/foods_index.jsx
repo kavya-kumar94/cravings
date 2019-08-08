@@ -77,7 +77,7 @@ class FoodsIndex extends React.Component {
 
 
                     <div className='foods-map-container'>
-                        <Map center={[this.props.foods[0].lat, this.props.foods[0].lng]} zoom={13} style={{ height: "480px", width: "33%", position: "absolute", right: '10px'}}>
+                        <Map center={[this.props.foods[0].lat, this.props.foods[0].lng]} zoom={13} style={{ height: "480px", width: "33%", position: "absolute", right: '10px', top: '165px'}}>
                             <TileLayer
                                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                                 url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
