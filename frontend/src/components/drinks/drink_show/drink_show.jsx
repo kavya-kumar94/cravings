@@ -3,7 +3,7 @@ import React from "react";
 import "./drink_show.css";
 // import { withRouter } from 'react-router-dom';
 
-import { Map, CircleMarker, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker,Popup,TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
@@ -67,25 +67,17 @@ class DrinkShow extends React.Component {
             <TileLayer
               attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-            // url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            // url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
             />
 
-            <CircleMarker
-              center={[drink.lat, drink.lng]}
-              radius={6 * Math.log(100)}
-              fillOpacity={0.5}
-              stroke={false}
-            />
-
-            {/* <Marker key={drink.id} position={[drink.lat, drink.lng]}>
+            <Marker position={[drink.lat, drink.lng]}>
               <Popup>
                 {drink.name}
                 <br />
-                {drink.address}
+                {drink.address}.
+                      <br />
+                {drink.city}, {drink.state} {drink.zipCode}
               </Popup>
-            </Marker> */}
-
+            </Marker>
 
           </Map>
         </div>

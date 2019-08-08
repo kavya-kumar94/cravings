@@ -67,8 +67,6 @@ class DrinksIndex extends React.Component {
                         <TileLayer
                             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                             url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-                        // url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        // url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                         />
 
 
@@ -78,7 +76,9 @@ class DrinksIndex extends React.Component {
                                     <Popup>
                                         {drink.name}
                                         <br />
-                                        {drink.address}
+                                        {drink.address}.
+                                        <br />
+                                        {drink.city}, {drink.state} {drink.zipCode}
                                     </Popup>
                                 </Marker>
                             )
