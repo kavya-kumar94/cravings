@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Drink = require('../../models/Drink');
+const ObjectId = require('mongodb').ObjectId;
 
 router.get("/", (req, res) => {
     
@@ -154,6 +155,58 @@ router.get("/", (req, res) => {
     // })
     }
 })
+
+router.get("/:drinkId", (req, res) => {
+
+    //req.params.foodId
+
+    let result = [];
+
+    let drinkId = req.params.drinkId;
+    let o_drinkId = new ObjectId(drinkId);
+
+    Drink.findOne({ "_id": o_drinkId })
+        .then(res => result = result.concat(res))
+        .then(() => {
+            let drink = result[0];
+            let drinkPojo = {
+                id: drink._id,
+                name: drink.name,
+                imageUrl: drink.imageUrl,
+                rating: drink.rating,
+                lat: drink.lat,
+                lng: drink.lng,
+                price: drink.price,
+                address: drink.address,
+                city: drink.city,
+                zipCode: drink.zipCode,
+                country: drink.country,
+                state: drink.state,
+                phone: drink.phone,
+                caffeine: drink.caffeine,
+                sweet: drink.sweet,
+                aromatic: drink.aromatic,
+                hot: drink.hot,
+                iced: drink.iced,
+                healthy: drink.healthy,
+                sad: drink.sad,
+                tired: drink.tired,
+                happy: drink.happy,
+                angry: drink.angry,
+                sick: drink.sick,
+                celebratory: drink.celebratory,
+                stressed: drink.stressed,
+                adventurous: drink.adventurous
+            }
+
+            return res.json(drinkPojo);
+        })
+        .catch(err => res.status(404));
+
+
+})
+
+
 
 module.exports = router;
 

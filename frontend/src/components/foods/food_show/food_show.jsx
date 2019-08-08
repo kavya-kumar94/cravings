@@ -51,11 +51,9 @@ class FoodShow extends React.Component {
                 </div>
                 <br />
                 <div className="food-show-price">
-                    Price Range: {food.price} 
+                    Price Range: {food.price ? food.price : "N/A"} 
                     <br />
                     Rating: <span className={`rating-static rating-${food.rating * 10}`} />
-                    <br />
-                    Type: {food.category}
                 </div>
                 {this.props.loggedIn ? 
                   <div className='food-save' onClick={() => this.saveFoodItem(userId, food.id)}>
