@@ -19,6 +19,8 @@ import FoodWheel from './foods/food_mood_wheel';
 import WaitingRoomContainer from './multi_user/waiting_room_container';
 import DrinkMoodFormContainer from './drinks/drink_mood_form_container';
 import LobbyContainer from './multi_user/lobby_container';
+import SaveIndex from './saves/save_index';
+
 
 class App extends React.Component {
     
@@ -33,9 +35,18 @@ class App extends React.Component {
         if (this.props.location.pathname.indexOf("/drink") === 0 ) {
             classy="bg"
         } 
+<<<<<<< HEAD
         if (this.props.location.pathname === '/') {
             newclass="app"
         }
+=======
+        if (this.props.location.pathname.indexOf("/saves") === 0) {
+            classy="save"
+        }
+    if (this.props.location.pathname === '/') {
+        newclass="app"
+    }
+>>>>>>> master
     
         return(
             <div className={newclass}>
@@ -49,6 +60,7 @@ class App extends React.Component {
                     <Route exact path="/foods" component={FoodsIndexContainer} />
                     <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
+<<<<<<< HEAD
                     <Route exact path="/drinks" component={DrinksIndexContainer} />
                     <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
 
@@ -57,6 +69,28 @@ class App extends React.Component {
                     <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} />
                 </Switch>
             </div>
+=======
+    
+    return(
+        <div className={newclass}>
+        <div className={classy}></div>
+        <NavBarContainer />
+        <Modal />
+        <div className="main-body">
+            <Switch>
+                <Route path='/drinkform' component={DrinkMoodFormContainer} />
+                <Route path='/foodform' component={FoodFormContainer} />
+                <Route exact path="/foods" component={FoodsIndexContainer} />
+                <Route exact path="/foods/:foodId" component={FoodShowContainer} />
+
+                <Route exact path="/drinks" component={DrinksIndexContainer} />
+                <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
+                <Route exact path="/saves" component={SaveIndex} />
+                <Route exact path="/" component={MainPage} />
+                <Route exact path="/lobby" component={LobbyContainer} />
+                <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} />
+            </Switch>
+>>>>>>> master
         </div>
         )
     }
