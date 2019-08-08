@@ -9,6 +9,8 @@ const foods = require("./routes/api/foods");
 const drinks = require("./routes/api/drinks");
 const rooms = require("./routes/api/rooms");
 const bodyParser = require('body-parser');
+const foodsaves = require('./routes/api/foodsaves');
+const drinksaves = require('./routes/api/drinksaves');
 
 mongoose
     .connect(db, { useNewUrlParser: true } )
@@ -53,3 +55,5 @@ app.use("/api/users", users)
 app.use("/api/foods", foods)
 app.use("/api/drinks", drinks)
 app.use("/api/rooms", rooms)
+app.use("/api/foodsaves", foodsaves)
+app.use("/api/drinksaves", drinksaves)
