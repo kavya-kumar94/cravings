@@ -62,30 +62,10 @@ class DrinksIndex extends React.Component {
             ));
 
             return (
-                <>
-                    <Map center={[this.props.drinks[0].lat, this.props.drinks[0].lng]} zoom={13} style={{ height: "480px", width: "100%", position: "absolute" }}>
-                        <TileLayer
-                            attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-                        />
-
-
-                        {this.props.drinks.map((drink) => {
-                            return (
-                                <Marker key={drink.id} position={[drink.lat, drink.lng]}>
-                                    <Popup>
-                                        {drink.name}
-                                        <br />
-                                        {drink.address}.
-                                        <br />
-                                        {drink.city}, {drink.state} {drink.zipCode}
-                                    </Popup>
-                                </Marker>
-                            )
-                        })}
-                    </Map>
-
+                <div className='drinks-index-map-container'>
+                    
                     <div className="drinks-index-container">
+
                         <button className='pick-one' onClick={() => this.randomizer()}>
                             Pick for me, I am indecisive
                         </button>
@@ -94,9 +74,36 @@ class DrinksIndex extends React.Component {
                             {drinks}
                         </ul>
 
+                    </div>
+
+                    <div className='drinks-map-container'>
+
+                        <Map center={[this.props.drinks[0].lat, this.props.drinks[0].lng]} zoom={13} style={{ height: "75%", width: '32%', position: "fixed", top: '167px' }}>
+                            <TileLayer
+                                attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                                url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+                            />
+
+
+                            {this.props.drinks.map((drink) => {
+                                return (
+                                    <Marker key={drink.id} position={[drink.lat, drink.lng]}>
+                                        <Popup>
+                                            {drink.name}
+                                            <br />
+                                            {drink.address}.
+                                            <br />
+                                            {drink.city}, {drink.state} {drink.zipCode}
+                                        </Popup>
+                                    </Marker>
+                                )
+                            })}
+                        </Map>
 
                     </div>
-                </>
+
+                    
+                </div>
             );
         }
     }
