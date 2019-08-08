@@ -27,27 +27,26 @@ class DrinkShow extends React.Component {
     return (
       <div className="drink-show">
         <div className="drink-show-photo">
-          <img src={drink.imageUrl} className="show-photo" alt="" />
+            <img src={drink.imageUrl} className="show-photo" alt="" />
         </div>
 
         <div className="drink-show-info">
-          <div className="drink-show-name">{drink.name}</div>
-          <div className="drink-show-location">
-            <i className="fas fa-map-marker-alt" /> &nbsp;
-            {drink.address}.
+            <div className="drink-show-name">{drink.name}</div>
+            <div className="drink-show-location">
+                <i className="fas fa-map-marker-alt" /> &nbsp;
+                {drink.address}.
+                <br />
+                {drink.city}, {drink.state} {drink.zipCode}
+            </div>
             <br />
-            {drink.city}, {drink.state} {drink.zipCode}
-          </div>
+            <div className="drink-show-price">
+                Price Range: {drink.price ? drink.price : "N/A"}
+                <br />
+                Rating:{" "}
+                <span className={`rating-static rating-${drink.rating * 10}`} />
+            </div>
         </div>
-        <br />
-        <div className="drink-show-price">
-          Price Range: {drink.price}
-          <br />
-          Rating:{" "}
-          <span className={`rating-static rating-${drink.rating * 10}`} />
-          <br />
-          Type: {drink.category}
-        </div>
+        
       </div>
     );
   }

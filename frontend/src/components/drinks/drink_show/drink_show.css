@@ -1,4 +1,4 @@
-.food-show {
+.drink-show {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
     display: flex;
@@ -11,7 +11,7 @@
 }
 
 
-.food-show-photo {
+.drink-show-photo {
     width: 50%;
     /* vertical-align: middle; */
 }
@@ -23,18 +23,18 @@
     border-radius: 4px; 
 }
 
-.food-show-info {
+.drink-show-info {
     border: 1px solid black;
     flex: 1;
     padding: 10px 20px;
     border-radius: 4px;
 }
 
-.food-show-name {
+.drink-show-name {
     font-size: 40px;
 }
 
-.food-show-location {
+.drink-show-location {
     font-size: 20px;
 }
 
@@ -42,18 +42,18 @@
     color: red;
 }
 
-.food-show-price {
+.drink-show-price {
     color: black;
     font-size: 20px;
 }
 
-.food-save {
+.drink-save {
     cursor: pointer;
     position: relative;
     bottom: -2rem;
 }
 
-.food-save:hover {
+.drink-save:hover {
     opacity: 0.6;
 }
 
