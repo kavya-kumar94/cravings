@@ -18,7 +18,7 @@ import FoodFormContainer from './foods/food_form_container';
 import FoodWheel from './foods/food_mood_wheel';
 import DrinkMoodFormContainer from './drinks/drink_mood_form_container';
 // render map in food and drink index later
-import MapContainer from '../components/map/map_container';
+// import MapContainer from '../components/map/map_container';
 
 class App extends React.Component {
     // constructor(props) {
@@ -69,7 +69,7 @@ class App extends React.Component {
                 {/* <Route exact path="/lobby" component={LobbyContainer} />
                 <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} /> */}
 
-                <Route exact path="/map" component={MapContainer}/>
+                {/* <Route exact path="/map" component={MapContainer}/> */}
             </Switch>
         </div>
      </div>
