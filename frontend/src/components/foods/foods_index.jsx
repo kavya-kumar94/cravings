@@ -27,7 +27,6 @@ class FoodsIndex extends React.Component {
     }
 
     componentWillMount() {
-        // console.log(this.props.location.search)
         this.props.fetchFoods(this.props.location.search);
     }
 
@@ -39,7 +38,7 @@ class FoodsIndex extends React.Component {
     }
 
     render() {
-        
+
         if (this.props.foods === undefined) return null;
         
         if (this.props.loading) {
@@ -61,28 +60,8 @@ class FoodsIndex extends React.Component {
                     food={food} />
             ));
             return (
-                <>
-                    <Map center={[this.props.foods[0].lat, this.props.foods[0].lng]} zoom={13}  style={{ height: "480px", width: "100%", position: "absolute"}}>
-                        <TileLayer
-                            attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-                        />
-                    
-
-                        {this.props.foods.map((food) => {
-                            return (
-                                <Marker position={[food.lat, food.lng]}>
-                                    <Popup>
-                                        {food.name}
-                                        <br />
-                                        {food.address}.
-                                        <br />
-                                        {food.city}, {food.state} {food.zipCode}
-                                    </Popup>
-                                </Marker>
-                            )
-                        })}
-                    </Map>
+                
+                <div className='foods-index-map-container'>
 
                     <div className="foods-index-container">
                         
@@ -94,7 +73,33 @@ class FoodsIndex extends React.Component {
                             {foods}
                         </ul>
                     </div>
-                </>
+
+
+                    <div className='foods-map-container'>
+                        <Map center={[this.props.foods[0].lat, this.props.foods[0].lng]} zoom={13} style={{ height: "75%", width: '32%', position: "fixed", top: '167px' }}>
+                            <TileLayer
+                                attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                                url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+                            // url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                            // url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+                            />
+
+
+                            {this.props.foods.map((food) => {
+                                return (
+                                    <Marker position={[food.lat, food.lng]}>
+                                        <Popup>
+                                            {food.name}
+                                            <br />
+                                            {food.address}
+                                        </Popup>
+                                    </Marker>
+                                )
+                            })}
+                        </Map>
+                    </div>
+
+                </div>
             );
         }
 

@@ -1,12 +1,20 @@
+.foods-index-map-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 65px;
+    width: 100%;
+}
+
 .foods-index-container{
     color: black;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin-top: 100px;
+    width: 67%;
 }
+
 .foods-ul {
-    padding: 40px 40px;
+    /* padding: 40px 40px; */
     /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
@@ -15,6 +23,13 @@
     height: 100vh;
     min-height: 100vh;
 }
+
+.foods-map-container {
+    right: 10px;
+    top: 100px;
+    flex: 1;
+}
+
 
 
 .food-list-item {
@@ -96,12 +111,11 @@
 
 .pick-one {
     text-align: center;
-    margin: auto;
-    width: 20%;
+    margin: 40px auto 20px;
+    width: 35%;
     padding: 10px;
     font-size: 14px;
     border-radius: 20px;
-    margin-top: 10px;
     transition: all .2s ease-in-out;
     border: none;
 }
