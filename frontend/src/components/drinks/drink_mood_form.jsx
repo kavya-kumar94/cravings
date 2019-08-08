@@ -50,7 +50,6 @@ class DrinkForm extends React.Component {
 
     query(e) {
         e.preventDefault();
-        console.log(this.state);
         Object.keys(this.state).forEach(key => {
             if (this.state[key] === true && Object.keys(this.regions).includes(key)) {
                 this.setState({
@@ -93,114 +92,115 @@ class DrinkForm extends React.Component {
         return(
             <div className="drinkform">
                 <form className="drink-form" onSubmit={this.query}>
-                    <div className="drink-choosings">
-                    <div className="choose-moods">
-                    <h2>Choose your drink mood!</h2>
-                        <div className="caffeine">
-                            <input onClick={this.toggle('caffeine')} value={!this.state.caffeine} type="checkbox" />
-                            <label>Caffeine</label>
-                        </div>
-                        <div className="sweet">
-                            <input onClick={this.toggle('sweet')} value={!this.state.sweet} type="checkbox" />
-                            <label>Sweet</label>
-                        </div>
-                        <div className="aromatic">
-                            <input onClick={this.toggle('aromatic')} value={!this.state.aromatic} type="checkbox" />
-                            <label>Aromatic</label>
-                        </div>
-                        <div className="hot">
-                            <input onClick={this.toggle('hot')} value={!this.state.hot} type="checkbox" />
-                            <label>Hot</label>
-                        </div>
-                        <div className="iced">
-                            <input onClick={this.toggle('iced')} value={!this.state.iced} type="checkbox" />
-                            <label>Iced</label>
-                        </div>
-                        <div className="healthy">
-                            <input onClick={this.toggle('healthy')} value={!this.state.healthy} type="checkbox" />
-                            <label>Healthy</label>
-                        </div>
-                        <div className="sad">
-                            <input onClick={this.toggle('sad')} value={!this.state.sad} type="checkbox" />
-                            <label>Sad</label>
-                        </div>
-                        <div className="tired">
-                            <input onClick={this.toggle('tired')} value={!this.state.tired} type="checkbox" />
-                            <label>Tired</label>
-                        </div>
-                        <div className="happy">
-                            <input onClick={this.toggle('happy')} value={!this.state.happy} type="checkbox" />
-                            <label>Happy</label>
-                        </div>
-                    <div className="angry">
-                        <input onClick={this.toggle('angry')} value={!this.state.angry} type="checkbox"/>
-                        <label>Angry</label>
-                    </div>
-                    <div className="sick">
-                        <input onClick={this.toggle('sick')} value={!this.state.sick} type="checkbox"/>
-                        <label>Sick</label>
-                    </div>
-                    <div className="celebratory">
-                        <input onClick={this.toggle('celebratory')} value={!this.state.celebratory} type="checkbox"/>
-                        <label>Celebratory</label>
-                    </div>
-                    <div className="stressed">
-                        <input onClick={this.toggle('stressed')} value={!this.state.stressed} type="checkbox"/>
-                        <label>Stressed</label>
-                    </div>
-                    <div className="adventurous">
-                        <input onClick={this.toggle('adventurous')} value={!this.state.adventurous} type="checkbox"/>
-                        <label>Adventurous</label>
-                    </div>
-                </div>
+                    <div id="drink-choosings">
 
-                    <div className="choose-location">
+                        <div className="choose-drink-moods">
+                            <h2>Choose your drink mood!</h2>
+                            <div className="caffeine">
+                                <input id="caffeine" onClick={this.toggle('caffeine')} value={!this.state.caffeine} type="checkbox" />
+                                <label htmlFor="caffeine">Caffeine</label>
+                            </div>
+                            <div className="sweet">
+                                <input id="sweet" onClick={this.toggle('sweet')} value={!this.state.sweet} type="checkbox" />
+                                <label htmlFor="sweet">Sweet</label>
+                            </div>
+                            <div className="aromatic">
+                                <input id="aromatic" onClick={this.toggle('aromatic')} value={!this.state.aromatic} type="checkbox" />
+                                <label htmlFor="aromatic">Aromatic</label>
+                            </div>
+                            <div className="hot">
+                                <input id="hot" onClick={this.toggle('hot')} value={!this.state.hot} type="checkbox" />
+                                <label htmlFor="hot">Hot</label>
+                            </div>
+                            <div className="iced">
+                                <input id="iced" onClick={this.toggle('iced')} value={!this.state.iced} type="checkbox" />
+                                <label htmlFor="iced">Iced</label>
+                            </div>
+                            <div className="healthy">
+                                <input id="healthy" onClick={this.toggle('healthy')} value={!this.state.healthy} type="checkbox" />
+                                <label htmlFor="healthy">Healthy</label>
+                            </div>
+                            <div className="sad">
+                                <input id="sad" onClick={this.toggle('sad')} value={!this.state.sad} type="checkbox" />
+                                <label htmlFor="sad">Sad</label>
+                            </div>
+                            <div className="tired">
+                                <input id="tired" onClick={this.toggle('tired')} value={!this.state.tired} type="checkbox" />
+                                <label htmlFor="tired">Tired</label>
+                            </div>
+                            <div className="happy">
+                                <input id="happy" onClick={this.toggle('happy')} value={!this.state.happy} type="checkbox" />
+                                <label htmlFor="happy">Happy</label>
+                            </div>
+                            <div className="angry">
+                                <input id="angry" onClick={this.toggle('angry')} value={!this.state.angry} type="checkbox"/>
+                                <label htmlFor="angry">Angry</label>
+                            </div>
+                            <div className="sick">
+                                <input id="sick" onClick={this.toggle('sick')} value={!this.state.sick} type="checkbox"/>
+                                <label htmlFor="sick">Sick</label>
+                            </div>
+                            <div className="celebratory">
+                                <input id="celebratory" onClick={this.toggle('celebratory')} value={!this.state.celebratory} type="checkbox"/>
+                                <label htmlFor="celebratory">Celebratory</label>
+                            </div>
+                            <div className="stressed">
+                                <input id="stressed" onClick={this.toggle('stressed')} value={!this.state.stressed} type="checkbox"/>
+                                <label htmlFor="stressed">Stressed</label>
+                            </div>
+                            <div className="adventurous">
+                                <input id="adventurous" onClick={this.toggle('adventurous')} value={!this.state.adventurous} type="checkbox"/>
+                                <label htmlFor="adventurous">Adventurous</label>
+                            </div>
+                        </div>
 
-                        <h2>Choose your drink locations!</h2>
-                        <div className="chinaTown">
-                            <input onClick={this.toggle('chinaTown')} value={!this.state.chinaTown} type="checkbox" />
-                            <label>Chinatown</label>
-                        </div>
-                        <div className="eastBay">
-                            <input onClick={this.toggle('eastBay')} value={!this.state.eastBay} type="checkbox" />
-                            <label>East Bay</label>
-                        </div>
-                        <div className="fidi">
-                            <input onClick={this.toggle('fidi')} value={!this.state.fidi} type="checkbox" />
-                            <label>Financial District</label>
-                        </div>
-                        <div className="mission">
-                            <input onClick={this.toggle('mission')} value={!this.state.mission} type="checkbox" />
-                            <label>Mission District</label>
-                        </div>
-                        <div className="noeValley">
-                            <input onClick={this.toggle('noeValley')} value={!this.state.noeValley} type="checkbox" />
-                            <label>Noe Valley</label>
-                        </div>
-                        <div className="nb">
-                            <input onClick={this.toggle('nb')} value={!this.state.nb} type="checkbox" />
-                            <label>North Beach</label>
-                        </div>
-                        <div className="presidio">
-                            <input onClick={this.toggle('presidio')} value={!this.state.presidio} type="checkbox" />
-                            <label>Presidio</label>
-                        </div>
-                        <div className="soma">
-                            <input onClick={this.toggle('soma')} value={!this.state.soma} type="checkbox" />
-                            <label>SOMA</label>
-                        </div>
-                        <div className="sunset">
-                            <input onClick={this.toggle('sunset')} value={!this.state.sunset} type="checkbox" />
-                            <label>Sunset District</label>
+                        <div className="choose-locations">
+
+                            <h2>Choose locations!</h2>
+                            <div className="chinaTown">
+                                <input id="chinaTown" onClick={this.toggle('chinaTown')} value={!this.state.chinaTown} type="checkbox" />
+                                <label htmlFor="chinaTown">Chinatown</label>
+                            </div>
+                            <div className="eastBay">
+                                <input id="eastBay" onClick={this.toggle('eastBay')} value={!this.state.eastBay} type="checkbox" />
+                                <label htmlFor="eastBay">East Bay</label>
+                            </div>
+                            <div className="fidi">
+                                <input id="fidi" onClick={this.toggle('fidi')} value={!this.state.fidi} type="checkbox" />
+                                <label htmlFor="fidi">Financial District</label>
+                            </div>
+                            <div className="mission">
+                                <input id="mission" onClick={this.toggle('mission')} value={!this.state.mission} type="checkbox" />
+                                <label htmlFor="mission">Mission District</label>
+                            </div>
+                            <div className="noeValley">
+                                <input id="noeValley" onClick={this.toggle('noeValley')} value={!this.state.noeValley} type="checkbox" />
+                                <label htmlFor="noeValley">Noe Valley</label>
+                            </div>
+                            <div className="nb">
+                                <input id="nb" onClick={this.toggle('nb')} value={!this.state.nb} type="checkbox" />
+                                <label htmlFor="nb">North Beach</label>
+                            </div>
+                            <div className="presidio">
+                                <input id="presidio" onClick={this.toggle('presidio')} value={!this.state.presidio} type="checkbox" />
+                                <label htmlFor="presidio">Presidio</label>
+                            </div>
+                            <div className="soma">
+                                <input id="soma" onClick={this.toggle('soma')} value={!this.state.soma} type="checkbox" />
+                                <label htmlFor="soma">SOMA</label>
+                            </div>
+                            <div className="sunset">
+                                <input id="sunset" onClick={this.toggle('sunset')} value={!this.state.sunset} type="checkbox" />
+                                <label htmlFor="sunset">Sunset District</label>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    <div className="sub">
-                    <input type="submit" id="drinkform-btn" value="Find my drink!" />
 
+                    <div className="drinkform-btn-container">
+                        <input type="submit" className="drinkform-btn" value="Find my drink!" />
                     </div>
                 </form>
-                </div>
+            </div>
         )
     }
 

@@ -180,6 +180,7 @@ router.get("/:foodId", (req, res) => {
                 name: food.name,
                 imageUrl: food.imageUrl,
                 rating: food.rating,
+                category: food.category,
                 lat: food.lat,
                 lng: food.lng,
                 price: food.price,

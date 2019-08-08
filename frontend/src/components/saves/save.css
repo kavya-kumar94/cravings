@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway&display=swap');
+
+.save {
+    background-image: url('save_index.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: -10;
+    background-position: initial;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.user-info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 5%;
+    top: 10%;
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    list-style: none;
+    color: white;
+}
+
+.member-date {
+    font-size: 19px;
+    text-align: center;
+}

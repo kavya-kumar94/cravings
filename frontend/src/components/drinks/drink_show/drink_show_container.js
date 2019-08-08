@@ -4,7 +4,8 @@ import DrinkShow from './drink_show';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        drink: state.entities.drinks[ownProps.match.params.drinkId]
+        drink: state.entities.drinks[ownProps.match.params.drinkId],
+        loading: state.ui.loading.detailLoading
     };
 };
 

@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap');
 .app {
-    background-image: url('splash-bg-1.jpg');
+    background-image: url('bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100vw;
@@ -18,7 +18,9 @@
     height: inherit;
     display: flex;
     align-items: center;
-    justify-items: center;
+    justify-content: center;
+    min-height: 745px;
+    width: 100%;
 }
 
 .main {

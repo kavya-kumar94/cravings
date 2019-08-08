@@ -2,13 +2,12 @@
     color: black;
     display: flex;
     flex-direction: column;
-    margin: auto;
+    height: 100vh;
     margin-top: 100px;
-    /* height: 100vh; */
 }
 .drinks-ul {
     padding: 40px 40px;
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -17,104 +16,121 @@
     min-height: 100vh;
 }
 
-.site-additional-info {
-    height: 500px;
-    width: 500px;
-    margin: 0 auto;
-    margin-top: 10px;
-}
 
-.drinks-index-item {
+.drink-list-item {
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 18px;
     color: white;
     font-weight: bold;
     display: inline-block;
     text-align: center;
-    /* background: rgb(204, 200, 200);
-    opacity: 0.6; */
-    /* box-shadow: 5px 5px 5px 5px rgba(211, 211, 211, 0.7); */
-    width: 220px;
-    height: 200px;
-    min-height: fit-content;
+    box-shadow: -1px 0px 5px 4px rgba(211, 211, 211, 0.7);
+    width: 290px;
+    height: 240px;
     margin: 10px;
+    /* border: 1px solid black; */
+    /* background: rgb(204, 200, 200, 0.6); */
 }
 
-.drink-picture {
+.drink-pictures {
     height: 70%;
     width: 100%;
     background-size: stretch;
     display: block;
 }
 
-.drink-picture img{
-    object-fit: contain;
+.drink-pictures img{
+    object-fit: cover;
 }
 
-.pic-slides {
-    object-fit: fill;
-}
 
 .drink-info {
-    height: 20%;
-    width: 200px;
+    height: 22%;
     display: block;
     font-size: 15px;
     padding: 10px;
     text-decoration: none; 
     margin: auto;
+    background-color: rgb(155, 140, 140);
 }
 
-.drink-name-tent {
-        display: flex;
-        justify-content: space-between;
+.drink-name-location {
+    display: flex;
+    /* justify-content: space-between; */
 }
   
 .drink-name {
-    font-size: 13px;
+    font-size: 16px;
     margin: auto;
     text-align: center;
+    width: 50%;
 }
  
-
-.drink-full-address {
-    font-size: 12px;
+    
+.drink-location {
+    font-size: 13px;
     font-weight: lighter;
     text-align: center;
-
+    width: 50%;
+    border: 1px dashed black;
 }
 
-.extra-drink-info {
-    display: flex;
-    justify-content: space-between;        
+.fas {
+    color: red;
 }
-
-
-.drink-price {
-    font-size: 14px;
-    margin: auto;
-    }
     
+.drink-link:hover {
+    background-color: black;
+    cursor: pointer;
+}
+
 .drink-info:hover {
-    background-color: rgb(155, 140, 140);
+    background-color: black;
     cursor: pointer;
 }
 
 .drink-photo {
-    width: 85%;
-    height: 85%;
-    display: block;
-}
-
-.no-results-for-drink {
-    display: flex;
-    flex-direction: column;
     width: 100%;
-    align-items: center;
-    /* margin-left: 200px; */
+    height: 100%;
 }
 
-.no-results-for-drink h3 {
+
+.pick-one {
+    text-align: center;
+    margin: auto;
+    width: 20%;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 20px;
+    margin-top: 10px;
+    transition: all .2s ease-in-out;
+    border: none;
+}
+
+.pick-one:hover {
+    transform: scale(1.1);
+    background-color: rgb(212, 78, 78);
+}
+
+.pick-one:focus {
+    border: none;
+    outline: none;
+}
+
+.no-results-container {
+    display: flex;
+    justify-content: center;
+    margin: 100px auto;
+}
+
+.no-results-for-drink{
+    /* display: flex;
+    flex-direction: column; */
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+}
+
+.no-results-text {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 25px;
     color: black;
@@ -125,7 +141,7 @@
 .no-results-for-drink button {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    margin-left: 100px;
+    /* margin-left: 100px; */
     text-align: center;
     padding: 10px;
     width: 70%;
@@ -146,31 +162,27 @@
     outline: none;
 }
 
-.drink-show img {
-    width: 50%;
+.rating-static {
+  width: 60px;
+  height: 16px;
+  /* margin-top: 18px; */
+  display: inline-flex;
+  opacity: 0.8;
+  background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;
 }
 
-.drink-photo-rating{
-    background-color:white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 550px;
-    margin-bottom: 30px;
-    height: 300px;
-}
-.drink-show {
-    font-family: 'Source Sans Pro', sans-serif;
-    font-size: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    margin-top: 100px;
-}
 
-.drink-show p {
-    padding: 8px;
-}
+.rating-50 { background-position: 0 0; }
+.rating-40 { background-position: -12px 4px; } 
+.rating-30 { background-position: -24px 0; }
+.rating-20 { background-position: -36px 0; }
+.rating-10 { background-position: -48px 0; }
+.rating-0 { background-position: -60px 0; }
+.rating-5  { background-position: -48px -16px; }
+.rating-15 { background-position: -36px -16px; }
+.rating-25 { background-position: -24px -16px; }
+.rating-35 { background-position: -12px -13px; }
+.rating-45 { background-position: 0 -13px; }
+
+
 

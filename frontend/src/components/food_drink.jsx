@@ -23,7 +23,6 @@ class FoodDrink extends React.Component {
     render() {
         return (
             <div className="food-drink">
-                <h3>I'm craving...</h3>
                 <button onClick={this.foodWheel} className="food-btn">Food</button>
                 <button onClick={this.drinkWheel} className="drink-btn">Drinks</button>
             </div>
