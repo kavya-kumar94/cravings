@@ -41,7 +41,6 @@ export const fetchFoods = (query) => dispatch => {
 export const fetchFood = (id) => dispatch => {
 
     // loading
-
     dispatch(startLoadingSingleFood());
 
     return FoodApiUtil.fetchFood(id)

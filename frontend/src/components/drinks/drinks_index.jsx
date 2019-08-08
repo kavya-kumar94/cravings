@@ -67,18 +67,18 @@ class DrinksIndex extends React.Component {
                         <TileLayer
                             attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                             url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-                        // url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                        // url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                         />
 
 
-                        {this.props.drinks.map((drinks) => {
+                        {this.props.drinks.map((drink) => {
                             return (
-                                <Marker position={[drinks.lat, drinks.lng]}>
+                                <Marker key={drink.id} position={[drink.lat, drink.lng]}>
                                     <Popup>
-                                        {drinks.name}
+                                        {drink.name}
                                         <br />
-                                        {drinks.address}
+                                        {drink.address}.
+                                        <br />
+                                        {drink.city}, {drink.state} {drink.zipCode}
                                     </Popup>
                                 </Marker>
                             )
