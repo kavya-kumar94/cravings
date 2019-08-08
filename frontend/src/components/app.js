@@ -31,15 +31,15 @@ class App extends React.Component {
 
         if (this.props.location.pathname.indexOf("/food") === 0) {
             classy = "bg2"
-        }
-        if (this.props.location.pathname.indexOf("/drink") === 0) {
-            classy = "bg"
-        }
+        }  
+        if (this.props.location.pathname.indexOf("/drink") === 0 ) {
+            classy="bg"
+        } 
         if (this.props.location.pathname === '/') {
-            newclass = "app"
+            newclass="app"
         }
-
-        return (
+    
+        return(
             <div className={newclass}>
                 <div className={classy}></div>
                 <NavBarContainer />
@@ -51,8 +51,8 @@ class App extends React.Component {
                         <Route exact path="/foods" component={FoodsIndexContainer} />
                         <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
-                        <Route exact path="/drinks" component={DrinksIndexContainer} />
-                        <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
+                    <Route exact path="/drinks" component={DrinksIndexContainer} />
+                    <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
 
                         <Route exact path="/" component={MainPage} />
                         <Route exact path="/lobby" component={LobbyContainer} />
