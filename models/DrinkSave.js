@@ -12,5 +12,5 @@ const DrinkSaveSchema = new Schema({
     }
 });
 
-const DrinkSave = mongoose.model('drinksave', DrinkSaveSchema);
+const DrinkSave = mongoose.model('drinksaves', DrinkSaveSchema);
 module.exports = DrinkSave;
