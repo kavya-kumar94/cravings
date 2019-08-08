@@ -1,32 +1,56 @@
-import React from 'react';
+import React from "react";
+
+import "./drink_show.css";
 // import { withRouter } from 'react-router-dom';
 
 class DrinkShow extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
 
-    componentDidMount() {
-        this.props.fetchDrink(this.props.match.params.drinkId);
+  componentDidMount() {
+    this.props.fetchDrink(this.props.match.params.drinkId);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.drink) {
+      this.setState(nextProps.drink);
     }
+  }
 
-    render() {
+  render() {
+    let { drink } = this.props;
 
-        if (this.props.drink === undefined) return null;
-        
-        const { drink } = this.props;
+    if (drink === undefined) drink = {};
 
-        return (
-            <div className="drink-show">
-                <p>{drink.name}</p>
-                <p>{drink.address}, {drink.city}, {drink.state} {drink.zipCode}</p>
-                <p>{drink.price}</p>
-                <div className="drink-photo-rating">
-                    <div className={`rating-static rating-${drink.rating * 10}`}>
-                    </div>
-                    <img src={drink.imageUrl} className="drink-photo" alt="" />
-                </div>
-            </div>
-        )
-    };
- 
+    return (
+      <div className="drink-show">
+        <div className="drink-show-photo">
+          <img src={drink.imageUrl} className="show-photo" alt="" />
+        </div>
+
+        <div className="drink-show-info">
+          <div className="drink-show-name">{drink.name}</div>
+          <div className="drink-show-location">
+            <i className="fas fa-map-marker-alt" /> &nbsp;
+            {drink.address}.
+            <br />
+            {drink.city}, {drink.state} {drink.zipCode}
+          </div>
+        </div>
+        <br />
+        <div className="drink-show-price">
+          Price Range: {drink.price}
+          <br />
+          Rating:{" "}
+          <span className={`rating-static rating-${drink.rating * 10}`} />
+          <br />
+          Type: {drink.category}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default DrinkShow;
