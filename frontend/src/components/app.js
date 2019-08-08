@@ -23,34 +23,53 @@ import SaveIndex from './saves/save_index';
 
 
 class App extends React.Component {
-    // constructor(props) {
-    //     super(props);
-    // }
+    
 
     render() {
-    let classy = ""
-    let newclass = ""
-        // if (this.props.location.pathname.indexOf("/foods/") === 0) {
-        //     classy = "nobg"
-        // } else 
+        let classy = "";
+        let newclass = "";
+        
         if (this.props.location.pathname.indexOf("/food") === 0 ) {
             classy = "bg2"
-        } 
-
-        if (this.props.location.pathname.indexOf("/drinks/") === 0) {
-            classy = "nobg"
-        } else 
+        }  
         if (this.props.location.pathname.indexOf("/drink") === 0 ) {
             classy="bg"
         } 
+<<<<<<< HEAD
+        if (this.props.location.pathname === '/') {
+            newclass="app"
+        }
+=======
         if (this.props.location.pathname.indexOf("/saves") === 0) {
             classy="save"
         }
     if (this.props.location.pathname === '/') {
         newclass="app"
     }
+>>>>>>> master
     
+        return(
+            <div className={newclass}>
+            <div className={classy}></div>
+            <NavBarContainer />
+            <Modal />
+            <div className="main-body">
+                <Switch>
+                    <Route path='/drinkform' component={DrinkMoodFormContainer} />
+                    <Route path='/foodform' component={FoodFormContainer} />
+                    <Route exact path="/foods" component={FoodsIndexContainer} />
+                    <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
+<<<<<<< HEAD
+                    <Route exact path="/drinks" component={DrinksIndexContainer} />
+                    <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
+
+                    <Route exact path="/" component={MainPage} />
+                    <Route exact path="/lobby" component={LobbyContainer} />
+                    <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} />
+                </Switch>
+            </div>
+=======
     
     return(
         <div className={newclass}>
@@ -71,10 +90,10 @@ class App extends React.Component {
                 <Route exact path="/lobby" component={LobbyContainer} />
                 <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} />
             </Switch>
+>>>>>>> master
         </div>
-     </div>
-    )
-
-}};
+        )
+    }
+};
 
 export default withRouter(App);

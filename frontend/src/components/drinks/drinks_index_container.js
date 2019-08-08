@@ -4,7 +4,9 @@ import DrinksIndex from './drinks_index';
 
 const mapStateToProps = (state) => {
     return {
-        drinks: Object.values(state.entities.drinks)
+        drinks: Object.values(state.entities.drinks),
+        //loading
+        loading: state.ui.loading.indexLoading
     };
 };
 

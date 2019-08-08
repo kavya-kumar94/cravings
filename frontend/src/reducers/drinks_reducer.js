@@ -5,9 +5,9 @@ const DrinksReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_DRINKS:
-            return action.drinks.data;
+            return Object.assign({}, state, action.drinks.data);
         case RECEIVE_DRINK:
-            return action.drink.data;
+            return Object.assign({}, state, {[action.drink.data.id]: action.drink.data});
         default:
             return state;
     }
