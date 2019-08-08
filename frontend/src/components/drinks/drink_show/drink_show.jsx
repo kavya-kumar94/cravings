@@ -3,6 +3,18 @@ import React from "react";
 import "./drink_show.css";
 // import { withRouter } from 'react-router-dom';
 
+import { Map, CircleMarker, Marker, Popup, TileLayer } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+  iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+  iconUrl: require('leaflet/dist/images/marker-icon.png'),
+  shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
+
 class DrinkShow extends React.Component {
   constructor(props) {
     super(props);
@@ -25,28 +37,58 @@ class DrinkShow extends React.Component {
     if (drink === undefined) drink = {};
 
     return (
-      <div className="drink-show">
-        <div className="drink-show-photo">
-            <img src={drink.imageUrl} className="show-photo" alt="" />
+      <div className="drink-show-container">
+        <div className="drink-show">
+          <div className="drink-show-photo">
+              <img src={drink.imageUrl} className="show-photo" alt="" />
+          </div>
+
+          <div className="drink-show-info">
+              <div className="drink-show-name">{drink.name}</div>
+              <div className="drink-show-location">
+                  <i className="fas fa-map-marker-alt" /> &nbsp;
+                  {drink.address}.
+                  <br />
+                  {drink.city}, {drink.state} {drink.zipCode}
+              </div>
+              <br />
+              <div className="drink-show-price">
+                  Price Range: {drink.price ? drink.price : "N/A"}
+                  <br />
+                  Rating:{" "}
+                  <span className={`rating-static rating-${drink.rating * 10}`} />
+              </div>
+          </div>
+          
         </div>
 
-        <div className="drink-show-info">
-            <div className="drink-show-name">{drink.name}</div>
-            <div className="drink-show-location">
-                <i className="fas fa-map-marker-alt" /> &nbsp;
-                {drink.address}.
+        <div className="drink-map">
+          <Map center={[drink.lat, drink.lng]} zoom={13} style={{ height: "300px", width: "300px", position: "absolute" }}>
+            <TileLayer
+              attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+              url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+            // url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            // url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+            />
+
+            <CircleMarker
+              center={[drink.lat, drink.lng]}
+              radius={6 * Math.log(100)}
+              fillOpacity={0.5}
+              stroke={false}
+            />
+
+            {/* <Marker key={drink.id} position={[drink.lat, drink.lng]}>
+              <Popup>
+                {drink.name}
                 <br />
-                {drink.city}, {drink.state} {drink.zipCode}
-            </div>
-            <br />
-            <div className="drink-show-price">
-                Price Range: {drink.price ? drink.price : "N/A"}
-                <br />
-                Rating:{" "}
-                <span className={`rating-static rating-${drink.rating * 10}`} />
-            </div>
+                {drink.address}
+              </Popup>
+            </Marker> */}
+
+
+          </Map>
         </div>
-        
       </div>
     );
   }

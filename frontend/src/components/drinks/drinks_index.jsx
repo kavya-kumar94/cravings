@@ -72,13 +72,13 @@ class DrinksIndex extends React.Component {
                         />
 
 
-                        {this.props.drinks.map((drinks) => {
+                        {this.props.drinks.map((drink) => {
                             return (
-                                <Marker position={[drinks.lat, drinks.lng]}>
+                                <Marker key={drink.id} position={[drink.lat, drink.lng]}>
                                     <Popup>
-                                        {drinks.name}
+                                        {drink.name}
                                         <br />
-                                        {drinks.address}
+                                        {drink.address}
                                     </Popup>
                                 </Marker>
                             )
