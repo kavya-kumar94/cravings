@@ -13,7 +13,7 @@ const LoadingIcon = () => (
         </div>
         
         <br />
-        <div className='loading-text'> en route </div>
+        <div className='loading-text'> bon appétit </div>
     </div>
    
     
