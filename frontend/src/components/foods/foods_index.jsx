@@ -6,8 +6,8 @@ import './foods.css'
 
 import LoadingIcon from '../loading/loading_icon';
 
-// testing
-import {Map, CircleMarker, Marker, Popup, TileLayer} from 'react-leaflet';
+// leaflet map
+import {Map, Marker, Popup, TileLayer} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 

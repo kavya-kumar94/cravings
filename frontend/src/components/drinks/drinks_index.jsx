@@ -4,6 +4,18 @@ import DrinksIndexItem from './drinks_index_item';
 import './drinks.css';
 
 
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+import L from 'leaflet';
+
+delete L.Icon.Default.prototype._getIconUrl;
+
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
+    iconUrl: require('leaflet/dist/images/marker-icon.png'),
+    shadowUrl: require('leaflet/dist/images/marker-shadow.png')
+});
+
 class DrinksIndex extends React.Component {
 
     constructor(props) {
@@ -44,17 +56,41 @@ class DrinksIndex extends React.Component {
             ));
 
             return (
-                <div className="drinks-index-container">
-                    <button className='pick-one' onClick={() => this.randomizer()}>
-                        Pick for me, I am indecisive
-                    </button>
+                <>
+                    <Map center={[this.props.drinks[0].lat, this.props.drinks[0].lng]} zoom={13} style={{ height: "480px", width: "100%", position: "absolute" }}>
+                        <TileLayer
+                            attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                            url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
+                        // url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        // url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+                        />
 
-                    <ul className="drinks-ul">
-                        {drinks}
-                    </ul>
+
+                        {this.props.drinks.map((drinks) => {
+                            return (
+                                <Marker position={[drinks.lat, drinks.lng]}>
+                                    <Popup>
+                                        {drinks.name}
+                                        <br />
+                                        {drinks.address}
+                                    </Popup>
+                                </Marker>
+                            )
+                        })}
+                    </Map>
+
+                    <div className="drinks-index-container">
+                        <button className='pick-one' onClick={() => this.randomizer()}>
+                            Pick for me, I am indecisive
+                        </button>
+
+                        <ul className="drinks-ul">
+                            {drinks}
+                        </ul>
 
 
-                </div>
+                    </div>
+                </>
             );
         }
     }
