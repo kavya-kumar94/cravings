@@ -3,7 +3,9 @@ import { withRouter } from 'react-router-dom';
 import DrinksIndexItem from './drinks_index_item';
 import './drinks.css';
 
+//loading:
 
+import LoadingIcon from '../loading/loading_icon';
 class DrinksIndex extends React.Component {
 
     constructor(props) {
@@ -25,13 +27,16 @@ class DrinksIndex extends React.Component {
 
     render() {
 
-        if (this.props.drinks === undefined) {
-            return null;
+        if (this.props.drinks === undefined) return null;
+
+        if (this.props.loading) {
+            return <LoadingIcon />
         } else if (Object.keys(this.props.drinks).length === 0) {
             return (
-                <div className='drinks-index-container'>
+                <div className='no-results-container'>
                     <div className='no-results-for-drink'>
-                        <h3>We were unable to find drinks in your area that meet your cravings.</h3>
+                        <div className='no-results-text'>We were unable to find drinks in your area that meet your cravings.</div>
+                        <br />
                         <button className='spin-again' onClick={() => this.props.history.push('/drinkform')}>Please try again.</button>
                     </div>
                 </div>
