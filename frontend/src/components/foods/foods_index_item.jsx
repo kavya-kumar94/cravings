@@ -2,6 +2,7 @@ import React from 'react';
 import './foods.css'
 import { Link } from 'react-router-dom';
 
+
 class FoodsIndexItem extends React.Component {
 
     render() {
