@@ -8,10 +8,10 @@ export const unsaveFood = (foodsave) => {
     return axios.delete(`/api/foodsaves/${foodsave.id}`, foodsave);
 };
 
-export const fetchFoodSave = foodsave => {
-    return axios.get(`/api/foodsaves/${foodsave.id}`, foodsave);
+export const fetchFoodSave = (foodsave) => {
+    return axios.get(`/api/foodsaves/${foodsave.foodId}?userId=${foodsave.userId}`);
 };
 
 export const fetchFoodSaves = (userId) => {
-    return axios.get(`/api/foodsaves/${userId}`);
+    return axios.get(`/api/foodsaves/?userId=${userId}`);
 };
