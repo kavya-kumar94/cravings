@@ -9,7 +9,7 @@ const FoodSaveReducer = (state= {}, action) => {
     
     switch(action.type) {
         case RECEIVE_FOODSAVE:
-            return Object.assign({}, state, {[action.foodsave.id]: action.foodsave});
+            return Object.assign({}, state, {[action.foodsave.id]: action.foodsave.id});
         case RECEIVE_FOODSAVES:
             return Object.assign({}, state, action.foodsaves);
         case REMOVE_FOODSAVE:

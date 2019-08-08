@@ -1,7 +1,6 @@
 import React from "react";
-
 import './food_show.css';
-
+import { saveFood } from "../../../util/foodsave_api_util";
 //loading:
 
 // import LoadingIcon from "../../loading/loading_icon";
@@ -11,11 +10,12 @@ class FoodShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
-    this.saveFood = this.saveFood.bind(this);
+    this.saveFoodItem = this.saveFoodItem.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchFood(this.props.match.params.foodId);
+    // this.props.fetchFoodSave(this.props.food.id)
   }
 
   componentWillReceiveProps(nextProps) {
@@ -24,12 +24,14 @@ class FoodShow extends React.Component {
     }
   }
 
-  saveFood(e){
-    e.preventDefault();
+  saveFoodItem(userId, foodId) {
+    this.props.saveFood({userId: userId, foodId: foodId})
+      .then(this.props.history.push('/saves'))
   }
 
+
   render() {
-    let { food } = this.props;
+    let { food, userId } = this.props;
   
     if (food === undefined) food = {};
 
@@ -56,7 +58,7 @@ class FoodShow extends React.Component {
                     Type: {food.category}
                 </div>
                 {this.props.loggedIn ? 
-                  <div className='food-save' onClick={this.saveFood}>
+                  <div className='food-save' onClick={() => this.saveFoodItem(userId, food.id)}>
                     <i className="fas fa-heart"></i> Click to Save
                   </div> : <div className='food-save'>
                     <i className="fas fa-heart"></i> Please Sign in to Save
