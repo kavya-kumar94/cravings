@@ -50,7 +50,6 @@ class DrinkForm extends React.Component {
 
     query(e) {
         e.preventDefault();
-        console.log(this.state);
         Object.keys(this.state).forEach(key => {
             if (this.state[key] === true && Object.keys(this.regions).includes(key)) {
                 this.setState({
