@@ -5,6 +5,8 @@ import './save.css'
 
 import { fetchFoodSaves } from '../../actions/food_save_actions'
 import { fetchDrinkSaves } from '../../actions/drink_save_actions'
+import { fetchFoods } from '../../actions/food_actions'
+import { fetchDrinks } from '../../actions/drink_actions'
 class SaveIndex extends React.Component {
     constructor(props) {
         super(props);
@@ -16,19 +18,26 @@ class SaveIndex extends React.Component {
     // }
     componentDidMount() {
         let { userId } = this.props;
-        this.props.fetchDrinkSaves(userId);
-        this.props.fetchFoodSaves(userId);
+        console.log(userId);
+        this.props.fetchDrinkSaves(userId).then(this.props.fetchDrinks());
+        this.props.fetchFoodSaves(userId).then(this.props.fetchFoods());
     }
     
     render() {
         
-        const { currentUser, userId } = this.props;
+        const { currentUser, userId, foodSaves, drinks, foods } = this.props;
         return(
             <div className="save-index"> 
                 <div className="user-info">
                     <li>{currentUser.username}'s saved restaurants!</li>
                     <li className="member-date">Member since August 2019</li>
                 </div>
+
+                <ul className="saved-items">
+                    {Object.values(foodSaves).map((foodSave)=> {
+                        return <li>{foods[String(foodSave.foodId)]}</li>
+                    }) }
+                </ul>
                 I am your saves
             </div>
         )
@@ -37,16 +46,22 @@ class SaveIndex extends React.Component {
 
 
 const msp = state => {
+    // debugger;
     return {
         currentUser: state.session.user,
-        userId: state.session.user.id
+        userId: state.session.user.id,
+        foodSaves: state.entities.foodSaves,
+        foods: state.entities.foods,
+        drinks: state.entities.drinks
     }
 }
 
 const mdp = dispatch => {
     return {
         fetchFoodSaves: (userId) => dispatch(fetchFoodSaves(userId)),
-        fetchDrinkSaves: (userId) => dispatch(fetchDrinkSaves(userId))
+        fetchDrinkSaves: (userId) => dispatch(fetchDrinkSaves(userId)),
+        fetchDrinks: () => dispatch(fetchDrinks()),
+        fetchFoods: () => dispatch(fetchFoods())
     }
 }
 export default connect(msp, mdp)(SaveIndex);

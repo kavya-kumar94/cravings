@@ -8,10 +8,12 @@ const receiveFoodSave = foodsave => ({
     foodsave
 })
 
-const receiveFoodSaves = foodsaves => ({
+const receiveFoodSaves = foodsaves => {
+    return {
     type: RECEIVE_FOODSAVES,
     foodsaves
-})
+    }
+}
 
 const removeFoodSave = (foodsave) => ({
     type: REMOVE_FOODSAVE,
@@ -19,7 +21,7 @@ const removeFoodSave = (foodsave) => ({
 })
 
 export const saveFood = foodSave => dispatch => (
-    APIUtil.saveFood(foodSave).then(foodSave => dispatch(receiveFoodSave(foodSave)))
+    APIUtil.saveFood(foodSave).then(foodSave => dispatch(receiveFoodSave(foodSave.data)))
 );
 
 export const unsaveFood = (foodSave) => dispatch => (
@@ -27,9 +29,9 @@ export const unsaveFood = (foodSave) => dispatch => (
 );
 
 export const fetchFoodSaves = (userId) => dispatch => (
-    APIUtil.fetchFoodSaves(userId).then((foodSaves) => dispatch(receiveFoodSaves(foodSaves)))
+    APIUtil.fetchFoodSaves(userId).then((foodsaves) => dispatch(receiveFoodSaves(foodsaves.data)))
 );
 
 export const fetchFoodSave = (foodSave) => dispatch => (
-    APIUtil.fetchFoodSave(foodSave).then(foodsave => dispatch(receiveFoodSave(foodsave)))
+    APIUtil.fetchFoodSave(foodSave).then(foodsave => dispatch(receiveFoodSave(foodsave.data)))
 );

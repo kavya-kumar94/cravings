@@ -5,13 +5,25 @@ const mongoose = require("mongoose");
 
 router.get('/',
     (req, res) => {
-        FoodSave.find({ userId: req.body.userId })
+        FoodSave.find({ userId: mongoose.Types.ObjectId(req.query.userId)})
             .then(saves => {
                 res.json(saves);
             })
             .catch(err => res.status(404).json('No saves found'));
     }
 );
+
+router.get('/:foodId',
+    (req,res) => {
+        FoodSave.find({ 
+            userId: mongoose.Types.ObjectId(req.query.userId),
+            foodId: mongoose.Types.ObjectId(req.params.foodId)
+        }).then(saves => {
+            res.json(saves[0]);
+        })
+        .catch(err => res.status(404).json("No save found"));
+    }
+)
 
 router.post("/",
     (req, res) => {
