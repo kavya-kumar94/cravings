@@ -1,12 +1,19 @@
+.foods-index-map-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
 .foods-index-container{
     color: black;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin-top: 100px;
+    width: 67%;
 }
+
 .foods-ul {
-    padding: 40px 40px;
+    /* padding: 40px 40px; */
     /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
@@ -15,6 +22,13 @@
     height: 100vh;
     min-height: 100vh;
 }
+
+.foods-map-container {
+    right: 10px;
+    top: 100px;
+    flex: 1;
+}
+
 
 
 .food-list-item {
