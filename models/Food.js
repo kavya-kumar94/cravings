@@ -119,6 +119,10 @@ const FoodSchema = new Schema ({
         type: Boolean,
         required: true
     },
+    foodSaves: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'foodsaves'
+    }],
 })
 
 const Food = mongoose.model('foods', FoodSchema);

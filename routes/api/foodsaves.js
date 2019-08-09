@@ -5,11 +5,18 @@ const mongoose = require("mongoose");
 
 router.get('/',
     (req, res) => {
+        debugger
         FoodSave.find({ userId: mongoose.Types.ObjectId(req.query.userId)})
-            .then(saves => {
-                res.json(saves);
+            // .then(saves => {
+            //     res.json(saves);
+            // })
+            .populate('foodId')
+            .exec()
+            .then(foods => {
+                res.json(foods);
+                // console.log('the food is %s', foodsave.food.name);
             })
-            .catch(err => res.status(404).json('No saves found'));
+            // .catch(err => res.status(404).json('No saves found'));
     }
 );
 
