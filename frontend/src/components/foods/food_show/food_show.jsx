@@ -27,7 +27,9 @@ class FoodShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchFood(this.props.match.params.foodId);
-    this.props.fetchFoodSave({userId: this.props.currentUser.id, foodId: this.props.match.params.foodId})
+    if(this.props.currentUser) {
+      this.props.fetchFoodSave({userId: this.props.currentUser.id, foodId: this.props.match.params.foodId})
+    }
   }
 
   componentWillReceiveProps(nextProps) {
