@@ -3,8 +3,8 @@ import { withRouter, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './save.css'
 
-import { fetchFoodSaves } from '../../actions/food_save_actions'
-import { fetchDrinkSaves } from '../../actions/drink_save_actions'
+import { fetchFoodSaves, unsaveFood } from '../../actions/food_save_actions'
+import { fetchDrinkSaves, unsaveDrink } from '../../actions/drink_save_actions'
 import { fetchFoods } from '../../actions/food_actions'
 import { fetchDrinks } from '../../actions/drink_actions'
 class SaveIndex extends React.Component {
@@ -36,13 +36,26 @@ class SaveIndex extends React.Component {
                 <ul className="saved-food-items">
                     {Object.values(foodSaves).map((foodSave) => {
                         // return <li>{foodSave.name}</li>
-                            if (foodSave.foodId) return <Link to={`/foods/${foodSave.foodId._id}`}>{foodSave.foodId.name}</Link>
-                    })}
+                            if (foodSave.foodId) {
+                                return (
+                                <div>
+                                    <Link to={`/foods/${foodSave.foodId._id}`}>{foodSave.foodId.name}</Link>
+                                    <button onClick={() => this.props.unsaveFood(foodSave.foodId._id)}>delete</button>
+                                </div>
+                                )}
+                            })}
                 <ul className="saved-drink-items">
                     {console.log(drinkSaves)}
                     {Object.values(drinkSaves).map((drinkSave) => {
                         // return <li>{foodSave.name}</li>
-                        if (drinkSave.drinkId) return <Link to={`/drinks/${drinkSave.drinkId._id}`}>{drinkSave.drinkId.name}</Link>
+                        if (drinkSave.drinkId) {
+                            return (
+                                <div>
+                                    <Link to={`/drinks/${drinkSave.drinkId._id}`}>{drinkSave.drinkId.name}</Link>
+                                    <button onClick={() =>this.props.unsaveDrink(drinkSave.drinkId._id)}>delete</button>
+
+                                </div>
+                            )}
                     })}
                 </ul>
                 </ul>
@@ -66,7 +79,9 @@ const mdp = dispatch => {
         fetchFoodSaves: (userId) => dispatch(fetchFoodSaves(userId)),
         fetchDrinkSaves: (userId) => dispatch(fetchDrinkSaves(userId)),
         fetchDrinks: () => dispatch(fetchDrinks()),
-        fetchFoods: () => dispatch(fetchFoods())
+        fetchFoods: () => dispatch(fetchFoods()),
+        unsaveFood: (foodSave) => dispatch(unsaveFood(foodSave)),
+        unsaveDrink: (drinkSave) => dispatch(unsaveDrink(drinkSave))
     }
 }
 export default connect(msp, mdp)(SaveIndex);

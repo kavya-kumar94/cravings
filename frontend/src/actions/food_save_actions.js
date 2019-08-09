@@ -25,7 +25,7 @@ export const saveFood = foodSave => dispatch => (
 );
 
 export const unsaveFood = (foodSave) => dispatch => (
-    APIUtil.unsaveFood(foodSave).then((foodsave) => dispatch(removeFoodSave(foodsave)))
+    APIUtil.unsaveFood(foodSave).then((foodsave) => dispatch(removeFoodSave(foodsave.data)))
 );
 
 export const fetchFoodSaves = (userId) => dispatch => (

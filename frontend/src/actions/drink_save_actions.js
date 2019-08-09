@@ -23,7 +23,7 @@ export const saveDrink = drinkSave => dispatch => (
 );
 
 export const unsaveDrink = (drinksave) => dispatch => (
-    APIUtil.unsaveDrink(drinksave).then((drinksave) => dispatch(removeDrinkSave(drinksave)))
+    APIUtil.unsaveDrink(drinksave).then((drinksave) => dispatch(removeDrinkSave(drinksave.data)))
 );
 
 export const fetchDrinkSaves = (userId) => dispatch => (
