@@ -83,7 +83,7 @@ class FoodsIndex extends React.Component {
 
                             {this.props.foods.map((food) => {
                                 return (
-                                    <Marker position={[food.lat, food.lng]}>
+                                    <Marker key={food.id} position={[food.lat, food.lng]}>
                                         <Popup>
                                             {food.name}
                                             <br />
