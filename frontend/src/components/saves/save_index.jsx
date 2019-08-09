@@ -11,6 +11,8 @@ class SaveIndex extends React.Component {
     constructor(props) {
         super(props);
         // this.randomDate = this.randomDate.bind(this);
+        this.unsaveTheDrink = this.unsaveTheDrink.bind(this);
+        this.unsaveTheFood = this.unsaveTheFood.bind(this);
     }
 
     // randomDate(start, end) {
@@ -24,9 +26,17 @@ class SaveIndex extends React.Component {
         this.props.fetchDrinkSaves(this.props.currentUser.id);
     }
 
-    // unsaveTheFood() {
+    unsaveTheFood(foodSave) {
+        this.props.unsaveFood(foodSave);
+        (this.forceUpdate());
+        // .then(this.props.history.push("/saves"))
+    }
 
-    // }
+    unsaveTheDrink(drinkSave) {
+        this.props.unsaveDrink(drinkSave);
+        (this.forceUpdate());
+        // .then(this.props.history.push("/saves"))
+    }
 
 
     render() {
@@ -42,10 +52,10 @@ class SaveIndex extends React.Component {
                         // return <li>{foodSave.name}</li>
                             if (foodSave.foodId) {
                                 return (
-                                <div className="btn-link">
-                                    <Link to={`/foods/${String(foodSave.foodId._id)}`}>{foodSave.foodId.name}</Link>
-                                    <button onClick={() => this.props.unsaveFood(foodSave)}>delete</button>
-                                </div>
+                                    <div className="btn-link">
+                                        <Link to={`/foods/${String(foodSave.foodId._id)}`}>{foodSave.foodId.name}</Link>
+                                        <button onClick={() => this.unsaveTheFood(foodSave)}>delete</button>
+                                    </div>                                
                                 )}
                             })}
                 <ul className="saved-drink-items">
@@ -56,7 +66,7 @@ class SaveIndex extends React.Component {
                             return (
                                 <div className="btn-link">
                                     <Link to={`/drinks/${String(drinkSave.drinkId._id)}`}>{drinkSave.drinkId.name}</Link>
-                                    <button onClick={() =>this.props.unsaveDrink(drinkSave)}>delete</button>
+                                    <button onClick={() => this.unsaveTheDrink(drinkSave)}>delete</button>
 
                                 </div>
                             )}
