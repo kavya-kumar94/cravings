@@ -23,6 +23,7 @@ class FoodShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchFood(this.props.match.params.foodId);
+    this.props.fetchFoodSave({userId: this.props.userId, foodId: this.props.match.params.foodId})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -72,8 +73,8 @@ class FoodShow extends React.Component {
               </div>
           </div>
 
-          <div className="drink-map">
-            <Map center={[food.lat, food.lng]} zoom={13} style={{ height: "300px", width: "300px", position: "absolute" }}>
+          <div className="food-map-container">
+            <Map className="food-map" center={[food.lat, food.lng]} zoom={13} style={{ height: "250px", width: "800px", position: "absolute" }}>
               <TileLayer
                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"

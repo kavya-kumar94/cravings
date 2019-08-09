@@ -1,12 +1,21 @@
+.drinks-index-map-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 65px;
+    width: 100%;
+}
+
 .drinks-index-container{
     color: black;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    margin-top: 100px;
+    width: 67%;
 }
+
 .drinks-ul {
-    padding: 40px 40px;
+    /* padding: 40px 40px; */
+    /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -15,6 +24,11 @@
     min-height: 100vh;
 }
 
+.drinks-map-container {
+    right: 10px;
+    top: 100px;
+    flex: 1;
+}
 
 .drink-list-item {
     font-family: 'Source Sans Pro', sans-serif;
