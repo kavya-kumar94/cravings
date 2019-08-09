@@ -37,13 +37,13 @@ class SaveIndex extends React.Component {
 
     unsaveTheFood(foodSave) {
         this.props.unsaveFood(foodSave)
-        .then(this.forceUpdate());
+        // this.props.fetchFoodSaves(this.props.currentUser.id);
         // .then(this.props.history.push("/saves"))
     }
 
     unsaveTheDrink(drinkSave) {
         this.props.unsaveDrink(drinkSave)
-        .then(this.forceUpdate());
+        // this.props.fetchDrinkSaves(this.props.currentUser.id);
         // .then(this.props.history.push("/saves"))
     }
 
@@ -59,7 +59,7 @@ class SaveIndex extends React.Component {
                 <ul className="saved-food-items">
                     {Object.values(foodSaves).map((foodSave, idx) => {
                         // return <li>{foodSave.name}</li>
-                            if (foodSave.foodId) {
+                            if (foodSave.foodId && foodSave.foodId instanceof Object) {
                                 return (
                                     <div key={idx} className="btn-link">
                                         <Link to={`/foods/${String(foodSave.foodId._id)}`}>{foodSave.foodId.name}</Link>
@@ -71,7 +71,7 @@ class SaveIndex extends React.Component {
                     {console.log(drinkSaves)}
                     {Object.values(drinkSaves).map((drinkSave, idx) => {
                         // return <li>{foodSave.name}</li>
-                        if (drinkSave.drinkId) {
+                        if (drinkSave.drinkId && drinkSave.drinkId instanceof Object) {
                             return (
                                 <div key={idx} className="btn-link">
                                     <Link to={`/drinks/${String(drinkSave.drinkId._id)}`}>{drinkSave.drinkId.name}</Link>
