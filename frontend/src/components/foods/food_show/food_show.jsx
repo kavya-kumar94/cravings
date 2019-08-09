@@ -46,13 +46,10 @@ class FoodShow extends React.Component {
   render() {
     let { food, userId } = this.props;
   
-    if (food === undefined) food = {};
+    
+    if (!Object.keys(food).length) return <div></div>
 
-    // let lat = parseFloat(food.lat);
-    // let lng = food.lng;
-
-    // console.log(typeof lat);
-    // console.log(typeof lng);
+    
 
 
     return (
@@ -88,7 +85,7 @@ class FoodShow extends React.Component {
           
 
           <div className="food-map-container">
-          {/* <Map className="food-map" center={[parseFloat(food.lat), parseFloat(food.lng)]} zoom={13} style={{ height: "250px", width: "800px", position: "absolute" }}>
+          <Map className="food-map" center={[parseFloat(food.lat), parseFloat(food.lng)]} zoom={13} style={{ height: "250px", width: "800px", position: "absolute" }}>
               <TileLayer
                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
@@ -104,7 +101,7 @@ class FoodShow extends React.Component {
                     </Popup>
                 </Marker>
 
-            </Map> */}
+            </Map>
           </div>
         </div>
     );
