@@ -9,7 +9,7 @@ const mapStateToProps = (state,ownProps) => {
         loading: state.ui.loading.detailLoading,
         loggedIn: state.session.isAuthenticated,
         currentUser: state.session.user,
-        foodSave: state.entities.foodSaves
+        foodSave: Object.keys(state.entities.foodSaves)
     };
 };
 
