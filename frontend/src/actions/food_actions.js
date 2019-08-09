@@ -3,7 +3,6 @@ import * as FoodApiUtil from '../util/food_api_util';
 export const RECEIVE_FOODS = "RECEIVE_FOODS";
 export const RECEIVE_FOOD = "RECEIVE_FOOD";
 
-// loading page:
 
 export const START_LOADING_ALL_FOODS = 'START_LOADING_ALL_FOODS';
 export const START_LOADING_SINGLE_FOOD = 'START_LOADING_SINGLE_FOOD';
@@ -16,7 +15,6 @@ export const startLoadingSingleFood = () => ({
     type: START_LOADING_SINGLE_FOOD
 });
 
-// end of loading actions
 
 export const receiveFood = food => ({
     type: RECEIVE_FOOD,
@@ -30,7 +28,6 @@ export const receiveFoods = foods => ({
 
 export const fetchFoods = (query) => dispatch => {
 
-    // loading
     dispatch(startLoadingAllFoods());
 
     return FoodApiUtil.fetchFoods(query)
@@ -40,7 +37,6 @@ export const fetchFoods = (query) => dispatch => {
 
 export const fetchFood = (id) => dispatch => {
 
-    // loading
     dispatch(startLoadingSingleFood());
 
     return FoodApiUtil.fetchFood(id)

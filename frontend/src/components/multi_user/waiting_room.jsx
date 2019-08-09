@@ -2,7 +2,6 @@ import React from 'react';
 import './waiting_room.css';
 import { withRouter } from 'react-router-dom';
 import socketIOClient from 'socket.io-client';
-import food_form from '../foods/food_form';
 
 class WaitingRoom extends React.Component {
     constructor(props) {

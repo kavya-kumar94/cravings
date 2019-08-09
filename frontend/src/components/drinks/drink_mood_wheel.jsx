@@ -1,10 +1,8 @@
 import React from 'react';
 import { Pie } from 'react-chartjs-2';
 import { withRouter } from 'react-router-dom';
-// import 'chartjs-plugin-labels'
 import 'chartjs-plugin-datalabels';
 import './drink_mood_wheel.css'
-// import { defaults } from 'react-chartjs-2';
 
 class DrinkWheel extends React.Component {
     constructor(props) {
@@ -35,7 +33,6 @@ class DrinkWheel extends React.Component {
 
     query(e) {
         e.preventDefault();
-        // console.log(this.state);
         this.props.history.push({
             pathname: '/drinks',
             search: `?caffeine=${this.state.caffeine}&sweet=${this.state.sweet}&aromatic=${this.state.aromatic}&hot=${this.state.hot}&iced=${this.state.iced}&healthy=${this.state.healthy}&sad=${this.state.sad}&tired=${this.state.tired}&happy=${this.state.happy}&angry=${this.state.angry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
@@ -43,9 +40,6 @@ class DrinkWheel extends React.Component {
     }
 
     render() {
-        // Chart.defaults.global.legend.onClick = function (e, arr) {
-        //     /* do custom stuff here */
-        //     Chart.defaults.global.legend.onClick.call(this, e, arr)
         let chartData = {
 
             labels: ['caffeine',
@@ -113,7 +107,6 @@ class DrinkWheel extends React.Component {
                          options={{ maintainAspectRatio: true }}
                          allowSliceExplosion="true"
                          radiusFactor={0.7}
-                        //  options={{ plugins: { datalabels: { display: false } } }}
                          legend={{
                              position: 'left',
                              labels: {
@@ -124,48 +117,14 @@ class DrinkWheel extends React.Component {
                              onClick: (e, item) => {
                                  var index = item.index;
                                  var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
-                                //  var ci = this.refs.chart.chartInstance;
-                                 // See controller.isDatasetVisible comment
                                  meta.hidden = !meta.hidden;
-                                 // We hid a dataset ... rerender the chart
                                  this.handleClick(item.text, meta.hidden);
                                  this.refs.chart.chartInstance.update();
                              }
 
                          }}
                      />
-                {/* <Doughnut
-                    ref = "chart"
-                    className="do-component"
-                    data={this.state.chartData}
-                    width={800}
-                    height={300}
-                    options={{ maintainAspectRatio: true }}
-                    radiusFactor={0.7}
-                    options={
-                        {
-                            events: ['click', 'mousemove'],
-                            onClick: () => console.log('it works')
-                        }
-                    }
-                    options={
-                        {
-                            legend: {
-                                position: 'left',
-                                
-                                onClick: (e, legendItem) => {
-                                    legendItem.hidden = true
-                                    console.log(legendItem)
-
-                                },
-                                labels: {
-                                    fontSize: 20,
-                                    fontColor: '#000000'
-                                }
-                            },
-                        }   
-                    }
-                /> */}
+        
                 <div className="drink-wheel-btn">
                     <button onClick={this.query} className="result-btn">Get Results</button>
                 </div>

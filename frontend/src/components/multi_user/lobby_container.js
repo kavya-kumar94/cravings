@@ -1,13 +1,7 @@
 import { connect } from 'react-redux';
 import Lobby from './lobby';
-import { createRoom, updateRoom, fetchRoom, deleteRoom } from '../../actions/room_actions';
+import { createRoom, updateRoom, deleteRoom } from '../../actions/room_actions';
 
-// const mapStateToProps = (state) => {
-//     return {
-//         currentUser: state.session.user,
-//         gameRooms: Object.values(state.entities.gameRooms)
-//     };
-// }
 
 const mapDispatchToProps = (dispatch) => {
     return ({

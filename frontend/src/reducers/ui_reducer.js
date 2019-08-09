@@ -4,6 +4,5 @@ import loadingReducer from './loading_reducer';
 
 export default combineReducers({
     modal: modalReducer,
-    // loading
     loading: loadingReducer
 });

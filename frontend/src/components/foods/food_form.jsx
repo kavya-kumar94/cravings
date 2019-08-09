@@ -45,21 +45,9 @@ class FoodForm extends React.Component {
             sunset: [94122, 94132, 94116]
         };
 
-        // this.handleSubmit = this.handleSubmit.bind(this);
         this.check = this.check.bind(this);
         this.query = this.query.bind(this);
     }
-
-    // handleSubmit(e) {
-    //     e.preventDefault();
-    //     this.props.history.push({
-    //         pathname: `/foods`,
-            // search: `?sweet=${this.state.sweet}&spicy=${this.state.spicy}&salty=${this.state.salty}&savory=${this.state.savory}&hot=${this.state.hot}&cold=${this.state.cold}&healthy=${this.state.healthy}&junk=${this.state.junk}&happy=${this.state.happy}&sad=${this.state.sad}&hangry=${this.state.hangry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
-            // search: `?sweet=${this.state.sweet}`
-    //     })
-
-    // }
-
     
 
     query(e) {

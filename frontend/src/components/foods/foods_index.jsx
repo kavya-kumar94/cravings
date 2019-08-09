@@ -2,11 +2,9 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import FoodsIndexItem from './foods_index_item';
 import './foods.css'
-//loading:
 
 import LoadingIcon from '../loading/loading_icon';
 
-// leaflet map
 import {Map, Marker, Popup, TileLayer} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -85,7 +83,7 @@ class FoodsIndex extends React.Component {
 
                             {this.props.foods.map((food) => {
                                 return (
-                                    <Marker position={[food.lat, food.lng]}>
+                                    <Marker key={food.id} position={[food.lat, food.lng]}>
                                         <Popup>
                                             {food.name}
                                             <br />

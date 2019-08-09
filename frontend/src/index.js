@@ -1,16 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import './index.css';
 import Root from './components/root';
 import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
-//TESTING
-// import { fetchFoods } from './actions/food_actions';
-// import { fetchDrinks } from './actions/drink_actions';
-//TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -29,12 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore({});
     }
 
-    // TESTING
-    // window.dispatch = store.dispatch;
-    // window.getState = store.getState;
-    // window.fetchFoods = fetchFoods;
-    // window.fetchDrinks = fetchDrinks;
-    // TESTING
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);
