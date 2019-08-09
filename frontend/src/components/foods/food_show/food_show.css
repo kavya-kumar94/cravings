@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     background-color: white;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     border-radius: 4px;
     height: 300px;
     width: 800px;
@@ -29,8 +29,8 @@
 }
 
 .food-show-info {
-    border: 1px solid black;
-    border-bottom: transparent;
+    /* border: 1px solid black;
+    border-bottom: transparent; */
     flex: 1;
     padding: 10px 20px;
     border-radius: 0px 4px 0px 0px;
