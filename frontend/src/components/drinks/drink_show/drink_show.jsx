@@ -22,7 +22,9 @@ class DrinkShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchDrink(this.props.match.params.drinkId);
-    this.props.fetchDrinkSave({userId: this.props.currentUser.id, drinkId: this.props.drinkId})
+    if (this.props.currentUser) {
+      this.props.fetchDrinkSave({userId: this.props.currentUser.id, drinkId: this.props.drinkId})
+    }
   }
 
   componentWillReceiveProps(nextProps) {
