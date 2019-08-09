@@ -28,10 +28,14 @@ class FoodShow extends React.Component {
   // }
 
   componentDidMount() {
-    this.props.fetchFood(this.props.match.params.foodId);
-    if(this.props.currentUser) {
-      this.props.fetchFoodSave({userId: this.props.currentUser.id, foodId: this.props.match.params.foodId})
-    }
+    // this.props.fetchFood(this.props.match.params.foodId);
+    this.props.fetchFood(this.props.match.params.foodId)
+    .then(() => {
+      if(this.props.currentUser) {
+        this.props.fetchFoodSave({userId: this.props.currentUser.id, foodId: this.props.match.params.foodId})
+      }
+
+    })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -53,9 +57,9 @@ class FoodShow extends React.Component {
 
   checkFoodSave() {
     if (this.props.loggedIn) {
-      this.props.fetchFoodSave({ userId: this.props.currentUser.id, foodId: this.props.foodId });
+      // this.props.fetchFoodSave({ userId: this.props.currentUser.id, foodId: this.props.match.params.foodId });
       if (this.props.foodSave) {
-        return (<div className='food-unsave' onClick={() => this.unsaveFoodItem(this.props.currentUser.id, this.props.food.id)}>
+        return (<div className='food-save' onClick={() => this.unsaveFoodItem(this.props.currentUser.id, this.props.food.id)}>
           <i className="fas fa-heart"></i> Click to Unsave
           </div>
 
