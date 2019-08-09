@@ -7,9 +7,9 @@ const FoodsReducer = (state = {}, action) => {
     case RECEIVE_FOODS:
       return Object.assign({}, state, action.foods.data);
     case RECEIVE_FOOD:
-      return Object.assign({}, state, {
+      return {
         [action.food.data.id]: action.food.data
-      });
+      };
     default:
       return state;
   }

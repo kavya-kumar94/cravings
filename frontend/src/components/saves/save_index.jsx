@@ -22,7 +22,6 @@ class SaveIndex extends React.Component {
         // this.props.fetchFoodSaves(userId).then(this.props.fetchFoods());
         this.props.fetchFoodSaves(userId);
         this.props.fetchDrinkSaves(userId);
-        
     }
 
     render() {
@@ -39,8 +38,8 @@ class SaveIndex extends React.Component {
                             if (foodSave.foodId) {
                                 return (
                                 <div className="btn-link">
-                                    <Link to={`/foods/${foodSave.foodId._id}`}>{foodSave.foodId.name}</Link>
-                                    <button onClick={() => this.props.unsaveFood(foodSave.foodId._id)}>delete</button>
+                                    <Link to={`/foods/${String(foodSave.foodId._id)}`}>{foodSave.foodId.name}</Link>
+                                    <button onClick={() => this.props.unsaveFood(foodSave)}>delete</button>
                                 </div>
                                 )}
                             })}
@@ -51,8 +50,8 @@ class SaveIndex extends React.Component {
                         if (drinkSave.drinkId) {
                             return (
                                 <div className="btn-link">
-                                    <Link to={`/drinks/${drinkSave.drinkId._id}`}>{drinkSave.drinkId.name}</Link>
-                                    <button onClick={() =>this.props.unsaveDrink(drinkSave.drinkId._id)}>delete</button>
+                                    <Link to={`/drinks/${String(drinkSave.drinkId._id)}`}>{drinkSave.drinkId.name}</Link>
+                                    <button onClick={() =>this.props.unsaveDrink(drinkSave)}>delete</button>
 
                                 </div>
                             )}
