@@ -44,8 +44,8 @@ class FoodShow extends React.Component {
       .then(this.props.history.push('/saves'))
   }
 
-  unsaveFoodItem(foodSave) {
-    this.props.unsaveFood(foodSave)
+  unsaveFoodItem(userId, foodId) {
+    this.props.unsaveFood({userId: this.props.currentUser.id, foodId: foodId})
       .then(this.props.history.push('/saves'));
   }
 
@@ -53,7 +53,7 @@ class FoodShow extends React.Component {
     if (this.props.loggedIn) {
       this.props.fetchFoodSave({ userId: this.props.currentUser.id, foodId: this.props.foodId });
       if (this.props.foodSave) {
-        return (<div className='food-unsave' onClick={() => this.unsaveFoodItem(this.props.foodSaves)}>
+        return (<div className='food-unsave' onClick={() => this.unsaveFoodItem(this.props.currentUser.id, this.props.food.id)}>
           <i className="fas fa-heart"></i> Click to Unsave
           </div>
 
