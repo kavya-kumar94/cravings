@@ -8,7 +8,8 @@ const mapStateToProps = (state,ownProps) => {
         food: state.entities.foods[ownProps.match.params.foodId] || {},
         loading: state.ui.loading.detailLoading,
         loggedIn: state.session.isAuthenticated,
-        currentUser: state.session.user
+        currentUser: state.session.user,
+        foodSave: state.entities.foodSaves
     };
 };
 

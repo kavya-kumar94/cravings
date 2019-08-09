@@ -18,24 +18,51 @@ class DrinkShow extends React.Component {
     super(props);
     this.state = {};
     this.saveDrinkItem = this.saveDrinkItem.bind(this);
+    this.checkDrinkSave = this.checkDrinkSave.bind(this);
+    this.unsaveDrinkItem = this.unsaveDrinkItem.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchDrink(this.props.match.params.drinkId);
-    if (this.props.currentUser) {
-      this.props.fetchDrinkSave({userId: this.props.currentUser.id, drinkId: this.props.drinkId})
-    }
   }
-
+  
   componentWillReceiveProps(nextProps) {
     if (nextProps.drink) {
       this.setState(nextProps.drink);
     }
   }
-
+  
   saveDrinkItem(userId, drinkId) {
     this.props.saveDrink({userId: this.props.currentUser.id, drinkId: drinkId})
     .then(this.props.history.push('/saves'));
+  }
+
+  unsaveDrinkItem(drinkSave) {
+    this.props.unsaveDrink(drinkSave)
+    .then(this.props.history.push('/saves'));
+  }
+  
+  checkDrinkSave() {
+    console.log(this.props.drinkSave);
+      if(this.props.loggedIn) {
+        this.props.fetchDrinkSave({userId: this.props.currentUser.id, drinkId: this.props.drinkId});
+        if(this.props.drinkSave) {
+          return (<div className='drink-unsave' onClick={() => this.unsaveDrinkItem(this.props.drinkSaves)}>
+            <i className="fas fa-heart"></i> Click to Unsave
+          </div> 
+
+          )} else {
+            return(
+              <div className='drink-save' onClick={() => this.saveDrinkItem(this.props.currentUser.id, this.props.drink.id)}>
+                <i className="fas fa-heart"></i> Click to Save
+              </div> 
+            )}
+      } else {
+         return (<div className='drink-save'>
+            <i className="fas fa-heart"></i> Please Sign in to Save
+          </div>
+
+         )}
   }
 
   render() {
@@ -65,12 +92,7 @@ class DrinkShow extends React.Component {
                   Rating:{" "}
                   <span className={`rating-static rating-${drink.rating * 10}`} />
               </div>
-            {this.props.loggedIn ?
-              <div className='drink-save' onClick={() => this.saveDrinkItem(currentUser.id, drink.id)}>
-                <i className="fas fa-heart"></i> Click to Save
-                    </div> : <div className='drink-save'>
-                <i className="fas fa-heart"></i> Please Sign in to Save
-                    </div>}
+            {this.checkDrinkSave()}
           </div>
           
         </div>

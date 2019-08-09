@@ -13,7 +13,11 @@ router.get('/',
             .populate('drinkId')
             .exec()
             .then(drinks => {
-                res.json(drinks);
+                const object = {};
+                drinks.forEach((drink) => {
+                    object[drink._id] = drink;
+                })
+                res.json(object);
             })
     }
 );

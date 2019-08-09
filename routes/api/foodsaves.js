@@ -12,7 +12,11 @@ router.get('/',
             .populate('foodId')
             .exec()
             .then(foods => {
-                res.json(foods);
+                const object = {};
+                foods.forEach((food) => {
+                    object[food._id] = food;
+                })
+                res.json(object);
                 // console.log('the food is %s', foodsave.food.name);
             })
             // .catch(err => res.status(404).json('No saves found'));
