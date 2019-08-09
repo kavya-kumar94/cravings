@@ -74,5 +74,6 @@
 .drink-map {
     /* border: 2px solid black; */
     border-radius: 4px;
+    z-index: 7;
 }
 
