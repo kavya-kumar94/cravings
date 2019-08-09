@@ -21,9 +21,14 @@ class FoodShow extends React.Component {
     this.saveFoodItem = this.saveFoodItem.bind(this);
   }
 
+  // componentWillMount(){
+    // this.props.fetchFood(this.props.match.params.foodId);
+    // this.props.fetchFoodSave({ userId: this.props.userId, foodId: this.props.match.params.foodId })
+  // }
+
   componentDidMount() {
     this.props.fetchFood(this.props.match.params.foodId);
-    this.props.fetchFoodSave({userId: this.props.userId, foodId: this.props.match.params.foodId})
+    // this.props.fetchFoodSave({userId: this.props.userId, foodId: this.props.match.params.foodId})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -42,6 +47,13 @@ class FoodShow extends React.Component {
     let { food, userId } = this.props;
   
     if (food === undefined) food = {};
+
+    // let lat = parseFloat(food.lat);
+    // let lng = food.lng;
+
+    // console.log(typeof lat);
+    // console.log(typeof lng);
+
 
     return (
       <div className="food-show-container">
@@ -73,14 +85,16 @@ class FoodShow extends React.Component {
               </div>
           </div>
 
+          
+
           <div className="food-map-container">
-            <Map className="food-map" center={[food.lat, food.lng]} zoom={13} style={{ height: "250px", width: "800px", position: "absolute" }}>
+          {/* <Map className="food-map" center={[parseFloat(food.lat), parseFloat(food.lng)]} zoom={13} style={{ height: "250px", width: "800px", position: "absolute" }}>
               <TileLayer
                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
               />
 
-               <Marker position={[food.lat, food.lng]}>
+            <Marker position={[parseFloat(food.lat), parseFloat(food.lng)]}>
                     <Popup>
                         {food.name}
                         <br />
@@ -90,7 +104,7 @@ class FoodShow extends React.Component {
                     </Popup>
                 </Marker>
 
-            </Map>
+            </Map> */}
           </div>
         </div>
     );
