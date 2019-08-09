@@ -13,7 +13,7 @@
 .inputs input[type="submit"] {
     background-color: rgb(65, 132, 158);
     color: white;
-    width: 85%;
+    width: 80%;
     text-align: center;
 }
 
@@ -29,8 +29,15 @@
 }
 
 .close-x:hover {
-    color: rgb(124, 184, 207);
     cursor: pointer;
+}
+
+.fa-times {
+    color: black;
+}
+
+.fa-times:hover {
+    color: rgb(124, 184, 207);
 }
 
 .please {

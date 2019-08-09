@@ -36,7 +36,7 @@ class FoodsIndex extends React.Component {
     }
 
     render() {
-
+        
         if (this.props.foods === undefined) return null;
         
         if (this.props.loading) {
