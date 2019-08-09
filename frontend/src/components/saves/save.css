@@ -29,3 +29,21 @@
     font-size: 19px;
     text-align: center;
 }
+
+.saved-food-items{
+    list-style: none;
+    position: relative;
+    top: 20%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    padding: 10px;
+    margin-top: 10px;
+}
+.saved-drink-items{
+    list-style: none;
+    position: relative;
+}

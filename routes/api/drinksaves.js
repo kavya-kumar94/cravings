@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 router.get('/',
     (req, res) => {
-        DrinkSave.find({ userId: mongoose.Types.ObjectId(req.body.userId )})
+        DrinkSave.find({ userId: mongoose.Types.ObjectId(req.query.userId )})
             // .then(saves => {
             //     res.json(saves);
             // })

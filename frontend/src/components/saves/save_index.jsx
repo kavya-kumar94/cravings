@@ -33,19 +33,20 @@ class SaveIndex extends React.Component {
                 <div className="user-info">
                     <li>{currentUser.username}'s saved restaurants!</li>
                     <li className="member-date">Member since August 2019</li>
-                </div>
-                <ul className="saved-items">
-                    {console.log(foodSaves)}
+                <ul className="saved-food-items">
                     {Object.values(foodSaves).map((foodSave) => {
                         // return <li>{foodSave.name}</li>
-                        if (foodSave.foodId) return <li>{foodSave.foodId.name}</li>
+                            if (foodSave.foodId) return <Link to={`/foods/${foodSave.foodId._id}`}>{foodSave.foodId.name}</Link>
                     })}
+                <ul className="saved-drink-items">
+                    {console.log(drinkSaves)}
                     {Object.values(drinkSaves).map((drinkSave) => {
                         // return <li>{foodSave.name}</li>
-                        if (drinkSave.drinkId) return <li>{drinkSave.drinkId.name}</li>
+                        if (drinkSave.drinkId) return <Link to={`/drinks/${drinkSave.drinkId._id}`}>{drinkSave.drinkId.name}</Link>
                     })}
-
                 </ul>
+                </ul>
+                    </div>
             </div>
         )
     }
