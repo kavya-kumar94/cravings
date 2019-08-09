@@ -5,7 +5,6 @@ const mongoose = require("mongoose");
 
 router.get('/',
     (req, res) => {
-        debugger
         FoodSave.find({ userId: mongoose.Types.ObjectId(req.query.userId)})
             // .then(saves => {
             //     res.json(saves);
