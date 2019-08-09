@@ -3,12 +3,12 @@ const Schema = mongoose.Schema;
 
 const DrinkSaveSchema = new Schema({
     userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
     },
     drinkId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Drink'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'drinks'
     }
 });
 

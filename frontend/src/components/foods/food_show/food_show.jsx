@@ -5,7 +5,6 @@ import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
 import './food_show.css';
-import { saveFood } from "../../../util/foodsave_api_util";
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -23,7 +22,7 @@ class FoodShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchFood(this.props.match.params.foodId);
-    this.props.fetchFoodSave({userId: this.props.userId, foodId: this.props.match.params.foodId})
+    this.props.fetchFoodSave({userId: this.props.currentUser.id, foodId: this.props.match.params.foodId})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,13 +32,14 @@ class FoodShow extends React.Component {
   }
 
   saveFoodItem(userId, foodId) {
-    this.props.saveFood({userId: userId, foodId: foodId})
+    let { currentUser } = this.props;
+    this.props.saveFood({userId: currentUser.id, foodId: foodId})
       .then(this.props.history.push('/saves'))
   }
 
   
   render() {
-    let { food, userId } = this.props;
+    let { food, currentUser } = this.props;
   
     if (food === undefined) food = {};
 
@@ -65,7 +65,7 @@ class FoodShow extends React.Component {
                       Rating: <span className={`rating-static rating-${food.rating * 10}`} />
                   </div>
                   {this.props.loggedIn ? 
-                    <div className='food-save' onClick={this.saveFood}>
+                    <div className='food-save' onClick={()=>this.saveFoodItem(currentUser.id, food.id)}>
                       <i className="fas fa-heart"></i> Click to Save
                     </div> : <div className='food-save'>
                       <i className="fas fa-heart"></i> Please Sign in to Save

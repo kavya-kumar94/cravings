@@ -17,15 +17,7 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    },
-    foodSaves: [{ 
-        type: Schema.Types.ObjectId,
-        ref: 'Food' 
-    }],
-    drinkSaves: [{ 
-        type: Schema.Types.ObjectId,
-        ref: 'Drink' 
-    }]
+    }
 
 });
 
