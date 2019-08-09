@@ -2,11 +2,9 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 import FoodsIndexItem from './foods_index_item';
 import './foods.css'
-//loading:
 
 import LoadingIcon from '../loading/loading_icon';
 
-// leaflet map
 import {Map, Marker, Popup, TileLayer} from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -80,8 +78,6 @@ class FoodsIndex extends React.Component {
                             <TileLayer
                                 attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                                 url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
-                            // url="http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                            // url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
                             />
 
 

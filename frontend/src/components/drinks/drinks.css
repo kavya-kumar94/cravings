@@ -7,7 +7,6 @@
 }
 .drinks-ul {
     padding: 40px 40px;
-    /* max-width: 1200px; */
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -27,8 +26,6 @@
     width: 290px;
     height: 240px;
     margin: 10px;
-    /* border: 1px solid black; */
-    /* background: rgb(204, 200, 200, 0.6); */
 }
 
 .drink-pictures {
@@ -55,7 +52,6 @@
 
 .drink-name-location {
     display: flex;
-    /* justify-content: space-between; */
 }
   
 .drink-name {
@@ -122,8 +118,6 @@
 }
 
 .no-results-for-drink{
-    /* display: flex;
-    flex-direction: column; */
     width: 100%;
     text-align: center;
     display: inline-block;
@@ -140,7 +134,6 @@
 .no-results-for-drink button {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 20px;
-    /* margin-left: 100px; */
     text-align: center;
     padding: 10px;
     width: 70%;
@@ -164,7 +157,6 @@
 .rating-static {
   width: 60px;
   height: 16px;
-  /* margin-top: 18px; */
   display: inline-flex;
   opacity: 0.8;
   background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;

@@ -3,8 +3,6 @@
 .drink-form {
     display: flex;
     flex-direction: column;
-    /* padding-left: 200px; */
-    /* padding-top: 50px; */
     font-size: 20px;
     margin-top: 50px;
 }

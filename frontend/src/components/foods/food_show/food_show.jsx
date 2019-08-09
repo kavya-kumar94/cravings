@@ -6,7 +6,6 @@ import L from 'leaflet';
 
 import './food_show.css';
 import { saveFood } from "../../../util/foodsave_api_util";
-//loading:
 
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
@@ -80,7 +79,6 @@ class FoodShow extends React.Component {
                 url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
               />
 
-             
                <Marker position={[food.lat, food.lng]}>
                     <Popup>
                         {food.name}

@@ -15,34 +15,5 @@ span, article, footer, time, small {
   box-sizing: inherit;
   background: transparent;
 }
-/* 
-ul {
-  list-style: none;
-}
 
-img {
-  display: block;
-  height: auto;
-}
 
-input[type="password"],
-input[type="email"],
-input[type="text"],
-input[type="submit"],
-textarea,
-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-}
-
-button,
-input[type="submit"] {
-  cursor: pointer;
-}
-
-.group:after {
-  content: "";
-  display: block;
-  clear: both;
-} */

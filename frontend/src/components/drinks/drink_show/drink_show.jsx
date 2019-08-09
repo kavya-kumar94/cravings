@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./drink_show.css";
-// import { withRouter } from 'react-router-dom';
 
 import { Map, Marker,Popup,TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';

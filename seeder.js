@@ -11,67 +11,54 @@ const seed = (() => {
 
     const searchBreakfastRequest = {
         term: 'Breakfast & Brunch',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchBuffetRequest = {
         term: 'Buffets',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchItalianRequest = {
         term: 'Italian',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchJapaneseRequest = {
         term: 'Japanese',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchMexicanRequest = {
         term: 'Mexican',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchChineseRequest = {
         term: 'Chinese',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchIndianRequest = {
         term: 'Indian',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchKoreanRequest = {
         term: 'Korean',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchPizzaRequest = {
         term: 'Pizza',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchSandwichesRequest = {
         term: 'Sandwiches',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchSoupsRequest = {
         term: 'Soups',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchSaladRequest = {
         term: 'Salad',
-        // limit: 20,
         location: 'san francisco, ca'
     };
     const searchFastFoodRequest = {
         term: 'Fast Food',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
@@ -545,58 +532,47 @@ const seed = (() => {
         })
     })
 
-    // .catch(error => {
-    //     console.log(error);
-    // });
 
     Drink.collection.deleteMany({});
 
 
     const searchBubbleTeaRequest = {
         term: 'bubble tea',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
     const searchCoffeeShopsRequest = {
         term: 'coffeeshops',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
     const searchTeaRoomsRequest = {
         term: 'tea rooms',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
     const searchJuiceBarsAndSmoothiesRequest = {
         term: 'juice bars & smoothies',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
     const searchMilkshakeBarsRequest = {
         term: 'milkshake bars',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
     const searchKombuchaRequest = {
         term: 'kombucha',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
     const searchWineriesRequest = {
         term: 'wineries',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 
     const searchBarsRequest = {
         term: 'bars',
-        // limit: 20,
         location: 'san francisco, ca'
     };
 

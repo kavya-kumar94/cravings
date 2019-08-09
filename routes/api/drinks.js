@@ -53,7 +53,6 @@ router.get("/", (req, res) => {
             })
             let drinksPojo = {};
             filtered.forEach(drink => {
-                // drinks.forEach(drink => {
                 let drinkPojo = {
                     id: drink._id,
                     name: drink.name,
@@ -84,7 +83,6 @@ router.get("/", (req, res) => {
                     adventurous: drink.adventurous
                 }
                 drinksPojo[drink._id] = drinkPojo;
-                // })
             })
             return res.json(drinksPojo);
 
@@ -109,11 +107,9 @@ router.get("/", (req, res) => {
                     }
                 })
             }
-                console.log(filtered);
 
             let drinksPojo = {};
             filtered.forEach(drink => {
-                // drinks.forEach(drink => {
                 let drinkPojo = {
                     id: drink._id,
                     name: drink.name,
@@ -144,7 +140,6 @@ router.get("/", (req, res) => {
                     adventurous: drink.adventurous
                 }
                 drinksPojo[drink._id] = drinkPojo;
-                // })
             })
             return res.json(drinksPojo);
 
@@ -154,13 +149,10 @@ router.get("/", (req, res) => {
 
 
         })
-    // })
     }
 })
 
 router.get("/:drinkId", (req, res) => {
-
-    //req.params.foodId
 
     let result = [];
 
@@ -213,19 +205,3 @@ router.get("/:drinkId", (req, res) => {
 module.exports = router;
 
 
-  // Drink.find({
-    //     caffeine: req.query.caffeine,
-    //     sweet: req.query.sweet,
-    //     aromatic: req.query.aromatic,
-    //     hot: req.query.hot,
-    //     iced: req.query.iced,
-    //     healthy: req.query.healthy,
-    //     sad: req.query.sad,
-    //     tired: req.query.tired,
-    //     happy: req.query.happy,
-    //     angry: req.query.angry,
-    //     sick: req.query.sick,
-    //     celebratory: req.query.celebratory,
-    //     stressed: req.query.stressed,
-    //     adventurous: req.query.adventurous
-    // )}

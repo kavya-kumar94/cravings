@@ -3,7 +3,6 @@ import * as DrinkApiUtil from '../util/drink_api_util';
 export const RECEIVE_DRINKS = "RECEIVE_DRINKS";
 export const RECEIVE_DRINK = "RECEIVE_DRINK";
 
-// loading page:
 
 export const START_LOADING_ALL_DRINKS = 'START_LOADING_ALL_DRINKS';
 export const START_LOADING_SINGLE_DRINK = 'START_LOADING_SINGLE_DRINK';
@@ -16,7 +15,6 @@ export const startLoadingSingleDrink = () => ({
     type: START_LOADING_SINGLE_DRINK
 });
 
-// end of loading actions
 
 export const receiveDrink = (drink) => ({
     type: RECEIVE_DRINK,
@@ -30,7 +28,6 @@ export const receiveDrinks = (drinks) => ({
 
 export const fetchDrinks = (query) => dispatch => {
 
-    // loading
     dispatch(startLoadingAllDrinks());
 
     return DrinkApiUtil.fetchDrinks(query)
@@ -40,7 +37,6 @@ export const fetchDrinks = (query) => dispatch => {
 
 export const fetchDrink = (id) => dispatch => {
 
-    //loading
     dispatch(startLoadingSingleDrink());
 
     return DrinkApiUtil.fetchDrink(id)

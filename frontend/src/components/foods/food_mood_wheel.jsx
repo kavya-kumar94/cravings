@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
     Pie, 
-    // Doughnut 
 } from 'react-chartjs-2';
 import { withRouter } from 'react-router-dom';
 import 'chartjs-plugin-datalabels';
@@ -35,7 +34,6 @@ class FoodWheel extends React.Component {
 
     query(e) {
         e.preventDefault();
-        // console.log(this.state);
         this.props.history.push({
             pathname: '/foods',
             search: `?sweet=${this.state.sweet}&spicy=${this.state.spicy}&salty=${this.state.salty}&savory=${this.state.savory}&hot=${this.state.hot}&cold=${this.state.cold}&healthy=${this.state.healthy}&junk=${this.state.junk}&happy=${this.state.happy}&sad=${this.state.sad}&hangry=${this.state.hangry}&sick=${this.state.sick}&celebratory=${this.state.celebratory}&stressed=${this.state.stressed}&adventurous=${this.state.adventurous}`
@@ -103,7 +101,6 @@ class FoodWheel extends React.Component {
                 options={{maintainAspectRatio: true}}
                 allowSliceExplosion="true"
                 radiusFactor={0.8} 
-                // options={{ plugins: { datalabels: { display: false } } }}
                     legend={{
                         position: 'left',
                         labels: {
@@ -114,10 +111,7 @@ class FoodWheel extends React.Component {
                         onClick: (e, item) => {
                             var index = item.index;
                             var meta = this.refs.chart.chartInstance.getDatasetMeta(0).data[index]
-                            // var ci = this.refs.chart.chartInstance;
-                            // See controller.isDatasetVisible comment
                             meta.hidden = !meta.hidden;
-                            // We hid a dataset ... rerender the chart
                             this.handleClick(item.text, meta.hidden);
                             this.refs.chart.chartInstance.update();
                         }
