@@ -10,6 +10,7 @@ import { fetchDrinks } from '../../actions/drink_actions'
 class SaveIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.state ={};
         // this.randomDate = this.randomDate.bind(this);
         this.unsaveTheDrink = this.unsaveTheDrink.bind(this);
         this.unsaveTheFood = this.unsaveTheFood.bind(this);
@@ -26,15 +27,23 @@ class SaveIndex extends React.Component {
         this.props.fetchDrinkSaves(this.props.currentUser.id);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.foodSaves) {
+            this.setState(nextProps.foodSaves)
+        } else if (nextProps.drinkSaves) {
+            this.setState(nextProps.drinkSaves);
+        }
+    }
+
     unsaveTheFood(foodSave) {
-        this.props.unsaveFood(foodSave);
-        (this.forceUpdate());
+        this.props.unsaveFood(foodSave)
+        .then(this.forceUpdate());
         // .then(this.props.history.push("/saves"))
     }
 
     unsaveTheDrink(drinkSave) {
-        this.props.unsaveDrink(drinkSave);
-        (this.forceUpdate());
+        this.props.unsaveDrink(drinkSave)
+        .then(this.forceUpdate());
         // .then(this.props.history.push("/saves"))
     }
 
@@ -48,11 +57,11 @@ class SaveIndex extends React.Component {
                     <li>{currentUser.username}'s saved restaurants!</li>
                     <li className="member-date">Member since August 2019</li>
                 <ul className="saved-food-items">
-                    {Object.values(foodSaves).map((foodSave) => {
+                    {Object.values(foodSaves).map((foodSave, idx) => {
                         // return <li>{foodSave.name}</li>
                             if (foodSave.foodId) {
                                 return (
-                                    <div className="btn-link">
+                                    <div key={idx} className="btn-link">
                                         <Link to={`/foods/${String(foodSave.foodId._id)}`}>{foodSave.foodId.name}</Link>
                                         <button onClick={() => this.unsaveTheFood(foodSave)}>delete</button>
                                     </div>                                
@@ -60,11 +69,11 @@ class SaveIndex extends React.Component {
                             })}
                 <ul className="saved-drink-items">
                     {console.log(drinkSaves)}
-                    {Object.values(drinkSaves).map((drinkSave) => {
+                    {Object.values(drinkSaves).map((drinkSave, idx) => {
                         // return <li>{foodSave.name}</li>
                         if (drinkSave.drinkId) {
                             return (
-                                <div className="btn-link">
+                                <div key={idx} className="btn-link">
                                     <Link to={`/drinks/${String(drinkSave.drinkId._id)}`}>{drinkSave.drinkId.name}</Link>
                                     <button onClick={() => this.unsaveTheDrink(drinkSave)}>delete</button>
 
