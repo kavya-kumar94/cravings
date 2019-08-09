@@ -14,6 +14,7 @@ const FoodSaveReducer = (state= {}, action) => {
             // return Object.assign({}, state, {[action.foodsave._id]: action.foodsave});
             return {[action.foodsave._id]: action.foodsave};
         case RECEIVE_FOODSAVES:
+            debugger;
             return Object.assign({}, state, action.foodsaves);
         case REMOVE_FOODSAVE:
             let newState = merge({}, state);
