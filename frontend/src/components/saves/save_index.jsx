@@ -10,6 +10,7 @@ import { fetchDrinks } from '../../actions/drink_actions'
 class SaveIndex extends React.Component {
     constructor(props) {
         super(props);
+        this.state ={};
         // this.randomDate = this.randomDate.bind(this);
         this.unsaveTheDrink = this.unsaveTheDrink.bind(this);
         this.unsaveTheFood = this.unsaveTheFood.bind(this);
@@ -24,6 +25,14 @@ class SaveIndex extends React.Component {
         // this.props.fetchFoodSaves(userId).then(this.props.fetchFoods());
         this.props.fetchFoodSaves(this.props.currentUser.id);
         this.props.fetchDrinkSaves(this.props.currentUser.id);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.foodSaves) {
+            this.setState(nextProps.foodSaves)
+        } else if (nextProps.drinkSaves) {
+            this.setState(nextProps.drinkSaves);
+        }
     }
 
     unsaveTheFood(foodSave) {
