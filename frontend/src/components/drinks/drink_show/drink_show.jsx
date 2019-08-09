@@ -62,8 +62,8 @@ class DrinkShow extends React.Component {
           
         </div>
 
-        <div className="drink-map">
-          <Map center={[drink.lat, drink.lng]} zoom={13} style={{ height: "300px", width: "300px", position: "absolute" }}>
+        <div className="drink-map-container">
+          <Map className='drink-map' center={[drink.lat, drink.lng]} zoom={13} style={{ height: "250px", width: "800px", position: "absolute" }}>
             <TileLayer
               attribution="&amp;copy <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
               url="https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png"
