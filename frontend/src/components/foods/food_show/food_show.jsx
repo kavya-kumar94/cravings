@@ -49,9 +49,6 @@ class FoodShow extends React.Component {
     
     if (!Object.keys(food).length) return <div></div>
 
-    
-
-
     return (
       <div className="food-show-container">
           <div className="food-show">
