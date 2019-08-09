@@ -22,7 +22,7 @@ class DrinkShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchDrink(this.props.match.params.drinkId);
-    this.props.fetchDrinkSave({userId: this.props.userId, drinkId: this.props.drinkId})
+    this.props.fetchDrinkSave({userId: this.props.currentUser.id, drinkId: this.props.drinkId})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,12 +32,12 @@ class DrinkShow extends React.Component {
   }
 
   saveDrinkItem(userId, drinkId) {
-    this.props.saveDrink({userId: userId, drinkId: drinkId})
+    this.props.saveDrink({userId: this.props.currentUser.id, drinkId: drinkId})
     .then(this.props.history.push('/saves'));
   }
 
   render() {
-    let { drink, userId } = this.props;
+    let { drink, currentUser } = this.props;
 
     if (drink === undefined) drink = {};
 
@@ -64,7 +64,7 @@ class DrinkShow extends React.Component {
                   <span className={`rating-static rating-${drink.rating * 10}`} />
               </div>
             {this.props.loggedIn ?
-              <div className='drink-save' onClick={() => this.saveDrinkItem(userId, drink.id)}>
+              <div className='drink-save' onClick={() => this.saveDrinkItem(currentUser.id, drink.id)}>
                 <i className="fas fa-heart"></i> Click to Save
                     </div> : <div className='drink-save'>
                 <i className="fas fa-heart"></i> Please Sign in to Save

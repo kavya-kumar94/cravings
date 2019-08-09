@@ -17,16 +17,21 @@ class SaveIndex extends React.Component {
     //     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
     // }
     componentDidMount() {
-        let { userId } = this.props;
+        // let { userId } = this.props;
         // this.props.fetchDrinkSaves(userId).then(this.props.fetchDrinks());
         // this.props.fetchFoodSaves(userId).then(this.props.fetchFoods());
-        this.props.fetchFoodSaves(userId);
-        this.props.fetchDrinkSaves(userId);
+        this.props.fetchFoodSaves(this.props.currentUser.id);
+        this.props.fetchDrinkSaves(this.props.currentUser.id);
     }
+
+    // unsaveTheFood() {
+
+    // }
+
 
     render() {
 
-        const { currentUser, userId, foodSaves, drinks, foods, drinkSaves } = this.props;
+        const { currentUser, foodSaves, drinks, foods, drinkSaves } = this.props;
         return (
             <div className="save-index">
                 <div className="user-info">
@@ -66,7 +71,7 @@ class SaveIndex extends React.Component {
 const msp = state => {
     return {
         currentUser: state.session.user,
-        userId: state.session.user.id,
+        // userId: state.session.user.id,
         foodSaves: state.entities.foodSaves,
         drinkSaves: state.entities.drinkSaves
         // foods: state.entities.foods,

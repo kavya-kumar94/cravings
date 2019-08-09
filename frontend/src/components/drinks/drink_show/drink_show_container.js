@@ -8,8 +8,7 @@ const mapStateToProps = (state, ownProps) => {
         drink: state.entities.drinks[ownProps.match.params.drinkId],
         loading: state.ui.loading.detailLoading,
         loggedIn: state.session.isAuthenticated,
-        currentUser: state.session.user,
-        userId: state.session.user.id
+        currentUser: state.session.user
     };
 };
 
