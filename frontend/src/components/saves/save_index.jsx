@@ -38,7 +38,7 @@ class SaveIndex extends React.Component {
                         // return <li>{foodSave.name}</li>
                             if (foodSave.foodId) {
                                 return (
-                                <div>
+                                <div className="btn-link">
                                     <Link to={`/foods/${foodSave.foodId._id}`}>{foodSave.foodId.name}</Link>
                                     <button onClick={() => this.props.unsaveFood(foodSave.foodId._id)}>delete</button>
                                 </div>
@@ -50,7 +50,7 @@ class SaveIndex extends React.Component {
                         // return <li>{foodSave.name}</li>
                         if (drinkSave.drinkId) {
                             return (
-                                <div>
+                                <div className="btn-link">
                                     <Link to={`/drinks/${drinkSave.drinkId._id}`}>{drinkSave.drinkId.name}</Link>
                                     <button onClick={() =>this.props.unsaveDrink(drinkSave.drinkId._id)}>delete</button>
 
