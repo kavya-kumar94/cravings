@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchDrink } from '../../../actions/drink_actions';
-import { saveDrink, unsaveDrink, fetchDrinkSave } from '../../../actions/Drink_save_actions';
+import { saveDrink, unsaveDrink, fetchDrinkSave } from '../../../actions/drink_save_actions';
 import DrinkShow from './drink_show';
 
 const mapStateToProps = (state, ownProps) => {

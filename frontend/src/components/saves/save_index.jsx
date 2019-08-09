@@ -21,12 +21,13 @@ class SaveIndex extends React.Component {
         // this.props.fetchDrinkSaves(userId).then(this.props.fetchDrinks());
         // this.props.fetchFoodSaves(userId).then(this.props.fetchFoods());
         this.props.fetchFoodSaves(userId);
+        this.props.fetchDrinkSaves(userId);
         
     }
 
     render() {
 
-        const { currentUser, userId, foodSaves, drinks, foods } = this.props;
+        const { currentUser, userId, foodSaves, drinks, foods, drinkSaves } = this.props;
         return (
             <div className="save-index">
                 <div className="user-info">
@@ -39,8 +40,12 @@ class SaveIndex extends React.Component {
                         // return <li>{foodSave.name}</li>
                         if (foodSave.foodId) return <li>{foodSave.foodId.name}</li>
                     })}
+                    {Object.values(drinkSaves).map((drinkSave) => {
+                        // return <li>{foodSave.name}</li>
+                        if (drinkSave.drinkId) return <li>{drinkSave.drinkId.name}</li>
+                    })}
+
                 </ul>
-                I am your saves
             </div>
         )
     }
@@ -50,6 +55,7 @@ const msp = state => {
         currentUser: state.session.user,
         userId: state.session.user.id,
         foodSaves: state.entities.foodSaves,
+        drinkSaves: state.entities.drinkSaves
         // foods: state.entities.foods,
         // drinks: state.entities.drinks
     }
