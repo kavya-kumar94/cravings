@@ -18,6 +18,8 @@ class FoodShow extends React.Component {
     super(props);
     this.state = {};
     this.saveFoodItem = this.saveFoodItem.bind(this);
+    this.checkFoodSave = this.checkFoodSave.bind(this);
+    this.unsaveFoodItem = this.unsaveFoodItem.bind(this);
   }
 
   // componentWillMount(){
@@ -40,6 +42,36 @@ class FoodShow extends React.Component {
     let { currentUser } = this.props;
     this.props.saveFood({userId: currentUser.id, foodId: foodId})
       .then(this.props.history.push('/saves'))
+  }
+
+  unsaveFoodItem(foodSave) {
+    this.props.unsaveFood(foodSave)
+      .then(this.props.history.push('/saves'));
+  }
+
+  checkFoodSave() {
+    if (this.props.loggedIn) {
+      this.props.fetchFoodSave({ userId: this.props.currentUser.id, foodId: this.props.foodId });
+      if (this.props.foodSave) {
+        return (<div className='food-unsave' onClick={() => this.unsaveFoodItem(this.props.foodSaves)}>
+          <i className="fas fa-heart"></i> Click to Unsave
+          </div>
+
+        )
+      } else {
+        return (
+          <div className='food-save' onClick={() => this.saveFoodItem(this.props.currentUser.id, this.props.food.id)}>
+            <i className="fas fa-heart"></i> Click to Save
+              </div>
+        )
+      }
+    } else {
+      return (<div className='food-save'>
+        <i className="fas fa-heart"></i> Please Sign in to Save
+          </div>
+
+      )
+    }
   }
 
   
@@ -70,12 +102,7 @@ class FoodShow extends React.Component {
                       <br />
                       Rating: <span className={`rating-static rating-${food.rating * 10}`} />
                   </div>
-                  {this.props.loggedIn ? 
-                    <div className='food-save' onClick={()=>this.saveFoodItem(currentUser.id, food.id)}>
-                      <i className="fas fa-heart"></i> Click to Save
-                    </div> : <div className='food-save'>
-                      <i className="fas fa-heart"></i> Please Sign in to Save
-                    </div>}
+                {this.checkFoodSave()}
               </div>
           </div>
 
