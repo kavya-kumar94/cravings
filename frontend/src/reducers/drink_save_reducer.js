@@ -3,6 +3,7 @@ import {
     RECEIVE_DRINKSAVES,
     REMOVE_DRINKSAVE
 } from '../actions/drink_save_actions';
+import {merge} from 'lodash';
 
 const DrinkSaveReducer = (state = {}, action) => {
     Object.freeze(state);

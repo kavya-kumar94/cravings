@@ -116,10 +116,14 @@ const DrinkSchema = new Schema({
         type: Boolean,
         required: true
     },
-    users: [{
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+    drinkSaves: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'drinksaves'
     }]
+    // users: [{
+    //     type: Schema.Types.ObjectId,
+    //     ref: 'User'
+    // }]
     // restaurant_id: {
     //     type: Array,
     //     required: true

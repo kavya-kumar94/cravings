@@ -65,7 +65,7 @@ class FoodShow extends React.Component {
                       Rating: <span className={`rating-static rating-${food.rating * 10}`} />
                   </div>
                   {this.props.loggedIn ? 
-                    <div className='food-save' onClick={this.saveFood}>
+                    <div className='food-save' onClick={()=>this.saveFoodItem(userId, food.id)}>
                       <i className="fas fa-heart"></i> Click to Save
                     </div> : <div className='food-save'>
                       <i className="fas fa-heart"></i> Please Sign in to Save
