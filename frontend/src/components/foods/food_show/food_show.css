@@ -43,7 +43,7 @@
     font-size: 20px;
 }
 
-.fas {
+.fa-map-marker-alt {
     color: red;
 }
 
@@ -62,6 +62,10 @@
     opacity: 0.6;
 }
 
+.fa-heart {
+    color: red;
+}
+
 .food-map-container {
     width: 800px;
     height: 250px;
@@ -70,4 +74,5 @@
 .food-map {
     /* border: 2px solid black; */
     border-radius: 4px;
+    z-index: 7;
 }
