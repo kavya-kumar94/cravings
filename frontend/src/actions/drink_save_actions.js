@@ -19,17 +19,17 @@ const removeDrinkSave = (drinksave) => ({
 })
 
 export const saveDrink = drinkSave => dispatch => (
-    APIUtil.saveDrink(drinkSave).then(drinkSave => dispatch(receiveDrinkSave(drinkSave)))
+    APIUtil.saveDrink(drinkSave).then(drinkSave => dispatch(receiveDrinkSave(drinkSave.data)))
 );
 
 export const unsaveDrink = (drinksave) => dispatch => (
-    APIUtil.unsaveDrink(drinksave).then((drinksave) => dispatch(removeDrinkSave(drinksave)))
+    APIUtil.unsaveDrink(drinksave).then((drinksave) => dispatch(removeDrinkSave(drinksave.data)))
 );
 
 export const fetchDrinkSaves = (userId) => dispatch => (
-    APIUtil.fetchDrinkSaves(userId).then((drinkSaves) => dispatch(receiveDrinkSaves(drinkSaves)))
+    APIUtil.fetchDrinkSaves(userId).then((drinksaves) => dispatch(receiveDrinkSaves(drinksaves.data)))
 );
 
 export const fetchDrinkSave = (drinksave) => dispatch => (
-    APIUtil.fetchDrinkSave(drinksave).then(drinksave => dispatch(receiveDrinkSave(drinksave)))
+    APIUtil.fetchDrinkSave(drinksave).then(drinksave => dispatch(receiveDrinkSave(drinksave.data)))
 );

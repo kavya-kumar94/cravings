@@ -5,13 +5,13 @@ export const saveDrink = (drinksave) => {
 };
 
 export const unsaveDrink = (drinksave) => {
-    return axios.delete(`/api/drinksaves/${drinksave.id}`, drinksave);
+    return axios.delete(`/api/drinksaves/${String(drinksave._id)}`, drinksave);
 };
 
 export const fetchDrinkSave = drinksave => {
-    return axios.get(`/api/drinksaves/${drinksave.id}`, drinksave);
+    return axios.get(`/api/drinksaves/${drinksave.drinkId}?userId=${drinksave.userId}`);
 };
 
 export const fetchDrinkSaves = (userId) => {
-    return axios.get(`/api/drinksaves/${userId}`);
+    return axios.get(`/api/drinksaves/?userId=${userId}`);
 };

@@ -1,7 +1,6 @@
 import React from "react";
 
 import "./drink_show.css";
-
 import { Map, Marker,Popup,TileLayer } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
@@ -18,10 +17,12 @@ class DrinkShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {};
+    this.saveDrinkItem = this.saveDrinkItem.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchDrink(this.props.match.params.drinkId);
+    this.props.fetchDrinkSave({userId: this.props.currentUser.id, drinkId: this.props.drinkId})
   }
 
   componentWillReceiveProps(nextProps) {
@@ -30,8 +31,13 @@ class DrinkShow extends React.Component {
     }
   }
 
+  saveDrinkItem(userId, drinkId) {
+    this.props.saveDrink({userId: this.props.currentUser.id, drinkId: drinkId})
+    .then(this.props.history.push('/saves'));
+  }
+
   render() {
-    let { drink } = this.props;
+    let { drink, currentUser } = this.props;
 
     if (!Object.keys(drink).length) return <div></div>
 
@@ -57,6 +63,12 @@ class DrinkShow extends React.Component {
                   Rating:{" "}
                   <span className={`rating-static rating-${drink.rating * 10}`} />
               </div>
+            {this.props.loggedIn ?
+              <div className='drink-save' onClick={() => this.saveDrinkItem(currentUser.id, drink.id)}>
+                <i className="fas fa-heart"></i> Click to Save
+                    </div> : <div className='drink-save'>
+                <i className="fas fa-heart"></i> Please Sign in to Save
+                    </div>}
           </div>
           
         </div>

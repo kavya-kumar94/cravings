@@ -3,13 +3,14 @@ const Schema = mongoose.Schema;
 
 const FoodSaveSchema = new Schema({
     userId: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'users'
     },
     foodId: {
-        type: Schema.Types.ObjectId,
-        ref: 'Food'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'foods'
     }
 });
 
-module.exports = FoodSave = mongoose.model('FoodSave', FoodSaveSchema);
+const FoodSave = mongoose.model('foodsaves', FoodSaveSchema);
+module.exports = FoodSave;
