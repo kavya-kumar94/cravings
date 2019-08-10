@@ -30,24 +30,24 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 var server = app.listen(5000);
-var io = require('socket.io').listen(server);
+// var io = require('socket.io').listen(server);
 
-io.on('connection', socket => {
-    console.log('user connected');
+// io.on('connection', socket => {
+//     console.log('user connected');
 
-    socket.on('disconnect', function () {
-        console.log('user disconnected');
-    });
+//     socket.on('disconnect', function () {
+//         console.log('user disconnected');
+//     });
     
-    // socket.on('chat', ({msg}) => {
-    //     io.emit(msg);
-    //     console.log(msg);
-    // })
-    socket.on('multiuser', (room) => {
-        console.log(room);
-        // io.emit(msg);
-    })
-});
+//     // socket.on('chat', ({msg}) => {
+//     //     io.emit(msg);
+//     //     console.log(msg);
+//     // })
+//     socket.on('multiuser', (room) => {
+//         console.log(room);
+//         // io.emit(msg);
+//     })
+// });
 
 // seed(); 
 

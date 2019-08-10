@@ -11,18 +11,11 @@ class SaveIndex extends React.Component {
     constructor(props) {
         super(props);
         this.state ={};
-        // this.randomDate = this.randomDate.bind(this);
         this.unsaveTheDrink = this.unsaveTheDrink.bind(this);
         this.unsaveTheFood = this.unsaveTheFood.bind(this);
     }
 
-    // randomDate(start, end) {
-    //     return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
-    // }
     componentDidMount() {
-        // let { userId } = this.props;
-        // this.props.fetchDrinkSaves(userId).then(this.props.fetchDrinks());
-        // this.props.fetchFoodSaves(userId).then(this.props.fetchFoods());
         this.props.fetchFoodSaves(this.props.currentUser.id);
         this.props.fetchDrinkSaves(this.props.currentUser.id);
     }
@@ -37,14 +30,10 @@ class SaveIndex extends React.Component {
 
     unsaveTheFood(foodSave) {
         this.props.unsaveFood(foodSave)
-        // this.props.fetchFoodSaves(this.props.currentUser.id);
-        // .then(this.props.history.push("/saves"))
     }
 
     unsaveTheDrink(drinkSave) {
         this.props.unsaveDrink(drinkSave)
-        // this.props.fetchDrinkSaves(this.props.currentUser.id);
-        // .then(this.props.history.push("/saves"))
     }
 
 
@@ -60,23 +49,22 @@ class SaveIndex extends React.Component {
                     {Object.values(foodSaves).map((foodSave, idx) => {
                                 return (
                                     (foodSave.foodId && foodSave.foodId instanceof Object) ? 
-                                    <div key={idx} className="btn-link">
+                                    <div key={foodSave.foodId} className="btn-link">
                                         <Link to={`/foods/${String(foodSave.foodId._id)}`}>{foodSave.foodId.name}</Link>
                                         <button onClick={() => this.unsaveTheFood(foodSave)}>delete</button>
-                                    </div>        : <></>                        
+                                    </div>        : <div key={idx}></div>                        
                                 )}
                     )}    
                 <ul className="saved-drink-items">
-                    {console.log(drinkSaves)}
                     {Object.values(drinkSaves).map((drinkSave, idx) => {
                         
                             return (
                                 (drinkSave.drinkId && drinkSave.drinkId instanceof Object) ?
-                                <div key={idx} className="btn-link">
+                                <div key={drinkSave.drinkId} className="btn-link">
                                     <Link to={`/drinks/${String(drinkSave.drinkId._id)}`}>{drinkSave.drinkId.name}</Link>
                                     <button onClick={() => this.unsaveTheDrink(drinkSave)}>delete</button>
 
-                                </div> : <></>
+                                </div> : <div key={idx}></div>
                             )}
                     )}
                 </ul>
