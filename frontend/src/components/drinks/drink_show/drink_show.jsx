@@ -25,7 +25,7 @@ class DrinkShow extends React.Component {
   componentDidMount() {
     this.props.fetchDrink(this.props.match.params.drinkId)
       .then(() => {
-        if (this.props.currentUser) {
+        if (this.props.loggedIn) {
           this.props.fetchDrinkSave({ userId: this.props.currentUser.id, drinkId: this.props.match.params.drinkId })
         }
 
