@@ -26,7 +26,7 @@ class FoodShow extends React.Component {
     // this.props.fetchFood(this.props.match.params.foodId);
     this.props.fetchFood(this.props.match.params.foodId)
     .then(() => {
-      if(this.props.currentUser) {
+      if(this.props.loggedIn) {
         this.props.fetchFoodSave({userId: this.props.currentUser.id, foodId: this.props.match.params.foodId})
       }
 
@@ -76,7 +76,7 @@ class FoodShow extends React.Component {
 
   
   render() {
-    let { food, currentUser } = this.props;
+    let { food } = this.props;
   
     
     if (!Object.keys(food).length) return <div></div>;
