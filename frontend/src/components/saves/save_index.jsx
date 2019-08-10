@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import './save.css'
 
@@ -50,7 +50,7 @@ class SaveIndex extends React.Component {
 
     render() {
 
-        const { currentUser, foodSaves, drinks, foods, drinkSaves } = this.props;
+        const { currentUser, foodSaves, drinkSaves } = this.props;
         return (
             <div className="save-index">
                 <div className="user-info">
@@ -58,28 +58,27 @@ class SaveIndex extends React.Component {
                     <li className="member-date">Member since August 2019</li>
                 <ul className="saved-food-items">
                     {Object.values(foodSaves).map((foodSave, idx) => {
-                        // return <li>{foodSave.name}</li>
-                            if (foodSave.foodId && foodSave.foodId instanceof Object) {
                                 return (
+                                    (foodSave.foodId && foodSave.foodId instanceof Object) ? 
                                     <div key={idx} className="btn-link">
                                         <Link to={`/foods/${String(foodSave.foodId._id)}`}>{foodSave.foodId.name}</Link>
                                         <button onClick={() => this.unsaveTheFood(foodSave)}>delete</button>
-                                    </div>                                
+                                    </div>        : <></>                        
                                 )}
-                            })}
+                    )}    
                 <ul className="saved-drink-items">
                     {console.log(drinkSaves)}
                     {Object.values(drinkSaves).map((drinkSave, idx) => {
-                        // return <li>{foodSave.name}</li>
-                        if (drinkSave.drinkId && drinkSave.drinkId instanceof Object) {
+                        
                             return (
+                                (drinkSave.drinkId && drinkSave.drinkId instanceof Object) ?
                                 <div key={idx} className="btn-link">
                                     <Link to={`/drinks/${String(drinkSave.drinkId._id)}`}>{drinkSave.drinkId.name}</Link>
                                     <button onClick={() => this.unsaveTheDrink(drinkSave)}>delete</button>
 
-                                </div>
+                                </div> : <></>
                             )}
-                    })}
+                    )}
                 </ul>
                 </ul>
                     </div>

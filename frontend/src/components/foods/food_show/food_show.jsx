@@ -76,7 +76,7 @@ class FoodShow extends React.Component {
 
   
   render() {
-    let { food, currentUser } = this.props;
+    let { food } = this.props;
   
     
     if (!Object.keys(food).length) return <div></div>;

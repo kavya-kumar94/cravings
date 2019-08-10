@@ -74,7 +74,7 @@ class DrinkShow extends React.Component {
   }
 
   render() {
-    let { drink, currentUser } = this.props;
+    let { drink } = this.props;
 
     if (!Object.keys(drink).length) return <div></div>;
 
