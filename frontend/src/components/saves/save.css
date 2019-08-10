@@ -28,6 +28,7 @@
 .member-date {
     font-size: 19px;
     text-align: center;
+    border-bottom: 1px solid white;
 }
 
 .saved-food-items{
@@ -42,7 +43,15 @@
     font-family: 'Raleway', sans-serif;
     padding: 10px;
     margin-top: 10px;
+    background-color: rgba(255,255,255, 0.3);
 }
+
+.saved-food-items > * {
+    /* border-bottom: 1px solid whitesmoke; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .saved-drink-items{
     list-style: none;
     position: relative;
@@ -52,27 +61,32 @@
 
 .btn-link {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
 }
 
 .btn-link button {
-   border-radius: 20px;
+    border-radius: 5px;
     padding: 2px 10px 2px;
-    font-size: 10px;
+    font-size: 15px;
     transition: all .2s ease-in-out;
-    background-color: white;
+    background-color: rgba(255,255,255,0.6);
     color: black;
     margin-top: 20px;
     transition: all .2s ease-in-out;
-    /* width: 15px; */
-    /* display: flex; */
     text-align: center;
     margin: auto;
-    position: relative;
-    left: 0;
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    border-color: burlywood;
+    
 }
 
 .btn-link button:focus {
     outline: none;
+}
+
+.btn-link button:hover {
+    transform: scale(1.1);
 }

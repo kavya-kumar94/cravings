@@ -16,9 +16,9 @@ import DrinkWheel from './drinks/drink_mood_wheel';
 import FoodFormContainer from './foods/food_form_container';
 // eslint-disable-next-line
 import FoodWheel from './foods/food_mood_wheel';
-import WaitingRoomContainer from './multi_user/waiting_room_container';
+// import WaitingRoomContainer from './multi_user/waiting_room_container';
 import DrinkMoodFormContainer from './drinks/drink_mood_form_container';
-import LobbyContainer from './multi_user/lobby_container';
+// import LobbyContainer from './multi_user/lobby_container';
 import SaveIndex from './saves/save_index';
 
 
@@ -58,8 +58,8 @@ class App extends React.Component {
                     <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
                     <Route exact path="/saves" component={SaveIndex} />
                         <Route exact path="/" component={MainPage} />
-                        <Route exact path="/lobby" component={LobbyContainer} />
-                        <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} />
+                        {/* <Route exact path="/lobby" component={LobbyContainer} />
+                        <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} /> */}
                     </Switch>
                 </div>
             </div>

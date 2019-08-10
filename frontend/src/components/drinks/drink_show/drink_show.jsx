@@ -23,7 +23,13 @@ class DrinkShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchDrink(this.props.match.params.drinkId);
+    this.props.fetchDrink(this.props.match.params.drinkId)
+      .then(() => {
+        if (this.props.currentUser) {
+          this.props.fetchDrinkSave({ userId: this.props.currentUser.id, drinkId: this.props.match.params.drinkId })
+        }
+
+      })
   }
   
   componentWillReceiveProps(nextProps) {
@@ -33,42 +39,44 @@ class DrinkShow extends React.Component {
   }
   
   saveDrinkItem(userId, drinkId) {
-    this.props.saveDrink({userId: this.props.currentUser.id, drinkId: drinkId})
-    .then(this.props.history.push('/saves'));
+    let { currentUser } = this.props;
+    this.props.saveDrink({ userId: currentUser.id, drinkId: drinkId })
+      .then(() => this.props.history.push('/saves'));
   }
 
-  unsaveDrinkItem(drinkSave) {
-    this.props.unsaveDrink(drinkSave)
-    .then(this.props.history.push('/saves'));
+  unsaveDrinkItem(drinkId) {
+    this.props.unsaveDrink({ _id: drinkId })
+      .then(() => this.props.history.push('/saves'));
   }
   
   checkDrinkSave() {
-    console.log(this.props.drinkSave);
-      if(this.props.loggedIn) {
-        this.props.fetchDrinkSave({userId: this.props.currentUser.id, drinkId: this.props.drinkId});
-        if(this.props.drinkSave) {
-          return (<div className='drink-unsave' onClick={() => this.unsaveDrinkItem(this.props.drinkSaves)}>
-            <i className="fas fa-heart"></i> Click to Unsave
-          </div> 
-
-          )} else {
-            return(
-              <div className='drink-save' onClick={() => this.saveDrinkItem(this.props.currentUser.id, this.props.drink.id)}>
-                <i className="fas fa-heart"></i> Click to Save
-              </div> 
-            )}
-      } else {
-         return (<div className='drink-save'>
-            <i className="fas fa-heart"></i> Please Sign in to Save
+    if (this.props.loggedIn) {
+      if (this.props.drinkSave[0] !== "undefined") {
+        return (<div className='food-save' onClick={() => this.unsaveDrinkItem(this.props.drinkSave[0])}>
+          <i className="fas fa-heart"></i> Click to Unsave
           </div>
 
-         )}
+        )
+      } else {
+        return (
+          <div className='food-save' onClick={() => this.saveDrinkItem(this.props.currentUser.id, this.props.drink.id)}>
+            <i className="fas fa-heart"></i> Click to Save
+              </div>
+        )
+      }
+    } else {
+      return (<div className='food-save'>
+        <i className="fas fa-heart"></i> Please Sign in to Save
+          </div>
+
+      )
+    }
   }
 
   render() {
     let { drink, currentUser } = this.props;
 
-    if (!Object.keys(drink).length) return <div></div>
+    if (!Object.keys(drink).length) return <div></div>;
 
     return (
       <div className="drink-show-container">

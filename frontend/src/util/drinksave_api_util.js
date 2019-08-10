@@ -5,7 +5,7 @@ export const saveDrink = (drinksave) => {
 };
 
 export const unsaveDrink = (drinksave) => {
-    return axios.delete(`/api/drinksaves/${String(drinksave._id)}`, drinksave);
+    return axios.delete(`/api/drinksaves/${drinksave._id}`);
 };
 
 export const fetchDrinkSave = drinksave => {

@@ -10,7 +10,8 @@ const DrinkSaveReducer = (state = {}, action) => {
 
     switch (action.type) {
         case RECEIVE_DRINKSAVE:
-            return Object.assign({}, state, { [action.drinksave._id]: action.drinksave });
+            // return Object.assign({}, state, { [action.drinksave._id]: action.drinksave });
+            return { [action.drinksave._id]: action.drinksave };
         case RECEIVE_DRINKSAVES:
             return Object.assign({}, state, action.drinksaves);
         case REMOVE_DRINKSAVE:

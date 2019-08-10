@@ -24,7 +24,7 @@ class MainPage extends React.Component {
                 <FoodDrink />
             </div>
 
-                <button className="lobby-btn" onClick={this.handleClick}>go to lobby</button>
+                {/* <button className="lobby-btn" onClick={this.handleClick}>go to lobby</button> */}
             </>
         );
     }

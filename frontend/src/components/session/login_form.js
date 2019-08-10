@@ -36,7 +36,7 @@ class LoginForm extends React.Component {
         };
 
         this.props.login(user)
-            .then(this.props.closeModal);
+            .then(() => this.props.closeModal);
     }
 
     handleDemoSubmit() {
@@ -47,7 +47,7 @@ class LoginForm extends React.Component {
         }
 
         this.props.login(demoUser)
-            .then(this.props.closeModal);
+            .then(() => this.props.closeModal);
     }
 
     usernameTyper(e) {
