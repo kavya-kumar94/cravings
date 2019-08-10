@@ -46,7 +46,7 @@
     background-color: rgba(255,255,255, 0.3);
 }
 
-.saved-food-items > * {
+.saved-food-items > .btn-link {
     /* border-bottom: 1px solid whitesmoke; */
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -63,6 +63,11 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+}
+
+.btn-link > a:hover {
+    /* background-color: rgba(255,255,255, 0.5); */
+    color: black;
 }
 
 .btn-link button {
@@ -89,4 +94,5 @@
 
 .btn-link button:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
