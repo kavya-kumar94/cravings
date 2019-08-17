@@ -21,6 +21,8 @@
     justify-content: center;
     min-height: 745px;
     width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .main {

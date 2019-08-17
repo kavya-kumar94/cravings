@@ -54,9 +54,10 @@ class App extends React.Component {
                         <Route exact path="/foods" component={FoodsIndexContainer} />
                         <Route exact path="/foods/:foodId" component={FoodShowContainer} />
 
-                    <Route exact path="/drinks" component={DrinksIndexContainer} />
-                    <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
-                    <Route exact path="/saves" component={SaveIndex} />
+                        <Route exact path="/drinks" component={DrinksIndexContainer} />
+                        <Route exact path="/drinks/:drinkId" component={DrinkShowContainer} />
+                        <Route exact path="/saves" component={SaveIndex} />
+                        {/* <Route exact path='/login' component={MainPage} /> */}
                         <Route exact path="/" component={MainPage} />
                         {/* <Route exact path="/lobby" component={LobbyContainer} />
                         <Route exact path="/lobby/:roomId" component={WaitingRoomContainer} /> */}
