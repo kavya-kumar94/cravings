@@ -79,7 +79,7 @@ class NavBar extends React.Component {
                                 <a href="https://github.com/kavya-kumar94">Kavya</a>
                                 <a href="https://github.com/sophiacheungshc">Sophia</a>
                                 <a href="https://github.com/mkayys">Michelle</a>
-                                <a href="https://github.com/welduselam">Selam</a>
+                                <a href="https://github.com/selam-weldu">Selam</a>
                             </ul>
                         </div>
                     )}
