@@ -1,12 +1,18 @@
+.main-splash-body {
+    /* position: relative;
+    width: 600px;
+    top: 75px;
+    left: -140px; */
+}
+
 .main {
-    /* display: flex;
+    display: flex;
     flex-direction: column;
     position: relative;
-    height: inherit;
     width: inherit;
-    min-height: 745px; */
-    margin-top: 7vw;
-    padding-left: 10%;
+    min-height: 745px;
+    /* margin-top: 7vw;
+    padding-left: 10%; */
 }
 
 .fd {
@@ -18,10 +24,10 @@
 
 .main-logo {
     background-image: url('main-cravings.png');
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    width: 545px;
-    height: 200px;
+    width: 580px;
+    height: 197px;
     /* position: relative;
     top: 8rem;
     right: 10rem; */

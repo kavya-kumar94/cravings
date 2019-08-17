@@ -15,18 +15,14 @@
 
 .main-body {
     /* width: inherit;
-    height: inherit;
+    height: inherit; */
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 745px;
+    /* min-height: 745px; */
+    height: 100vh;
     width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden; */
-
-    overflow: scroll;
 }
-
 
 #map-container{
     width: 500px;
