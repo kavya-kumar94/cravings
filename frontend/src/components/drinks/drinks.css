@@ -161,6 +161,7 @@
 .no-results-for-drink button:hover {
     transform: scale(1.1);
     background-color: rgb(212, 78, 78);
+    cursor: pointer;
 }
 
 .no-results-for-drink button:focus {

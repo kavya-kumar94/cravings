@@ -32,6 +32,7 @@
 
 .navbar-links button:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
 
@@ -172,8 +173,8 @@
 .dropdown2 {
     position: absolute;
     background-color: white;
-    top: 118%;
-    right: 53px;
+    top: 11%;
+    right: 12px;
     width: 12rem;
     z-index: 10;
     border: 1px solid #d4d8d9;
