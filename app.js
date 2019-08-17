@@ -59,6 +59,4 @@ app.use("/api/drinks", drinks);
 app.use("/api/rooms", rooms);
 app.use("/api/foodsaves", foodsaves);
 app.use("/api/drinksaves", drinksaves);
-app.get("/login", (req, res) => {
-  res.redirect('/')
-});
+
