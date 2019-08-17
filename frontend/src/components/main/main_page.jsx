@@ -18,14 +18,11 @@ class MainPage extends React.Component {
 
     render() {
         return (
-            <div className='main-splash-body'>
-                <div className="main">
-                    <div className="main-logo"></div>
-                    <FoodDrink />
-                </div>
-
-                    {/* <button className="lobby-btn" onClick={this.handleClick}>go to lobby</button> */}
+            <div className="main-splash">
+                <div className="main-logo"></div>
+                <FoodDrink />
             </div>
+
         );
     }
 }

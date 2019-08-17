@@ -4,6 +4,10 @@
  * Licensed under MIT
  */
 
+ .loading-page {
+    text-align: center;
+    margin: 100px auto;
+ }
 
 
 .loading-text {

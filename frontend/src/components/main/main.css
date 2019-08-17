@@ -1,18 +1,12 @@
-.main-splash-body {
-    /* position: relative;
-    width: 600px;
-    top: 75px;
-    left: -140px; */
-}
-
-.main {
-    display: flex;
-    flex-direction: column;
+.main-splash {
+    display: block;
+    /* flex-direction: column;
     position: relative;
-    width: inherit;
-    min-height: 745px;
+    width: inherit; */
+    /* min-height: 745px; */
     /* margin-top: 7vw;
     padding-left: 10%; */
+    width: 75%;
 }
 
 .fd {

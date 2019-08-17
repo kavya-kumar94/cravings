@@ -1,7 +1,7 @@
 .foods-index-map-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 65px;
+    /* margin-top: 65px; */
     width: 100%;
 }
 
@@ -104,7 +104,7 @@
 
 .pick-one {
     text-align: center;
-    margin: 60px auto 20px;
+    margin: 35px auto 20px;
     width: 35%;
     padding: 10px;
     font-size: 14px;

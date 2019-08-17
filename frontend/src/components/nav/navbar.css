@@ -3,7 +3,6 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    position: absolute;
     height: 4rem;
     width: 100%;
     z-index: 3;
@@ -12,7 +11,7 @@
 .navbar-links {
     display: flex;
     float: right;
-    margin-right: 40px;
+    /* margin-right: 40px; */
     padding: 20px;
 }
 
@@ -134,7 +133,7 @@
 }
 
 .github-toggle {
-    margin-left: 5px;
+    margin-left: 15px;
     background-image: url('GitHub-Mark-32px.png');
     height: 32px;
     width: 32px;
