@@ -14,7 +14,7 @@
 }
 
 .main-body {
-    width: inherit;
+    /* width: inherit;
     height: inherit;
     display: flex;
     align-items: center;
@@ -22,14 +22,11 @@
     min-height: 745px;
     width: 100%;
     overflow-y: scroll;
-    overflow-x: hidden;
+    overflow-x: hidden; */
+
+    overflow: scroll;
 }
 
-.main {
-    height: -webkit-fill-available;
-    width: inherit;
-    padding: 27%;
-}
 
 #map-container{
     width: 500px;

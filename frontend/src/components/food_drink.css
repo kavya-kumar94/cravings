@@ -1,13 +1,12 @@
 .food-drink button {
     border-radius: 20px;
-    padding: 7px 30px 7px;
-    font-size: 35px;
+    padding: 7px 12px;
+    font-size: 30px;
     transition: all .2s ease-in-out;
     font-family: 'Source Sans Pro', sans-serif;
     position: relative;
-    position: relative;
     left: 82px;
-    width: 9rem;
+    width: 120px;
     font-weight: bolder;
     border-color: yellow;
     text-shadow: 1px 1px 1px lightslategrey;
@@ -44,11 +43,14 @@
     background-image: url('fooddrink.png');
     background-size: contain;
     background-repeat: no-repeat;
-    min-height: 23rem;
+    min-height: 341px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    position: relative;
+    margin-left: 15%;
+    margin-bottom: 1%;
+    /* position: relative;
     right: 1rem;
-    top: 11rem;
+    top: 11rem; */
+    
 }
